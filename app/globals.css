@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 75, 85, 99;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 11, 60, 138;
+    --background-end-rgb: 11, 60, 138;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-display text-slate-700 antialiased overflow-x-hidden bg-background-light;
+  }
+  ::selection {
+    @apply bg-primary/20 text-primary-dark;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full border-4 border-transparent bg-clip-content hover:bg-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ===== NEW DESIGN STYLES FROM V2 ===== */
+
+/* Hero Gradient */
+.hero-gradient {
+  background: radial-gradient(circle at top right, #3b76e8 0%, #1152d4 100%);
+}
+
+/* Glass Morphism Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Shimmer Button Effect */
+.shimmer-btn {
+  background: linear-gradient(90deg, #F59E0B 0%, #fbbf24 50%, #F59E0B 100%);
+  background-size: 200% 100%;
+}
+
+/* Spotlight Card Effect */
+.spotlight-card {
+  --x: 50%;
+  --y: 50%;
+  position: relative;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(17, 82, 212, 0.08) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== LEGACY STYLES (PRESERVED) ===== */
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+
+/* Transition delays for scroll-reveal */
+.scroll-reveal.reveal-pending.delay-100 { transition-delay: 100ms; }
+.scroll-reveal.reveal-pending.delay-200 { transition-delay: 200ms; }
+.scroll-reveal.reveal-pending.delay-300 { transition-delay: 300ms; }
+.scroll-reveal.reveal-pending.delay-400 { transition-delay: 400ms; }
+.scroll-reveal.reveal-pending.delay-500 { transition-delay: 500ms; }
+
+/* Smooth transitions for interactive elements */
+a {
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  transform: translateY(-1px);
+}
+
+/* Card hover effects */
+.service-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effects */
+.btn-primary {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Scroll-triggered animations - progressive enhancement approach */
+/* Default: elements are VISIBLE (failsafe if JS doesn't load) */
+.scroll-reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When JS loads, it adds 'reveal-pending' class - start hidden for animation */
+.scroll-reveal.reveal-pending:not(.revealed) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Once intersection is observed, reveal the element */
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fallback: auto-reveal animation after 2s as backup if JS observer fails */
+@keyframes autoReveal {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.scroll-reveal.reveal-pending:not(.revealed) {
+  animation: autoReveal 0.6s ease-out 2s forwards;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal.reveal-pending:not(.revealed) {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none;
+  }
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Secondary button style */
+.btn-secondary {
+  border-width: 2px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

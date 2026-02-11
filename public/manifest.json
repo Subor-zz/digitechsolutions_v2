@@ -1,0 +1,27 @@
+{
+  "name": "Digitech Solutions - IT Consultant & Full-Stack Developer",
+  "short_name": "Digitech Solutions",
+  "description": "9+ years IT consulting experience across service management, application consulting, and full-stack development.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B3C8A",
+  "theme_color": "#0B3C8A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "consulting", "technology"],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
