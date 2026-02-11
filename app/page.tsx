@@ -331,7 +331,7 @@ export default function Home() {
             <div className="mt-16 text-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent underline transition-colors"
+                className="inline-flex items-center gap-2 text-base font-bold text-primary hover:text-accent underline transition-colors"
               >
                 Niet zeker welke dienst past? Plan een gratis intake (15 min) →
               </Link>
