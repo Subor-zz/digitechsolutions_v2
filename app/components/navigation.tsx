@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -31,11 +32,17 @@ export default function Navigation() {
         <div className={`glass-nav rounded-[2rem] px-6 lg:px-10 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] transition-all duration-500 ${isScrolled ? 'h-16' : 'h-20'}`}>
           <div className="flex justify-between h-full items-center">
             <Link href="/" className="flex-shrink-0 flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white font-black text-xl group-hover:rotate-12 transition-transform shadow-lg shadow-primary/20">
-                D
+              <div className="relative w-9 h-9 group-hover:scale-110 transition-transform">
+                <Image
+                  src="/logo-transparent.png"
+                  alt="Digitech Solutions Logo"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                />
               </div>
               <span className="font-extrabold text-xl tracking-tighter text-slate-900">
-                Digitech<span className="text-slate-400"> Solutions</span>
+                Digitech<span className="text-slate-400">Solutions</span>
               </span>
             </Link>
 
@@ -44,11 +51,10 @@ export default function Navigation() {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={`px-5 py-2 rounded-xl text-sm font-bold transition-all ${
-                    isActive(item.href)
-                      ? 'bg-primary/10 text-primary shadow-sm'
-                      : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100/50'
-                  }`}
+                  className={`px-5 py-2 rounded-xl text-sm font-bold transition-all ${isActive(item.href)
+                    ? 'bg-primary/10 text-primary shadow-sm'
+                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100/50'
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -58,11 +64,10 @@ export default function Navigation() {
 
               <Link
                 href="/contact"
-                className={`px-7 py-2.5 rounded-xl text-sm font-bold shadow-xl transition-all active:scale-95 ${
-                  isActive('/contact')
-                    ? 'bg-primary text-white shadow-primary/20'
-                    : 'bg-slate-900 text-white shadow-slate-900/10 hover:bg-primary'
-                }`}
+                className={`px-7 py-2.5 rounded-xl text-sm font-bold shadow-xl transition-all active:scale-95 ${isActive('/contact')
+                  ? 'bg-primary text-white shadow-primary/20'
+                  : 'bg-slate-900 text-white shadow-slate-900/10 hover:bg-primary'
+                  }`}
               >
                 Contact
               </Link>
@@ -91,11 +96,10 @@ export default function Navigation() {
                   key={item.id}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`w-full text-left px-6 py-4 rounded-2xl font-bold transition-all ${
-                    isActive(item.href)
-                      ? 'bg-primary text-white'
-                      : 'text-slate-600 hover:bg-slate-50'
-                  }`}
+                  className={`w-full text-left px-6 py-4 rounded-2xl font-bold transition-all ${isActive(item.href)
+                    ? 'bg-primary text-white'
+                    : 'text-slate-600 hover:bg-slate-50'
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -103,11 +107,10 @@ export default function Navigation() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className={`w-full text-left px-6 py-4 rounded-2xl font-bold transition-all ${
-                  isActive('/contact')
-                    ? 'bg-primary text-white'
-                    : 'text-slate-600 hover:bg-slate-50'
-                }`}
+                className={`w-full text-left px-6 py-4 rounded-2xl font-bold transition-all ${isActive('/contact')
+                  ? 'bg-primary text-white'
+                  : 'text-slate-600 hover:bg-slate-50'
+                  }`}
               >
                 Contact
               </Link>
