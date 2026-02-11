@@ -437,23 +437,23 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="mt-auto pt-8 border-t border-slate-50 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div className="mt-auto pt-6 border-t border-slate-50 flex flex-col sm:flex-row items-center gap-6">
                       <Link
                         href="/over-mij"
-                        className="bg-primary text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 shadow-xl shadow-primary/10 hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 group w-full sm:w-auto justify-center"
+                        className="bg-primary text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-3 shadow-xl shadow-primary/10 hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 group"
                       >
                         Over mij
                         <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
                       </Link>
 
-                      <div className="flex flex-wrap gap-6">
-                        <div className="flex items-center gap-3">
-                          <span className="material-icons text-slate-300 text-lg">email</span>
-                          <span className="text-xs font-bold text-slate-500">info@digitechsolutions.nl</span>
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-slate-400">
+                        <div className="flex items-center gap-1.5">
+                          <span className="material-icons text-base">email</span>
+                          <span className="text-xs font-medium">info@digitechsolutions.nl</span>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <span className="material-icons text-slate-300 text-lg">location_on</span>
-                          <span className="text-xs font-bold text-slate-500">Amsterdam</span>
+                        <div className="flex items-center gap-1.5">
+                          <span className="material-icons text-base">location_on</span>
+                          <span className="text-xs font-medium">Amsterdam</span>
                         </div>
                       </div>
                     </div>

@@ -35,7 +35,7 @@ export default function Navigation() {
                 D
               </div>
               <span className="font-extrabold text-xl tracking-tighter text-slate-900">
-                Digitech<span className="text-primary">.</span>
+                Digitech<span className="text-slate-400"> Solutions</span>
               </span>
             </Link>
 
