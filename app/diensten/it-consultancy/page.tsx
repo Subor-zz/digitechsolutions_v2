@@ -317,7 +317,7 @@ export default function ITConsultancyPage() {
       </section>
 
       {/* FAQ Section with Schema */}
-      <FaqSchema faqs={faqs} />
+      <FAQSchema faqs={faqs} />
       <FAQSection faqs={faqs} />
 
       {/* Related Services */}
