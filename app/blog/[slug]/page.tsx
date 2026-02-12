@@ -1988,6 +1988,8 @@ Bij overheidsorganisaties werk ik pragmatisch en resultaatgericht:
 2. **Heldere werkwijzen opstellen** – Praktische, uitvoerbare processen die direct resultaat opleveren
 3. **Sturen van juiste expertise** – Voor complexe vraagstukken de juiste specialisten inzetten
 4. **Rust en stabiliteit** – Geen snelle oplossingen, maar gedegenlijke verbeteringen die werken
+4. **Rust en stabiliteit** – Geen snelle oplossingen, maar gedegenlijke verbeteringen die werken
+
 
 Conclusie: Een ZZP applicatiebeheerder breng structuur, consistentie en expertise in een organisatie die dat vaak mist. Of het nu gaat om een nieuw systeem of applicatie te implementeren – ik zorg dat de overgang soepel verloopt en de impact op burgers minimaal is.
     `,
