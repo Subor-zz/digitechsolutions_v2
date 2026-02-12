@@ -157,10 +157,10 @@ export default function Home() {
     <>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative pt-40 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-gradient-to-br from-primary via-primary to-[#0a3d9c]">
+        <section className="relative pt-40 pb-24 lg:pt-48 lg:pb-40 overflow-hidden hero-gradient">
           {/* Animated blobs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-blue-300/20 rounded-full blur-[120px] animate-blob"></div>
+            <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-[120px] animate-blob"></div>
             <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-cyan-300/10 rounded-full blur-[150px] animate-blob animation-delay-2000"></div>
           </div>
 
