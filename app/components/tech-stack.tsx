@@ -23,7 +23,7 @@ export default function TechStack() {
   return (
     <div className="py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-        <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Technologieen & Tools</p>
+        <p className="text-sm font-semibold text-slate-600 uppercase tracking-wider">Technologieen & Tools</p>
       </div>
 
       <div className="relative flex overflow-hidden group">
@@ -35,7 +35,7 @@ export default function TechStack() {
           {displayTechs.map((tech, idx) => (
             <div
               key={`${tech.name}-${idx}`}
-              className="flex items-center gap-3 text-lg md:text-xl font-bold text-slate-400 hover:text-primary transition-colors cursor-default"
+              className="flex items-center gap-3 text-lg md:text-xl font-bold text-slate-600 hover:text-primary transition-colors cursor-default"
             >
               <span className="material-icons text-slate-300 group-hover:text-primary transition-colors">{tech.icon}</span>
               {tech.name}

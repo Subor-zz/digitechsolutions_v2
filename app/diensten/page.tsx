@@ -61,7 +61,7 @@ function SpotlightCard({ service, onNavigate }: { service: typeof servicesData[0
       <div className="mt-auto pt-8 border-t border-slate-100 relative z-10">
         <ul className="space-y-4">
           {service.points.map((point, i) => (
-            <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
+            <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-600 group-hover:text-slate-900 transition-colors">
               <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-primary transition-all group-hover:scale-125"></div>
               {point}
             </li>

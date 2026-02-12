@@ -187,7 +187,7 @@ export function BlogRelatedArticles({ currentSlug, className = '', maxArticles =
                     </p>
                   </div>
                 </div>
-                <span className="text-xs text-slate-400 font-medium">
+                <span className="text-xs text-slate-600 font-medium">
                   {post.readTime} lezen →
                 </span>
               </Link>

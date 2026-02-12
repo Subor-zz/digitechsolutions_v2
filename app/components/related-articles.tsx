@@ -48,7 +48,7 @@ export function RelatedArticles({ serviceId, className = '' }: RelatedArticlesPr
                       {title}
                     </h3>
                   </div>
-                  <span className="text-xs text-slate-400 font-medium">Lees artikel →</span>
+                  <span className="text-xs text-slate-600 font-medium">Lees artikel →</span>
                 </Link>
               );
             })}
