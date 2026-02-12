@@ -155,7 +155,7 @@ export default function Navigation() {
 
               <Link
                 href="/contact"
-                className="px-6 py-2.5 rounded-xl text-sm font-bold shadow-xl transition-all active:scale-95 bg-slate-900 text-white shadow-slate-900/10 hover:bg-primary hover:shadow-primary/20 flex items-center gap-2"
+                className="px-6 py-2.5 rounded-xl text-sm font-bold shadow-xl transition-all active:scale-95 bg-techOrange text-white shadow-techOrange/20 hover:bg-warmOrange hover:shadow-warmOrange/20 flex items-center gap-2"
               >
                 Plan gratis intake
                 <span className="material-icons text-sm">calendar_month</span>
@@ -256,7 +256,7 @@ export default function Navigation() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-left px-6 py-4 rounded-2xl font-bold transition-all bg-slate-900 text-white shadow-slate-900/10 hover:bg-primary flex items-center gap-2"
+                  className="w-full text-left px-6 py-4 rounded-2xl font-bold transition-all bg-techOrange text-white shadow-techOrange/20 hover:bg-warmOrange flex items-center gap-2"
                 >
                   Plan gratis intake
                   <span className="material-icons text-sm">calendar_month</span>
