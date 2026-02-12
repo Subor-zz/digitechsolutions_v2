@@ -239,6 +239,11 @@ export default function RootLayout({
   return (
     <html lang="nl" className="scroll-smooth">
       <head>
+        {/* DNS preconnect for faster LCP */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://www.digitechsolutions.nl" />
+
         {/* Favicon */}
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
