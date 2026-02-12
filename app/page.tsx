@@ -226,6 +226,7 @@ export default function Home() {
                 </h2>
                 <p className="mt-6 text-lg text-slate-500 font-medium leading-relaxed max-w-xl">
                   Focus op stabiliteit, processen en support voor bedrijfsapplicaties.
+                  Als ervaren <Link href="/diensten/zzp-applicatiebeheerder" className="text-primary hover:text-accent underline underline-offset-2 decoration-2 underline-primary/30 transition-all">ZZP applicatiebeheerder</Link> breng ik rust en continuïteit in uw IT-omgeving.
                 </p>
               </div>
             </div>

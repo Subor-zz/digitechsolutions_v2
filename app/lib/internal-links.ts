@@ -56,61 +56,77 @@ export const serviceToBlogMap: Record<string, string[]> = {
 };
 
 // Blog posts with related services
+// PRIMARY PILLAR PAGES (SEO Money Pages)
+const primaryPillarServices = {
+  applicatiebeheerder: { href: '/diensten/zzp-applicatiebeheerder', title: 'ZZP Applicatiebeheerder', icon: 'settings_applications' },
+  functioneelBeheerder: { href: '/diensten/zzp-functioneel-beheerder', title: 'ZZP Functioneel Beheerder', icon: 'sync_alt' },
+  supportItsm: { href: '/diensten/support-itsm', title: 'IT Support & ITSM', icon: 'support_agent' },
+};
+
+// Category to secondary service mapping
+const categoryToSecondaryService: Record<string, RelatedService | null> = {
+  'Fractional CTO': { href: '/diensten/fractional-cto', title: 'Fractional CTO', icon: 'psychology' },
+  'Full-Stack Development': { href: '/diensten/full-stack-development', title: 'Full-stack Development', icon: 'code' },
+  'IT-Consultancy': { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
+  'IT Project Manager': { href: '/diensten/it-project-manager', title: 'IT Project Manager', icon: 'assignment' },
+  'Productconsultatie & Technische Validatie': { href: '/diensten/productconsultatie', title: 'Productconsultatie', icon: 'lightbulb' },
+};
+
 export const blogToServiceMap: Record<string, RelatedService[]> = {
   'wanneer-heb-je-een-fractional-cto-nodig': [
-    { href: '/diensten/fractional-cto', title: 'Fractional CTO', icon: 'psychology' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['Fractional CTO']!,
   ],
   'kosten-vs-fulltime-cto': [
-    { href: '/diensten/fractional-cto', title: 'Fractional CTO', icon: 'psychology' },
+    primaryPillarServices.applicatiebeheerder,
     { href: '/tarieven', title: 'Tarieven', icon: 'payments' },
   ],
   'fractional-cto-vs-interim-cto': [
-    { href: '/diensten/fractional-cto', title: 'Fractional CTO', icon: 'psychology' },
-    { href: '/diensten/projectmanagement', title: 'Projectmanagement', icon: 'assignment' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT Project Manager']!,
   ],
   'technische-fouten-zonder-cto': [
-    { href: '/diensten/fractional-cto', title: 'Fractional CTO', icon: 'psychology' },
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT-Consultancy']!,
   ],
   'tech-roadmap-voor-startups': [
-    { href: '/diensten/fractional-cto', title: 'Fractional CTO', icon: 'psychology' },
-    { href: '/diensten/product-business-consultatie', title: 'Productconsultatie', icon: 'lightbulb' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['Productconsultatie & Technische Validatie']!,
   ],
   'fractional-cto-bij-due-diligence': [
-    { href: '/diensten/fractional-cto', title: 'Fractional CTO', icon: 'psychology' },
-    { href: '/diensten/full-stack-development', title: 'Full-stack Development', icon: 'code' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['Full-Stack Development']!,
   ],
   'mvp-laten-bouwen-waar-op-letten': [
-    { href: '/diensten/full-stack-development', title: 'Full-stack Development', icon: 'code' },
-    { href: '/diensten/product-business-consultatie', title: 'Productconsultatie', icon: 'lightbulb' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['Full-Stack Development']!,
   ],
   'react-vs-nextjs-voor-startups': [
-    { href: '/diensten/full-stack-development', title: 'Full-stack Development', icon: 'code' },
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT-Consultancy']!,
   ],
   'technische-schuld-voorkomen': [
-    { href: '/diensten/full-stack-development', title: 'Full-stack Development', icon: 'code' },
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT-Consultancy']!,
   ],
   'wanneer-herschrijven-vs-doorbouwen': [
-    { href: '/diensten/full-stack-development', title: 'Full-stack Development', icon: 'code' },
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT-Consultancy']!,
   ],
   'wat-is-een-applicatie-audit': [
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
-    { href: '/diensten/applicatieconsultatie', title: 'Applicatieconsultatie', icon: 'search' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT-Consultancy']!,
   ],
   'performanceproblemen-herkennen': [
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
-    { href: '/diensten/applicatieconsultatie', title: 'Applicatieconsultatie', icon: 'search' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT-Consultancy']!,
   ],
   'security-risico\'s-bij-webapps': [
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
-    { href: '/diensten/applicatieconsultatie', title: 'Applicatieconsultatie', icon: 'search' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['IT-Consultancy']!,
   ],
   'build-vs-buy-beslissingen': [
-    { href: '/diensten/it-consultancy', title: 'IT-consultancy', icon: 'terminal' },
-    { href: '/diensten/applicatieconsultatie', title: 'Applicatieconsultatie', icon: 'search' },
-    { href: '/diensten/product-business-consultatie', title: 'Productconsultatie', icon: 'lightbulb' },
+    primaryPillarServices.applicatiebeheerder,
+    categoryToSecondaryService['Productconsultatie & Technische Validatie']!,
   ],
 };
