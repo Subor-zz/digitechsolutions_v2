@@ -61,51 +61,37 @@ export default function CookiePage() {
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">2. Welke cookies gebruiken wij?</h2>
 
-            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Essentile cookies</h3>
+            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Geen marketingcookies</h3>
             <p className="text-gray-700 mb-4">
-              Deze cookies zijn noodzakelijk voor de werking van de website. Zonder deze cookies kunnen sommige functies niet worden gebruikt.
+              <strong>Wij gebruiken geen marketingcookies, trackingpixels of derde partij trackers.</strong> Onze website is volledig cookie-vrij voor analytics doeleinden.
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Functionaliteit van de website</li>
-              <li>Toegang tot beveiligde gedeelten</li>
-              <li>Shopping cart functionaliteit (indien van toepassing)</li>
-            </ul>
 
-            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Analytische cookies</h3>
+            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Privacy-first analytics (Plausible)</h3>
             <p className="text-gray-700 mb-4">
-              Wij gebruiken analytische tools om te begrijpen hoe bezoekers onze website gebruiken. Dit helpt ons om de website te verbeteren.
+              Wij gebruiken <strong>Plausible Analytics</strong> — een privacy-vriendelijke, cookie-loze analysetool. Plausible:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Google Analytics (indien geactiveerd)</li>
-              <li>Aantal bezoekers en populaire pagina&apos;s</li>
-              <li>Gebruikersgedrag en patronen</li>
+              <li>Gebruikt <strong>geen cookies</strong></li>
+              <li>Volgt geen gebruikers over verschillende websites</li>
+              <li>Deelt geen gegevens met derde partijen</li>
+              <li>Is volledig AVG/GDPR-compliant</li>
             </ul>
+            <p className="text-gray-700 mb-4">
+              Plausible meet alleen anonieme pagina&apos;s en basisstatistieken (aantal bezoekers, populaire pagina&apos;s). Er is geen persoonlijk identificeerbare informatie gekoppeld aan deze data.
+            </p>
 
-            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Functionele cookies</h3>
+            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Essentiële cookies (indien van toepassing)</h3>
             <p className="text-gray-700 mb-4">
-              Deze cookies onthouden jouw voorkeuren en stellen een verbeterde gebruikservaring mogelijk.
+              Momenteel plaatst onze website <strong>geen essentiële cookies</strong>. Als we in de toekomst functionaliteit toevoegen die cookies vereist (zoals een login-portal), zullen we dit hier duidelijk vermelden.
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Taalvoorkeuren</li>
-              <li>Gebruikersnaam onthouden voor inloggen</li>
-              <li>Regio-instellingen</li>
-            </ul>
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">3. Cookies beheren</h2>
             <p className="text-gray-700 mb-4">
-              Je kunt kiezen welke cookies je accepteert via je browserinstellingen. Houd er rekening mee dat het uitschakelen van cookies de functionaliteit van de website kan beperken.
+              Omdat wij geen cookies gebruiken voor analytics of marketing, is er <strong>geen cookie-toestemming (consent) vereist</strong> op onze website.
             </p>
-
-            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Browserinstellingen</h3>
             <p className="text-gray-700 mb-4">
-              In de meeste browsers kun je cookies beheren via:
+              Je kunt desgewenst cookies in je browser blokkeren via browserinstellingen. Dit heeft geen invloed op de basisfunctionaliteit van onze website, maar kan bepaalde functies beïnvloeden (zoals eventuele toekomstige login-functionaliteit).
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li><strong>Chrome:</strong> Instellingen &gt; Privacy en beveiliging &gt; Cookies en andere sitegegevens</li>
-              <li><strong>Firefox:</strong> Instellingen &gt; Privacy &amp; beveiliging</li>
-              <li><strong>Safari:</strong> Voorkeuren &gt; Privacy</li>
-              <li><strong>Edge:</strong> Instellingen &gt; Cookies en machtigingen</li>
-            </ul>
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">4. Derde partijen</h2>
             <p className="text-gray-700">

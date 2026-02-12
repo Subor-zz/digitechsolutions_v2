@@ -66,9 +66,22 @@ export default function PrivacyPage() {
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
               <li>Naam en contactgegevens (e-mailadres, telefoonnummer)</li>
               <li>Bedrijfsgegevens (indien van toepassing)</li>
-              <li>IP-adres en browsergegevens (voor beveiliging en analytics)</li>
               <li>Communicatie (e-mails, telefoongesprekken)</li>
             </ul>
+
+            <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Website analytics (Plausible)</h3>
+            <p className="text-gray-700 mb-4">
+              Voor website analytics gebruiken wij <strong>Plausible</strong> — een privacy-first, cookie-loze analysetool. Plausible:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>Gebruikt geen cookies</li>
+              <li>Volgt geen individuele bezoekers</li>
+              <li>Deelt geen data met derden</li>
+              <li>Is volledig AVG/GDPR-compliant zonder toestemming</li>
+            </ul>
+            <p className="text-gray-700 mb-4">
+              Plausible meet alleen anonieme statistieken zoals paginaweergaven en bezoekersaantallen. Er vindt geen profiling of cross-site tracking plaats.
+            </p>
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">3. Waarom verwerken wij gegevens?</h2>
             <p className="text-gray-700 mb-4">
@@ -107,7 +120,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">7. Cookies</h2>
             <p className="text-gray-700">
-              Onze website maakt gebruik van cookies. Zie ons <Link href="/cookiebeleid" className="text-primary hover:underline font-medium">Cookiebeleid</Link> voor meer informatie.
+              Onze website gebruikt geen marketingcookies en plaatst geen trackingcookies. Wij gebruiken Plausible Analytics (cookie-loos) voor basisstatistieken. Zie ons <Link href="/cookiebeleid" className="text-primary hover:underline font-medium">Cookiebeleid</Link> voor meer informatie.
             </p>
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">8. Beveiliging</h2>
