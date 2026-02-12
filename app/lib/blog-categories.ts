@@ -23,8 +23,8 @@ export const BLOG_CATEGORIES: Record<string, BlogCategory> = {
     metaTitle: "Fractional CTO | StrategischTechnisch Leiderschap voor Startups",
     metaDescription: "Lees hoe een fractional CTO jouw startup helpt met technische roadmap, architectuur en teamontwikkeling. Senior expertise zonder fulltime kosten.",
     relatedServices: [
-      { href: "/diensten/fractional-cto", title: "Fractional CTO", icon: "psychology" },
-      { href: "/diensten/it-consultancy", title: "IT-consultancy", icon: "terminal" },
+      { href: "/diensten/zzp-applicatiebeheerder", title: "ZZP Applicatiebeheerder", icon: "settings" },
+      { href: "/diensten/zzp-functioneel-beheerder", title: "ZZP Functioneel Beheerder", icon: "sync_alt" },
     ],
   },
   itConsultancy: {
@@ -37,9 +37,9 @@ export const BLOG_CATEGORIES: Record<string, BlogCategory> = {
     metaTitle: "IT-Consultancy & Applicatie Audits | Kwaliteit & Security",
     metaDescription: "Inzicht in de kwaliteit, veiligheid en performance van je applicaties. Ontdek wat een audit oplevert en welke verbeteringen mogelijk zijn.",
     relatedServices: [
-      { href: "/diensten/it-consultancy", title: "IT-consultancy", icon: "terminal" },
-      { href: "/diensten/applicatieconsultatie", title: "Applicatieconsultatie", icon: "search" },
-      { href: "/diensten/support-itsm", title: "Support & ITSM", icon: "support_agent" },
+      { href: "/diensten/zzp-applicatiebeheerder", title: "ZZP Applicatiebeheerder", icon: "settings" },
+      { href: "/diensten/zzp-functioneel-beheerder", title: "ZZP Functioneel Beheerder", icon: "sync_alt" },
+      { href: "/diensten/support-itsm", title: "IT Support & ITSM", icon: "support_agent" },
     ],
   },
   fullStack: {
@@ -52,8 +52,8 @@ export const BLOG_CATEGORIES: Record<string, BlogCategory> = {
     metaTitle: "Full-Stack & MVP Development | Software Bouwen voor Startups",
     metaDescription: "Gids voor MVP development, technologiekeuzes en technische schuld. Lees hoe je schaalbare software bouwt met React en Next.js.",
     relatedServices: [
-      { href: "/diensten/full-stack-development", title: "Full-stack Development", icon: "code" },
-      { href: "/diensten/product-business-consultatie", title: "Productconsultatie", icon: "lightbulb" },
+      { href: "/diensten/full-stack-development", title: "Full Stack Developer", icon: "code" },
+      { href: "/diensten/productconsultatie", title: "Productconsultatie & Technische Validatie", icon: "lightbulb" },
     ],
   },
   performanceSecurity: {
@@ -66,8 +66,8 @@ export const BLOG_CATEGORIES: Record<string, BlogCategory> = {
     metaTitle: "Performance & Security | Snelle en Veilige Webapplicaties",
     metaDescription: "Herken en los performanceproblemen en security-risico's op. Praktische tips voor het beveiligen en optimaliseren van webapplicaties.",
     relatedServices: [
-      { href: "/diensten/it-consultancy", title: "IT-consultancy", icon: "terminal" },
-      { href: "/diensten/applicatieconsultatie", title: "Applicatieconsultatie", icon: "search" },
+      { href: "/diensten/zzp-applicatiebeheerder", title: "ZZP Applicatiebeheerder", icon: "settings" },
+      { href: "/diensten/productconsultatie", title: "Productconsultatie & Technische Validatie", icon: "search" },
     ],
   },
   strategie: {
@@ -80,9 +80,9 @@ export const BLOG_CATEGORIES: Record<string, BlogCategory> = {
     metaTitle: "Technische Strategie & Build vs Buy Beslissingen",
     metaDescription: "Framework voor technische beslissingen: build vs buy, technologiekeuzes en strategische planning. Maak informed keuzes voor je tech stack.",
     relatedServices: [
-      { href: "/diensten/fractional-cto", title: "Fractional CTO", icon: "psychology" },
-      { href: "/diensten/product-business-consultatie", title: "Productconsultatie", icon: "lightbulb" },
-      { href: "/diensten/it-consultancy", title: "IT-consultancy", icon: "terminal" },
+      { href: "/diensten/zzp-functioneel-beheerder", title: "ZZP Functioneel Beheerder", icon: "sync_alt" },
+      { href: "/diensten/it-project-manager", title: "IT Project Manager", icon: "assignment" },
+      { href: "/diensten/productconsultatie", title: "Productconsultatie & Technische Validatie", icon: "lightbulb" },
     ],
   },
 };
