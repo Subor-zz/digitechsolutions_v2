@@ -6,11 +6,21 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 
 // Type definitions for navigation items
+type NavItemDropdownItem = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+type NavItemDivider = {
+  type: 'divider';
+};
+
 type NavItemWithDropdown = {
   id: string;
   label: string;
   hasDropdown: true;
-  items: { id: string; label: string; href: string; }[];
+  items: (NavItemDropdownItem | NavItemDivider)[];
 };
 
 type NavItemRegular = {
@@ -22,6 +32,10 @@ type NavItemRegular = {
 
 type NavItem = NavItemWithDropdown | NavItemRegular;
 
+// Type guard for divider items
+function isDivider(item: NavItemDropdownItem | NavItemDivider): item is NavItemDivider {
+  return 'type' in item && item.type === 'divider';
+}
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,10 +69,11 @@ export default function Navigation() {
       items: [
         { id: 'applicatiebeheerder', label: 'ZZP Applicatiebeheerder', href: '/diensten/zzp-applicatiebeheerder' },
         { id: 'functioneel-beheerder', label: 'ZZP Functioneel Beheerder', href: '/diensten/zzp-functioneel-beheerder' },
-        { id: 'support-itsm', label: 'Support & ITSM', href: '/diensten/support-itsm' },
+        { id: 'support-itsm', label: 'IT Support & ITSM', href: '/diensten/support-itsm' },
+        { type: 'divider' },
         { id: 'full-stack', label: 'Full Stack Developer', href: '/diensten/full-stack-development' },
         { id: 'project-manager', label: 'IT Project Manager', href: '/diensten/it-project-manager' },
-        { id: 'productconsultatie', label: 'Productconsultatie & Validatie', href: '/diensten/productconsultatie' },
+        { id: 'productconsultatie', label: 'Productconsultatie & Technische Validatie', href: '/diensten/productconsultatie' },
       ]
     },
     { id: 'blog', label: 'Blog', href: '/blog' },
@@ -115,18 +130,22 @@ export default function Navigation() {
                       </button>
                       {activeDropdown === item.id && (
                         <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl border border-slate-100 shadow-xl py-2 animate-fade-in">
-                          {item.items.map((subItem) => (
-                            <Link
-                              key={subItem.id}
-                              href={subItem.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className={`block px-5 py-2.5 text-sm font-medium transition-colors ${
-                                pathname === subItem.href ? 'text-primary bg-primary/5' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                              }`}
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
+                          {item.items.map((subItem, idx) =>
+                            isDivider(subItem) ? (
+                              <div key={`divider-${idx}`} className="my-2 mx-5 border-t border-slate-200" />
+                            ) : (
+                              <Link
+                                key={subItem.id}
+                                href={subItem.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className={`block px-5 py-2.5 text-sm font-medium transition-colors ${
+                                  pathname === subItem.href ? 'text-primary bg-primary/5' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                                }`}
+                              >
+                                {subItem.label}
+                              </Link>
+                            )
+                          )}
                         </div>
                       )}
                     </>
@@ -182,20 +201,24 @@ export default function Navigation() {
                         {item.label}
                       </div>
                       <div className="flex flex-col gap-1 ml-4">
-                        {item.items.map((subItem) => (
-                          <Link
-                            key={subItem.id}
-                            href={subItem.href}
-                            onClick={() => setIsOpen(false)}
-                            className={`w-full text-left px-6 py-3 rounded-xl font-medium transition-all ${
-                              pathname === subItem.href
-                                ? 'bg-primary/10 text-primary'
-                                : 'text-slate-600 hover:bg-slate-50'
-                            }`}
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
+                        {item.items.map((subItem, idx) =>
+                          isDivider(subItem) ? (
+                            <div key={`divider-${idx}`} className="my-2 mx-6 border-t border-slate-200" />
+                          ) : (
+                            <Link
+                              key={subItem.id}
+                              href={subItem.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`w-full text-left px-6 py-3 rounded-xl font-medium transition-all ${
+                                pathname === subItem.href
+                                  ? 'bg-primary/10 text-primary'
+                                  : 'text-slate-600 hover:bg-slate-50'
+                              }`}
+                            >
+                              {subItem.label}
+                            </Link>
+                          )
+                        )}
                       </div>
                     </div>
                   ) : (
