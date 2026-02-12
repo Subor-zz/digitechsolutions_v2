@@ -318,6 +318,36 @@ export default function ZZPFunctioneelBeheerderPage() {
         </div>
       </section>
 
+      {/* Gerelateerde diensten */}
+      <section className="py-16 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Gerelateerde diensten
+              </h2>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+            <ScrollReveal delay={100}>
+              <Link href="/diensten/zzp-applicatiebeheerder" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-purple-600 text-3xl mb-2">settings_applications</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Applicatiebeheerder</h3>
+                <p className="text-sm text-slate-500">Incident- en change management, monitoring, releases en gebruikersbeheer.</p>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <Link href="/diensten/support-itsm" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-emerald-600 text-3xl mb-2">support_agent</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT Support & ITSM</h3>
+                <p className="text-sm text-slate-500">1e/2e lijns support, ITIL-processen, SLA's en serviceverbetering.</p>
+              </Link>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <FAQSection faqs={faqs} />
       <FAQSchema faqs={faqs} />

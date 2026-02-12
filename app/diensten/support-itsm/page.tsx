@@ -258,19 +258,19 @@ export default function SupportITSMPage() {
             </header>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
             <ScrollReveal delay={100}>
-              <Link href="/diensten/full-stack-development" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-purple-600 text-3xl mb-2">code</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">Full-stack development</h3>
-                <p className="text-sm text-slate-500">Web- en mobiele applicaties van MVP tot productie.</p>
+              <Link href="/diensten/zzp-applicatiebeheerder" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-purple-600 text-3xl mb-2">settings_applications</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Applicatiebeheerder</h3>
+                <p className="text-sm text-slate-500">Incident- en change management, monitoring, releases en gebruikersbeheer.</p>
               </Link>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <Link href="/diensten/it-consultancy" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-emerald-600 text-3xl mb-2">terminal</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT-consultancy</h3>
-                <p className="text-sm text-slate-500">Applicatieanalyse, performance checks en integratieadvies.</p>
+              <Link href="/diensten/zzp-functioneel-beheerder" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-blue-600 text-3xl mb-2">sync_alt</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Functioneel Beheerder</h3>
+                <p className="text-sm text-slate-500">De brug tussen business en IT met requirements, wijzigingsbeheer en UAT.</p>
               </Link>
             </ScrollReveal>
           </div>
