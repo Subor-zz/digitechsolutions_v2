@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Footer from "../components/footer";
 
 export const metadata: Metadata = {
-  title: "IT Consultancy Breda | Digitech Solutions",
-  description: "Lokale IT-consultancy in Breda en omgeving. Fractional CTO, full-stack development en technisch advies voor startups en MKB in Noord-Brabant.",
-  keywords: ["IT consult Breda", "IT consultancy Breda", "fractional CTO Breda", "software developer Breda", "IT advies Breda", "Noord-Brabant"],
+  title: "IT Consultancy voor schaalbare systemen | Digitech Solutions",
+  description: "IT consultancy gericht op schaalbaarheid en technische richting. Architectuurreview, roadmap en strategisch advies voor groeiende bedrijven.",
+  keywords: ["IT consultancy", "technische strategie", "architectuur review", "schaalbare systemen", "IT advies", "technisch advies"],
   openGraph: {
-    title: "IT Consultancy Breda | Digitech Solutions",
-    description: "Lokale IT-consultancy in Breda. Fractional CTO, full-stack development en technisch advies voor startups en MKB.",
+    title: "IT Consultancy voor schaalbare systemen | Digitech Solutions",
+    description: "IT consultancy gericht op schaalbaarheid en technische richting. Architectuurreview, roadmap en strategisch advies voor groeiende bedrijven.",
     url: "https://digitechsolutions.nl/it-consultant-breda",
     type: "website",
   },
@@ -22,7 +22,7 @@ const localBusinessSchema = {
   "url": "https://digitechsolutions.nl",
   "logo": "https://digitechsolutions.nl/logo.png",
   "image": "https://digitechsolutions.nl/logo.png",
-  "description": "IT-consultancy, fractional CTO en full-stack development in Breda en omgeving.",
+  "description": "IT consultancy gericht op schaalbaarheid en technische richting. Architectuurreview, roadmap en strategisch advies.",
   "telephone": "+31643983420",
   "priceRange": "€€",
   "address": {
@@ -48,8 +48,8 @@ const localBusinessSchema = {
   ],
   "serviceType": [
     "IT-consultancy",
-    "Fractional CTO",
-    "Full-stack development",
+    "Technische strategie",
+    "Architectuur review",
     "IT-projectmanagement"
   ],
   "openingHoursSpecification": {

@@ -23,7 +23,7 @@ const organizationSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "image": `${siteUrl}/logo.png`,
-  "description": "IT consultancy, technical strategy en development voor startups en scale-ups.",
+  "description": "Strategische IT consultancy voor startups en scale-ups. Architectuurreview, technische roadmap en CTO-level sparring.",
   "telephone": "+31643983420",
   "priceRange": "€€",
   "founder": {
@@ -72,7 +72,7 @@ const localBusinessSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "image": `${siteUrl}/logo.png`,
-  "description": "IT consultancy, technical strategy en development in Breda. Services voor startups en scale-ups in heel Nederland.",
+  "description": "Strategische IT consultancy in Breda. Architectuurreview, technische roadmap en strategisch advies voor groeiende bedrijven.",
   "telephone": "+31643983420",
   "priceRange": "€€",
   "address": {
@@ -129,7 +129,7 @@ const servicesSchema = {
     {
       "@type": "Service",
       "position": 1,
-      "name": "Fractional CTO / Technisch Advies",
+      "name": "Technische Strategie & Advies",
       "description": "Technologystack evaluatie, technische architectuur, build-or-buy analyse, technisch due diligence, AI & automatiseringsstrategie",
       "url": "https://digitechsolutions.nl/diensten/fractional-cto"
     },
