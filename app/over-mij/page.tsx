@@ -41,8 +41,8 @@ const timeline = [
   },
   {
     period: "2025 – Heden",
-    title: "Onafhankelijk Consultant & Developer",
-    description: "Fractional CTO werkzaamheden, full-stack ontwikkeling, projectmanagement, productconsultatie, AI-versterkte levering, startup advies, end-to-end productontwikkeling.",
+    title: "ZZP Applicatiebeheerder & Functioneel Beheerder",
+    description: "Applicatiebeheer, functioneel beheer, support & ITSM, full-stack ontwikkeling, projectmanagement, productconsultatie, end-to-end technical delivery.",
   },
 ];
 
@@ -101,8 +101,8 @@ export default function OverMijPage() {
               Over Subor Cheung
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Fractional CTO, full-stack developer en projectmanager met 9+ jaar IT-ervaring en 11 jaar finance-achtergrond.
-              Strategisch én hands-on, voor startups en MKB.
+              ZZP applicatiebeheerder en functioneel beheerder met 9+ jaar IT-ervaring en 11 jaar finance-achtergrond.
+              Strategisch én hands-on, voor stabiele IT-omgevingen.
             </p>
           </div>
 
@@ -119,24 +119,24 @@ export default function OverMijPage() {
 
                   <div className="prose prose-lg max-w-none">
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Ik ben <strong>Subor Cheung</strong>: fractional CTO, IT-consultant, full-stack developer en projectmanager met
+                      Ik ben <strong>Subor Cheung</strong>: ZZP applicatiebeheerder, functioneel beheerder en IT-specialist met
                       9+ jaar ervaring in IT-consultancy en 11 jaar in de finance- en bankensector. Gevestigd in Breda,
-                      actief voor startups en MKB-bedrijven door heel Nederland en de EU.
+                      actief voor bedrijven door heel Nederland en de EU.
                     </p>
 
                     <p className="text-gray-700 leading-relaxed mb-4">
                       Mijn unieke achtergrond in zowel IT als finance geeft me een bredere kijk op technische
-                      projecten. Ik begrijp niet alleen hoe je software bouwt, maar ook waarom bedrijven het nodig
+                      projecten. Ik begrijp niet alleen hoe je applicaties beheert en onderhoudt, maar ook waarom bedrijven dit nodig
                       hebben en hoe het bijdraagt aan bedrijfsdoelen.
                     </p>
 
                     <p className="text-gray-700 leading-relaxed mb-4">
                       Mijn aanpak combineert strategisch inzicht met praktische uitvoering. Ik werk hands-on mee
-                      aan development, adviseer over architectuur en roadmap, en help teams om efficiënter te werken.
+                      aan applicatiebeheer, functioneel beheer en support, en help teams om efficiënter te werken.
                     </p>
 
                     <p className="text-gray-700 leading-relaxed">
-                      Remote-first, flexibel en resultaatgericht — van MVP-ontwikkeling tot fractional CTO-diensten.
+                      Remote-first, flexibel en resultaatgericht — inzetbaar voor applicatiebeheer, functioneel beheer en IT support.
                     </p>
                   </div>
 

@@ -30,24 +30,24 @@ function ScrollReveal({
 
 const services = [
   {
-    title: "Fractional CTO",
-    description: "Technische strategie, architectuur en teamrichting voor startups en MKB in Breda en omgeving.",
-    link: "/diensten/fractional-cto"
+    title: "ZZP Applicatiebeheerder",
+    description: "Incident- en change management, monitoring, releases en gebruikersbeheer voor stabiele applicaties.",
+    link: "/diensten/zzp-applicatiebeheerder"
   },
   {
-    title: "IT-Consultancy",
-    description: "Applicatie-audits, performance checks en integratieadvies voor bedrijven in Noord-Brabant.",
-    link: "/diensten/it-consultancy"
+    title: "ZZP Functioneel Beheerder",
+    description: "Requirements, wijzigingsbeheer, UAT, communicatie en procesoptimalisatie als brug tussen business en IT.",
+    link: "/diensten/zzp-functioneel-beheerder"
+  },
+  {
+    title: "IT Support & ITSM",
+    description: "1e/2e lijns support, ITIL-processen, SLA's, ticketing en serviceverbetering.",
+    link: "/diensten/support-itsm"
   },
   {
     title: "Full-Stack Development",
     description: "Web- en mobiele applicaties van MVP tot productie, gebouwd door een lokale developer.",
     link: "/diensten/full-stack-development"
-  },
-  {
-    title: "Projectmanagement",
-    description: "Technisch projectmanagement met Agile/Scrum expertise voor je IT-projecten.",
-    link: "/diensten/projectmanagement"
   }
 ];
 
@@ -153,8 +153,8 @@ export default function ItConsultantBredaPage() {
             IT Consultant Breda
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Lokale IT-consultancy voor startups en MKB in Breda en omgeving.
-            Fractional CTO, software development en technisch advies — dichtbij en persoonlijk.
+            ZZP IT specialist in applicatiebeheer, functioneel beheer en IT support in Breda en omgeving.
+            Persoonlijk, dichtbij en praktisch — voor stabiele IT-omgevingen.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -226,7 +226,7 @@ export default function ItConsultantBredaPage() {
                 Diensten voor bedrijven in Breda
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Van fractional CTO voor startups tot software development voor MKB.
+                ZZP inzetbaarheid voor applicatiebeheer, functioneel beheer en IT support in Breda en omstreken.
               </p>
             </header>
           </ScrollReveal>

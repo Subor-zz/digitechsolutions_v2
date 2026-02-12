@@ -16,7 +16,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-600 text-sm leading-relaxed mb-8 max-w-xs text-left">
-              Hoogwaardige IT-consultancy voor ambitieuze bedrijven. Wij overbruggen de kloof tussen business strategie en technische executie.
+              ZZP IT specialist in applicatiebeheer, functioneel beheer en IT support.
             </p>
           </div>
 

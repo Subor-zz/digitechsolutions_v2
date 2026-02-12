@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IT-diensten | Fractional CTO, Development & Projectmanagement",
-  description: "Fractional CTO, full-stack development, projectmanagement en softwareconsultancy voor startups en MKB. Breda, NL/EU-remote.",
+  title: "IT-diensten | ZZP Applicatiebeheer, Functioneel Beheer & IT Support",
+  description: "ZZP applicatiebeheerder, functioneel beheerder, IT support, full-stack development en projectmanagement. Breda, NL/EU-remote.",
   openGraph: {
-    title: "IT-diensten | Fractional CTO, Development & Projectmanagement",
-    description: "Fractional CTO, full-stack development, projectmanagement voor startups en MKB.",
+    title: "IT-diensten | ZZP Applicatiebeheer, Functioneel Beheer & IT Support",
+    description: "ZZP applicatiebeheerder, functioneel beheerder, IT support, full-stack development en projectmanagement.",
     type: "website",
     url: "https://digitechsolutions.nl/diensten"
   },
   twitter: {
     card: "summary_large_image",
-    title: "IT-diensten | Fractional CTO, Development & Projectmanagement",
-    description: "Fractional CTO, full-stack development, projectmanagement voor startups en MKB."
+    title: "IT-diensten | ZZP Applicatiebeheer, Functioneel Beheer & IT Support",
+    description: "ZZP applicatiebeheerder, functioneel beheerder, IT support, full-stack development en projectmanagement."
   },
   alternates: {
     canonical: "https://digitechsolutions.nl/diensten"

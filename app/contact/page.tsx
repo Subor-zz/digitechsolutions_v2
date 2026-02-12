@@ -174,13 +174,12 @@ export default function ContactPage() {
                           className={`w-full px-4 py-2 border ${formErrors.service ? 'border-red-300' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
                         >
                           <option value="">Selecteer een dienst</option>
-                          <option value="fractional-cto">Fractional CTO / Technisch Advies</option>
-                          <option value="it-consultancy">IT-consultancy & Applicatieadvies</option>
-                          <option value="full-stack">Full-Stack Development</option>
-                          <option value="projectmanagement">Projectmanagement</option>
-                          <option value="product-consultatie">Product & Business Consultatie</option>
-                          <option value="support-itsm">Support & IT-Servicemanagement</option>
-                          <option value="research">Research & Documentatie</option>
+                          <option value="zzp-applicatiebeheerder">ZZP Applicatiebeheerder</option>
+                          <option value="zzp-functioneel-beheerder">ZZP Functioneel Beheerder</option>
+                          <option value="support-itsm">IT Support & ITSM</option>
+                          <option value="full-stack">Full Stack Developer</option>
+                          <option value="projectmanagement">IT Project Manager</option>
+                          <option value="product-consultatie">Productconsultatie & Technische Validatie</option>
                           <option value="anders">Anders</option>
                         </select>
                         {formErrors.service && (

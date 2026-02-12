@@ -31,46 +31,40 @@ function ScrollReveal({
 
 const pricing = [
   {
-    service: "Fractional CTO / Advies",
-    model: "Dagtarief of maandelijkse retainer",
-    rate: "€800 – €1.000 / dag",
-    context: "Meestal in retainer-vorm voor continuïteit"
-  },
-  {
-    service: "IT-consultancy",
-    model: "Per audit, traject of uurtarief",
+    service: "ZZP Applicatiebeheerder",
+    model: "Maandelijkse retainer of uurtarief",
     rate: "€100 – €150 / uur",
-    context: "Vaak ingezet als audit of afgebakend traject"
+    context: "Inclusief incident- en change management"
   },
   {
-    service: "Productconsultatie & validatie",
-    model: "Per opdracht of uurtarief",
+    service: "ZZP Functioneel Beheerder",
+    model: "Maandelijkse retainer of uurtarief",
     rate: "€100 – €150 / uur",
-    context: "Voor validatie vóór ontwikkeling"
+    context: "Brug tussen business en IT, requirements en UAT"
   },
   {
-    service: "Technisch projectmanagement",
-    model: "Maandelijkse retainer of per project",
-    rate: "€3.000 – €6.000 / maand",
-    context: "Afhankelijk van complexiteit en stakeholderaantal"
-  },
-  {
-    service: "Full-stack development",
-    model: "Vaste prijs of dagtarief",
-    rate: "€750 – €1.000 / dag",
-    context: "Scope en doorlooptijd bepalend"
-  },
-  {
-    service: "Support & ITSM",
+    service: "IT Support & ITSM",
     model: "Maandelijkse retainer",
     rate: "€1.500 – €3.000 / maand",
     context: "Inclusief vaste responstijden en prioritering"
   },
   {
-    service: "Research & documentatie",
-    model: "Per opgeleverd product",
-    rate: "€2.000 – €7.500",
-    context: "Op basis van diepgang en leveringsvorm"
+    service: "Full Stack Developer",
+    model: "Vaste prijs of dagtarief",
+    rate: "€750 – €1.000 / dag",
+    context: "Scope en doorlooptijd bepalend"
+  },
+  {
+    service: "IT Project Manager",
+    model: "Maandelijkse retainer of per project",
+    rate: "€3.000 – €6.000 / maand",
+    context: "Afhankelijk van complexiteit en stakeholderaantal"
+  },
+  {
+    service: "Productconsultatie & Technische Validatie",
+    model: "Per opdracht of uurtarief",
+    rate: "€100 – €150 / uur",
+    context: "Voor validatie vóór ontwikkeling"
   },
 ];
 
@@ -96,7 +90,7 @@ const collaborationForms = [
     title: "Retainer (maandelijks)",
     subtitle: "Voor structurele betrokkenheid en continuïteit.",
     suitableFor: [
-      "fractional CTO rollen",
+      "applicatiebeheer en functioneel beheer",
       "technisch projectmanagement",
       "support & ITSM"
     ],
@@ -105,7 +99,7 @@ const collaborationForms = [
       "voorspelbaarheid in capaciteit",
       "korte lijnen en prioriteit"
     ],
-    note: "Ideaal voor startups en MKB die geen fulltime rol nodig hebben."
+    note: "Ideaal voor ZZP inzetbaarheid met flexibele beschikbaarheid."
   },
   {
     icon: "🟦",
