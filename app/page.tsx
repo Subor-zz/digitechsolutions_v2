@@ -97,7 +97,7 @@ function SpotlightCard({ service, onNavigate }: { service: typeof servicesData[0
       <div className="mt-auto pt-8 border-t border-slate-100 relative z-10">
         <ul className="space-y-4">
           {service.points.map((point, i) => (
-            <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
+            <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-600 group-hover:text-slate-500 transition-colors">
               <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-primary transition-all group-hover:scale-125"></div>
               {point}
             </li>
@@ -377,7 +377,7 @@ export default function Home() {
                       <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </Link>
 
-                    <p className="mt-6 text-slate-400 text-xs text-center max-w-[200px]">
+                    <p className="mt-6 text-slate-600 text-xs text-center max-w-[200px]">
                       Alle uurtarieven, pakketten en voorbeeldprojecten
                     </p>
                   </div>
@@ -408,7 +408,7 @@ export default function Home() {
                         <span className="text-slate-900 font-extrabold">Subor Cheung</span>, fractional CTO en IT-consultant.
                         Een unieke combinatie van technische expertise en business ervaring.
                       </h2>
-                      <p className="text-slate-400 font-medium text-lg italic">
+                      <p className="text-slate-600 font-medium text-lg italic">
                         Pragmatische oplossingen die werken en schaalbaar zijn
                       </p>
                     </div>
@@ -446,7 +446,7 @@ export default function Home() {
                         <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
                       </Link>
 
-                      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-slate-400">
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-slate-600">
                         <div className="flex items-center gap-1.5">
                           <span className="material-icons text-base">email</span>
                           <span className="text-xs font-medium">info@digitechsolutions.nl</span>
@@ -467,7 +467,7 @@ export default function Home() {
                 <div className="relative bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-2xl shadow-slate-200 border border-slate-100 h-full flex flex-col justify-center">
                   <div className="mb-6">
                     <h3 className="text-xl font-bold text-slate-900 tracking-tight">Direct Contact</h3>
-                    <p className="text-sm text-slate-400 font-medium">Laten we samen kijken naar de volgende fase.</p>
+                    <p className="text-sm text-slate-600 font-medium">Laten we samen kijken naar de volgende fase.</p>
                   </div>
                   <div className="space-y-4 text-left">
                     <div>

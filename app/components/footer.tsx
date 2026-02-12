@@ -12,10 +12,10 @@ export default function Footer() {
                 D
               </div>
               <span className="font-bold text-xl tracking-tight">
-                Digitech<span className="font-light text-slate-400">Solutions</span>
+                Digitech<span className="font-light text-slate-600">Solutions</span>
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-xs text-left">
+            <p className="text-slate-600 text-sm leading-relaxed mb-8 max-w-xs text-left">
               Hoogwaardige IT-consultancy voor ambitieuze bedrijven. Wij overbruggen de kloof tussen business strategie en technische executie.
             </p>
           </div>
@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Diensten */}
           <div className="text-left">
             <h4 className="font-bold text-lg mb-6">Diensten</h4>
-            <ul className="space-y-4 text-sm text-slate-400">
+            <ul className="space-y-4 text-sm text-slate-600">
               <li>
                 <Link href="/diensten" className="hover:text-accent transition-colors">
                   Alle Diensten
@@ -55,7 +55,7 @@ export default function Footer() {
           {/* Bedrijf */}
           <div className="text-left">
             <h4 className="font-bold text-lg mb-6">Bedrijf</h4>
-            <ul className="space-y-4 text-sm text-slate-400">
+            <ul className="space-y-4 text-sm text-slate-600">
               <li>
                 <Link href="/over-mij" className="hover:text-accent transition-colors">
                   Over mij
@@ -82,7 +82,7 @@ export default function Footer() {
           {/* Juridisch */}
           <div className="text-left">
             <h4 className="font-bold text-lg mb-6">Juridisch</h4>
-            <ul className="space-y-4 text-sm text-slate-400">
+            <ul className="space-y-4 text-sm text-slate-600">
               <li>
                 <Link href="/privacy" className="hover:text-accent transition-colors">
                   Privacyverklaring
