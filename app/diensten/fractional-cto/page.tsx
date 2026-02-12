@@ -5,6 +5,7 @@ import FAQSection, { FAQSchema } from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
+import { RelatedArticles } from '../../components/related-articles';
 
 // ScrollReveal wrapper component
 function ScrollReveal({
@@ -315,6 +316,9 @@ export default function FractionalCTOPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Related Blog Articles */}
+      <RelatedArticles serviceId="fractional-cto" />
 
       <Footer />
     </div>

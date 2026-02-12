@@ -5,6 +5,7 @@ import FAQSection, { FAQSchema } from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
+import { RelatedArticles } from '../../components/related-articles';
 
 function ScrollReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number; }) {
   const [ref, isIntersecting] = useScrollReveal();
@@ -371,6 +372,9 @@ export default function ApplicatieconsultatiePage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Related Blog Articles */}
+      <RelatedArticles serviceId="applicatieconsultatie" />
 
       <Footer />
     </div>

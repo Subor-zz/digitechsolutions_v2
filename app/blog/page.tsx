@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
+import { RelatedServices } from "../components/related-services";
 
 // Blog post data - this will be populated with actual posts
 const blogPosts = [
