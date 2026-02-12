@@ -22,15 +22,11 @@ type NavItemRegular = {
 
 type NavItem = NavItemWithDropdown | NavItemRegular;
 
-// Service dropdown items
+// Service dropdown items - nieuwe positioning
 const dienstenItems = [
-  { id: 'fractional-cto', label: 'Fractional CTO', href: '/diensten/fractional-cto' },
-  { id: 'it-consultancy', label: 'IT-consultancy', href: '/diensten/it-consultancy' },
-  { id: 'applicatieconsultatie', label: 'Applicatieconsultatie', href: '/diensten/applicatieconsultatie' },
-  { id: 'full-stack', label: 'Full-stack Development', href: '/diensten/full-stack-development' },
-  { id: 'projectmanagement', label: 'Projectmanagement', href: '/diensten/projectmanagement' },
-  { id: 'product-consultatie', label: 'Productconsultatie', href: '/diensten/product-business-consultatie' },
-  { id: 'support-itsm', label: 'Support & ITSM', href: '/diensten/support-itsm' },
+  { id: 'technical-strategy', label: 'IT Consultancy & Technical Strategy', href: '/diensten/technical-strategy' },
+  { id: 'cto-sparring', label: 'CTO-Level Sparring', href: '/diensten/cto-sparring' },
+  { id: 'technical-audit', label: 'Technische Audit & Due Diligence', href: '/diensten/technical-audit' },
 ];
 
 // Voor wie dropdown items
@@ -153,13 +149,13 @@ export default function Navigation() {
 
               <div className="w-px h-6 bg-slate-200 mx-4"></div>
 
-              <Link
-                href="/contact"
+              <a
+                href="mailto:info@digitechsolutions.nl?subject=Strategische%20Intake"
                 className="shimmer-btn animate-shimmer px-6 py-2.5 rounded-xl text-sm font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
               >
-                Plan gratis intake
+                Strategische intake
                 <span className="material-icons text-sm">calendar_month</span>
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -253,14 +249,14 @@ export default function Navigation() {
                 ))}
 
                 {/* CTA Button */}
-                <Link
-                  href="/contact"
+                <a
+                  href="mailto:info@digitechsolutions.nl?subject=Strategische%20Intake"
                   onClick={() => setIsOpen(false)}
                   className="shimmer-btn animate-shimmer w-full text-left px-6 py-4 rounded-2xl font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
                 >
-                  Plan gratis intake
+                  Strategische intake
                   <span className="material-icons text-sm">calendar_month</span>
-                </Link>
+                </a>
               </div>
             </div>
           )}
