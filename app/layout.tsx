@@ -10,8 +10,8 @@ const manrope = Manrope({
 
 const siteUrl = "https://www.digitechsolutions.nl";
 const siteName = "Digitech Solutions";
-const title = "IT Consultancy & Technical Strategy | Digitech Solutions";
-const description = "Strategische IT consultancy voor startups en scale-ups. Architectuurreview, technische roadmap en CTO-level sparring zonder executive verplichtingen.";
+const title = "ZZP Applicatiebeheerder & Functioneel Beheerder | Digitech Solutions";
+const description = "Ervaren ZZP applicatiebeheerder en functioneel beheerder voor stabiele IT-omgevingen. Inzetbaar voor incident- en change management, support & ITSM.";
 const authorName = "Subor Cheung";
 const authorUrl = "https://www.linkedin.com/in/subor-cheung-3baab21a/";
 
@@ -23,14 +23,14 @@ const organizationSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "image": `${siteUrl}/logo.png`,
-  "description": "Strategische IT consultancy voor startups en scale-ups. Architectuurreview, technische roadmap en CTO-level sparring.",
+  "description": "ZZP applicatiebeheerder en functioneel beheerder voor stabiele IT-omgevingen. Inzetbaar voor incident- en change management, support & ITSM.",
   "telephone": "+31643983420",
   "priceRange": "€€",
   "founder": {
     "@type": "Person",
     "name": authorName,
     "url": authorUrl,
-    "jobTitle": "IT Consultant & Technical Strategist"
+    "jobTitle": "ZZP Applicatiebeheerder & Functioneel Beheerder"
   },
   "areaServed": ["NL", "EU"],
   "address": {
@@ -39,14 +39,12 @@ const organizationSchema = {
     "addressCountry": "NL"
   },
   "serviceType": [
-    "IT Consultancy",
-    "Technical Strategy",
-    "CTO-Level Sparring",
-    "Technical Audit",
+    "ZZP Applicatiebeheer",
+    "ZZP Functioneel Beheer",
+    "IT Support & ITSM",
     "Full-stack development",
     "IT-projectmanagement",
-    "IT-consultancy & applicatieadvies",
-    "Technisch advies"
+    "Productconsultatie & Technische Validatie"
   ],
   "knowsAbout": [
     "React", "Next.js", "TypeScript", "Node.js", "Python",
@@ -72,7 +70,7 @@ const localBusinessSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "image": `${siteUrl}/logo.png`,
-  "description": "Strategische IT consultancy in Breda. Architectuurreview, technische roadmap en strategisch advies voor groeiende bedrijven.",
+  "description": "ZZP applicatiebeheerder en functioneel beheerder in Breda. Stabiele IT-omgevingen, support en procesoptimalisatie.",
   "telephone": "+31643983420",
   "priceRange": "€€",
   "address": {
@@ -98,16 +96,17 @@ const personSchema = {
   "@type": "Person",
   "name": authorName,
   "url": authorUrl,
-  "jobTitle": "IT Consultant & Full-Stack Developer",
+  "jobTitle": "ZZP Applicatiebeheerder & Functioneel Beheerder",
   "worksFor": {
     "@type": "Organization",
     "name": siteName,
     "url": siteUrl
   },
-  "description": "IT consultant met 9+ jaar ervaring in IT-consultancy, technical strategy en full-stack development.",
+  "description": "ZZP applicatiebeheerder en functioneel beheerder met 9+ jaar ervaring in IT-beheer, support & ITSM.",
   "knowsAbout": [
-    "IT Service Management", "IT-consultancy", "Technical Strategy",
-    "React", "Next.js", "TypeScript", "Node.js", "Projectmanagement", "Agile", "Scrum", "ITIL"
+    "Applicatiebeheer", "Functioneel Beheer", "IT Service Management",
+    "ITIL", "Incident Management", "Change Management", "React", "Next.js",
+    "TypeScript", "Node.js", "Projectmanagement", "Agile", "Scrum"
   ],
   "address": {
     "@type": "PostalAddress",
@@ -129,44 +128,44 @@ const servicesSchema = {
     {
       "@type": "Service",
       "position": 1,
-      "name": "Technische Strategie & Advies",
-      "description": "Technologystack evaluatie, technische architectuur, build-or-buy analyse, technisch due diligence, AI & automatiseringsstrategie",
-      "url": "https://digitechsolutions.nl/diensten/fractional-cto"
+      "name": "ZZP Applicatiebeheerder",
+      "description": "Incident- en change management, monitoring, releases en gebruikersbeheer voor stabiele applicaties.",
+      "url": "https://digitechsolutions.nl/diensten/zzp-applicatiebeheerder"
     },
     {
       "@type": "Service",
       "position": 2,
-      "name": "IT-consultancy & Applicatieadvies",
-      "description": "Softwareselectie, applicatie-audits, implementatiebegeleiding, integratieconsultatie, migratieplanning",
-      "url": "https://digitechsolutions.nl/diensten/it-consultancy"
+      "name": "ZZP Functioneel Beheerder",
+      "description": "Requirements, wijzigingsbeheer, UAT, communicatie en procesoptimalisatie als brug tussen business en IT.",
+      "url": "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
     },
     {
       "@type": "Service",
       "position": 3,
-      "name": "Full-Stack Development",
-      "description": "Web apps, mobiele apps, game development, automatisering, API's, CI/CD",
-      "url": "https://digitechsolutions.nl/diensten/full-stack-development"
+      "name": "IT Support & ITSM",
+      "description": "1e/2e lijns support, ITIL-processen, SLA's, ticketing en serviceverbetering.",
+      "url": "https://digitechsolutions.nl/diensten/support-itsm"
     },
     {
       "@type": "Service",
       "position": 4,
-      "name": "Technisch Projectmanagement",
-      "description": "End-to-end levering, Agile/Scrum begeleiding, roadmapping, stakeholdercommunicatie",
-      "url": "https://digitechsolutions.nl/diensten/projectmanagement"
+      "name": "Full Stack Developer",
+      "description": "Webapplicaties, API's en automatisering met moderne stack als aanvullende expertise.",
+      "url": "https://digitechsolutions.nl/diensten/full-stack-development"
     },
     {
       "@type": "Service",
       "position": 5,
-      "name": "Productconsultatie & Strategie",
-      "description": "PRD's & featurespecificaties, MVP-definitie & haalbaarheid, go-to-market input",
-      "url": "https://digitechsolutions.nl/diensten/product-business-consultatie"
+      "name": "IT Project Manager",
+      "description": "Projectplanning, stakeholdermanagement, releases en delivery van IT-projecten.",
+      "url": "https://digitechsolutions.nl/diensten/it-project-manager"
     },
     {
       "@type": "Service",
       "position": 6,
-      "name": "Support & IT-servicemanagement",
-      "description": "SLA's, incident- en change management, supportstructuur & tooling",
-      "url": "https://digitechsolutions.nl/diensten/support-itsm"
+      "name": "Productconsultatie & Technische Validatie",
+      "description": "Haalbaarheidsanalyse, scope-bepaling, risico-inventarisatie en technische review van productideeën.",
+      "url": "https://digitechsolutions.nl/diensten/productconsultatie"
     }
   ]
 };
@@ -182,15 +181,16 @@ export const metadata: Metadata = {
   creator: authorName,
   publisher: siteName,
   keywords: [
-    "IT consultancy",
-    "technical strategy",
-    "technische strategie",
-    "architectuurreview",
-    "technische roadmap",
-    "CTO-level sparring",
-    "schalbare systemen",
-    "IT advies",
-    "technisch advies"
+    "ZZP applicatiebeheerder",
+    "ZZP functioneel beheerder",
+    "applicatiebeheer",
+    "functioneel beheer",
+    "IT support",
+    "ITSM",
+    "ITIL",
+    "incident management",
+    "change management",
+    "support & servicemanagement"
   ],
   robots: {
     index: true,
@@ -203,8 +203,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // Note: canonical URLs are set per-page, not globally
-  // Home page canonical is set via page metadata
   openGraph: {
     type: "website",
     locale: "nl_NL",
@@ -217,7 +215,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: `${siteName} - IT Consulting Diensten`
+        alt: `${siteName} - ZZP Applicatiebeheer & Functioneel Beheer`
       }
     ]
   },
@@ -228,11 +226,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
     creator: "@SuborCheung",
   },
-  verification: {
-    // Add your verification codes here when available:
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-  }
 };
 
 export default function RootLayout({
@@ -280,7 +273,7 @@ export default function RootLayout({
         <meta name="DC.description" content={description} />
         <meta name="DC.creator" content={authorName} />
         <meta name="DC.language" content="nl" />
-        <meta name="DC.subject" content="IT Consulting, Full-Stack Development, Projectmanagement" />
+        <meta name="DC.subject" content="ZZP Applicatiebeheer, Functioneel Beheer, IT Support, ITSM" />
 
         {/* Geo Meta Tags */}
         <meta name="geo.region" content="NL-NB" />

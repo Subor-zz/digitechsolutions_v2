@@ -12,95 +12,15 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Diensten overview -->
+  <!-- ZZP Applicatiebeheerder (PRIMARY) -->
   <url>
-    <loc>https://www.digitechsolutions.nl/diensten</loc>
+    <loc>https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Fractional CTO -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/cto-sparring</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- IT Consultancy & Technical Strategy -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/technical-strategy</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- CTO-Level Sparring -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/cto-sparring</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Technische Audit & Due Diligence -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/cto-sparring</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- IT-consultancy -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/it-consultancy</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Applicatieconsultatie -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/applicatieconsultatie</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Full-stack development -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/full-stack-development</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Projectmanagement -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/projectmanagement</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Productconsultatie -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/product-business-consultatie</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Support & ITSM -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/diensten/support-itsm</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ZZP Functioneel Beheerder -->
+  <!-- ZZP Functioneel Beheerder (PRIMARY) -->
   <url>
     <loc>https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder</loc>
     <lastmod>2026-02-12</lastmod>
@@ -108,17 +28,41 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- IT Support & ITSM (PRIMARY) -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/diensten/support-itsm</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Full Stack Developer (SECONDARY) -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/diensten/full-stack-development</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IT Project Manager (SECONDARY) -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/diensten/it-project-manager</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Productconsultatie & Technische Validatie (SECONDARY) -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/diensten/productconsultatie</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Over mij (About) -->
   <url>
     <loc>https://www.digitechsolutions.nl/over-mij</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Tarieven (Pricing) -->
-  <url>
-    <loc>https://www.digitechsolutions.nl/tarieven</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -140,7 +84,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog: Fractional CTO articles -->
+  <!-- Blog posts -->
   <url>
     <loc>https://www.digitechsolutions.nl/blog/wanneer-heb-je-een-fractional-cto-nodig</loc>
     <lastmod>2026-02-12</lastmod>
@@ -183,7 +127,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Full-Stack Development articles -->
   <url>
     <loc>https://www.digitechsolutions.nl/blog/mvp-laten-bouwen-waar-op-letten</loc>
     <lastmod>2026-02-12</lastmod>
@@ -212,7 +155,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: IT-Consultancy/Applicatieconsultatie articles -->
   <url>
     <loc>https://www.digitechsolutions.nl/blog/wat-is-een-applicatie-audit</loc>
     <lastmod>2026-02-12</lastmod>
@@ -228,7 +170,7 @@
   </url>
 
   <url>
-    <loc>https://www.digitechsolutions.nl/blog/security-risico's-bij-webapps</loc>
+    <loc>https://www.digitechsolutions.nl/blog/security-risico-s-bij-webapps</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -239,6 +181,30 @@
     <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/privacy</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Cookiebeleid -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/cookiebeleid</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Voorwaarden -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/voorwaarden</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <!-- Local SEO: IT Consultant Breda -->

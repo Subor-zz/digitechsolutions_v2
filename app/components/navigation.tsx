@@ -6,11 +6,21 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 
 // Type definitions for navigation items
+type NavItemDropdownItem = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+type NavItemDivider = {
+  type: 'divider';
+};
+
 type NavItemWithDropdown = {
   id: string;
   label: string;
   hasDropdown: true;
-  items: { id: string; label: string; href: string; }[];
+  items: (NavItemDropdownItem | NavItemDivider)[];
 };
 
 type NavItemRegular = {
@@ -22,6 +32,10 @@ type NavItemRegular = {
 
 type NavItem = NavItemWithDropdown | NavItemRegular;
 
+// Type guard for divider items
+function isDivider(item: NavItemDropdownItem | NavItemDivider): item is NavItemDivider {
+  return 'type' in item && item.type === 'divider';
+}
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +62,23 @@ export default function Navigation() {
   }, [activeDropdown]);
 
   const navItems: NavItem[] = [
-    { id: 'resources', label: 'Resources', href: '/blog' },
-    { id: 'tarieven', label: 'Tarieven', href: '/tarieven' },
-    { id: 'over-mij', label: 'Over', href: '/over-mij' },
+    {
+      id: 'diensten',
+      label: 'Diensten',
+      hasDropdown: true,
+      items: [
+        { id: 'applicatiebeheerder', label: 'ZZP Applicatiebeheerder', href: '/diensten/zzp-applicatiebeheerder' },
+        { id: 'functioneel-beheerder', label: 'ZZP Functioneel Beheerder', href: '/diensten/zzp-functioneel-beheerder' },
+        { id: 'support-itsm', label: 'IT Support & ITSM', href: '/diensten/support-itsm' },
+        { type: 'divider' },
+        { id: 'full-stack', label: 'Full Stack Developer', href: '/diensten/full-stack-development' },
+        { id: 'project-manager', label: 'IT Project Manager', href: '/diensten/it-project-manager' },
+        { id: 'productconsultatie', label: 'Productconsultatie & Technische Validatie', href: '/diensten/productconsultatie' },
+      ]
+    },
+    { id: 'blog', label: 'Blog', href: '/blog' },
+    { id: 'over-mij', label: 'Over mij', href: '/over-mij' },
+    { id: 'contact', label: 'Contact', href: '/contact' },
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -102,18 +130,22 @@ export default function Navigation() {
                       </button>
                       {activeDropdown === item.id && (
                         <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl border border-slate-100 shadow-xl py-2 animate-fade-in">
-                          {item.items.map((subItem) => (
-                            <Link
-                              key={subItem.id}
-                              href={subItem.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className={`block px-5 py-2.5 text-sm font-medium transition-colors ${
-                                pathname === subItem.href ? 'text-primary bg-primary/5' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                              }`}
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
+                          {item.items.map((subItem, idx) =>
+                            isDivider(subItem) ? (
+                              <div key={`divider-${idx}`} className="my-2 mx-5 border-t border-slate-200" />
+                            ) : (
+                              <Link
+                                key={subItem.id}
+                                href={subItem.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className={`block px-5 py-2.5 text-sm font-medium transition-colors ${
+                                  pathname === subItem.href ? 'text-primary bg-primary/5' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                                }`}
+                              >
+                                {subItem.label}
+                              </Link>
+                            )
+                          )}
                         </div>
                       )}
                     </>
@@ -134,13 +166,13 @@ export default function Navigation() {
 
               <div className="w-px h-6 bg-slate-200 mx-4"></div>
 
-              <a
-                href="mailto:info@digitechsolutions.nl?subject=Strategische%20Intake"
+              <Link
+                href="/contact"
                 className="shimmer-btn animate-shimmer px-6 py-2.5 rounded-xl text-sm font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
               >
-                Strategische intake
+                Beschikbaarheid bespreken
                 <span className="material-icons text-sm">calendar_month</span>
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -161,31 +193,59 @@ export default function Navigation() {
           {isOpen && (
             <div className="absolute top-full left-4 right-4 mt-2 bg-white rounded-[2rem] border border-slate-200 shadow-2xl p-6 md:hidden max-h-[80vh] overflow-y-auto">
               <div className="flex flex-col gap-2">
-                {/* Nav items */}
-                {navItems.filter(item => !item.hasDropdown).map((item) => (
-                  <Link
-                    key={item.id}
-                    href={'href' in item ? (item as NavItemRegular).href : ''}
-                    onClick={() => setIsOpen(false)}
-                    className={`w-full text-left px-6 py-4 rounded-2xl font-bold transition-all ${
-                      'href' in item && isActive((item as NavItemRegular).href)
-                        ? 'bg-primary text-white'
-                        : 'text-slate-600 hover:bg-slate-50'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                {/* Nav items with dropdowns */}
+                {navItems.map((item) => (
+                  item.hasDropdown && item.items ? (
+                    <div key={item.id} className="mb-2">
+                      <div className="px-6 py-3 font-bold text-slate-900 text-sm">
+                        {item.label}
+                      </div>
+                      <div className="flex flex-col gap-1 ml-4">
+                        {item.items.map((subItem, idx) =>
+                          isDivider(subItem) ? (
+                            <div key={`divider-${idx}`} className="my-2 mx-6 border-t border-slate-200" />
+                          ) : (
+                            <Link
+                              key={subItem.id}
+                              href={subItem.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`w-full text-left px-6 py-3 rounded-xl font-medium transition-all ${
+                                pathname === subItem.href
+                                  ? 'bg-primary/10 text-primary'
+                                  : 'text-slate-600 hover:bg-slate-50'
+                              }`}
+                            >
+                              {subItem.label}
+                            </Link>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.id}
+                      href={'href' in item ? (item as NavItemRegular).href : ''}
+                      onClick={() => setIsOpen(false)}
+                      className={`w-full text-left px-6 py-4 rounded-2xl font-bold transition-all ${
+                        'href' in item && isActive((item as NavItemRegular).href)
+                          ? 'bg-primary text-white'
+                          : 'text-slate-600 hover:bg-slate-50'
+                        }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
 
                 {/* CTA Button */}
-                <a
-                  href="mailto:info@digitechsolutions.nl?subject=Strategische%20Intake"
+                <Link
+                  href="/contact"
                   onClick={() => setIsOpen(false)}
                   className="shimmer-btn animate-shimmer w-full text-left px-6 py-4 rounded-2xl font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
                 >
-                  Strategische intake
+                  Beschikbaarheid bespreken
                   <span className="material-icons text-sm">calendar_month</span>
-                </a>
+                </Link>
               </div>
             </div>
           )}
