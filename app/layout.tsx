@@ -283,7 +283,9 @@ export default function RootLayout({
         <meta name="geo.placename" content="Breda" />
       </head>
       <body className={`${manrope.variable} antialiased`}>
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
       </body>
     </html>
   );
