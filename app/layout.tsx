@@ -248,17 +248,6 @@ export default function RootLayout({
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
 
-        {/* Plausible Analytics (privacy-first, cookie-less) */}
-        <script
-          async
-          src="https://plausible.io/js/pa-4TZy5XTY110wLWZbmETTM.js"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)};`,
-          }}
-        />
-
         {/* Structured Data */}
         <script
           type="application/ld+json"

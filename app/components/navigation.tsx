@@ -155,12 +155,6 @@ export default function Navigation() {
 
               <Link
                 href="/contact"
-                onClick={() => {
-                  // Track CTA click with Plausible (cookie-less)
-                  if (typeof window !== 'undefined' && (window as any).plausible) {
-                    (window as any).plausible('cta_intake_click');
-                  }
-                }}
                 className="shimmer-btn animate-shimmer px-6 py-2.5 rounded-xl text-sm font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
               >
                 Plan gratis intake
@@ -261,13 +255,7 @@ export default function Navigation() {
                 {/* CTA Button */}
                 <Link
                   href="/contact"
-                  onClick={() => {
-                    setIsOpen(false);
-                    // Track CTA click with Plausible (cookie-less)
-                    if (typeof window !== 'undefined' && (window as any).plausible) {
-                      (window as any).plausible('cta_intake_click');
-                    }
-                  }}
+                  onClick={() => setIsOpen(false)}
                   className="shimmer-btn animate-shimmer w-full text-left px-6 py-4 rounded-2xl font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
                 >
                   Plan gratis intake
