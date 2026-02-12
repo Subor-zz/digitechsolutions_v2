@@ -453,7 +453,7 @@ export default function Home() {
                         </div>
                         <div className="flex items-center gap-1.5">
                           <span className="material-icons text-base">location_on</span>
-                          <span className="text-xs font-medium">Amsterdam</span>
+                          <span className="text-xs font-medium">Breda</span>
                         </div>
                       </div>
                     </div>

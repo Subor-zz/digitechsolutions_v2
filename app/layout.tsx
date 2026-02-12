@@ -8,7 +8,7 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const siteUrl = "https://digitechsolutions.nl";
+const siteUrl = "https://www.digitechsolutions.nl";
 const siteName = "Digitech Solutions";
 const title = "Digitech Solutions | IT-consultancy, fractional CTO & development";
 const description = "Senior IT-consultancy voor startups en MKB. Fractional CTO, IT-advies en schaalbare software. Transparant, inhoudelijk en zonder ruis.";
@@ -60,6 +60,34 @@ const organizationSchema = {
     "https://www.linkedin.com/in/subor-cheung-3baab21a/",
     "https://github.com/Subor-zz/"
   ]
+};
+
+// Structured Data for LocalBusiness (local SEO)
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": siteName,
+  "url": siteUrl,
+  "logo": `${siteUrl}/logo.png`,
+  "image": `${siteUrl}/logo.png`,
+  "description": "IT-consultancy, fractional CTO en full-stack development in Breda. Servies voor startups en MKB in heel Nederland.",
+  "telephone": "+31643983420",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Breda",
+    "addressLocality": "Breda",
+    "addressRegion": "Noord-Brabant",
+    "postalCode": "4800",
+    "addressCountry": "NL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "51.5875",
+    "longitude": "4.7750"
+  },
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "areaServed": ["Breda", "Noord-Brabant", "Nederland"]
 };
 
 // Structured Data for Person
@@ -224,7 +252,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema, personSchema, servicesSchema]),
+            __html: JSON.stringify([organizationSchema, localBusinessSchema, personSchema, servicesSchema]),
           }}
         />
 

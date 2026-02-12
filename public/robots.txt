@@ -1,10 +1,7 @@
-# robots.txt for digitechsolutions.nl
+# robots.txt for www.digitechsolutions.nl
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://digitechsolutions.nl/sitemap.xml
-
-# Crawl-delay (optional, for politeness)
-Crawl-delay: 1
+Sitemap: https://www.digitechsolutions.nl/sitemap.xml

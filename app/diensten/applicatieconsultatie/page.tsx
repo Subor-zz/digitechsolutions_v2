@@ -122,13 +122,18 @@ const faqs = [
 export default function ApplicatieconsultatiePage() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Canonical: This content focuses specifically on application selection/advisory */}
+      {/* For broader IT consulting, see /diensten/it-consultancy */}
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-deepBlue via-midBlue to-azureBlue pb-20 md:pb-28">
         <Navigation />
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            IT-consultancy & applicatieadvies
+            Applicatieconsultatie
           </h1>
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
+            Specifiek advies bij softwareselectie, vendorkeuze en implementatietrajecten.
+          </p>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
             Je software werkt, maar voelt steeds moeilijker te onderhouden, uit te breiden of te vertrouwen.
             Vaak is niet direct duidelijk waar het probleem precies zit, maar wél dat het tempo eruit gaat.
