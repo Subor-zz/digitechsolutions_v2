@@ -22,19 +22,6 @@ type NavItemRegular = {
 
 type NavItem = NavItemWithDropdown | NavItemRegular;
 
-// Service dropdown items - nieuwe positioning
-const dienstenItems = [
-  { id: 'technical-strategy', label: 'IT Consultancy & Technical Strategy', href: '/diensten/technical-strategy' },
-  { id: 'cto-sparring', label: 'CTO-Level Sparring', href: '/diensten/cto-sparring' },
-  { id: 'technical-audit', label: 'Technische Audit & Due Diligence', href: '/diensten/technical-audit' },
-];
-
-// Voor wie dropdown items
-const voorWieItems = [
-  { id: 'startups', label: 'Startups', href: '/diensten#startups' },
-  { id: 'scaleups', label: 'Scale-ups', href: '/diensten#scaleups' },
-  { id: 'mkb', label: 'MKB', href: '/diensten#mkb' },
-];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,8 +48,6 @@ export default function Navigation() {
   }, [activeDropdown]);
 
   const navItems: NavItem[] = [
-    { id: 'oplossingen', label: 'Oplossingen', hasDropdown: true, items: dienstenItems },
-    { id: 'voor-wie', label: 'Voor wie', hasDropdown: true, items: voorWieItems },
     { id: 'resources', label: 'Resources', href: '/blog' },
     { id: 'tarieven', label: 'Tarieven', href: '/tarieven' },
     { id: 'over-mij', label: 'Over', href: '/over-mij' },
@@ -176,63 +161,7 @@ export default function Navigation() {
           {isOpen && (
             <div className="absolute top-full left-4 right-4 mt-2 bg-white rounded-[2rem] border border-slate-200 shadow-2xl p-6 md:hidden max-h-[80vh] overflow-y-auto">
               <div className="flex flex-col gap-2">
-                {/* Oplossingen dropdown */}
-                <div className="border-b border-slate-100 pb-4 mb-4">
-                  <button
-                    onClick={() => setActiveDropdown(activeDropdown === 'oplossingen-mobile' ? null : 'oplossingen-mobile')}
-                    className="w-full text-left px-6 py-3 rounded-2xl font-bold transition-all flex items-center justify-between text-slate-900"
-                  >
-                    Oplossingen
-                    <span className="material-icons text-sm transition-transform duration-200">
-                      {activeDropdown === 'oplossingen-mobile' ? 'expand_less' : 'expand_more'}
-                    </span>
-                  </button>
-                  {activeDropdown === 'oplossingen-mobile' && (
-                    <div className="mt-2 space-y-1">
-                      {dienstenItems.map((subItem) => (
-                        <Link
-                          key={subItem.id}
-                          href={subItem.href}
-                          onClick={() => { setIsOpen(false); setActiveDropdown(null); }}
-                          className={`block px-6 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                            pathname === subItem.href ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'
-                          }`}
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Voor wie dropdown */}
-                <div className="border-b border-slate-100 pb-4 mb-4">
-                  <button
-                    onClick={() => setActiveDropdown(activeDropdown === 'voor-wie-mobile' ? null : 'voor-wie-mobile')}
-                    className="w-full text-left px-6 py-3 rounded-2xl font-bold transition-all flex items-center justify-between text-slate-900"
-                  >
-                    Voor wie
-                    <span className="material-icons text-sm transition-transform duration-200">
-                      {activeDropdown === 'voor-wie-mobile' ? 'expand_less' : 'expand_more'}
-                    </span>
-                  </button>
-                  {activeDropdown === 'voor-wie-mobile' && (
-                    <div className="mt-2 space-y-1">
-                      {voorWieItems.map((subItem) => (
-                        <Link
-                          key={subItem.id}
-                          href={subItem.href}
-                          onClick={() => { setIsOpen(false); setActiveDropdown(null); }}
-                          className="block px-6 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50"
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Other nav items */}
+                {/* Nav items */}
                 {navItems.filter(item => !item.hasDropdown).map((item) => (
                   <Link
                     key={item.id}
