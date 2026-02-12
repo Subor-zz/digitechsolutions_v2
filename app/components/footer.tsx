@@ -25,28 +25,33 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6">Diensten</h4>
             <ul className="space-y-4 text-sm text-slate-600">
               <li>
-                <Link href="/diensten" className="hover:text-accent transition-colors">
-                  Alle Diensten
+                <Link href="/diensten/zzp-applicatiebeheerder" className="hover:text-accent transition-colors">
+                  ZZP Applicatiebeheerder
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/fractional-cto" className="hover:text-accent transition-colors">
-                  Fractional CTO
+                <Link href="/diensten/zzp-functioneel-beheerder" className="hover:text-accent transition-colors">
+                  ZZP Functioneel Beheerder
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/it-consultancy" className="hover:text-accent transition-colors">
-                  IT-consultancy
+                <Link href="/diensten/support-itsm" className="hover:text-accent transition-colors">
+                  Support & ITSM
                 </Link>
               </li>
               <li>
                 <Link href="/diensten/full-stack-development" className="hover:text-accent transition-colors">
-                  Full-stack development
+                  Full Stack Developer
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/projectmanagement" className="hover:text-accent transition-colors">
-                  Projectmanagement
+                <Link href="/diensten/it-project-manager" className="hover:text-accent transition-colors">
+                  IT Project Manager
+                </Link>
+              </li>
+              <li>
+                <Link href="/diensten/productconsultatie" className="hover:text-accent transition-colors">
+                  Productconsultatie & Validatie
                 </Link>
               </li>
             </ul>
@@ -64,11 +69,6 @@ export default function Footer() {
               <li>
                 <Link href="/blog" className="hover:text-accent transition-colors">
                   Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/tarieven" className="hover:text-accent transition-colors">
-                  Tarieven
                 </Link>
               </li>
               <li>

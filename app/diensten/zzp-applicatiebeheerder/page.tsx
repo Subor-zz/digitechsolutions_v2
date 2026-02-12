@@ -5,16 +5,6 @@ import FAQSection, { FAQSchema } from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-// SEO Metadata
-export const metadata: Metadata = {
-  title: 'ZZP Applicatiebeheerder | Digitech Solutions',
-  description: '',
-  alternates: {
-    canonical: 'https://www.digitechsolutions.nl/zzp-applicatiebeheerder',
-  },
-};
 
 function ScrollReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number; }) {
   const [ref, isIntersecting] = useScrollReveal();
@@ -23,7 +13,75 @@ function ScrollReveal({ children, className = '', delay = 0 }: { children: React
   return <div ref={ref} className={`${baseClass} ${className}`}>{children}</div>;
 }
 
-const faqs: { question: string; answer: string; }[] = [];
+const tasks = [
+  "Incident- en probleemmanagement volgens ITIL",
+  "Change management en release coördinatie",
+  "Monitoring van applicatieperformance en beschikbaarheid",
+  "Gebruikersbeheer, rechten en toegang",
+  "Documentatie van configuraties en procedures",
+  "Patch management en updates",
+  "Back-up en recovery procedures"
+];
+
+const scenarios = [
+  {
+    title: "Applicaties zijn traag of onstabiel",
+    description: "Geen inzicht in performance, geen proactieve monitoring en gebruikers ervaren vertragingen."
+  },
+  {
+    title: "Wijzigingen leiden tot verrassingen",
+    description: "Releases worden ad-hoc uitgevoerd, geen testproces en regressiefouten komen regelmatig voor."
+  },
+  {
+    title: "Geen overzicht van incidenten",
+    description: "Problemen worden niet geregistreerd, oorzaken blijven onduidelijk en dezelfde issues keren terug."
+  },
+  {
+    title: "Onvoldoende kennisoverdracht",
+    description: "Configuraties en procedures staan niet documenteerd, wat afhankelijkheid van personen creëert."
+  },
+  {
+    title: "Gebruikers weten niet waar ze met vragen heen moeten",
+    description: "Geen duidelijk supportproces, geen SLA-afspraken en wachttijden zijn onduidelijk."
+  }
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Analyse van huidige situatie",
+    description: "Ik breng de huidige applicatielandschap, processen en knelpunten in kaart door middel van interviews en analyse van bestaande documentatie."
+  },
+  {
+    number: "02",
+    title: "Structuur en verbeterplan",
+    description: "Op basis van de analyse stel ik een concreet plan op voor procesverbetering, prioriteiten en een roadmap."
+  },
+  {
+    number: "03",
+    title: "Implementatie en borging",
+    description: "We voeren het plan uit, richten processen in en zorgen dat kennis wordt vastgelegd voor duurzame verbetering."
+  }
+];
+
+const faqs = [
+  {
+    question: "Wat kost een ZZP applicatiebeheerder?",
+    answer: "Mijn tarief is afhankelijk van de duur, scope en complexiteit van de opdracht. Neem contact op voor een maatwerkvoorstel op basis van jouw situatie."
+  },
+  {
+    question: "Ben je inzetbaar op locatie of remote?",
+    answer: "Ik werk zowel remote als op locatie. Voor incidentmanagement en kritieke situaties is fysieke aanwezigheid vaak waardevol, maar voor monitoring en documentatiewerk is remote efficiënt."
+  },
+  {
+    question: "Met welke applicaties heb je ervaring?",
+    answer: "Ik heb ervaring met diverse bedrijfsapplicaties, CRM-systemen, ERP-pakketten en maatwerk webapplicaties. De exacte applicatie is minder belangrijk dan de beheermethodiek."
+  },
+  {
+    question: "Kun je tijdelijk vervanging bieden?",
+    answer: "Zeker. Ik ben inzetbaar voor interim vervanging van zieke collega's, tijdens vakantieperiodes of terwijl je zoekt naar een structurele oplossing."
+  }
+];
 
 export default function ZZPApplicatiebeheerderPage() {
   return (
