@@ -371,7 +371,7 @@ export default function Home() {
 
                     <Link
                       href="/tarieven"
-                      className="inline-flex items-center gap-3 bg-techOrange text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-techOrange/20 hover:bg-warmOrange transition-all transform hover:scale-105 active:scale-95 group"
+                      className="shimmer-btn animate-shimmer inline-flex items-center gap-3 text-white px-10 py-4 rounded-xl font-bold shadow-[0_15px_50px_rgba(245,158,11,0.4)] hover:scale-105 active:scale-95 transition-all group"
                     >
                       Bekijk onze tarieven
                       <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -440,7 +440,7 @@ export default function Home() {
                     <div className="mt-auto pt-6 border-t border-slate-50 flex flex-col sm:flex-row items-center gap-6">
                       <Link
                         href="/over-mij"
-                        className="bg-techOrange text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-3 shadow-xl shadow-techOrange/20 hover:bg-warmOrange transition-all transform hover:scale-105 active:scale-95 group"
+                        className="shimmer-btn animate-shimmer text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-3 shadow-[0_15px_50px_rgba(245,158,11,0.4)] hover:scale-105 active:scale-95 transition-all group"
                       >
                         Over mij
                         <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -510,7 +510,7 @@ export default function Home() {
                     <div className="pt-4">
                       <Link
                         href="/contact"
-                        className="w-full bg-techOrange text-white py-5 rounded-2xl font-bold shadow-xl shadow-techOrange/20 hover:bg-warmOrange transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 uppercase tracking-widest text-xs"
+                        className="shimmer-btn animate-shimmer w-full text-white py-5 rounded-2xl font-bold shadow-[0_15px_50px_rgba(245,158,11,0.4)] hover:scale-105 active:scale-95 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 uppercase tracking-widest text-xs"
                       >
                         Naar contactformulier
                         <span className="material-icons text-sm">arrow_forward</span>

@@ -155,7 +155,7 @@ export default function Navigation() {
 
               <Link
                 href="/contact"
-                className="px-6 py-2.5 rounded-xl text-sm font-bold shadow-xl transition-all active:scale-95 bg-techOrange text-white shadow-techOrange/20 hover:bg-warmOrange hover:shadow-warmOrange/20 flex items-center gap-2"
+                className="shimmer-btn animate-shimmer px-6 py-2.5 rounded-xl text-sm font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
               >
                 Plan gratis intake
                 <span className="material-icons text-sm">calendar_month</span>
@@ -256,7 +256,7 @@ export default function Navigation() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-left px-6 py-4 rounded-2xl font-bold transition-all bg-techOrange text-white shadow-techOrange/20 hover:bg-warmOrange flex items-center gap-2"
+                  className="shimmer-btn animate-shimmer w-full text-left px-6 py-4 rounded-2xl font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
                 >
                   Plan gratis intake
                   <span className="material-icons text-sm">calendar_month</span>

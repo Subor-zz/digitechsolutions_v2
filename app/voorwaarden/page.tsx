@@ -123,7 +123,7 @@ export default function TermsPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-techOrange text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-techOrange/20 hover:bg-warmOrange transition-all transform hover:scale-105 active:scale-95"
+            className="shimmer-btn animate-shimmer inline-flex items-center gap-2 text-white px-10 py-4 rounded-xl font-bold shadow-[0_15px_50px_rgba(245,158,11,0.4)] hover:scale-105 active:scale-95 transition-all"
           >
             Neem contact op
             <span className="material-icons text-sm">arrow_forward</span>
