@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Footer from "../components/footer";
 
 export const metadata: Metadata = {
-  title: "IT Consultant Breda | Digitech Solutions",
+  title: "IT Consultancy Breda | Digitech Solutions",
   description: "Lokale IT-consultancy in Breda en omgeving. Fractional CTO, full-stack development en technisch advies voor startups en MKB in Noord-Brabant.",
-  keywords: ["IT consultant Breda", "IT consultancy Breda", "fractional CTO Breda", "software developer Breda", "IT advies Breda", "Noord-Brabant"],
+  keywords: ["IT consult Breda", "IT consultancy Breda", "fractional CTO Breda", "software developer Breda", "IT advies Breda", "Noord-Brabant"],
   openGraph: {
-    title: "IT Consultant Breda | Digitech Solutions",
+    title: "IT Consultancy Breda | Digitech Solutions",
     description: "Lokale IT-consultancy in Breda. Fractional CTO, full-stack development en technisch advies voor startups en MKB.",
     url: "https://digitechsolutions.nl/it-consultant-breda",
     type: "website",

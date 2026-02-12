@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact | Digitech Solutions IT-consultancy",
-  description: "Neem contact op met Digitech Solutions voor IT-consultancy, development of fractional CTO. Snelle intake, duidelijke scope.",
+  title: "Fractional CTO inhuren? | Digitech Solutions",
+  description: "Plan een gratis intake (15 min) om te bespreken of een fractional CTO of IT-advies passen bij jouw situatie.",
   openGraph: {
     title: "Contact | Digitech Solutions IT-consultancy",
     description: "Neem contact op met Digitech Solutions voor IT-consultancy, development of fractional CTO.",
