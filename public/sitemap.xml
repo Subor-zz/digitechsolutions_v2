@@ -28,6 +28,30 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- IT Consultancy & Technical Strategy -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/diensten/technical-strategy</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- CTO-Level Sparring -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/diensten/cto-sparring</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Technische Audit & Due Diligence -->
+  <url>
+    <loc>https://www.digitechsolutions.nl/diensten/technical-audit</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- IT-consultancy -->
   <url>
     <loc>https://www.digitechsolutions.nl/diensten/it-consultancy</loc>
