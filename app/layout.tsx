@@ -10,8 +10,8 @@ const manrope = Manrope({
 
 const siteUrl = "https://www.digitechsolutions.nl";
 const siteName = "Digitech Solutions";
-const title = "Digitech Solutions | IT consultancy, technical strategy and development";
-const description = "IT consultancy, technical strategy en development voor schaalbare systemen. Architectuurreview, roadmap en strategisch advies voor startups en scale-ups.";
+const title = "IT Consultancy & Technical Strategy | Digitech Solutions";
+const description = "Strategische IT consultancy voor startups en scale-ups. Architectuurreview, technische roadmap en CTO-level sparring zonder executive verplichtingen.";
 const authorName = "Subor Cheung";
 const authorUrl = "https://www.linkedin.com/in/subor-cheung-3baab21a/";
 
@@ -184,13 +184,13 @@ export const metadata: Metadata = {
   keywords: [
     "IT consultancy",
     "technical strategy",
-    "IT-consultancy",
+    "technische strategie",
     "architectuurreview",
     "technische roadmap",
-    "CTO sparring",
-    "React developer",
-    "Next.js developer",
-    "TypeScript developer"
+    "CTO-level sparring",
+    "schalbare systemen",
+    "IT advies",
+    "technisch advies"
   ],
   robots: {
     index: true,

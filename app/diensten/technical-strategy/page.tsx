@@ -1,9 +1,9 @@
 'use client';
 
-import { useScrollReveal } from '../../../components/scroll-reveal';
-import FAQSection, { FAQSchema } from '../../../components/faq-section';
-import Navigation from '../../../components/navigation';
-import Footer from '../../../components/footer';
+import { useScrollReveal } from '../../components/scroll-reveal';
+import FAQSection, { FAQSchema } from '../../components/faq-section';
+import Navigation from '../../components/navigation';
+import Footer from '../../components/footer';
 import Link from 'next/link';
 
 // ScrollReveal wrapper component
