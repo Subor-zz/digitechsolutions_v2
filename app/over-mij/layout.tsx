@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Over Subor Cheung | IT-consultant & Developer (20+ jaar ervaring)",
-  description: "9+ jaar IT-consultancy, 11 jaar finance. Fractional CTO, full-stack developer, projectmanager. Breda, EU-remote.",
+  title: "Over Subor Cheung | ZZP Applicatiebeheerder & Functioneel Beheerder",
+  description: "ZZP applicatiebeheerder en functioneel beheerder met 9+ jaar IT-ervaring en 11 jaar finance-achtergrond. Breda, EU-remote.",
   openGraph: {
-    title: "Over Subor Cheung | IT-consultant & Developer (20+ jaar ervaring)",
-    description: "9+ jaar IT-consultancy, 11 jaar finance. Fractional CTO, full-stack developer, projectmanager.",
+    title: "Over Subor Cheung | ZZP Applicatiebeheerder & Functioneel Beheerder",
+    description: "ZZP applicatiebeheerder en functioneel beheerder met 9+ jaar IT-ervaring en 11 jaar finance-achtergrond.",
     type: "website",
     url: "https://digitechsolutions.nl/over-mij"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Over Subor Cheung | IT-consultant & Developer (20+ jaar ervaring)",
-    description: "9+ jaar IT-consultancy, 11 jaar finance. Fractional CTO, full-stack developer."
+    title: "Over Subor Cheung | ZZP Applicatiebeheerder & Functioneel Beheerder",
+    description: "ZZP applicatiebeheerder en functioneel beheerder met 9+ jaar IT-ervaring en 11 jaar finance-achtergrond."
   },
   alternates: {
     canonical: "https://digitechsolutions.nl/over-mij"

@@ -155,7 +155,7 @@ export default function BlogPage() {
             IT &<span className="text-white/70">Technologie Blog</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg lg:text-xl text-blue-50/80 font-medium leading-relaxed text-balance">
-            Artikelen over fractional CTO, IT-consultancy en software development voor startups en MKB.
+            Artikelen over IT beheer, applicaties, ITSM, development en technische keuzes.
           </p>
         </div>
 

@@ -74,20 +74,28 @@ function SpotlightCard({ service, onNavigate }: { service: typeof servicesData[0
 
 const servicesData = [
   {
-    id: 'fractional-cto',
-    title: 'Fractional CTO',
-    slug: '/diensten/fractional-cto',
-    shortDescription: 'Senior technische sturing zonder fulltime CTO. Ideaal als je moet kiezen: architectuur, roadmap, teamrichting of AI.',
-    icon: 'psychology',
-    points: ['Architectuur & technische roadmap', 'Teamrichting, hiring & standards', 'Due diligence & risicobeheersing'],
+    id: 'zzp-applicatiebeheerder',
+    title: 'ZZP Applicatiebeheerder',
+    slug: '/diensten/zzp-applicatiebeheerder',
+    shortDescription: 'Incident- en change management, monitoring, releases en gebruikersbeheer voor stabiele applicaties.',
+    icon: 'settings_applications',
+    points: ['Incident- en change management', 'Monitoring & performance', 'Releases & gebruikersbeheer'],
   },
   {
-    id: 'it-consultancy',
-    title: 'IT-consultancy',
-    slug: '/diensten/it-consultancy',
-    shortDescription: 'Je applicatie werkt, maar onderhoud, performance of stabiliteit begint te knellen. Ik maak snel zichtbaar waar de bottleneck zit.',
-    icon: 'terminal',
-    points: ['Applicatie- & architectuuranalyse', 'Performance & security quickscan', 'Integratie- en migratieadvies'],
+    id: 'zzp-functioneel-beheerder',
+    title: 'ZZP Functioneel Beheerder',
+    slug: '/diensten/zzp-functioneel-beheerder',
+    shortDescription: 'Requirements, wijzigingsbeheer, UAT en procesoptimalisatie als brug tussen business en IT.',
+    icon: 'manage_accounts',
+    points: ['Requirements & analyse', 'Wijzigingsbeheer & UAT', 'Procesoptimalisatie & communicatie'],
+  },
+  {
+    id: 'support-itsm',
+    title: 'IT Support & ITSM',
+    slug: '/diensten/support-itsm',
+    shortDescription: '1e/2e lijns support, ITIL-processen, SLA\'s, ticketing en serviceverbetering.',
+    icon: 'support_agent',
+    points: ["SLA's, incident- en change management", 'Supportstructuur & tooling', 'Documentatie & kennisoverdracht'],
   },
   {
     id: 'full-stack-development',
@@ -98,28 +106,20 @@ const servicesData = [
     points: ['Webapps (React / Next.js / TypeScript)', 'Mobile (React Native / Expo)', "API's, automatisering & integraties"],
   },
   {
-    id: 'projectmanagement',
-    title: 'Projectmanagement',
-    slug: '/diensten/projectmanagement',
-    shortDescription: 'Projecten ontsporen zelden door code — meestal door scope, planning en communicatie. Ik breng structuur én technische inhoud.',
+    id: 'it-project-manager',
+    title: 'IT Project Manager',
+    slug: '/diensten/it-project-manager',
+    shortDescription: 'Projectplanning, stakeholdermanagement, releases en delivery van IT-projecten.',
     icon: 'assignment',
     points: ['Roadmaps, sprints & scope control', 'Stakeholdermanagement', "Risico's, planning & voortgang"],
   },
   {
-    id: 'product-business-consultatie',
-    title: 'Productconsultatie',
-    slug: '/diensten/product-business-consultatie',
+    id: 'productconsultatie',
+    title: 'Productconsultatie & Technische Validatie',
+    slug: '/diensten/productconsultatie',
     shortDescription: 'Snel valideren of je idee technisch en commercieel haalbaar is. Van requirements tot MVP-scope zodat je gericht bouwt.',
     icon: 'lightbulb',
     points: ["PRD's & featurespecificaties", 'MVP-definitie & haalbaarheid', 'Go-to-market input + tech plan'],
-  },
-  {
-    id: 'support-itsm',
-    title: 'Support & ITSM',
-    slug: '/diensten/support-itsm',
-    shortDescription: 'Als je software live is, wil je rust: duidelijke supportflows, minder incidenten en voorspelbare doorontwikkeling.',
-    icon: 'support_agent',
-    points: ["SLA's, incident- en change management", 'Supportstructuur & tooling', 'Documentatie & kennisoverdracht'],
   },
 ];
 
@@ -138,7 +138,7 @@ const faqs = [
   },
   {
     question: 'Wat is de doorlooptijd voor een typisch project?',
-    answer: 'Dit varieert sterk afhankelijk van scope en complexiteit. Een applicatie-audit duurt doorgaans 1-2 weken, een MVP ontwikkeling 6-12 weken, en fractional CTO werkzaamheden lopen vaak voor langere tijd (maanden) met flexibele inzet.',
+    answer: 'Dit varieert sterk afhankelijk van scope en complexiteit. Een applicatie-audit duurt doorgaans 1-2 weken, een MVP ontwikkeling 6-12 weken, en ZZP inzetbaarheid loopt vaak voor langere tijd (maanden) met flexibele beschikbaarheid.',
   },
   {
     question: 'Kan je ook werken met ons bestaande team?',
@@ -157,7 +157,7 @@ export default function DienstenPage() {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
             name: 'IT-diensten | Digitech Solutions',
-            description: 'Overzicht van alle IT-diensten: fractional CTO, IT-consultancy, full-stack development, projectmanagement en meer.',
+            description: 'Overzicht van alle IT-diensten: ZZP applicatiebeheer, functioneel beheer, IT support, full-stack development, projectmanagement en meer.',
             url: 'https://digitechsolutions.nl/diensten',
           }),
         }}
@@ -187,8 +187,8 @@ export default function DienstenPage() {
                 <span className="text-white/70">strategie en uitvoering combineren</span>
               </h1>
               <p className="max-w-2xl mx-auto text-lg lg:text-xl text-blue-50/80 font-medium mb-12 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
-                Van fractional CTO en IT-advies tot full-stack development en projectmanagement.
-                Flexibel inzetbaar voor startups en MKB.
+                ZZP inzetbaar voor applicatiebeheer, functioneel beheer en IT support.
+                Flexibel inzetbaar voor bedrijven in heel Nederland en EU.
               </p>
             </div>
           </div>
