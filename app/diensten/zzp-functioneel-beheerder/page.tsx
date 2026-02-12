@@ -14,34 +14,39 @@ function ScrollReveal({ children, className = '', delay = 0 }: { children: React
 }
 
 const tasks = [
-  "Vertalen van business requirements naar functionele specificaties",
+  "Inventariseren en vertalen van business requirements",
   "Begeleiden van wijzigingsverzoeken (change management)",
-  "Coördineren en uitvoeren van UAT",
-  "Incidentanalyse en structurele verbeteringen",
-  "Afstemming tussen gebruikers en IT",
-  "Documentatie en procesoptimalisatie",
-  "Ondersteuning bij implementaties en releases"
+  "Coördineren en uitvoeren van gebruikersacceptatietesten (UAT)",
+  "Incidentanalyse vanuit gebruikersperspectief",
+  "Procesoptimalisatie rondom applicatiegebruik",
+  "Afstemming tussen business, applicatiebeheer en development",
+  "Rapportages en verbeteradviezen",
+  "Documentatie en kennisborging"
 ];
 
 const scenarios = [
   {
-    title: "Business en IT werken langs elkaar heen",
+    title: "Business en IT werken niet effectief samen",
     description: "Requirements worden niet goed begrepen, de IT-oplossing sluit niet aan bij de praktijk en frustratie groeit aan beide kanten."
   },
   {
-    title: "Ongecontroleerde wijzigingen",
+    title: "Wijzigingen worden ongecontroleerd doorgevoerd",
     description: "Wijzigingen worden ad-hoc doorgevoerd zonder testproces, wat leidt tot regressiefouten en onvoorspelbaar gedrag."
   },
   {
-    title: "Gebrek aan structuur",
-    description: "Geen duidelijke change management processen, geen overzicht van openstaande verzoeken en geen prioriteitstelling."
+    title: "Gebruikers klagen over functionaliteit of procesafwijkingen",
+    description: "Problemen worden gemeld maar niet systematisch aangepakt. Dezelfde issues blijven terugkomen zonder duidelijke oplossing."
   },
   {
-    title: "Gebruikersproblemen zonder duidelijke oplossing",
-    description: "Problemen worden gemeld maar niet systematisch aangepakt. Dezelfde issues blijven terugkomen."
+    title: "Acceptatietesten zijn niet goed ingericht",
+    description: "UAT ontbreekt of verloopt ongestructureerd, waardoor fouten pas in productie opduiken."
   },
   {
-    title: "Applicaties worden niet optimaal benut",
+    title: "Behoefte aan tijdelijke versterking binnen beheer",
+    description: "Een collega is afwezig door ziekte of verloop, of er is extra capaciteit nodig voor een project."
+  },
+  {
+    title: "Applicaties sluiten onvoldoende aan op bedrijfsprocessen",
     description: "De tools zijn er, maar gebruikers werken er niet effectief mee door gebrek aan adoptiebegeleiding en documentatie."
   }
 ];
@@ -49,37 +54,37 @@ const scenarios = [
 const steps = [
   {
     number: "01",
-    title: "Analyse van huidige situatie",
-    description: "Ik breng de huidige processen, applicatielandschap en knelpunten in kaart door middel van interviews en documentatieanalyse."
+    title: "Analyse van processen en applicatiegebruik",
+    description: "Ik onderzoek hoe applicaties worden ingezet binnen bedrijfsprocessen en waar knelpunten ontstaan."
   },
   {
     number: "02",
-    title: "Structuur en verbeterplan",
-    description: "Op basis van de analyse stel ik een concreet plan op voor procesverbetering, prioriteiten en een roadmap."
+    title: "Structuur en prioritering",
+    description: "We bepalen samen welke wijzigingen prioriteit hebben en hoe deze gecontroleerd worden doorgevoerd."
   },
   {
     number: "03",
-    title: "Implementatie en begeleiding",
-    description: "We voeren het plan uit, ik begeleid veranderingen en zorg dat nieuwe werkwijzen landen bij het team."
+    title: "Begeleiding en borging",
+    description: "Ik begeleid testtrajecten, wijzigingsbeheer en zorg voor duidelijke documentatie en overdracht."
   }
 ];
 
 const faqs = [
   {
     question: "Wat kost een ZZP functioneel beheerder?",
-    answer: "Mijn tarief is afhankelijk van de duur, scope en complexiteit van de opdracht. Neem contact op voor een maatwerkvoorstel op basis van jouw situatie."
+    answer: "Het tarief is afhankelijk van inzetduur en complexiteit van de omgeving. Neem contact op voor een maatwerkvoorstel op basis van jouw situatie."
   },
   {
-    question: "Ben je inzetbaar op locatie of remote?",
-    answer: "Ik werk zowel remote als op locatie. Voor de meeste sessies zoals workshops en UAT begeleiding is fysieke aanwezigheid vaak waardevol, maar voor analyses en documentatiewerk is remote efficiënt."
+    question: "Werk je samen met applicatiebeheerders?",
+    answer: "Ja, functioneel beheer werkt vaak nauw samen met applicatiebeheer en IT support. Ik stem af met alle betrokken partijen voor optimale samenwerking."
+  },
+  {
+    question: "Ben je inzetbaar voor implementatieprojecten?",
+    answer: "Ja, van requirements tot acceptatie en nazorg. Ik ondersteun bij software-implementaties, migraties en nieuwe applicatie roll-outs."
   },
   {
     question: "Werk je volgens ITIL?",
-    answer: "Ja, ik heb ervaring met ITIL-processen en werkwijzen. Ik kan change management, incident management en service request processen inrichten volgens ITIL-principes, pragmatisch toegepast op jouw organisatie."
-  },
-  {
-    question: "Kun je ondersteunen bij implementaties?",
-    answer: "Zeker. Ik ondersteun bij software-implementaties, migraties en nieuwe applicatierolls-outs. Van het verzamelen van requirements tot het coördineren van UAT en de go-live begeleiding."
+    answer: "Ja, ik heb ervaring met ITIL-processen en werkwijzen. Ik kan change management, incident management en service request processen inrichten volgens ITIL-principes."
   }
 ];
 
@@ -99,12 +104,14 @@ export default function ZZPFunctioneelBeheerderPage() {
             ZZP Functioneel Beheer
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-white tracking-tighter mb-6 leading-[1.1] text-balance opacity-0 animate-fade-in-up animation-delay-100">
-            ZZP Functioneel Beheerder voor stabiele en gestructureerde IT-omgevingen
+            ZZP Functioneel Beheerder voor stabiele applicaties en duidelijke processen
           </h1>
           <p className="max-w-3xl mx-auto text-lg lg:text-xl text-blue-50/90 font-medium mb-12 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
-            Als senior ZZP functioneel beheerder vorm ik de brug tussen business en IT.
-            Ik vertaal business requirements naar werkelijke oplossingen, breng structuur in wijzigingsprocessen
-            en zorg dat applicaties doen wat gebruikers nodig hebben.
+            Een ervaren ZZP functioneel beheerder zorgt ervoor dat applicaties niet alleen technisch werken,
+            maar ook daadwerkelijk aansluiten op de behoeften van de organisatie.
+          </p>
+          <p className="max-w-3xl mx-auto text-base lg:text-lg text-blue-50/80 font-medium mb-12 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
+            Inzetbaar op interim- of projectbasis.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-in-up animation-delay-300">
             <Link href="/contact" className="shimmer-btn animate-shimmer text-white font-semibold px-10 py-4 rounded-full text-base shadow-lg">
@@ -127,8 +134,7 @@ export default function ZZPFunctioneelBeheerderPage() {
                 Wat doet een ZZP Functioneel Beheerder?
               </h2>
               <p className="text-slate-500 max-w-2xl mx-auto">
-                Een functioneel beheerder is de schakel tussen de business en de technische realisatie.
-                Ik werk vanuit ITIL-ervaring en pragmatische inzetbaarheid.
+                Functioneel beheer richt zich op de inhoudelijke werking van applicaties binnen bedrijfsprocessen.
               </p>
             </header>
           </ScrollReveal>
@@ -136,7 +142,7 @@ export default function ZZPFunctioneelBeheerderPage() {
           <div className="max-w-4xl mx-auto">
             <ul className="space-y-3">
               {tasks.map((task, index) => (
-                <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600 | 700}>
+                <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800}>
                   <li className="flex items-start gap-3">
                     <span className="material-icons text-accent flex-shrink-0 mt-0.5">check_circle</span>
                     <span className="text-slate-700">{task}</span>
@@ -145,26 +151,32 @@ export default function ZZPFunctioneelBeheerderPage() {
               ))}
             </ul>
           </div>
+
+          <ScrollReveal delay={800} className="mt-10 text-center">
+            <p className="text-slate-500 max-w-2xl mx-auto italic">
+              Ik werk gestructureerd en waar passend volgens ITIL-processen.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Wanneer heb je een ZZP Functioneel Beheerder nodig? */}
+      {/* Wanneer heeft u een ZZP Functioneel Beheerder nodig? */}
       <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Wanneer heb je een ZZP Functioneel Beheerder nodig?
+                Wanneer heeft u een ZZP Functioneel Beheerder nodig?
               </h2>
               <p className="text-slate-500 max-w-2xl mx-auto">
-                Herken je een van de volgende situaties?
+                Een interim functioneel beheerder is waardevol wanneer:
               </p>
             </header>
           </ScrollReveal>
 
           <div className="max-w-4xl mx-auto space-y-4">
             {scenarios.map((scenario, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500}>
+              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600}>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
                   <h3 className="font-bold text-lg text-slate-900 mb-2">{scenario.title}</h3>
                   <p className="text-slate-500">{scenario.description}</p>
@@ -172,6 +184,14 @@ export default function ZZPFunctioneelBeheerderPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal delay={700} className="mt-10 max-w-4xl mx-auto">
+            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+              <p className="text-slate-700">
+                Functioneel beheer brengt structuur, overzicht en duidelijke communicatie tussen business en IT.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -183,9 +203,6 @@ export default function ZZPFunctioneelBeheerderPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Mijn aanpak
               </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Een gestructureerd proces dat werkt voor jouw organisatie.
-              </p>
             </header>
           </ScrollReveal>
 
@@ -207,42 +224,8 @@ export default function ZZPFunctioneelBeheerderPage() {
         </div>
       </section>
 
-      {/* Samenwerking en inzetbaarheid */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Samenwerking en inzetbaarheid
-              </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Flexibele inzet op basis van jouw behoefte.
-              </p>
-            </header>
-          </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-            {[
-              { title: "Interim", desc: "Tijdelijke vervanging of versterking van je functioneel beheer team." },
-              { title: "Projectmatig", desc: "Gerichte inzet voor specifieke implementaties of migraties." },
-              { title: "Migratieondersteuning", desc: "Begeleiding van overgang van oude naar nieuwe systemen." },
-              { title: "Procesoptimalisatie", desc: "Analyse en verbetering van bestaande processen." },
-              { title: "MKB", desc: "Pragmatische ondersteuning voor kleinere organisaties." },
-              { title: "Scale-ups", desc: "Structuur brengen in groeiende applicatielandschappen." }
-            ].map((item, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600}>
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h3 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-slate-500">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Verschil tussen Functioneel Beheer en Applicatiebeheer */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
@@ -258,7 +241,7 @@ export default function ZZPFunctioneelBeheerderPage() {
                 <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
                   <h3 className="font-bold text-lg text-slate-900 mb-3">Functioneel Beheer</h3>
                   <p className="text-sm text-slate-600 mb-3">
-                    Richt zich op <strong>wat</strong> de applicatie moet doen voor de business.
+                    Richt zich op de <strong>aansluiting tussen applicatie en businessprocessen</strong>.
                   </p>
                   <ul className="text-sm text-slate-500 space-y-1">
                     <li>• Requirements en specificaties</li>
@@ -270,7 +253,7 @@ export default function ZZPFunctioneelBeheerderPage() {
                 <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
                   <h3 className="font-bold text-lg text-slate-900 mb-3">Applicatiebeheer</h3>
                   <p className="text-sm text-slate-600 mb-3">
-                    Richt zich op <strong>hoe</strong> de applicatie technisch functioneert.
+                    Richt zich op de <strong>technische stabiliteit en continuïteit</strong> van systemen.
                   </p>
                   <ul className="text-sm text-slate-500 space-y-1">
                     <li>• Updates en patches</li>
@@ -285,7 +268,7 @@ export default function ZZPFunctioneelBeheerderPage() {
             <ScrollReveal delay={100}>
               <div className="bg-slate-50 rounded-xl p-6 text-center">
                 <p className="text-slate-600 mb-4">
-                  De rollen vullen elkaar aan. Voor compleet beheer combineer ik functioneel beheer met:
+                  Bekijk ook:
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
                   <Link href="/diensten/zzp-applicatiebeheerder" className="px-5 py-2 bg-purple-100 text-purple-800 rounded-lg text-sm font-medium hover:bg-purple-200 transition-colors">
@@ -301,6 +284,40 @@ export default function ZZPFunctioneelBeheerderPage() {
         </div>
       </section>
 
+      {/* Samenwerking en inzetbaarheid */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Samenwerking en inzetbaarheid
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Beschikbaar als:
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+            {[
+              { title: "Interim ZZP functioneel beheerder", desc: "Tijdelijke vervanging of versterking van je functioneel beheer team." },
+              { title: "Tijdelijke vervanging", desc: "Bij ziekte, verlof of tijdens wervingsprocessen." },
+              { title: "Projectmatige ondersteuning", desc: "Gerichte inzet voor specifieke projecten of implementaties." },
+              { title: "Ondersteuning bij implementatie of migratie", desc: "Begeleiding van overgang van oude naar nieuwe systemen." },
+              { title: "Optimalisatie van bestaande beheerstructuren", desc: "Analyse en verbetering van bestaande processen." },
+              { title: "MKB, scale-ups en organisaties met bedrijfskritische applicaties", desc: "Inzetbaar binnen diverse organisatiegroottes." }
+            ].map((item, index) => (
+              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600}>
+                <div className="bg-slate-50 rounded-xl p-6 shadow-sm">
+                  <h3 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-500">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <FAQSection faqs={faqs} />
       <FAQSchema faqs={faqs} />
@@ -310,7 +327,7 @@ export default function ZZPFunctioneelBeheerderPage() {
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Op zoek naar een betrouwbare ZZP functioneel beheerder?
+              Op zoek naar een ervaren ZZP functioneel beheerder?
             </h2>
             <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
               Neem contact op om beschikbaarheid te bespreken of een CV op te vragen.
