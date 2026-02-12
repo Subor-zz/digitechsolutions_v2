@@ -57,6 +57,34 @@ const nextConfig = {
         destination: '/diensten/zzp-applicatiebeheerder/:path*',
         permanent: true, // 301 redirect
       },
+      // Legacy projectmanagement redirect
+      {
+        source: '/diensten/projectmanagement',
+        destination: '/diensten/it-project-manager',
+        permanent: true, // 301 redirect
+      },
+      {
+        source: '/diensten/projectmanagement/:path*',
+        destination: '/diensten/it-project-manager/:path*',
+        permanent: true, // 301 redirect
+      },
+      // Legacy product-business-consultatie redirect
+      {
+        source: '/diensten/product-business-consultatie',
+        destination: '/diensten/productconsultatie',
+        permanent: true, // 301 redirect
+      },
+      {
+        source: '/diensten/product-business-consultatie/:path*',
+        destination: '/diensten/productconsultatie/:path*',
+        permanent: true, // 301 redirect
+      },
+      // Legacy it-consultant-breda redirect
+      {
+        source: '/it-consultant-breda',
+        destination: '/diensten/zzp-applicatiebeheerder',
+        permanent: true, // 301 redirect
+      },
     ];
   },
 };
