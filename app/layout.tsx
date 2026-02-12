@@ -10,8 +10,8 @@ const manrope = Manrope({
 
 const siteUrl = "https://www.digitechsolutions.nl";
 const siteName = "Digitech Solutions";
-const title = "Digitech Solutions | IT-consultancy, fractional CTO & development";
-const description = "Senior IT-consultancy voor startups en MKB. Fractional CTO, IT-advies en schaalbare software. Transparant, inhoudelijk en zonder ruis.";
+const title = "Digitech Solutions | IT consultancy, technical strategy and development";
+const description = "IT consultancy, technical strategy en development voor schaalbare systemen. Architectuurreview, roadmap en strategisch advies voor startups en scale-ups.";
 const authorName = "Subor Cheung";
 const authorUrl = "https://www.linkedin.com/in/subor-cheung-3baab21a/";
 
@@ -23,14 +23,14 @@ const organizationSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "image": `${siteUrl}/logo.png`,
-  "description": "IT-consultancy, fractional CTO, full-stack development en technisch projectmanagement voor startups en MKB.",
+  "description": "IT consultancy, technical strategy en development voor startups en scale-ups.",
   "telephone": "+31643983420",
   "priceRange": "€€",
   "founder": {
     "@type": "Person",
     "name": authorName,
     "url": authorUrl,
-    "jobTitle": "IT Consultant & Full-Stack Developer"
+    "jobTitle": "IT Consultant & Technical Strategist"
   },
   "areaServed": ["NL", "EU"],
   "address": {
@@ -39,8 +39,10 @@ const organizationSchema = {
     "addressCountry": "NL"
   },
   "serviceType": [
-    "IT-consultancy",
-    "Fractional CTO",
+    "IT Consultancy",
+    "Technical Strategy",
+    "CTO-Level Sparring",
+    "Technical Audit",
     "Full-stack development",
     "IT-projectmanagement",
     "IT-consultancy & applicatieadvies",
@@ -70,7 +72,7 @@ const localBusinessSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "image": `${siteUrl}/logo.png`,
-  "description": "IT-consultancy, fractional CTO en full-stack development in Breda. Servies voor startups en MKB in heel Nederland.",
+  "description": "IT consultancy, technical strategy en development in Breda. Services voor startups en scale-ups in heel Nederland.",
   "telephone": "+31643983420",
   "priceRange": "€€",
   "address": {
@@ -102,9 +104,9 @@ const personSchema = {
     "name": siteName,
     "url": siteUrl
   },
-  "description": "IT consultant met 9+ jaar ervaring in servicemanagement, IT-consultancy en full-stack ontwikkeling.",
+  "description": "IT consultant met 9+ jaar ervaring in IT-consultancy, technical strategy en full-stack development.",
   "knowsAbout": [
-    "IT Service Management", "IT-consultancy", "Full-Stack Development",
+    "IT Service Management", "IT-consultancy", "Technical Strategy",
     "React", "Next.js", "TypeScript", "Node.js", "Projectmanagement", "Agile", "Scrum", "ITIL"
   ],
   "address": {
@@ -180,10 +182,12 @@ export const metadata: Metadata = {
   creator: authorName,
   publisher: siteName,
   keywords: [
+    "IT consultancy",
+    "technical strategy",
     "IT-consultancy",
-    "fractional CTO",
-    "full-stack development",
-    "IT-projectmanagement",
+    "architectuurreview",
+    "technische roadmap",
+    "CTO sparring",
     "React developer",
     "Next.js developer",
     "TypeScript developer"
