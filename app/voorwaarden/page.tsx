@@ -51,91 +51,83 @@ export default function TermsPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto prose prose-lg max-w-none">
             <p className="text-gray-600 italic">
-              Laatst bijgewerkt: februari 2025
+              Laatste update: februari 2025
             </p>
 
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">1. Toepasselijkheid</h2>
             <p className="text-gray-700">
-              Deze algemene voorwaarden zijn van toepassing op alle diensten en producten van Digitech Solutions. Door gebruik te maken van onze diensten ga je akkoord met deze voorwaarden.
+              Deze voorwaarden zijn van toepassing op offertes, opdrachten en dienstverlening door Digitech Solutions.
             </p>
 
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">2. Definities</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li><strong>Dienstverlener:</strong> Digitech Solutions, ingeschreven bij de Kamer van Koophandel</li>
-              <li><strong>Opdrachtgever:</strong> De natuurlijke of rechtspersoon die de dienst afneemt</li>
-              <li><strong>Overeenkomst:</strong> De overeenkomst tussen dienstverlener en opdrachtgever</li>
-              <li><strong>Diensten:</strong> Alle door dienstverlener te leveren diensten zoals IT-consultancy, fractional CTO en development</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">3. Offertes en totstandkoming</h2>
-            <p className="text-gray-700 mb-4">
-              Alle offertes zijn vrijblijvend, tenzij uitdrukkelijk anders schriftelijk overeengekomen. De overeenkomst komt tot stand na:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Schriftelijke aanvaarding van de offerte door de opdrachtgever, of</li>
-              <li>Feitelijke aanvang van de uitvoering van de overeenkomst door de dienstverlener</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">4. Uitvoering van de overeenkomst</h2>
-            <p className="text-gray-700 mb-4">
-              De dienstverlener zal de overeenkomst naar beste inzicht en vermogen en in overeenstemming met de eisen van goed vakmanschap uitvoeren. De dienstverlener behoudt zich het recht voor bepaalde werkzaamheden derden in te schakelen.
-            </p>
-
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">5. Verplichtingen van de opdrachtgever</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Verstrekken van alle benodigde informatie en materialen</li>
-              <li>Medewerking verlenen aan de uitvoering van de overeenkomst</li>
-              <li>Timeig betalen van de facturen</li>
-              <li>Respecteren van intellectuele eigendomsrechten van de dienstverlener</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">6. Honorarium en betaling</h2>
-            <p className="text-gray-700 mb-4">
-              Tenzij anders overeengekomen, geschiedt betaling op basis van:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Uurtarief (voor consultancy en fractional CTO diensten)</li>
-              <li>Projectprijs (voor development en vaste projecten)</li>
-              <li>Retainer (voor langdurige samenwerking)</li>
-            </ul>
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">1. Diensten</h2>
             <p className="text-gray-700">
-              Facturen dienen binnen 14 dagen na factuurdatum te worden voldaan, tenzij anders schriftelijk overeengekomen.
+              Digitech Solutions levert o.a. IT-consultancy, (fractional) CTO-ondersteuning, softwareontwikkeling en aanverwante adviesdiensten.
+            </p>
+
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">2. Offertes en totstandkoming</h2>
+            <p className="text-gray-700 mb-4">
+              Een opdracht komt tot stand na schriftelijke bevestiging (e-mail is voldoende) of wanneer de uitvoering start.
+            </p>
+
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">3. Informatie van de klant</h2>
+            <p className="text-gray-700">
+              De klant is verantwoordelijk voor juiste en volledige informatie die nodig is voor uitvoering. Vertraging door ontbrekende input kan invloed hebben op planning.
+            </p>
+
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">4. Inspanningsverplichting</h2>
+            <p className="text-gray-700">
+              Onze diensten zijn in principe een inspanningsverplichting: we leveren professioneel en zorgvuldig werk, maar kunnen geen specifieke resultaten garanderen (bijv. omzetgroei, rankings, conversie).
+            </p>
+
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">5. Tarieven en betaling</h2>
+            <p className="text-gray-700 mb-4">
+              Tarieven staan in offerte of op de tarievenpagina. Facturen hebben een betalingstermijn van 14 dagen, tenzij anders afgesproken.
+            </p>
+
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">6. Aansprakelijkheid</h2>
+            <p className="text-gray-700">
+              Aansprakelijkheid is beperkt tot het bedrag dat voor de betreffende opdracht is gefactureerd over de laatste 1 maand, tenzij sprake is van opzet of bewuste roekeloosheid.
+            </p>
+            <p className="text-gray-700">
+              Indirecte schade (zoals gevolgschade, winstderving) is uitgesloten voor zover wettelijk toegestaan.
             </p>
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">7. Intellectueel eigendom</h2>
-            <p className="text-gray-700 mb-4">
-              Tenzij anders overeengekomen, blijven alle rechten van intellectueel eigendom (waaronder maar niet beperkt tot broncode, ontwerpen, documentatie) bij de dienstverlener berusten, tenzij:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Specifiek overeengekomen in de overeenkomst</li>
-              <li>Betaald als afzonderlijke dienst (source code buy-out)</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">8. Aansprakelijkheid</h2>
             <p className="text-gray-700">
-              De aansprakelijkheid van de dienstverlener is beperkt tot het bedrag dat in de desbetreffende overeenkomst is overeengekomen. Voor indirecte schade of gevolgschade is de dienstverlener niet aansprakelijk, tenzij er sprake is van opzet of grove schuld.
+              Adviezen, documenten, code en deliverables blijven eigendom van Digitech Solutions totdat volledig is betaald. Na betaling krijgt de klant een gebruiksrecht zoals afgesproken in de opdracht.
             </p>
 
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">9. Ontbinding en beindiging</h2>
-            <p className="text-gray-700 mb-4">
-              Beide partijen kunnen de overeenkomst beindigen:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>Schriftelijk met inachtneming van een opzegtermijn van 30 dagen</li>
-              <li>Met onmiddellijke ingang bij zwarende toerekenbare schuld</li>
-              <li>Door faillissement of surseance van betaling van een der partij</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">10. Geschillen</h2>
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">8. Geheimhouding</h2>
             <p className="text-gray-700">
-              Op alle overeenkomsten en voorwaarden is Nederlands recht van toepassing. Geschillen zullen voorlegd worden aan de bevoegde rechter in Nederland.
+              Beide partijen behandelen vertrouwelijke informatie vertrouwelijk. Op verzoek kunnen we een aparte NDA tekenen.
             </p>
 
-            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">11. Contact</h2>
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">9. Opzegging</h2>
             <p className="text-gray-700">
-              Voor vragen over onze algemene voorwaarden kun je contact opnemen via <a href="mailto:info@digitechsolutions.nl" className="text-primary hover:underline font-medium">info@digitechsolutions.nl</a>.
+              Doorlopende samenwerking kan worden opgezegd met een opzegtermijn van 1 maand, tenzij anders overeengekomen. Reeds gemaakte uren/kosten worden gefactureerd.
+            </p>
+
+            <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">10. Toepasselijk recht</h2>
+            <p className="text-gray-700">
+              Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Vragen over onze voorwaarden?</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Neem gerust contact op als je vragen hebt over onze algemene voorwaarden of dienstverlening.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-techOrange text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-techOrange/20 hover:bg-warmOrange transition-all transform hover:scale-105 active:scale-95"
+          >
+            Neem contact op
+            <span className="material-icons text-sm">arrow_forward</span>
+          </Link>
         </div>
       </section>
 
