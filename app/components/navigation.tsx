@@ -178,7 +178,7 @@ export default function Navigation() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="absolute top-full left-4 right-4 mt-2 glass-nav rounded-[2rem] border border-white/20 shadow-2xl p-6 md:hidden max-h-[80vh] overflow-y-auto">
+            <div className="absolute top-full left-4 right-4 mt-2 bg-white rounded-[2rem] border border-slate-200 shadow-2xl p-6 md:hidden max-h-[80vh] overflow-y-auto">
               <div className="flex flex-col gap-2">
                 {/* Oplossingen dropdown */}
                 <div className="border-b border-slate-100 pb-4 mb-4">

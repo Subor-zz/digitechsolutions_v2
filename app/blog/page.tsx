@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import { RelatedServices } from "../components/related-services";
+import { BLOG_CATEGORIES, BLOG_POST_CATEGORIES } from "../lib/blog-categories";
 
 // Blog post data - this will be populated with actual posts
 const blogPosts = [
@@ -133,8 +135,6 @@ const blogPosts = [
   },
 ];
 
-const categories = ["Alle", "Fractional CTO", "Full-Stack Development", "IT-Consultancy"];
-
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -166,17 +166,20 @@ export default function BlogPage() {
       <section className="py-8 bg-gray-50 border-b sticky top-0 z-10">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  cat === "Alle"
-                    ? "bg-primary text-white"
-                    : "bg-white text-gray-700 hover:bg-gray-100 border"
-                }`}
+            <Link
+              href="/blog"
+              className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-primary text-white"
+            >
+              Alle
+            </Link>
+            {Object.values(BLOG_CATEGORIES).map((cat) => (
+              <Link
+                key={cat.id}
+                href={`/blog/${cat.slug}`}
+                className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-700 hover:bg-gray-100 border"
               >
-                {cat}
-              </button>
+                {cat.name}
+              </Link>
             ))}
           </div>
         </div>
@@ -197,10 +200,14 @@ export default function BlogPage() {
                   <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-slate-900">
                     {post.category}
                   </span>
-                  <div className="aspect-video bg-gradient-to-br from-deepBlue/20 to-azureBlue/20 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-slate-900/30" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
-                    </svg>
+                  <div className="aspect-video relative overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
                 </div>
                 <div className="p-6">

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-background-dark text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Section */}
           <div className="col-span-1 sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6 group">
@@ -79,6 +79,28 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Juridisch */}
+          <div className="text-left">
+            <h4 className="font-bold text-lg mb-6">Juridisch</h4>
+            <ul className="space-y-4 text-sm text-slate-400">
+              <li>
+                <Link href="/privacy" className="hover:text-accent transition-colors">
+                  Privacyverklaring
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookiebeleid" className="hover:text-accent transition-colors">
+                  Cookiebeleid
+                </Link>
+              </li>
+              <li>
+                <Link href="/voorwaarden" className="hover:text-accent transition-colors">
+                  Algemene Voorwaarden
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact */}
           <div className="text-left">
             <h4 className="font-bold text-lg mb-6">Contact</h4>
@@ -113,6 +135,15 @@ export default function Footer() {
               <span className="material-icons text-lg">code</span>
               GitHub
             </a>
+            <Link href="/privacy" className="hover:text-accent transition-colors">
+              Privacy
+            </Link>
+            <Link href="/cookiebeleid" className="hover:text-accent transition-colors">
+              Cookies
+            </Link>
+            <Link href="/voorwaarden" className="hover:text-accent transition-colors">
+              Voorwaarden
+            </Link>
           </div>
         </div>
       </div>

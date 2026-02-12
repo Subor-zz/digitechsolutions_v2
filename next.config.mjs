@@ -1,3 +1,8 @@
+import { validateMetaAtBuildTime } from './app/lib/meta-validation.js';
+
+// Run meta validation at build time
+validateMetaAtBuildTime();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {

@@ -1,7 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Footer from "../../components/footer";
 import { FaqSchema } from "../../components/faq-schema";
+import Breadcrumbs from "../../components/breadcrumbs";
+import { BlogRelatedArticles } from "../../components/blog-related-articles";
+import { RelatedServices } from "../../components/related-services";
+import { getCategoryByPostSlug } from "../../lib/blog-categories";
 
 // Blog post data
 const blogPosts: Record<
@@ -12,6 +17,7 @@ const blogPosts: Record<
     date: string;
     readTime: string;
     excerpt: string;
+    image: string;
     content: string;
     relatedService?: string;
     faqs?: { question: string; answer: string }[];
@@ -23,6 +29,7 @@ const blogPosts: Record<
     date: "2025-02-10",
     readTime: "5 min",
     excerpt: "Herken je situaties waarin een fractional CTO het verschil maakt: groeipijnen, technische schuld, of investeringsronde op komst?",
+    image: "/blog/fractional-cto-OG.jpg",
     content: `
 Een fractional CTO is een investering die snel kan terugverdienen, mits je hem op het juiste moment inzet. Maar wanneer is dat moment precies?
 
@@ -100,6 +107,7 @@ Begeleiding scale-up: retainer 3–12 maanden met roadmap, architectuuradvies en
     date: "2025-02-10",
     readTime: "4 min",
     excerpt: "Een vergelijking van de kosten en baten: wanneer is een fractional CTO financieel aantrekkelijker dan een fulltime CTO?",
+    image: "/blog/costs-OG.jpg",
     content: `
 ## De kosten van een fulltime CTO
 
@@ -154,6 +162,7 @@ Voor de meeste startups en MKB-bedrijven is een fractional CTO financieel aantre
     date: "2025-02-10",
     readTime: "6 min",
     excerpt: "Beide zijn parttime leiders, maar de focus en aanpak verschillen. Lees wat het beste bij jouw situatie past.",
+    image: "/blog/comparison-OG.jpg",
     content: `
 ## Wat is een fractional CTO?
 
@@ -208,6 +217,7 @@ Kies fractional CTO voor strategische groei, kies interim CTO voor operationele 
     date: "2025-02-10",
     readTime: "7 min",
     excerpt: "De 7 meest voorkomende strategische fouten die startups maken zonder technische leiding.",
+    image: "/blog/mistakes-OG.jpg",
     content: `
 ## Waarom fouten maken zonder technische leiding?
 
@@ -290,6 +300,7 @@ De kosten van het repareren van deze fouten zijn vaak 5-10x hoger dan het voorko
     title: "Tech roadmap voor startups: van MVP naar scale",
     category: "Fractional CTO",
     date: "2025-02-10",
+    image: "/blog/roadmap-OG.jpg",
     readTime: "8 min",
     excerpt: "Hoe bouw je een technische roadmap die meegroeit met je startup? Praktisch stappenplan.",
     content: `
@@ -424,6 +435,7 @@ Als je merkt dat je team bouwt zonder duidelijke richting, of als je roadmap een
     date: "2025-02-10",
     readTime: "6 min",
     excerpt: "Voorbereiden op een investeringsronde? Zo overtuig je investeerders met een solide technische positie.",
+    image: "/blog/due-diligence-OG.jpg",
     content: `
 ## Wat is technical due diligence?
 
@@ -546,6 +558,7 @@ Een fractional CTO kan helpen bij voorbereiding, rapportage en tijdens het due d
     date: "2025-02-10",
     readTime: "7 min",
     excerpt: "Een MVP is meer dan een mini-product. Lees wat je nodig hebt voor een succesvolle MVP ontwikkeling.",
+    image: "/blog/mvp-OG.jpg",
     content: `
 ## Wat is een MVP?
 
@@ -738,6 +751,7 @@ Als je een MVP wilt laten bouwen, plan een gratis intake om je idee te bespreken
     date: "2025-02-10",
     readTime: "5 min",
     excerpt: "Beide frameworks zijn populair, maar voor startups is er vaak een duidelijke winnaar.",
+    image: "/blog/react-nextjs-OG.jpg",
     content: `
 ## Wat zijn React en Next.js?
 
@@ -865,6 +879,7 @@ Als je twijfelt over welke stack voor jouw startup geschikt is, plan een gratis 
     date: "2025-02-10",
     readTime: "6 min",
     excerpt: "Hoe je technische schuld voorkomt tijdens snelle groei, zonder je development tempo te verliezen.",
+    image: "/blog/tech-debt-OG.jpg",
     content: `
 ## Wat is technische schuld?
 
@@ -1035,6 +1050,7 @@ Key takeaways:
     date: "2025-02-10",
     readTime: "5 min",
     excerpt: "De lastige vraag: refactor of rewrite? Een beslissingsboom voor technische leiders.",
+    image: "/blog/refactor-OG.jpg",
     content: `
 ## De eeuwige discussie: refactor vs rewrite
 
@@ -1210,6 +1226,7 @@ Key lessons:
     date: "2025-02-10",
     readTime: "5 min",
     excerpt: "Inzicht in de kwaliteit, veiligheid en performance van je applicatie. Wat houdt een audit precies in?",
+    image: "/blog/audit-OG.jpg",
     content: `
 ## Wat is een applicatie-audit?
 
@@ -1981,6 +1998,39 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const category = getCategoryByPostSlug(slug);
+
+  // Generate BlogPosting structured data
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": "https://www.digitechsolutions.nl/og-image.png",
+    "datePublished": `${post.date}T00:00:00+00:00`,
+    "dateModified": `${post.date}T00:00:00+00:00`,
+    "author": {
+      "@type": "Person",
+      "name": "Subor Cheung",
+      "url": "https://www.linkedin.com/in/subor-cheung-3baab21a/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digitech Solutions",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.digitechsolutions.nl/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.digitechsolutions.nl/blog/${slug}`
+    },
+    "articleSection": post.category,
+    "wordCount": post.content.split(/\s+/).length,
+    "readTime": post.readTime
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero/Navigation section - matching homepage structure */}
@@ -2051,9 +2101,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Article Hero Content */}
         <div className="relative z-10 container mx-auto px-6 pb-16 md:pb-20">
           <div className="max-w-3xl mx-auto">
-            <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
-              {post.category}
-            </span>
+            {category ? (
+              <Link
+                href={`/blog/${category.slug}`}
+                className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium mb-4 hover:bg-white/30 transition-colors"
+              >
+                {post.category}
+              </Link>
+            ) : (
+              <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
+                {post.category}
+              </span>
+            )}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               {post.title}
             </h1>
@@ -2071,6 +2130,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+      </section>
+
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-gray-50 border-b">
+        <div className="container mx-auto px-6">
+          <Breadcrumbs
+            blogTitle={post.title}
+            categoryName={category?.name}
+            categorySlug={category?.slug}
+          />
+        </div>
       </section>
 
       <article>
@@ -2232,6 +2302,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* FAQ Schema if available */}
       {post.faqs && post.faqs.length > 0 && <FaqSchema faqs={post.faqs} />}
+
+      {/* Related Services */}
+      <RelatedServices blogSlug={slug} />
+
+      {/* Related Articles */}
+      <BlogRelatedArticles currentSlug={slug} />
+
+      {/* BlogPosting Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
 
       <Footer />
     </div>
