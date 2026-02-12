@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "ZZP Applicatiebeheerder | Digitech Solutions",
-  description: "Ervaren ZZP applicatiebeheerder voor stabiele applicaties. Incident- en change management, monitoring, releases en gebruikersbeheer.",
+  description: "Ervaren ZZP applicatiebeheerder voor stabiele bedrijfsapplicaties. Inzetbaar voor interim beheer, incidentafhandeling en optimalisatie.",
   openGraph: {
     title: "ZZP Applicatiebeheerder | Digitech Solutions",
-    description: "Ervaren ZZP applicatiebeheerder voor stabiele applicaties. Incident- en change management, monitoring, releases en gebruikersbeheer.",
+    description: "Ervaren ZZP applicatiebeheerder voor stabiele bedrijfsapplicaties. Inzetbaar voor interim beheer, incidentafhandeling en optimalisatie.",
     type: "website",
     url: "https://digitechsolutions.nl/diensten/zzp-applicatiebeheerder"
   },
