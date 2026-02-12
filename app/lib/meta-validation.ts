@@ -70,27 +70,27 @@ export const ROUTE_META_REGISTRY: RouteMeta[] = [
 
   // Blog categories
   {
-    path: "/blog/fractional-cto",
+    path: "/blog/c/fractional-cto",
     title: "Fractional CTO | Strategisch Technisch Leiderschap voor Startups",
     description: "Lees hoe een fractional CTO jouw startup helpt met technische roadmap, architectuur en teamontwikkeling. Senior expertise zonder fulltime kosten.",
   },
   {
-    path: "/blog/it-consultancy-audits",
+    path: "/blog/c/it-consultancy-audits",
     title: "IT-Consultancy & Applicatie Audits | Kwaliteit & Security",
     description: "Inzicht in de kwaliteit, veiligheid en performance van je applicaties. Ontdek wat een audit oplevert en welke verbeteringen mogelijk zijn.",
   },
   {
-    path: "/blog/full-stack-mvp",
+    path: "/blog/c/full-stack-mvp",
     title: "Full-Stack & MVP Development | Software Bouwen voor Startups",
     description: "Gids voor MVP development, technologiekeuzes en technische schuld. Lees hoe je schaalbare software bouwt met React en Next.js.",
   },
   {
-    path: "/blog/performance-security",
+    path: "/blog/c/performance-security",
     title: "Performance & Security | Snelle en Veilige Webapplicaties",
     description: "Herken en los performanceproblemen en security-risico's op. Praktische tips voor het beveiligen en optimaliseren van webapplicaties.",
   },
   {
-    path: "/blog/strategie-beslissingen",
+    path: "/blog/c/strategie-beslissingen",
     title: "Technische Strategie & Build vs Buy Beslissingen",
     description: "Framework voor technische beslissingen: build vs buy, technologiekeuzes en strategische planning. Maak informed keuzes voor je tech stack.",
   },

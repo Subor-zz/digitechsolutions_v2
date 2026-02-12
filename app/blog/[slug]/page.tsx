@@ -1403,6 +1403,7 @@ Als je overweegt een audit, plan een gratis intake om:
     date: "2025-02-10",
     readTime: "6 min",
     excerpt: "Hoe signaleer je performance issues en welke stappen onderneem je?",
+    image: "/blog/performance-OG.jpg",
     content: `
 ## Wat is performance?
 
@@ -1586,6 +1587,7 @@ Als je performance problemen vermoedt, plan een gratis intake om:
     date: "2025-02-10",
     readTime: "7 min",
     excerpt: "De meest voorkomende veiligheidslekken en hoe je ze voorkomt.",
+    image: "/blog/security-OG.jpg",
     content: `
 ## Waarom security belangrijk is
 
@@ -1803,6 +1805,7 @@ Plan een gratis intake om:
     date: "2025-02-10",
     readTime: "6 min",
     excerpt: "Software bouwen of kopen? Een beslissingsframework voor IT-managers en founders.",
+    image: "/blog/build-buy-OG.jpg",
     content: `
 ## De eeuwige vraag: build of buy?
 
@@ -2103,7 +2106,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="max-w-3xl mx-auto">
             {category ? (
               <Link
-                href={`/blog/${category.slug}`}
+                href={`/blog/c/${category.slug}`}
                 className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium mb-4 hover:bg-white/30 transition-colors"
               >
                 {post.category}
@@ -2140,6 +2143,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             categoryName={category?.name}
             categorySlug={category?.slug}
           />
+        </div>
+      </section>
+
+      {/* Featured Image */}
+      <section className="container mx-auto px-6 -mt-2">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
+          </div>
         </div>
       </section>
 

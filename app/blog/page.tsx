@@ -175,7 +175,7 @@ export default function BlogPage() {
             {Object.values(BLOG_CATEGORIES).map((cat) => (
               <Link
                 key={cat.id}
-                href={`/blog/${cat.slug}`}
+                href={`/blog/c/${cat.slug}`}
                 className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-700 hover:bg-gray-100 border"
               >
                 {cat.name}

@@ -78,7 +78,7 @@ export default function CookiePage() {
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
               <li>Google Analytics (indien geactiveerd)</li>
               <li>Aantal bezoekers en populaire pagina&apos;s</li>
-              <li>Gebruikersgedrag en -patronen</li>
+              <li>Gebruikersgedrag en patronen</li>
             </ul>
 
             <h3 className="text-xl font-bold text-deepBlue mt-6 mb-3">Functionele cookies</h3>
@@ -101,10 +101,10 @@ export default function CookiePage() {
               In de meeste browsers kun je cookies beheren via:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li><strong>Chrome:</strong> Instellingen > Privacy en beveiliging > Cookies en andere sitegegevens</li>
-              <li><strong>Firefox:</strong> Instellingen > Privacy & beveiliging</li>
-              <li><strong>Safari:</strong> Voorkeuren > Privacy</li>
-              <li><strong>Edge:</strong> Instellingen > Cookies en machtigingen</li>
+              <li><strong>Chrome:</strong> Instellingen &gt; Privacy en beveiliging &gt; Cookies en andere sitegegevens</li>
+              <li><strong>Firefox:</strong> Instellingen &gt; Privacy &amp; beveiliging</li>
+              <li><strong>Safari:</strong> Voorkeuren &gt; Privacy</li>
+              <li><strong>Edge:</strong> Instellingen &gt; Cookies en machtigingen</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-deepBlue mt-8 mb-4">4. Derde partijen</h2>

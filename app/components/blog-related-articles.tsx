@@ -160,7 +160,7 @@ export function BlogRelatedArticles({ currentSlug, className = '', maxArticles =
               Gerelateerde artikelen
             </h2>
             <Link
-              href={`/blog/${category.slug}`}
+              href={`/blog/c/${category.slug}`}
               className="text-primary hover:text-midBlue font-medium text-sm flex items-center gap-1"
             >
               Bekijk alles

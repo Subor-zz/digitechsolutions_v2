@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Navigation from "../../components/navigation";
-import Footer from "../../components/footer";
-import Breadcrumbs from "../../components/breadcrumbs";
-import { BLOG_CATEGORIES, getCategoryBySlug, BLOG_POST_CATEGORIES } from "../../lib/blog-categories";
+import Navigation from "../../../components/navigation";
+import Footer from "../../../components/footer";
+import Breadcrumbs from "../../../components/breadcrumbs";
+import { BLOG_CATEGORIES, getCategoryBySlug, BLOG_POST_CATEGORIES } from "../../../lib/blog-categories";
 
 // Blog post data (shared with main blog page)
 const blogPosts: Record<
@@ -227,7 +227,7 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ c
   // Generate ItemList schema
   const itemListSchema = generateItemListSchema({
     categoryName: categoryData.name,
-    categoryUrl: `https://www.digitechsolutions.nl/blog/${categoryData.slug}`,
+    categoryUrl: `https://www.digitechsolutions.nl/blog/c/${categoryData.slug}`,
     posts: categoryPosts.map((post) => ({
       title: post.title,
       url: `/blog/${post.slug}`,
@@ -250,7 +250,7 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ c
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter mb-6 text-balance">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter mb-6">
               {categoryData.title}
             </h1>
             <p className="text-lg lg:text-xl text-blue-50/90 font-medium leading-relaxed mb-8 max-w-2xl mx-auto">

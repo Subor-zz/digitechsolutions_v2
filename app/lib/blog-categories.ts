@@ -135,5 +135,5 @@ export function getAllCategories(): BlogCategory[] {
 
 // Generate category page URL
 export function getCategoryUrl(slug: string): string {
-  return `/blog/${slug}`;
+  return `/blog/c/${slug}`;
 }
