@@ -181,14 +181,18 @@ export default function TechnicalStrategyPage() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 md:py-20 hero-gradient">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-[120px] animate-blob"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-cyan-300/10 rounded-full blur-[150px] animate-blob animation-delay-2000"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal>
             <header className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Wat houdt IT Consultancy in?
               </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
+              <p className="text-blue-100/80 max-w-2xl mx-auto">
                 Geen theoretische adviezen, maar praktische strategie die aansluit bij je team en groeifase.
               </p>
             </header>
@@ -197,17 +201,18 @@ export default function TechnicalStrategyPage() {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600}>
-                <div className="bg-slate-50 rounded-xl p-6 hover:shadow-md transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <span className="material-icons text-primary text-2xl">{service.icon}</span>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+                    <span className="material-icons text-white text-2xl">{service.icon}</span>
                   </div>
-                  <h3 className="font-bold text-lg text-slate-900 mb-2">{service.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{service.description}</p>
+                  <h3 className="font-bold text-lg text-white mb-2">{service.title}</h3>
+                  <p className="text-sm text-blue-50/90 leading-relaxed">{service.description}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Wanneer nodig */}
