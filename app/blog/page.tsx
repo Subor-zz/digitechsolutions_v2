@@ -8,6 +8,15 @@ import { BLOG_CATEGORIES, BLOG_POST_CATEGORIES } from "../lib/blog-categories";
 // Blog post data - this will be populated with actual posts
 const blogPosts = [
   {
+    slug: "van-ad-hoc-helpdesk-naar-itil-support",
+    title: "Van ad-hoc helpdesk naar ITIL support: een stappenplan",
+    excerpt: "Stap voor stap van reactieve helpdesk naar professionele ITSM organisatie. Een praktisch stappenplan voor MKB en scale-ups.",
+    category: "IT-Consultancy & Audits",
+    date: "2025-02-13",
+    readTime: "8 min",
+    image: "/blog/itsm-support-OG.jpg",
+  },
+  {
     slug: "verschil-functioneel-applicatiebeheer",
     title: "Verschil tussen functioneel en applicatiebeheer",
     excerpt: "Functioneel beheer vs applicatiebeheer: wat is het verschil en wanneer heb je welke specialist nodig? Een complete vergelijking.",
