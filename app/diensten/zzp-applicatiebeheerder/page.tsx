@@ -1,10 +1,12 @@
 'use client';
 
 import { useScrollReveal } from '../../components/scroll-reveal';
-import FAQSection, { FAQSchema } from '../../components/faq-section';
+import FAQSection from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
+import { JsonLd } from '../../components/JsonLd';
+import { createServicePageSchema, type FAQItem } from '../../lib/schema';
 
 function ScrollReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number; }) {
   const [ref, isIntersecting] = useScrollReveal();
@@ -116,7 +118,7 @@ const cases = [
 ];
 
 // FAQ
-const faqs = [
+const faqs: FAQItem[] = [
   {
     question: "Wat kost een ZZP applicatiebeheerder per uur?",
     answer: "Mijn uurtarief ligt tussen €85 en €125 exclusief BTW, afhankelijk van complexiteit, duur van de opdracht en het senioriteitsniveau dat nodig is. Voor langere opdrachten gelden gereduceerde tarieven. Vraag een tariefindicatie aan voor een vaste all-in prijs zonder verrassingen."
@@ -151,126 +153,21 @@ const faqs = [
   }
 ];
 
-// Structured Data - Combined @graph schema
-function StructuredData() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder#breadcrumbs',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'name': 'Home',
-            'item': 'https://www.digitechsolutions.nl/'
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'name': 'Diensten',
-            'item': 'https://www.digitechsolutions.nl/diensten/'
-          },
-          {
-            '@type': 'ListItem',
-            'position': 3,
-            'name': 'ZZP Applicatiebeheerder',
-            'item': 'https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder'
-          }
-        ]
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder#service',
-        'name': 'ZZP Applicatiebeheerder',
-        'serviceType': 'Applicatiebeheer (freelance/ZZP)',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'Digitech Solutions',
-          'url': 'https://www.digitechsolutions.nl/'
-        },
-        'areaServed': [
-          { '@type': 'Country', 'name': 'Nederland' }
-        ],
-        'availableChannel': [
-          {
-            '@type': 'ServiceChannel',
-            'serviceUrl': 'https://www.digitechsolutions.nl/contact'
-          }
-        ],
-        'url': 'https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder',
-        'description': 'Inhuur van een ZZP applicatiebeheerder voor stabiele systemen, incident- en probleemoplossing, change- en release ondersteuning en procesverbetering.'
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder#faq',
-        'mainEntity': [
-          {
-            '@type': 'Question',
-            'name': 'Wat kost een ZZP applicatiebeheerder per uur?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Mijn uurtarief ligt tussen €85 en €125 exclusief BTW, afhankelijk van complexiteit, duur van de opdracht en het senioriteitsniveau dat nodig is. Voor langere opdrachten gelden gereduceerde tarieven.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': 'Hoe snel kun je starten als interim applicatiebeheerder?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Ik ben doorgaans binnen 48 uur na opdrachtbevestiging startklaar. Na een korte intake van 1-2 uur om de applicaties en werkomgeving te leren kennen, ga ik direct aan de slag.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': 'Wat is het verschil tussen een ZZP applicatiebeheerder en een vaste medewerker?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Als ZZP\'er betaal je alleen voor geleverde uren — geen overhead voor pensioenen, vakantiedagen, ziektekosten of wervingskosten. Dit scheelt gemiddeld 15-25% ten opzichte van een fulltime medewerker in loondienst.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': 'Welke applicaties kun je beheren?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Ik heb brede ervaring met Microsoft 365 (Exchange, SharePoint, Teams), Salesforce, SAP, Oracle NetSuite, AFAS, Exact, en diverse SaaS-applicaties. Voor specifieke systemen kan ik snel inwerken als documentatie aanwezig is.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': 'Hoe zit het met kennisoverdracht als je vertrekt?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Kennisoverdracht is standaard onderdeel van mijn dienstverlening. Alle procedures, configuraties en workarounds leg ik vast in runbooks en documentatie. Bij langere opdrachten train ik interne medewerkers zodat zij het beheer kunnen overnemen.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': 'Wat is de minimale inzetduur?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Voor interim opdrachten geldt een minimale inzet van 16 uur per week. Voor projectmatige opdrachten zoals migraties is de duur in overleg. Ik werk met een opzegtermijn van 1 week, zodat je flexibel blijft.'
-            }
-          }
-        ]
-      }
-    ]
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
+// Schema using factory
+const serviceSchema = createServicePageSchema({
+  serviceName: "ZZP Applicatiebeheerder",
+  serviceDescription: "Inhuur van een ZZP applicatiebeheerder voor stabiele systemen, incident- en probleemoplossing, change- en release ondersteuning en procesverbetering.",
+  serviceUrl: "https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder",
+  serviceSlug: "zzp-applicatiebeheerder",
+  faqs: faqs.slice(0, 6), // Use first 6 for schema
+  hourlyRateMin: 85,
+  hourlyRateMax: 125,
+});
 
 export default function ZZPApplicatiebeheerderPage() {
   return (
     <div className="min-h-screen bg-white">
-      <StructuredData />
+      <JsonLd data={serviceSchema} />
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 lg:pt-48 lg:pb-28 overflow-hidden hero-gradient">

@@ -1,10 +1,12 @@
 'use client';
 
 import { useScrollReveal } from '../../components/scroll-reveal';
-import FAQSection, { FAQSchema } from '../../components/faq-section';
+import FAQSection from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
+import { JsonLd } from '../../components/JsonLd';
+import { createServicePageSchema, type FAQItem } from '../../lib/schema';
 
 function ScrollReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number; }) {
   const [ref, isIntersecting] = useScrollReveal();
@@ -32,115 +34,6 @@ const credentials = [
   { icon: "support_agent", text: "Ervaring bij MKB en scale-ups" },
   { icon: "location_on", text: "Direct inzetbaar vanuit Breda, NL" }
 ];
-
-// Structured Data - Combined @graph schema
-function StructuredDataSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.digitechsolutions.nl/diensten/support-itsm#breadcrumbs",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.digitechsolutions.nl/" },
-          { "@type": "ListItem", "position": 2, "name": "Diensten", "item": "https://www.digitechsolutions.nl/diensten/" },
-          { "@type": "ListItem", "position": 3, "name": "Support & ITSM", "item": "https://www.digitechsolutions.nl/diensten/support-itsm" }
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.digitechsolutions.nl/diensten/support-itsm#service",
-        "name": "Support & ITSM",
-        "serviceType": "IT support en IT Service Management (ITSM)",
-        "provider": {
-          "@type": "Organization",
-          "name": "Digitech Solutions",
-          "url": "https://www.digitechsolutions.nl/"
-        },
-        "areaServed": [
-          { "@type": "Country", "name": "Nederland" }
-        ],
-        "availableChannel": [
-          {
-            "@type": "ServiceChannel",
-            "serviceUrl": "https://www.digitechsolutions.nl/contact"
-          }
-        ],
-        "url": "https://www.digitechsolutions.nl/diensten/support-itsm",
-        "description": "IT support en ITSM ondersteuning met focus op incident-, problem- en change management, SLA-afspraken, procesoptimalisatie en voorspelbare service."
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.digitechsolutions.nl/diensten/support-itsm#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Wat kost een ITSM support specialist inhuren?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "De investering voor een ITSM support specialist varieert van €2.500 tot €6.000+ per maand, afhankelijk van supportniveaus (1e/2e/3e lijn), dekkingsuren en complexiteit. Voor een complete servicedesk starten MKB-organisaties gemiddeld vanaf €2.500-€4.000 per maand inclusief incident management, SLA-rapportages en continue verbetering. Scale-ups met 24/7 support behoeften investeren doorgaans €5.000-€6.000+ per maand."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wat is ITSM?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "ITSM (IT Service Management) is de manier waarop IT-diensten worden geleverd en verbeterd via processen zoals incident-, problem- en change management, vaak gebaseerd op ITIL. Het professionaliseert uw supportorganisatie met gestructureerde processen, SLA's en KPI's."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wanneer is ITSM support relevant?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Wanneer supportdruk toeneemt, responstijden te lang zijn, er onvoldoende grip is op incidenten of wanneer SLA's, prioritering en procesverbetering nodig zijn. Ook wanneer incidenten blijven terugkomen, developers worden afgeleid door supportvragen, of kennis verdwijnt bij personeelsverloop."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Werken jullie met ITIL?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja, als ITIL 4 gecertificeerde specialist richt ik ITSM werkzaamheden in volgens ITIL-principes, afgestemd op de maturity en tooling van de organisatie. Dit omvat Incident Management, Problem Management, Change Management en SLA Management."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Welke ITSM tools gebruikt u?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Dit is afhankelijk van de omgeving. Veelvoorkomende ITSM tools zijn Jira Service Management (ideaal voor development teams), ServiceNow (enterprise 100+ FTE), TOPdesk (Nederlands MKB, gebruiksvriendelijk), Freshservice (schaalbaar met self-service), en Zendesk (customer support focus). Ik adviseer objectief zonder vendor lock-in."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Kunnen jullie helpen met SLA's en processen?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja, ondersteuning kan bestaan uit SLA-inrichting, rapportages, prioritering, escalatiepaden en procesoptimalisatie. Ik lever KPI-dashboards met MTTR, FCR, SLA compliance en CSAT scores voor datagedreven verbetering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hoe worden tarieven bepaald?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Tarieven hangen af van de scope (supportniveau 1e/2e/3e lijn, tooling, procesverantwoordelijkheid), dekkingsuren (business hours vs 24/7) en benodigde senioriteit. MKB start vanaf €2.500/maand, compleet ITSM vanaf €4.000/maand. Na intake kan een specifieke indicatie worden gegeven."
-            }
-          }
-        ]
-      }
-    ]
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
 
 // Wanneer ITSM nodig is - Signalen
 const itsmSignals = [
@@ -344,7 +237,7 @@ const blogSuggestions = [
 ];
 
 // Conversion Layer - FAQ (min 6, geschikt voor structured data)
-const faqs = [
+const faqs: FAQItem[] = [
   {
     question: "Wat kost een ITSM support specialist inhuren?",
     answer: "De investering voor een ITSM support specialist varieert van €2.500 tot €6.000+ per maand, afhankelijk van supportniveaus (1e/2e/3e lijn), dekkingsuren en complexiteit. Voor een complete servicedesk starten MKB-organisaties gemiddeld vanaf €2.500-€4.000 per maand inclusief incident management, SLA-rapportages en continue verbetering. Scale-ups met 24/7 support behoeften investeren doorgaans €5.000-€6.000+ per maand. Vraag een vrijblijvende scan aan voor een specifiek advies op maat."
@@ -379,11 +272,19 @@ const faqs = [
   }
 ];
 
+// Schema using factory
+const serviceSchema = createServicePageSchema({
+  serviceName: "ITSM Support Specialist",
+  serviceDescription: "IT support en ITSM ondersteuning met focus op incident-, problem- en change management, SLA-afspraken, procesoptimalisatie en voorspelbare service.",
+  serviceUrl: "https://www.digitechsolutions.nl/diensten/support-itsm",
+  serviceSlug: "support-itsm",
+  faqs: faqs,
+});
+
 export default function SupportITSMPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Structured Data */}
-      <StructuredDataSchema />
+      <JsonLd data={serviceSchema} />
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 lg:pt-48 lg:pb-40 overflow-hidden hero-gradient">
@@ -741,7 +642,6 @@ export default function SupportITSMPage() {
 
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
-      <FAQSchema faqs={faqs} />
 
       {/* Internal Links - Gerelateerde diensten */}
       <section className="py-16 md:py-20 bg-slate-50">

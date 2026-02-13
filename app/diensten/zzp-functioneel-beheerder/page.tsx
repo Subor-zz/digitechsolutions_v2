@@ -1,10 +1,12 @@
 'use client';
 
 import { useScrollReveal } from '../../components/scroll-reveal';
-import FAQSection, { FAQSchema } from '../../components/faq-section';
+import FAQSection from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
+import { JsonLd } from '../../components/JsonLd';
+import { createServicePageSchema, type FAQItem } from '../../lib/schema';
 
 function ScrollReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number; }) {
   const [ref, isIntersecting] = useScrollReveal();
@@ -32,107 +34,6 @@ const credentials = [
   { icon: "fact_check", text: "100+ UAT trajecten begeleid" },
   { icon: "location_on", text: "Direct inzetbaar vanuit Breda, NL" }
 ];
-
-// Structured Data Component - Combined @graph schema
-function StructuredDataSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder#breadcrumbs",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.digitechsolutions.nl/" },
-          { "@type": "ListItem", "position": 2, "name": "Diensten", "item": "https://www.digitechsolutions.nl/diensten/" },
-          { "@type": "ListItem", "position": 3, "name": "ZZP Functioneel Beheerder", "item": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder" }
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder#service",
-        "name": "ZZP Functioneel Beheerder",
-        "serviceType": "Functioneel beheer (freelance/ZZP)",
-        "provider": {
-          "@type": "Organization",
-          "name": "Digitech Solutions",
-          "url": "https://www.digitechsolutions.nl/"
-        },
-        "areaServed": [
-          { "@type": "Country", "name": "Nederland" }
-        ],
-        "availableChannel": [
-          {
-            "@type": "ServiceChannel",
-            "serviceUrl": "https://www.digitechsolutions.nl/contact"
-          }
-        ],
-        "url": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder",
-        "description": "Inhuur van een ZZP functioneel beheerder die IT en business verbindt, processen optimaliseert, wijzigingen begeleidt en de functionele werking van applicaties bewaakt."
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Wat doet een functioneel beheerder?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Een functioneel beheerder vertaalt businessbehoeften naar applicatie-inrichting, beheert configuraties, begeleidt wijzigingen en ondersteunt gebruikers om processen soepel te laten verlopen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wat is het verschil tussen functioneel beheer en applicatiebeheer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Functioneel beheer richt zich op processen, inrichting en gebruikersbehoeften; applicatiebeheer richt zich vaker op technische stabiliteit, incidenten, monitoring en releases binnen het applicatielandschap."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wanneer huur je een ZZP functioneel beheerder in?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bij groei, projectimplementaties, tijdelijk capaciteitsgebrek, migraties of wanneer adoptie, procesoptimalisatie en wijzigingsbegeleiding nodig zijn."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Doet een functioneel beheerder ook test- en acceptatiebegeleiding?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja, afhankelijk van de opdracht kan ondersteuning worden geboden bij UAT (user acceptance testing), acceptatiecriteria en release-communicatie richting gebruikers."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is remote werken mogelijk?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja, remote of hybride inzet is mogelijk, afhankelijk van de omgeving en afspraken met stakeholders."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hoe worden tarieven bepaald?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Tarieven hangen af van ervaring, domeinkennis, complexiteit van het systeem en de scope. Na intake is een indicatie mogelijk."
-            }
-          }
-        ]
-      }
-    ]
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
 
 // Praktijkvoorbeelden voor authority layer
 const praktijkvoorbeelden = [
@@ -191,7 +92,7 @@ const werkzaamhedenConcreet = [
   ]}
 ];
 
-const faqs = [
+const faqs: FAQItem[] = [
   {
     question: "Wat kost een ZZP functioneel beheerder per uur?",
     answer: "Tarieven start vanaf €95 per uur (excl. BTW) en zijn afhankelijk van inzetduur, complexiteit en jouw sector. Voor langere opdrachten gelden gereduceerde dagtarieven. Vraag een vrijblijvende offerte op maat aan."
@@ -232,11 +133,21 @@ const groeiOmgevingen = [
   { fase: "Maand 2-3", wat: "Processen optimaliseren", duur: "Efficiency meten en verbeteren" }
 ];
 
+// Schema using factory
+const serviceSchema = createServicePageSchema({
+  serviceName: "ZZP Functioneel Beheerder",
+  serviceDescription: "Inhuur van een ZZP functioneel beheerder die IT en business verbindt, processen optimaliseert, wijzigingen begeleidt en de functionele werking van applicaties bewaakt.",
+  serviceUrl: "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder",
+  serviceSlug: "zzp-functioneel-beheerder",
+  faqs: faqs.slice(0, 6),
+  hourlyRateMin: 95,
+  hourlyRateMax: 125,
+});
+
 export default function ZZPFunctioneelBeheerderPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Structured Data - Combined @graph schema */}
-      <StructuredDataSchema />
+      <JsonLd data={serviceSchema} />
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-24 overflow-hidden hero-gradient">
@@ -948,7 +859,6 @@ export default function ZZPFunctioneelBeheerderPage() {
       </section>
 
       <FAQSection faqs={faqs} />
-      <FAQSchema faqs={faqs} />
 
       {/* Interne Links - Gerelateerde diensten */}
       <section className="py-16 md:py-20 bg-slate-50">
