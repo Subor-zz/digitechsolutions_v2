@@ -330,6 +330,10 @@ const relatedServices = [
 // Blog suggesties voor interne links
 const blogSuggestions = [
   {
+    title: "Van ad-hoc helpdesk naar ITIL support",
+    url: "/blog/van-ad-hoc-helpdesk-naar-itil-support"
+  },
+  {
     title: "Technische schuld voorkomen",
     url: "/blog/technische-schuld-voorkomen"
   },
