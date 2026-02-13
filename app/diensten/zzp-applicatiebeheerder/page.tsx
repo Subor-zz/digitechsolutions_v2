@@ -13,6 +13,27 @@ function ScrollReveal({ children, className = '', delay = 0 }: { children: React
   return <div ref={ref} className={`${baseClass} ${className}`}>{children}</div>;
 }
 
+// Table of Contents - Anchor navigation
+const tableOfContents = [
+  { id: "wat-doe-ik", label: "Wat doet een ZZP applicatiebeheerder?" },
+  { id: "problemen", label: "Herken je dit?" },
+  { id: "wanneer-nodig", label: "Wanneer heb je mij nodig?" },
+  { id: "voordelen", label: "Voordelen ZZP vs vast" },
+  { id: "werkwijze", label: "Werkzaamheden" },
+  { id: "tools", label: "Tools & Expertise" },
+  { id: "cases", label: "Praktijkcases" },
+  { id: "faq", label: "Veelgestelde vragen" },
+  { id: "contact", label: "Contact" }
+];
+
+// Credentials & Social Proof
+const credentials = [
+  { icon: "workspace_premium", text: "15+ jaar ervaring in IT en applicatiebeheer" },
+  { icon: "verified", text: "ITIL 4 gecertificeerd" },
+  { icon: "business", text: "Ervaring bij financiële instellingen en MKB" },
+  { icon: "location_on", text: "Direct inzetbaar vanuit Breda, NL" }
+];
+
 // Probleem-sectie data voor herkenning en pijnlijken
 const problems = [
   {
@@ -295,8 +316,98 @@ export default function ZZPApplicatiebeheerderPage() {
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-white border-b border-slate-200 py-3" aria-label="Breadcrumb">
+        <div className="container mx-auto px-6">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link href="/" className="text-slate-500 hover:text-accent transition-colors">Home</Link></li>
+            <li><span className="text-slate-400">/</span></li>
+            <li><Link href="/diensten" className="text-slate-500 hover:text-accent transition-colors">Diensten</Link></li>
+            <li><span className="text-slate-400">/</span></li>
+            <li className="text-slate-900 font-medium">ZZP Applicatiebeheerder</li>
+          </ol>
+        </div>
+      </nav>
+
+      {/* Table of Contents - Desktop Sticky */}
+      <div className="hidden lg:block bg-slate-50 border-b border-slate-200 sticky top-0 z-40">
+        <div className="container mx-auto px-6 py-3">
+          <nav className="flex items-center gap-1 text-sm overflow-x-auto" aria-label="Inhoudsopgave">
+            <span className="text-slate-500 font-medium mr-2 flex-shrink-0">Op deze pagina:</span>
+            {tableOfContents.map((item, index) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="px-3 py-1.5 rounded-full text-slate-600 hover:bg-accent/10 hover:text-accent transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Credentials Bar - E-E-A-T */}
+      <section className="py-8 bg-white border-b border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {credentials.map((cred, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <span className="material-icons text-accent text-xl">{cred.icon}</span>
+                <span className="text-sm text-slate-700">{cred.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prose Block - What does a ZZP Applicatiebeheerder do? */}
+      <section id="wat-doe-ik" className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                Wat doet een ZZP applicatiebeheerder?
+              </h2>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Als <strong>ZZP applicatiebeheerder</strong> ben ik verantwoordelijk voor het beheer, onderhoud en de optimalisatie van bedrijfskritische applicaties binnen jouw organisatie. Waar een functioneel beheerder zich richt op de afstemming tussen business en IT, focus ik mij op de technische kant: configuratie, monitoring, performance en het waarborgen van continuïteit. Of het nu gaat om Microsoft 365, Salesforce, SAP of maatwerkapplicaties — ik zorg ervoor dat je systemen betrouwbaar draaien.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Steeds meer MKB-bedrijven en scale-ups kiezen ervoor om een <strong>applicatiebeheerder in te huren</strong> in plaats van een vaste medewerker in loondienst. Waarom? Omdat <strong>interim applicatiebeheer</strong> flexibiliteit biedt zonder de overhead van werkgeversverplichtingen. Je betaalt alleen voor de uren die ik maak, zonder pensioenen, vakantiedagen of ziektekosten. Dit maakt een <strong>freelance applicatiebeheerder</strong> vaak 15-25% kostenbesparend ten opzichte van een fulltime medewerker.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Daarnaast breng ik ervaringskennis mee van meerdere organisaties en projecten. Waar een interne medewerker soms vastzit in oude patronen, kijk ik met een frisse blik naar je processen en tooling. Ik werk volgens <strong>ITIL-gecertificeerde methodieken</strong> voor incident-, problem- en changemanagement, en documenteer alles in runbooks en knowledge bases. Zo blijft kennis behouden, ook als ik vertrek.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Of je nu <strong>applicatiebeheer wilt uitbesteden</strong> omdat je huidige beheerder vertrekt, of juist behoefte hebt aan extra capaciteit voor een migratie of implementatie — als <strong>ZZP applicatiebeheerder voor het MKB</strong> schaal ik mee met jouw behoeften. Van 16 uur per week tot fulltime projectinzet, alles is mogelijk. Mijn <strong>ZZP applicatiebeheerder tarief</strong> ligt tussen €85 en €125 per uur, afhankelijk van complexiteit en duur van de opdracht. Vraag een vrijblijvende offerte aan voor een vaste all-in prijs.
+              </p>
+            </ScrollReveal>
+
+            {/* About the specialist - E-E-A-T element */}
+            <ScrollReveal>
+              <div className="mt-10 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <span className="material-icons text-accent text-3xl">person</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 mb-1">Over de specialist</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                      Met meer dan 15 jaar ervaring in IT en applicatiebeheer heb ik gewerkt bij financiële instellingen, logistieke bedrijven en SaaS scale-ups. Ik ben ITIL 4 gecertificeerd en gespecialiseerd in Microsoft 365, Salesforce en enterprise applicaties.
+                    </p>
+                    <Link href="/over-mij" className="text-accent hover:underline text-sm font-medium">
+                      Meer over mijn achtergrond en ervaring →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Probleem & Oplossing Sectie */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section id="problemen" className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
@@ -353,7 +464,7 @@ export default function ZZPApplicatiebeheerderPage() {
       </section>
 
       {/* Wanneer ZZP Applicatiebeheerder inhuren? */}
-      <section className="py-16 md:py-20 bg-white">
+      <section id="wanneer-nodig" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
@@ -387,7 +498,7 @@ export default function ZZPApplicatiebeheerderPage() {
       </section>
 
       {/* Voordelen ZZP */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section id="voordelen" className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
@@ -456,7 +567,7 @@ export default function ZZPApplicatiebeheerderPage() {
       </section>
 
       {/* Tools & Expertise */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section id="tools" className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
@@ -496,7 +607,7 @@ export default function ZZPApplicatiebeheerderPage() {
       </section>
 
       {/* Praktijkcases */}
-      <section className="py-16 md:py-20 bg-white">
+      <section id="cases" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
@@ -534,7 +645,7 @@ export default function ZZPApplicatiebeheerderPage() {
       </section>
 
       {/* FAQ Sectie */}
-      <section className="py-16 md:py-20 bg-white">
+      <section id="faq" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
@@ -549,6 +660,56 @@ export default function ZZPApplicatiebeheerderPage() {
 
           <div className="max-w-4xl mx-auto">
             <FAQSection faqs={faqs} />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Schema Output */}
+      <FAQSchema faqs={faqs} />
+
+      {/* Internal Links - Gerelateerde diensten */}
+      <section className="py-16 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Gerelateerde diensten
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Applicatiebeheer werkt nog beter in combinatie met deze expertisegebieden.
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+            <ScrollReveal delay={100}>
+              <Link href="/diensten/zzp-functioneel-beheerder" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-accent text-3xl mb-2">arrow_forward</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Functioneel Beheerder</h3>
+                <p className="text-sm text-slate-600">De brug tussen business en IT: requirements, wijzigingsbeheer, UAT-coördinatie en processturing.</p>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <Link href="/diensten/support-itsm" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-accent text-3xl mb-2">arrow_forward</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT Support & ITSM</h3>
+                <p className="text-sm text-slate-600">Professionele IT support en ITSM diensten volgens ITIL 4. Incident, problem en change management.</p>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <Link href="/diensten/it-consultancy" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-accent text-3xl mb-2">arrow_forward</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT Consultancy & Audits</h3>
+                <p className="text-sm text-slate-600">Onafhankelijke analyse van uw applicaties, architectuur en IT-processen.</p>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={400}>
+              <Link href="/over-mij" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-accent text-3xl mb-2">arrow_forward</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">Over mij</h3>
+                <p className="text-sm text-slate-600">Meer over mijn achtergrond, certificeringen en 15+ jaar ervaring in IT.</p>
+              </Link>
+            </ScrollReveal>
           </div>
         </div>
       </section>

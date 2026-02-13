@@ -13,6 +13,26 @@ function ScrollReveal({ children, className = '', delay = 0 }: { children: React
   return <div ref={ref} className={`${baseClass} ${className}`}>{children}</div>;
 }
 
+// Table of Contents - Anchor navigation
+const tableOfContents = [
+  { id: "wat-doe-ik", label: "Wat doe ik?" },
+  { id: "problemen", label: "Problemen die ik oplos" },
+  { id: "werkzaamheden", label: "Concrete werkzaamheden" },
+  { id: "cases", label: "Referenties" },
+  { id: "expertise", label: "Expertise & Certificaten" },
+  { id: "aanpak", label: "Mijn aanpak" },
+  { id: "faq", label: "Veelgestelde vragen" },
+  { id: "contact", label: "Contact" }
+];
+
+// Credentials & Social Proof
+const credentials = [
+  { icon: "workspace_premium", text: "15+ jaar ervaring in IT en functioneel beheer" },
+  { icon: "verified", text: "BiSL 2 & ITIL 4 gecertificeerd" },
+  { icon: "fact_check", text: "100+ UAT trajecten begeleid" },
+  { icon: "location_on", text: "Direct inzetbaar vanuit Breda, NL" }
+];
+
 // Structured Data Components
 function ServiceSchema() {
   const schema = {
@@ -228,6 +248,96 @@ export default function ZZPFunctioneelBeheerderPage() {
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-white border-b border-slate-200 py-3" aria-label="Breadcrumb">
+        <div className="container mx-auto px-6">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link href="/" className="text-slate-500 hover:text-accent transition-colors">Home</Link></li>
+            <li><span className="text-slate-400">/</span></li>
+            <li><Link href="/diensten" className="text-slate-500 hover:text-accent transition-colors">Diensten</Link></li>
+            <li><span className="text-slate-400">/</span></li>
+            <li className="text-slate-900 font-medium">ZZP Functioneel Beheerder</li>
+          </ol>
+        </div>
+      </nav>
+
+      {/* Table of Contents - Desktop Sticky */}
+      <div className="hidden lg:block bg-slate-50 border-b border-slate-200 sticky top-0 z-40">
+        <div className="container mx-auto px-6 py-3">
+          <nav className="flex items-center gap-1 text-sm overflow-x-auto" aria-label="Inhoudsopgave">
+            <span className="text-slate-500 font-medium mr-2 flex-shrink-0">Op deze pagina:</span>
+            {tableOfContents.map((item, index) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="px-3 py-1.5 rounded-full text-slate-600 hover:bg-accent/10 hover:text-accent transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Credentials Bar - E-E-A-T */}
+      <section className="py-8 bg-white border-b border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {credentials.map((cred, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <span className="material-icons text-accent text-xl">{cred.icon}</span>
+                <span className="text-sm text-slate-700">{cred.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prose Block - What does a ZZP Functioneel Beheerder do? */}
+      <section id="wat-doe-ik" className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                Wat doet een ZZP functioneel beheerder?
+              </h2>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Als <strong>ZZP functioneel beheerder</strong> vorm ik de cruciale schakel tussen jouw businessprocessen en de IT-afdeling. Waar een applicatiebeheerder zich richt op de technische kant van systemen, focus ik op de inhoud: requirements vertalen, wijzigingen coördineren, en ervoor zorgen dat IT oplossingen daadwerkelijk aansluiten bij de behoeften van de organisatie. Ik werk volgens het <strong>BiSL-framework</strong> en ben getraind in <strong>ITIL 4</strong>, de wereldstandaarden voor functioneel en technisch beheer.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Steeds meer organisaties kiezen ervoor om een <strong>functioneel beheerder in te huren</strong> in plaats van een vaste medewerker. De voordelen zijn duidelijk: met een <strong>interim functioneel beheerder</strong> krijg je direct toegang tot ervaringskennis uit meerdere sectoren en projecten, zonder de langdurige wervingsprocedure en werkgeversverplichtingen. Als <strong>BiSL consultant</strong> breng ik best practices mee die ik bij andere organisaties heb toegepast — kennis die intern vaak ontbreekt.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Mijn kernwerkzaamheden omvatten <strong>requirements engineering</strong>, <strong>UAT coördinatie</strong>, en <strong>change management</strong>. Ik verzamel business requirements via workshops en interviews, vertaal deze naar functionele ontwerpen en user stories, en begeleid acceptatietrajecten waarbij key users de nieuwe functionaliteit testen. Daarnaast ondersteun ik bij het opzetten van Change Advisory Boards en zorg ik voor gestructureerde wijzigingsprocedures. Wil je <strong>functioneel beheer uitbesteden</strong>? Ik ben flexibel inzetbaar vanaf 16 uur per week.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Mijn <strong>ZZP functioneel beheerder tarief</strong> start vanaf €95 per uur, afhankelijk van de complexiteit en duur van de opdracht. Voor langere trajecten gelden gereduceerde dagtarieven. In combinatie met <strong>UAT coördinatie</strong> en requirements engineering lever ik complete functionele beheerdiensten, zodat jij je kunt richten op je core business. Vraag een vrijblijvende offerte aan voor een maatwerkvoorstel.
+              </p>
+            </ScrollReveal>
+
+            {/* About the specialist - E-E-A-T element */}
+            <ScrollReveal>
+              <div className="mt-10 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <span className="material-icons text-accent text-3xl">person</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 mb-1">Over de specialist</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                      Met meer dan 15 jaar ervaring in functioneel beheer heb ik gewerkt bij zorginstellingen, financiële dienstverleners en overheidsorganisaties. Ik ben BiSL 2 en ITIL 4 gecertificeerd en heb meer dan 100 UAT-trajecten succesvol begeleid.
+                    </p>
+                    <Link href="/over-mij" className="text-accent hover:underline text-sm font-medium">
+                      Meer over mijn achtergrond en ervaring →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Bar - Voor wie is dit */}
       <section className="py-12 bg-blue-50 border-b border-blue-100">
         <div className="container mx-auto px-6">
@@ -389,7 +499,7 @@ export default function ZZPFunctioneelBeheerderPage() {
       </section>
 
       {/* Praktijkvoorbeelden - Authority Layer */}
-      <section className="py-16 md:py-20 bg-white">
+      <section id="cases" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
@@ -606,7 +716,7 @@ export default function ZZPFunctioneelBeheerderPage() {
       </section>
 
       {/* FAQ - Conversion Layer */}
-      <section className="py-16 md:py-20 bg-white">
+      <section id="faq" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">

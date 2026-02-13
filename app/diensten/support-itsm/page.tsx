@@ -13,6 +13,27 @@ function ScrollReveal({ children, className = '', delay = 0 }: { children: React
   return <div ref={ref} className={`${baseClass} ${className}`}>{children}</div>;
 }
 
+// Table of Contents - Anchor navigation
+const tableOfContents = [
+  { id: "wat-is-itsm", label: "Waarom ITSM essentieel is" },
+  { id: "problemen", label: "Supportproblemen?" },
+  { id: "doelgroep", label: "Voor wie is dit?" },
+  { id: "diensten", label: "Wat ik lever" },
+  { id: "werkwijze", label: "Mijn werkwijze" },
+  { id: "tools", label: "Tools & Frameworks" },
+  { id: "resultaten", label: "Resultaten" },
+  { id: "faq", label: "Veelgestelde vragen" },
+  { id: "contact", label: "Contact" }
+];
+
+// Credentials & Social Proof
+const credentials = [
+  { icon: "workspace_premium", text: "15+ jaar ervaring in IT support en ITSM" },
+  { icon: "verified", text: "ITIL 4 gecertificeerd" },
+  { icon: "support_agent", text: "Ervaring bij MKB en scale-ups" },
+  { icon: "location_on", text: "Direct inzetbaar vanuit Breda, NL" }
+];
+
 // Structured Data Components
 function ServiceSchema() {
   const schema = {
@@ -385,6 +406,96 @@ export default function SupportITSMPage() {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+      </section>
+
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-white border-b border-slate-200 py-3" aria-label="Breadcrumb">
+        <div className="container mx-auto px-6">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link href="/" className="text-slate-500 hover:text-accent transition-colors">Home</Link></li>
+            <li><span className="text-slate-400">/</span></li>
+            <li><Link href="/diensten" className="text-slate-500 hover:text-accent transition-colors">Diensten</Link></li>
+            <li><span className="text-slate-400">/</span></li>
+            <li className="text-slate-900 font-medium">IT Support & ITSM</li>
+          </ol>
+        </div>
+      </nav>
+
+      {/* Table of Contents - Desktop Sticky */}
+      <div className="hidden lg:block bg-slate-50 border-b border-slate-200 sticky top-0 z-40">
+        <div className="container mx-auto px-6 py-3">
+          <nav className="flex items-center gap-1 text-sm overflow-x-auto" aria-label="Inhoudsopgave">
+            <span className="text-slate-500 font-medium mr-2 flex-shrink-0">Op deze pagina:</span>
+            {tableOfContents.map((item, index) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="px-3 py-1.5 rounded-full text-slate-600 hover:bg-accent/10 hover:text-accent transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Credentials Bar - E-E-A-T */}
+      <section className="py-8 bg-white border-b border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {credentials.map((cred, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <span className="material-icons text-accent text-xl">{cred.icon}</span>
+                <span className="text-sm text-slate-700">{cred.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prose Block - Why ITSM is essential */}
+      <section id="wat-is-itsm" className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                Waarom ITSM essentieel is voor groeiende organisaties
+              </h2>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Veel MKB-bedrijven en scale-ups starten met ad-hoc IT support: iemand belt met een probleem, er wordt een ticket aangemaakt, en hopelijk wordt het opgelost. Maar naarmate je organisatie groeit, wordt deze reactieve aanpak onhoudbaar. Incidenten duren te lang, kennis verdwijnt bij personeelsverloop, en er is geen inzicht in de kwaliteit van de support. Dit is waar <strong>ITSM (IT Service Management)</strong> verschil maakt.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                <strong>ITSM uitbesteden</strong> betekent het professionaliseren van je supportorganisatie volgens bewezen frameworks zoals <strong>ITIL 4</strong>. In plaats van reageren op incidenten, ga je proactief werken met gestructureerde processen voor incident-, problem- en changemanagement. Je stelt SLA's op voor responstijden, meet KPI's zoals MTTR en First Contact Resolution, en bouwt een Knowledge Base op zodat oplossingen niet opnieuw hoeven worden uitgevonden. Het resultaat? Voorspelbare support, tevreden gebruikers, en een development team dat zich kan richten op productontwikkeling in plaats van brandjes blussen.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Als <strong>IT support MKB</strong> specialist help ik organisaties bij de <strong>ITIL implementatie</strong> en het professionaliseren van hun helpdesk. Of je nu een complete <strong>helpdesk professionalisering</strong> nodig hebt, of specifiek ondersteuning bij <strong>SLA management</strong> en KPI-rapportages — ik schaal mee met je behoeften. Van het selecteren en configureren van ITSM tools zoals Jira Service Management of TOPdesk, tot het trainen van je team en het opzetten van processen. Als <strong>IT service management consultant</strong> breng ik ervaringskennis mee van meerdere organisaties, zodat je niet zelf het wiel hoeft uit te vinden.
+              </p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                De investering voor professionele ITSM varieert afhankelijk van je situatie: gewenste supportniveaus, dekkingsuren en huidige volwassenheid. MKB-organisaties starten gemiddeld vanaf €2.500-€4.000 per maand voor een complete servicedesk. Vraag een vrijblijvende scan aan voor een specifiek advies op maat.
+              </p>
+            </ScrollReveal>
+
+            {/* About the specialist - E-E-A-T element */}
+            <ScrollReveal>
+              <div className="mt-10 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <span className="material-icons text-accent text-3xl">person</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 mb-1">Over de specialist</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                      Met meer dan 15 jaar ervaring in IT support en ITSM heb ik organisaties geholpen bij het opzetten van volwassen supportorganisaties. Ik ben ITIL 4 gecertificeerd en heb gewerkt met tools als Jira SM, ServiceNow, TOPdesk en Freshservice.
+                    </p>
+                    <Link href="/over-mij" className="text-accent hover:underline text-sm font-medium">
+                      Meer over mijn achtergrond en ervaring →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
       </section>
 
       {/* Trust Layer - Problemen die opgelost worden */}
