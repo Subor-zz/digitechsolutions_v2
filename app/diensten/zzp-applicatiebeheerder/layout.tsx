@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ZZP Applicatiebeheerder | Digitech Solutions",
-  description: "Ervaren ZZP applicatiebeheerder voor stabiele bedrijfsapplicaties. Inzetbaar voor interim beheer, incidentafhandeling en optimalisatie.",
+  title: "ZZP Applicatiebeheerder | Applicatiebeheer voor MKB",
+  description: "Ervaren ZZP applicatiebeheerder voor bedrijfskritische applicaties. Interim inzet voor continuïteit, beheer en structuur. ITIL-gecertificeerde processen.",
   openGraph: {
-    title: "ZZP Applicatiebeheerder | Digitech Solutions",
-    description: "Ervaren ZZP applicatiebeheerder voor stabiele bedrijfsapplicaties. Inzetbaar voor interim beheer, incidentafhandeling en optimalisatie.",
+    title: "ZZP Applicatiebeheerder | Applicatiebeheer voor MKB",
+    description: "Ervaren ZZP applicatiebeheerder voor bedrijfskritische applicaties. Interim inzet voor continuïteit, beheer en structuur. ITIL-gecertificeerde processen.",
     type: "website",
-    url: "https://digitechsolutions.nl/diensten/zzp-applicatiebeheerder"
+    url: "https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder"
   },
-  alternates: { canonical: "https://digitechsolutions.nl/diensten/zzp-applicatiebeheerder" }
+  alternates: { canonical: "https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder" }
 };
 
 export default function ZZPApplicatiebeheerderLayout({ children }: { children: React.ReactNode }) {
