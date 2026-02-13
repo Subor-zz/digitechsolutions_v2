@@ -15,3 +15,7 @@ export const metadata: Metadata = {
     canonical: "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
   }
 };
+
+export default function FunctioneelBeheerderLayout({ children }: { children: React.ReactNode }) {
+  return children;
+}
