@@ -33,65 +33,95 @@ const credentials = [
   { icon: "location_on", text: "Direct inzetbaar vanuit Breda, NL" }
 ];
 
-// Structured Data Components
-function ServiceSchema() {
+// Structured Data Component - Combined @graph schema
+function StructuredDataSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "ZZP Functioneel Beheerder",
-    "description": "Ervaren ZZP functioneel beheerder. Direct inzetbaar voor BiSL, ITIL, UAT en requirements engineering. MKB en scale-up specialist.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digitech Solutions",
-      "url": "https://digitechsolutions.nl"
-    },
-    "serviceType": ["Functioneel Beheer", "BiSL", "ITIL", "UAT", "Change Management", "Requirements Engineering"],
-    "areaServed": ["Nederland", "België"],
-    "offers": {
-      "@type": "Offer",
-      "availabilityStarts": "2024-01-01",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "priceCurrency": "EUR",
-        "description": "Op aanvraag - afhankelijk van inzetduur en complexiteit"
-      }
-    },
-    "audience": {
-      "@type": "Audience",
-      "audienceType": ["MKB", "Scale-ups", "Enterprise", "Overheid", "Zorg"]
-    }
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
-
-function BreadcrumbSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://digitechsolutions.nl"
+        "@type": "BreadcrumbList",
+        "@id": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.digitechsolutions.nl/" },
+          { "@type": "ListItem", "position": 2, "name": "Diensten", "item": "https://www.digitechsolutions.nl/diensten/" },
+          { "@type": "ListItem", "position": 3, "name": "ZZP Functioneel Beheerder", "item": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder" }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Diensten",
-        "item": "https://digitechsolutions.nl/diensten"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
+        "@type": "Service",
+        "@id": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder#service",
         "name": "ZZP Functioneel Beheerder",
-        "item": "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
+        "serviceType": "Functioneel beheer (freelance/ZZP)",
+        "provider": {
+          "@type": "Organization",
+          "name": "Digitech Solutions",
+          "url": "https://www.digitechsolutions.nl/"
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Nederland" }
+        ],
+        "availableChannel": [
+          {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://www.digitechsolutions.nl/contact"
+          }
+        ],
+        "url": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder",
+        "description": "Inhuur van een ZZP functioneel beheerder die IT en business verbindt, processen optimaliseert, wijzigingen begeleidt en de functionele werking van applicaties bewaakt."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wat doet een functioneel beheerder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Een functioneel beheerder vertaalt businessbehoeften naar applicatie-inrichting, beheert configuraties, begeleidt wijzigingen en ondersteunt gebruikers om processen soepel te laten verlopen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat is het verschil tussen functioneel beheer en applicatiebeheer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Functioneel beheer richt zich op processen, inrichting en gebruikersbehoeften; applicatiebeheer richt zich vaker op technische stabiliteit, incidenten, monitoring en releases binnen het applicatielandschap."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wanneer huur je een ZZP functioneel beheerder in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bij groei, projectimplementaties, tijdelijk capaciteitsgebrek, migraties of wanneer adoptie, procesoptimalisatie en wijzigingsbegeleiding nodig zijn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Doet een functioneel beheerder ook test- en acceptatiebegeleiding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, afhankelijk van de opdracht kan ondersteuning worden geboden bij UAT (user acceptance testing), acceptatiecriteria en release-communicatie richting gebruikers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is remote werken mogelijk?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, remote of hybride inzet is mogelijk, afhankelijk van de omgeving en afspraken met stakeholders."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe worden tarieven bepaald?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tarieven hangen af van ervaring, domeinkennis, complexiteit van het systeem en de scope. Na intake is een indicatie mogelijk."
+            }
+          }
+        ]
       }
     ]
   };
@@ -205,9 +235,8 @@ const groeiOmgevingen = [
 export default function ZZPFunctioneelBeheerderPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Structured Data */}
-      <ServiceSchema />
-      <BreadcrumbSchema />
+      {/* Structured Data - Combined @graph schema */}
+      <StructuredDataSchema />
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-24 overflow-hidden hero-gradient">
@@ -222,11 +251,11 @@ export default function ZZPFunctioneelBeheerderPage() {
             Direct beschikbaar
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-white tracking-tighter mb-4 leading-[1.1] text-balance opacity-0 animate-fade-in-up animation-delay-100">
-            ZZP Functioneel Beheerder<br />BiSL, ITIL & UAT specialist
+            ZZP Functioneel Beheerder Inhuren<br />De Brug Tussen IT en Business
           </h1>
           <p className="max-w-3xl mx-auto text-lg lg:text-xl text-blue-50/90 font-medium mb-6 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
-            <strong>Ervararen functioneel beheerder</strong> die de brug vormt tussen jouw businessprocessen en IT.
-            Expert in <strong>BiSL 2</strong>, <strong>ITIL 4</strong> en <strong>User Acceptance Testing</strong>.
+            <strong>Freelance functioneel beheerder</strong> die requirements vertaalt naar werkende oplossingen.
+            <strong>Interim functioneel beheer specialist</strong> voor organisaties die structureel aanpassingen nodig hebben.
           </p>
           <p className="max-w-2xl mx-auto text-blue-100/80 text-sm mb-8 opacity-0 animate-fade-in-up animation-delay-300">
             ✓ Direct inzetbaar op interim- of projectbasis<br />
@@ -302,7 +331,7 @@ export default function ZZPFunctioneelBeheerderPage() {
                 Wat doet een ZZP functioneel beheerder?
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                Als <strong>ZZP functioneel beheerder</strong> vorm ik de cruciale schakel tussen jouw businessprocessen en de IT-afdeling. Waar een applicatiebeheerder zich richt op de technische kant van systemen, focus ik op de inhoud: requirements vertalen, wijzigingen coördineren, en ervoor zorgen dat IT oplossingen daadwerkelijk aansluiten bij de behoeften van de organisatie. Ik werk volgens het <strong>BiSL-framework</strong> en ben getraind in <strong>ITIL 4</strong>, de wereldstandaarden voor functioneel en technisch beheer.
+                Als <strong>ZZP functioneel beheerder</strong> vorm ik de cruciale schakel tussen jouw businessprocessen en de IT-afdeling. Waar een <Link href="/diensten/zzp-applicatiebeheerder" className="text-accent hover:underline">applicatiebeheerder</Link> zich richt op de technische kant van systemen, focus ik op de inhoud: requirements vertalen, wijzigingen coördineren, en ervoor zorgen dat IT oplossingen daadwerkelijk aansluiten bij de behoeften van de organisatie. Ik werk volgens het <strong>BiSL-framework</strong> en ben getraind in <strong>ITIL 4</strong>, de wereldstandaarden voor functioneel en technisch beheer.
               </p>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
                 Steeds meer organisaties kiezen ervoor om een <strong>functioneel beheerder in te huren</strong> in plaats van een vaste medewerker. De voordelen zijn duidelijk: met een <strong>interim functioneel beheerder</strong> krijg je direct toegang tot ervaringskennis uit meerdere sectoren en projecten, zonder de langdurige wervingsprocedure en werkgeversverplichtingen. Als <strong>BiSL consultant</strong> breng ik best practices mee die ik bij andere organisaties heb toegepast — kennis die intern vaak ontbreekt.
@@ -680,6 +709,169 @@ export default function ZZPFunctioneelBeheerderPage() {
         </div>
       </section>
 
+      {/* Tarieven - Prijsindicatie */}
+      <section id="tarieven" className="py-16 md:py-20 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Tarieven ZZP Functioneel Beheerder
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Transparante tarieven zonder verborgen kosten. Het exacte tarief hangt af van complexiteit, duur en sector.
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto">
+            {/* Tariefkaarten */}
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <ScrollReveal delay={100}>
+                <div className="bg-white rounded-xl p-6 border border-slate-200 hover:border-accent/30 hover:shadow-lg transition-all">
+                  <div className="text-center mb-4">
+                    <span className="material-icons text-accent text-3xl">schedule</span>
+                    <h3 className="font-bold text-lg text-slate-900 mt-2">Uurtarief</h3>
+                    <p className="text-sm text-slate-500">Korte opdrachten</p>
+                  </div>
+                  <div className="text-center py-4 border-t border-slate-100">
+                    <span className="text-4xl font-extrabold text-accent">€95</span>
+                    <span className="text-slate-500"> - €125</span>
+                    <p className="text-xs text-slate-400 mt-1">per uur (excl. BTW)</p>
+                  </div>
+                  <ul className="text-sm text-slate-600 space-y-2 mt-4">
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      1-3 maanden inzet
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      24-40 uur per week
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      Alle documentatie
+                    </li>
+                  </ul>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={200}>
+                <div className="bg-white rounded-xl p-6 border-2 border-accent shadow-lg relative">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                    MEEST GEKOZEN
+                  </div>
+                  <div className="text-center mb-4">
+                    <span className="material-icons text-accent text-3xl">calendar_today</span>
+                    <h3 className="font-bold text-lg text-slate-900 mt-2">Dagtarief</h3>
+                    <p className="text-sm text-slate-500">Middellange trajecten</p>
+                  </div>
+                  <div className="text-center py-4 border-t border-slate-100">
+                    <span className="text-4xl font-extrabold text-accent">€720</span>
+                    <span className="text-slate-500"> - €960</span>
+                    <p className="text-xs text-slate-400 mt-1">per dag (excl. BTW)</p>
+                  </div>
+                  <ul className="text-sm text-slate-600 space-y-2 mt-4">
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      3-6 maanden inzet
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      Fulltime beschikbaar
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      Kennisoverdracht inbegrepen
+                    </li>
+                  </ul>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={300}>
+                <div className="bg-white rounded-xl p-6 border border-slate-200 hover:border-accent/30 hover:shadow-lg transition-all">
+                  <div className="text-center mb-4">
+                    <span className="material-icons text-accent text-3xl">event</span>
+                    <h3 className="font-bold text-lg text-slate-900 mt-2">Maandtarief</h3>
+                    <p className="text-sm text-slate-500">Langdurige samenwerking</p>
+                  </div>
+                  <div className="text-center py-4 border-t border-slate-100">
+                    <span className="text-4xl font-extrabold text-accent">€12K</span>
+                    <span className="text-slate-500"> - €16K</span>
+                    <p className="text-xs text-slate-400 mt-1">per maand (excl. BTW)</p>
+                  </div>
+                  <ul className="text-sm text-slate-600 space-y-2 mt-4">
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      6+ maanden inzet
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      Fulltime inzet
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-icons text-green-500 text-base">check</span>
+                      Priority support
+                    </li>
+                  </ul>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Wat beïnvloedt het tarief */}
+            <ScrollReveal delay={400}>
+              <div className="bg-slate-50 rounded-xl p-6">
+                <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <span className="material-icons text-accent">info</span>
+                  Wat beïnvloedt het tarief?
+                </h4>
+                <div className="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
+                  <div className="flex items-start gap-3">
+                    <span className="material-icons text-accent text-lg">trending_up</span>
+                    <div>
+                      <strong className="text-slate-900">Complexiteit:</strong> Core systemen vs. ondersteunende applicaties
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-icons text-accent text-lg">domain</span>
+                    <div>
+                      <strong className="text-slate-900">Sector:</strong> Gereguleerde sectoren (zorg, finance) vereisen extra compliance
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-icons text-accent text-lg">location_on</span>
+                    <div>
+                      <strong className="text-slate-900">Reisafstand:</strong> Fysieke aanwezigheid kan reiskosten met zich meebrengen
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-icons text-accent text-lg">bolt</span>
+                    <div>
+                      <strong className="text-slate-900">Urgentie:</strong> Spoedopdrachten met start &lt; 1 week hebben opslag
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* CTA */}
+            <ScrollReveal delay={500}>
+              <div className="text-center mt-8">
+                <p className="text-slate-600 mb-4">
+                  Vraag een vrijblijvende offerte aan voor een exacte prijsindicatie op maat.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-full transition-all"
+                >
+                  <span className="material-icons text-base">mail</span>
+                  Offerte aanvragen
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Beschikbaarheid check - Conversion element */}
       <section className="py-16 md:py-20 bg-slate-50" id="beschikbaarheid">
         <div className="container mx-auto px-6">
@@ -757,6 +949,85 @@ export default function ZZPFunctioneelBeheerderPage() {
 
       <FAQSection faqs={faqs} />
       <FAQSchema faqs={faqs} />
+
+      {/* Interne Links - Gerelateerde diensten */}
+      <section className="py-16 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Gerelateerde diensten
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Functioneel beheer werkt optimaal in combinatie met deze expertisegebieden.
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+            <ScrollReveal delay={100}>
+              <Link href="/diensten/zzp-applicatiebeheerder" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group border border-slate-200">
+                <span className="material-icons text-accent text-3xl mb-2">settings_applications</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Applicatiebeheerder</h3>
+                <p className="text-sm text-slate-600">Technisch beheer van bedrijfskritische applicaties. Monitoring, incident management, releases en configuratiebeheer.</p>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <Link href="/diensten/support-itsm" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group border border-slate-200">
+                <span className="material-icons text-accent text-3xl mb-2">support_agent</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT Support & ITSM</h3>
+                <p className="text-sm text-slate-600">ITIL-georganiseerde support met incident-, problem- en changemanagement. SLA's, KPI's en kennisborging.</p>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <Link href="/diensten/it-consultancy" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group border border-slate-200">
+                <span className="material-icons text-accent text-3xl mb-2">business_center</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT Consultancy & Audits</h3>
+                <p className="text-sm text-slate-600">Onafhankelijke analyse van IT-processen en applicaties. Inzicht voordat je investeert.</p>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={400}>
+              <Link href="/over-mij" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group border border-slate-200">
+                <span className="material-icons text-accent text-3xl mb-2">person</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">Over mij</h3>
+                <p className="text-sm text-slate-600">Meer over mijn achtergrond, 15+ jaar ervaring, certificeringen en werkwijze als IT specialist.</p>
+              </Link>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Links */}
+      <section className="py-12 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="font-bold text-slate-900 mb-4">Gerelateerde artikelen</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/blog/verschil-functioneel-applicatiebeheer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm text-slate-700 transition-colors"
+              >
+                <span className="material-icons text-xs">article</span>
+                Verschil functioneel en applicatiebeheer
+              </Link>
+              <Link
+                href="/blog/uae-best-practices"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm text-slate-700 transition-colors"
+              >
+                <span className="material-icons text-xs">article</span>
+                UAT best practices
+              </Link>
+              <Link
+                href="/blog/change-management-proces"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm text-slate-700 transition-colors"
+              >
+                <span className="material-icons text-xs">article</span>
+                Change management proces opzetten
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section - Conversion Layer */}
       <section className="py-20 md:py-24 hero-gradient">
