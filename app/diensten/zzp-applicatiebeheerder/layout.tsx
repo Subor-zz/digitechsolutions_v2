@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ZZP Applicatiebeheerder Inhuren | Interim Applicatiebeheer MKB",
-  description: "Ervaren ZZP applicatiebeheerder voor MKB en scale-ups. Interim inzetbaar voor incident management, ITIL-processen en applicatiebeheer. Direct beschikbaar in Nederland.",
-  keywords: ["ZZP applicatiebeheerder", "interim applicatiebeheerder", "freelance applicatiebeheerder", "applicatiebeheer inhuren", "applicatiebeheer MKB", "applicatiebeheer uitbesteden", "Microsoft 365 beheer", "Salesforce beheer"],
+  title: "ZZP Applicatiebeheerder Inhuren | Direct Inzetbaar | €85-125/uur",
+  description: "ZZP applicatiebeheerder inhuren? Direct beschikbaar binnen 48 uur. ITIL-gecertificeerd, 15+ jaar ervaring. Interim & projectbasis. Vanaf 16 uur/week.",
+  keywords: ["ZZP applicatiebeheerder", "applicatiebeheerder inhuren", "freelance applicatiebeheerder", "interim applicatiebeheer specialist", "applicatiebeheer uitbesteden", "Microsoft 365 beheer", "Salesforce beheerder"],
   robots: "index, follow",
   openGraph: {
-    title: "ZZP Applicatiebeheerder Inhuren | Digitech Solutions",
-    description: "Ervaren ZZP applicatiebeheerder voor MKB en scale-ups. Interim inzetbaar voor incident management, ITIL-processen en applicatiebeheer.",
+    title: "ZZP Applicatiebeheerder Inhuren | Direct Inzetbaar",
+    description: "ZZP applicatiebeheerder inhuren? Direct beschikbaar binnen 48 uur. ITIL-gecertificeerd, 15+ jaar ervaring. Interim & projectbasis.",
     type: "website",
     url: "https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder",
     locale: "nl_NL"
