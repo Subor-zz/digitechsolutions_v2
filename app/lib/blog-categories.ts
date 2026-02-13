@@ -99,6 +99,7 @@ export const BLOG_POST_CATEGORIES: Record<string, keyof typeof BLOG_CATEGORIES> 
 
   // IT-Consultancy & Audits posts
   "wat-is-een-applicatie-audit": "itConsultancy",
+  "wanneer-zzp-applicatiebeheerder-inhuren": "itConsultancy",
   "performanceproblemen-herkennen": "performanceSecurity",
   "security-risico's-bij-webapps": "performanceSecurity",
 

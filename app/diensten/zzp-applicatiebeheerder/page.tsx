@@ -502,6 +502,9 @@ export default function ZZPApplicatiebeheerderPage() {
               <p className="text-slate-600">
                 Naast technisch applicatiebeheer verzorg ik ook <Link href="/diensten/zzp-functioneel-beheerder" className="text-accent hover:underline font-medium">functioneel beheer</Link> en <Link href="/diensten/support-itsm" className="text-accent hover:underline font-medium">IT support & ITSM</Link>. Zo krijg je een complete beheeroplossing.
               </p>
+              <p className="text-slate-600 mt-4">
+                Lees ook: <Link href="/blog/wanneer-zzp-applicatiebeheerder-inhuren" className="text-accent hover:underline font-medium">Wanneer een ZZP applicatiebeheerder inhuren?</Link>
+              </p>
             </div>
           </ScrollReveal>
         </div>
