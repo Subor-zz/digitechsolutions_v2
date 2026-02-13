@@ -26,6 +26,7 @@ export const blogPosts: Record<string, RelatedPost[]> = {
     { slug: 'performanceproblemen-herkennen', title: 'Performanceproblemen herkennen' },
     { slug: 'security-risico\'s-bij-webapps', title: 'Security-risico\'s bij webapps' },
     { slug: 'build-vs-buy-beslissingen', title: 'Build vs buy beslissingen' },
+    { slug: 'applicatiebeheerder-binnen-overheidsorganisaties', title: 'Applicatiebeheerder binnen overheidsorganisaties' },
   ],
   fullStack: [
     { slug: 'mvp-laten-bouwen-waar-op-letten', title: 'MVP laten bouwen: waar op letten?' },

@@ -107,6 +107,7 @@ export const BLOG_POST_CATEGORIES: Record<string, keyof typeof BLOG_CATEGORIES> 
   "react-vs-nextjs-voor-startups": "fullStack",
   "technische-schuld-voorkomen": "fullStack",
   "wanneer-herschrijven-vs-doorbouwen": "fullStack",
+  "applicatiebeheerder-binnen-overheidsorganisaties": "fullStack",
 
   // Strategie & Beslissingen posts
   "build-vs-buy-beslissingen": "strategie",
