@@ -120,6 +120,28 @@ const personSchema = {
   ]
 };
 
+// Structured Data for Organization (basic)
+const organizationBasicSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.digitechsolutions.nl/#org",
+  "name": "Digitech Solutions",
+  "url": "https://www.digitechsolutions.nl/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://digitechsolutions.nl/logo-transparent.png"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+31-6-43983420",
+      "contactType": "sales",
+      "areaServed": "NL",
+      "availableLanguage": ["nl", "en"]
+    }
+  ]
+};
+
 // Structured Data for Services - Complete ItemList with all 6 services
 const servicesSchema = {
   "@context": "https://schema.org",
@@ -254,7 +276,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema, localBusinessSchema, personSchema, servicesSchema]),
+            __html: JSON.stringify([organizationBasicSchema, organizationSchema, localBusinessSchema, personSchema, servicesSchema]),
           }}
         />
 
