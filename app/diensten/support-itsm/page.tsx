@@ -15,80 +15,121 @@ function ScrollReveal({ children, className = '', delay = 0 }: { children: React
 
 // Table of Contents - Anchor navigation
 const tableOfContents = [
-  { id: "wat-is-itsm", label: "Waarom ITSM essentieel is" },
-  { id: "problemen", label: "Supportproblemen?" },
-  { id: "doelgroep", label: "Voor wie is dit?" },
-  { id: "diensten", label: "Wat ik lever" },
-  { id: "werkwijze", label: "Mijn werkwijze" },
-  { id: "tools", label: "Tools & Frameworks" },
+  { id: "wat-is-itsm", label: "Wat is ITSM" },
+  { id: "wanneer-nodig", label: "Wanneer nodig?" },
+  { id: "incident-management", label: "Incident & Problem" },
+  { id: "sla-proces", label: "SLA & Proces" },
   { id: "resultaten", label: "Resultaten" },
-  { id: "faq", label: "Veelgestelde vragen" },
+  { id: "tarieven", label: "Tarieven" },
+  { id: "faq", label: "FAQ" },
   { id: "contact", label: "Contact" }
 ];
 
 // Credentials & Social Proof
 const credentials = [
-  { icon: "workspace_premium", text: "15+ jaar ervaring in IT support en ITSM" },
+  { icon: "workspace_premium", text: "15+ jaar ervaring als ITSM specialist" },
   { icon: "verified", text: "ITIL 4 gecertificeerd" },
   { icon: "support_agent", text: "Ervaring bij MKB en scale-ups" },
   { icon: "location_on", text: "Direct inzetbaar vanuit Breda, NL" }
 ];
 
-// Structured Data Components
-function ServiceSchema() {
+// Structured Data - Combined @graph schema
+function StructuredDataSchema() {
   const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    'name': 'IT Support & IT Service Management',
-    'description': 'Professionele IT Support en ITSM dienstverlening voor MKB en scale-ups. Includet incident management, 1e/2e/3e lijns support, SLA afspraken en kennisborging volgens ITIL 4.',
-    'provider': {
-      '@type': 'Organization',
-      'name': 'DigiTech Solutions',
-      'url': 'https://www.digitechsolutions.nl'
-    },
-    'serviceType': ['IT Support', 'ITSM', 'Helpdesk', 'Service Desk', 'Incident Management', 'Change Management'],
-    'areaServed': {
-      '@type': 'Country',
-      'name': 'Nederland'
-    },
-    'keywords': 'IT support, ITSM, ITIL, helpdesk uitbesteden, service desk, incident management, change management, SLA, MTTR, 1e lijns support, 2e lijns support, extern support',
-    'offers': {
-      '@type': 'Offer',
-      'name': 'IT Support & ITSM Dienst',
-      'description': 'ITSM implementatie, supportorganisatie inrichting en 24/7 support dekking'
-    }
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
-
-function BreadcrumbSchema() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Home',
-        'item': 'https://www.digitechsolutions.nl'
+        "@type": "BreadcrumbList",
+        "@id": "https://www.digitechsolutions.nl/diensten/support-itsm#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.digitechsolutions.nl/" },
+          { "@type": "ListItem", "position": 2, "name": "Diensten", "item": "https://www.digitechsolutions.nl/diensten/" },
+          { "@type": "ListItem", "position": 3, "name": "Support & ITSM", "item": "https://www.digitechsolutions.nl/diensten/support-itsm" }
+        ]
       },
       {
-        '@type': 'ListItem',
-        'position': 2,
-        'name': 'Diensten',
-        'item': 'https://www.digitechsolutions.nl/diensten'
+        "@type": "Service",
+        "@id": "https://www.digitechsolutions.nl/diensten/support-itsm#service",
+        "name": "Support & ITSM",
+        "serviceType": "IT support en IT Service Management (ITSM)",
+        "provider": {
+          "@type": "Organization",
+          "name": "Digitech Solutions",
+          "url": "https://www.digitechsolutions.nl/"
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Nederland" }
+        ],
+        "availableChannel": [
+          {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://www.digitechsolutions.nl/contact"
+          }
+        ],
+        "url": "https://www.digitechsolutions.nl/diensten/support-itsm",
+        "description": "IT support en ITSM ondersteuning met focus op incident-, problem- en change management, SLA-afspraken, procesoptimalisatie en voorspelbare service."
       },
       {
-        '@type': 'ListItem',
-        'position': 3,
-        'name': 'IT Support & ITSM',
-        'item': 'https://www.digitechsolutions.nl/diensten/support-itsm'
+        "@type": "FAQPage",
+        "@id": "https://www.digitechsolutions.nl/diensten/support-itsm#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wat kost een ITSM support specialist inhuren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De investering voor een ITSM support specialist varieert van €2.500 tot €6.000+ per maand, afhankelijk van supportniveaus (1e/2e/3e lijn), dekkingsuren en complexiteit. Voor een complete servicedesk starten MKB-organisaties gemiddeld vanaf €2.500-€4.000 per maand inclusief incident management, SLA-rapportages en continue verbetering. Scale-ups met 24/7 support behoeften investeren doorgaans €5.000-€6.000+ per maand."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat is ITSM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ITSM (IT Service Management) is de manier waarop IT-diensten worden geleverd en verbeterd via processen zoals incident-, problem- en change management, vaak gebaseerd op ITIL. Het professionaliseert uw supportorganisatie met gestructureerde processen, SLA's en KPI's."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wanneer is ITSM support relevant?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wanneer supportdruk toeneemt, responstijden te lang zijn, er onvoldoende grip is op incidenten of wanneer SLA's, prioritering en procesverbetering nodig zijn. Ook wanneer incidenten blijven terugkomen, developers worden afgeleid door supportvragen, of kennis verdwijnt bij personeelsverloop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Werken jullie met ITIL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, als ITIL 4 gecertificeerde specialist richt ik ITSM werkzaamheden in volgens ITIL-principes, afgestemd op de maturity en tooling van de organisatie. Dit omvat Incident Management, Problem Management, Change Management en SLA Management."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welke ITSM tools gebruikt u?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dit is afhankelijk van de omgeving. Veelvoorkomende ITSM tools zijn Jira Service Management (ideaal voor development teams), ServiceNow (enterprise 100+ FTE), TOPdesk (Nederlands MKB, gebruiksvriendelijk), Freshservice (schaalbaar met self-service), en Zendesk (customer support focus). Ik adviseer objectief zonder vendor lock-in."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kunnen jullie helpen met SLA's en processen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, ondersteuning kan bestaan uit SLA-inrichting, rapportages, prioritering, escalatiepaden en procesoptimalisatie. Ik lever KPI-dashboards met MTTR, FCR, SLA compliance en CSAT scores voor datagedreven verbetering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe worden tarieven bepaald?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tarieven hangen af van de scope (supportniveau 1e/2e/3e lijn, tooling, procesverantwoordelijkheid), dekkingsuren (business hours vs 24/7) en benodigde senioriteit. MKB start vanaf €2.500/maand, compleet ITSM vanaf €4.000/maand. Na intake kan een specifieke indicatie worden gegeven."
+            }
+          }
+        ]
       }
     ]
   };
@@ -101,248 +142,164 @@ function BreadcrumbSchema() {
   );
 }
 
-// Trust Layer - Problemen die we oplossen
-const painPoints = [
+// Wanneer ITSM nodig is - Signalen
+const itsmSignals = [
   {
-    title: "Incidenten blijven terugkomen zonder permanente oplossing",
-    relief: "Wij voeren Root Cause Analysis en leggen oplossingen vast in een Knowledge Base. Zo los je elk probleem één keer goed op."
+    title: "Incidenten blijven terugkomen",
+    description: "Zelfde problemen duiken steeds weer op zonder structurele oplossing.",
+    solution: "Root Cause Analysis en Knowledge Base zorgen voor permanente fixes."
+  },
+  {
+    title: "Geen inzicht in supportprestaties",
+    description: "U weet niet hoe snel issues worden opgelost of of SLA's worden gehaald.",
+    solution: "KPI-dashboards met MTTR, FCR en SLA compliance geven volledig inzicht."
+  },
+  {
+    title: "Developers worden afgeleid",
+    description: "Uw development team besteedt te veel tijd aan supportvragen.",
+    solution: "Dedicated support laag ontlast developers voor 30% meer development velocity."
+  },
+  {
+    title: "Kennis verdwijnt bij personeelsverloop",
+    description: "Als medewerkers vertrekken, verdwijnen oplossingen en kennis.",
+    solution: "Runbooks en Knowledge Base borgen kennis blijvend in de organisatie."
+  },
+  {
+    title: "Wijzigingen veroorzaken nieuwe problemen",
+    description: "Elke deployment of change leidt tot onverwachte incidenten.",
+    solution: "Change Management met CAB en rollback procedures voorkomt verrassingen."
   },
   {
     title: "Support is reactief en onvoorspelbaar",
-    relief: "Met duidelijke SLA's, KPI's en processen weet je precies wat je kunt verwachten. Geen verrassingen, maar heldere afspraken."
-  },
-  {
-    title: "Development team wordt constant gestoord met supportvragen",
-    relief: "Een dedicated support laag ontlast je developers. Zij kunnen zich richten op productontwikkeling, niet op ad-hoc brandjes."
-  },
-  {
-    title: "Kennis verdwijnt wanneer medewerkers vertrekken",
-    relief: "Alles wordt gedocumenteerd in runbooks en knowledge bases. Kennis blijft behouden voor je organisatie."
-  },
-  {
-    title: "Geen inzicht in supportkwaliteit en -prestaties",
-    relief: "Wij leveren heldere KPI-rapportages: MTTR, FCR, SLA performance, CSAT. Data-gestuurde verbetering."
-  },
-  {
-    title: "Wijzigingen leiden tot onverwachte incidenten",
-    relief: "Professioneel change management met CAB, impactanalyse en rollback procedures. Geen verrassingen na deployments."
+    description: "Er is geen structuur: incidents duren te lang, geen prioritering.",
+    solution: "ITIL-processen maken support voorspelbaar met duidelijke SLA's."
   }
 ];
 
-// Core Content - Wat we leveren
-const services = [
+// Incident, Problem & Change Management Details
+const itsmProcesses = [
   {
-    title: "1e lijns Support (Service Desk)",
-    description: "Eerste contactpunt voor alle gebruikers. Registreren, triage en eerste oplossingspoging.",
-    icon: "support_agent",
-    deliverables: [
-      "Telefonische en digitale bereikbaarheid",
-      "Ticketregistratie en categorisatie",
-      "First Call Resolution waar mogelijk",
-      "Doorverwijzing naar 2e lijn bij complexiteit"
-    ]
-  },
-  {
-    title: "2e lijns Support",
-    description: "Specialistische support voor complexere incidenten en diepere technische analyse.",
-    icon: "engineering",
-    deliverables: [
-      "Diepere technische troubleshooting",
-      "Configuratiewijzigingen",
-      "Root cause analysis bij terugkerende issues",
-      "Kennisartikelen schrijven voor Knowledge Base"
-    ]
-  },
-  {
-    title: "3e lijns Support & Vendor Management",
-    description: "Expert-niveau voor architectuurvraagstukken en leverancierscontact.",
-    icon: "architecture",
-    deliverables: [
-      "Architectuuradvies en designs",
-      "Leveranciersescalatie (Zendesk, ServiceNow, etc.)",
-      "Permanente oplossingen voor structurele problemen",
-      "Integration support"
-    ]
-  },
-  {
-    title: "Incident & Problem Management",
-    description: "Gestructureerd afhandelen van verstoringen volgens ITIL 4 best practices.",
+    title: "Incident Management",
     icon: "report_problem",
+    description: "Snel en gestructureerd verstoringen oplossen volgens ITIL 4.",
     deliverables: [
-      "Prioriteitsmatrix (P1-P4)",
-      "Escalatieprocedures",
-      "Known Error Database (KEDB)",
-      "Root Cause Analysis met 5 Whys/Fishbone"
+      "Prioriteitsmatrix (P1-P4) op impact en urgentie",
+      "Escalatieprocedures en responstijdafspraken",
+      "First Contact Resolution optimalisatie",
+      "Known Error Database (KEDB)"
+    ]
+  },
+  {
+    title: "Problem Management",
+    icon: "psychology",
+    description: "Onderliggende oorzaken identificeren en permanent oplossen.",
+    deliverables: [
+      "Root Cause Analysis (5 Whys, Fishbone)",
+      "Trendanalyse van terugkerende incidenten",
+      "Proactieve probleempreventie",
+      "Documentatie in Knowledge Base"
     ]
   },
   {
     title: "Change Management",
-    description: "Gecoördineerde wijzigingen met minimale risico's en disruptie.",
     icon: "sync",
+    description: "Veilige en gecontroleerde wijzigingen met minimale risico's.",
     deliverables: [
-      "Change Advisory Board (CAB)",
+      "Change Advisory Board (CAB) facilitatie",
       "Impactanalyse en risico-inschatting",
-      "Rollback procedures",
-      "Change calendar en planning"
-    ]
-  },
-  {
-    title: "Kennisborging & Knowledge Base",
-    description: "Documentatie en ontsluiting zodat kennis niet verloren gaat.",
-    icon: "school",
-    deliverables: [
-      "Runbooks en SOP's",
-      "Knowledge Base oplossingsartikelen",
-      "Known Error Database",
-      "Training en onboarding van supportmedewerkers"
+      "Test- en rollback procedures",
+      "Change calendar en communicatie"
     ]
   }
 ];
 
-// Authority Layer - Werkwijze
-const process = [
+// SLA & Procesoptimalisatie
+const slaOptimalisatie = [
   {
-    fase: "1. Maturity Scan (Week 1)",
-    description: "In kaart brengen van huidige volwassenheidsniveau: van ad-hoc naar gedefinieerd naar gemeten naar geoptimaliseerd.",
-    icon: "search",
-    output: "Rapport met knelpunten, quick wins en roadmap"
+    title: "SLA Definitie & Monitoring",
+    icon: "assignment",
+    items: [
+      "Response time en resolution time afspraken",
+      "Prioriteitsmatrix gekoppeld aan SLA's",
+      "Real-time SLA dashboards",
+      "Escalatie bij SLA drempelwaarden"
+    ]
   },
   {
-    fase: "2. Procesinrichting (Week 2-4)",
-    description: "ITIL 4 processen implementeren: Incident, Problem, Change, Request en Knowledge Management.",
-    icon: "settings",
-    output: "Procesbeschrijvingen, workflows, RACI-matrix"
+    title: "KPI-rapportage",
+    icon: "analytics",
+    items: [
+      "MTTR (Mean Time To Repair)",
+      "FCR (First Contact Resolution)",
+      "CSAT (Customer Satisfaction)",
+      "Ticket volume en trends"
+    ]
   },
   {
-    fase: "3. Tooling Selectie & Config (Week 3-6)",
-    description: "Selectie en implementatie van Jira SM, ServiceNow, TOPdesk of Freshservice afgestemd op schaal en behoeften.",
-    icon: "extension",
-    output: "Geconfigureerde ITSM tool met integraties"
-  },
-  {
-    fase: "4. Team Training & Go-Live (Week 6-8)",
-    description: "Trainen van supportmedewerkers,Knowledge Base vullen, onboarding en livegang.",
-    icon: "groups",
-    output: "Getraind team, documentatie, live support"
-  },
-  {
-    fase: "5. KPI-monitoring & CSI (Doorlopend)",
-    description: "Continu meten, rapporteren en verbeteren via Service Level Management en CSI-register.",
-    icon: "trending_up",
-    output: "KPI dashboards, kwartaalrapportages, improvement plannen"
+    title: "Procesoptimalisatie",
+    icon: "tune",
+    items: [
+      "Workflowautomatisering",
+      "Self-service portal setup",
+      "Knowledge Base implementatie",
+      "Continue verbetering (CSI)"
+    ]
   }
-];
-
-// Authority Layer - Tools & Frameworks
-const toolsFrameworks = [
-  { category: "ITSM Tools", items: [
-    { name: "Jira Service Management", fit: "Development-teams, Jira integratie" },
-    { name: "ServiceNow", fit: "Enterprise (100+ FTE), complexe workflows" },
-    { name: "TOPdesk", fit: "MKB/Nederlands, gebruiksvriendelijk" },
-    { name: "Freshservice", fit: "Schaalbaar, sterke self-service" },
-    { name: "Zendesk", fit: "Customer support focus, AI features" }
-  ]},
-  { category: "Frameworks & Standaarden", items: [
-    { name: "ITIL 4", fit: "Wereldstandaard voor ITSM" },
-    { name: "COBIT", fit: "Governance en controls framework" },
-    { name: "ISO 20000", fit: "Internationale kwaliteitsstandaard" },
-    { name: "DevOps/Agile", fit: "Integratie met development methodologies" }
-  ]}
-];
-
-// Trust Layer - Voor wie
-const targetAudience = [
-  {
-    segment: "MKB Bedrijven (20-100 FTE)",
-    need: "Professionele support zonder fulltime FTE",
-    pain: "Ad-hoc support, geen SLA's, eigenaar is opgebrand",
-    outcome: "Voorspelbare support, lagere MTTR, focus op core business"
-  },
-  {
-    segment: "Scale-ups & Growing Tech Companies",
-    need: "Support die meegroeit met het team",
-    pain: "Developers worden afgeleid door supportvragen",
-    outcome: "Dedicated support laag, 30% meer development velocity"
-  },
-  {
-    segment: "IT Managers & CTO's",
-    need: "KPI-gestuurde supportverbetering",
-    pain: "Geen inzicht in prestaties, SLA's niet gehaald",
-    outcome: "Heldere rapportages, datagedreven verbetering"
-  },
-  {
-    segment: "Organisaties met Tooling-uitdagingen",
-    need: "Tooling selectie en optimalisatie",
-    pain: "Jira/ServiceNow draait op halve kracht",
-    outcome: "Geoptimaliseerde tooling die past bij organisatie"
-  }
-];
-
-// Conversion Layer - Kwalificatiefilters
-const notFor = [
-  { text: "Geen zin om een volledige interne supportafdeling op te bouwen", icon: "block" },
-  { text: "Grootschalige enterprise met 500+ FTE (wij richten ons op MKB/mid-market)", icon: "domain" },
-  { text: "Organisaties die alleen een goedkope helpdesk willen uitbesteden zonder kwaliteit", icon: "warning" }
 ];
 
 // Conversion Layer - Resultaten
 const results = [
   { metric: "MTTR verlaging", before: "48+ uur", after: "4-8 uur", impact: "92% sneller" },
   { metric: "First Contact Resolution", before: "35-45%", after: "65-75%", impact: "Minder escalaties" },
-  { metric: "SLA compliance", before: "Onbekend/Ad-hoc", after: "95%+ gehaald", impact: "Voorspelbaarheid" },
-  { metric: "Development time vrijgemaakt", before: "0%", after: "30%", impact: "Meer features" },
-  { metric: "Kennisborging", before: "In hoofden", after: "Gedocumenteerd", impact: "Geen knowhow verlies" }
+  { metric: "SLA compliance", before: "Onbekend", after: "95%+", impact: "Voorspelbaarheid" },
+  { metric: "Development velocity", before: "Baseline", after: "+30%", impact: "Meer features" }
 ];
 
-// Conversion Layer - FAQ
-const faqs = [
+// Tarieven
+const tarieven = [
   {
-    question: "Wat kost IT Support uitbesteden?",
-    answer: "De investering in professionele ITSM varieert afhankelijk van uw situatie: gewenste supportniveaus (1e/2e/3e lijn), dekkingsuren (business hours vs 24/7), toolingvereisten en huidige volwassenheidsniveau. MKB-organisaties starten gemiddeld vanaf €2.500-€4.000 per maand voor een complete servicedesk, inclusief incident management, SLA-rapportages en continue verbetering. Voor scale-ups en grotere organisaties is maatwerk mogelijk. Vraag een vrijblijvende scan aan voor een specifieke investering."
+    naam: "ITSM Quickstart",
+    prijs: "€2.500",
+    periode: "/maand",
+    beschrijving: "Idealiter voor MKB-starters met basis supportbehoefte",
+    features: [
+      "1e lijns support (business hours)",
+      "Incident management",
+      "Basis SLA rapportage",
+      "Knowledge Base setup",
+      "Maandelijkse KPI review"
+    ],
+    populair: false
   },
   {
-    question: "Wat is het verschil tussen IT Support en ITSM?",
-    answer: "IT Support is de dagelijkse uitvoering van hulpverlening aan gebruikers: tickets afhandelen, vragen beantwoorden, incidenten oplossen. ITSM (IT Service Management) is het framework dat deze ondersteuning structureel organiseert. ITSM omvat processen, rollen, verantwoordelijkheden, tools en metrics (KPI's). Kort: IT Support voert uit, ITSM organiseert. Zonder ITSM blijft support reactief en onvoorspelbaar. Met ITSM bouw je herkenbare processen, documenteer je kennis en meet je prestaties."
+    naam: "ITSM Professional",
+    prijs: "€4.000",
+    periode: "/maand",
+    beschrijving: "Voor groeiende organisaties met complexere supportbehoefte",
+    features: [
+      "1e + 2e lijns support",
+      "Incident & Problem management",
+      "Change management support",
+      "SLA dashboards & rapportages",
+      "ITSM tool configuratie",
+      "Kennisborging & training"
+    ],
+    populair: true
   },
   {
-    question: "Wat zijn 1e, 2e en 3e lijns support?",
-    answer: "1e lijns support (Service Desk) is het eerste contactpunt en behandelt eenvoudige vragen direct. 2e lijns support heeft specialistische kennis en behandelt complexere incidenten die door 1e lijn worden geëscaleerd. 3e lijns support is expert-niveau voor architectuurvraagstukken en leverancierscontact. Een effectieve supportorganisatie gebruikt deze indeling om: 1) Eenvoudige issues snel oplossen op 1e lijn, 2) Specialisten inzetten waar nodig op 2e lijn, 3) Expertise en leveranciers betrekken op 3e lijn. Dit verlaagt MTTR en verhoogt First Contact Resolution."
-  },
-  {
-    question: "Welke ITSM tool past bij mijn organisatie?",
-    answer: "De toolkeuze hangt af van uw schaal, behoeften en bestaande stack: Jira Service Management is ideaal voor development-teams die al Jira gebruiken en sterke integratie wensen. ServiceNow past bij grote organisaties (100+ FTE) met complexe workflowbehoeften en enterprise requirements. TOPdesk is populair in het Nederlandse MKB door gebruiksvriendelijkheid en focus op service management. Freshservice is schaalbaar en biedt uitstekende self-service voor snel groeiende organisaties. Zendesk is sterk voor customer support met AI-features. Ik help u graag bij een objectieve selectie op basis van uw situatie."
-  },
-  {
-    question: "Wat zijn SLA, MTTR en FCR?",
-    answer: "SLA (Service Level Agreement) zijn de afspraken tussen u en uw IT provider over responstijden, beschikbaarheid en kwaliteit. MTTR (Mean Time To Repair) is de gemiddelde tijd die nodig is om een incident volledig op te lossen. Een lagere MTTR betekent snellere service recovery. FCR (First Contact Resolution) is het percentage van incidenten dat bij het eerste contact wordt opgelost zonder escalatie. Een hogere FCR betekent efficiëntere support, tevreden gebruikers en lagere operationele kosten. Deze KPI's vormen de basis voor datagedreven supportverbetering."
-  },
-  {
-    question: "Hoe snel kunnen jullie opschalen bij pieken?",
-    answer: "Als externe ITSM partner kan ik snel opschalen zonder wervings- en ontslagtrajecten. Bij onverwachte pieken, projecten of tijdelijke vervanging kan ik capaciteit op korte termijn toevoegen. Daarnaast kan ik helpen bij het opzetten van flexibele schaalmodellen met vaste partners indien gewenst. U bent niet gebonden aan vaste FTE's, maar betaalt voor wat u nodig heeft, wanneer u het nodig heeft."
-  },
-  {
-    question: "Bieden jullie ook 24/7 support aan?",
-    answer: "Ja, 24/7 support is mogelijk als onderdeel van de dienstverlening. Dit is vooral relevant voor organisaties met: 1) Internationale operaties in verschillende tijdzones, 2) Kritische systemen die geen downtime kunnen veroorloven, 3) Industriesector met hoge beschikbaarheidseisen (finance, healthcare, e-commerce). Voor de meeste MKB-organisaties is business hours support met optionele noodlijn buiten kantooruren een kosteneffectieve oplossing. Samen bepalen we de juiste dekkingsgraaf op basis van uw behoeften en SLA-vereisten."
-  },
-  {
-    question: "Hoe garanderen jullie kennisborging?",
-    answer: "Kennisborging is essentieel voor duurzame supportkwaliteit. Ik werk met: 1) Knowledge Base met oplossingsartikelen voor veelvoorkomende issues, 2) Runbooks met stapsgewijze procedures voor complexe situaties, 3) Known Error Database (KEDB) voor documentatie van bekende problemen en workarounds, 4) Training van teamleden voor uniforme werkwijze. Wanneer ik vertrek, blijft alle kennis achter. Geen knowhow-verlies door personeelswisseling."
-  },
-  {
-    question: "Wat is Change Management en waarom is het belangrijk?",
-    answer: "Change Management is het gestructureerd aanbrengen van wijzigingen in IT systemen met minimale risico's en disruptie. Het omvat: 1) Change requests met duidelijke business case, 2) Impactanalyse voorafgaand aan de wijziging, 3) CAB (Change Advisory Board) voor grote changes, 4) Testprocedures vooraf en rollback procedures voor achteraf, 5) Change calendar voor planning en communicatie. Zonder change management worden changes ad-hoc uitgevoerd, wat leidt tot incidenten, rollback scenario's en ontevredenheid. Goed change management betekent voorspelbare, veilige wijzigingen met hoge success rate (95%+)."
-  },
-  {
-    question: "Kan jullie dienst combineren met ons development team?",
-    answer: "Absoluut. Sterker nog: dit is vaak de meest waardevolle combinatie. IT Support leert waar knelpunten zijn in de praktijk. Die inzichten kan ik meenemen in uw doorontwikkeling (DevOps integratie), waardoor toekomstige incidenten worden voorkomen. Support en development die elkaar versterken in plaats van werken als geïsoleerde silos - dat is moderne IT service delivery. Development kan zich richten op features, support lost operationele issues, en feedback uit beide richtingen verbetert het product."
-  },
-  {
-    question: "Wat leveren jullie concreet op bij een ITSM traject?",
-    answer: "Een ITSM traject levert tastbare resultaten op: 1) Maturity Scan rapport met huidig niveau en verbetermogelijkheden, 2) Gedefinieerde processen voor Incident, Problem, Change en Request Management, 3) Geïmplementeerde en geconfigureerde ITSM tool (Jira SM/ServiceNow/TOPdesk/Freshservice), 4) RACI-matrix met duidelijke rollen en verantwoordelijkheden, 5) Knowledge Base structuur met eerste oplossingsartikelen, 6) KPI-dashboard voor MTTR, FCR, SLA compliance en CSAT, 7) Getraind team volgens nieuwe werkwijze, 8) CSI-register voor continue verbetering. Na 3-6 maanden heeft u een volwassen supportorganisatie die meetbaar verbetert."
-  },
-  {
-    question: "Hoe gaan jullie om met onze huidige tools en systemen?",
-    answer: "Ik werk met uw bestaande stack in plaats van alles te vervangen. Of u nu Jira, GitHub, Azure DevOps, ServiceNow of een andere tool gebruikt - ik integreer daar zoveel mogelijk mee. Als uw huidige tooling onvoldoende is, adviseer ik objectief over alternatieven zonder vendor lock-in. Focus is op: 1) Behoud wat werkt, 2) Verbeter wat ontbreekt, 3) Integraties voor efficiëntere workflows. Geen big-bang migratie, maar gefaseerde verbetering met minimale disruptie."
+    naam: "ITSM Enterprise",
+    prijs: "€5.500+",
+    periode: "/maand",
+    beschrijving: "Compleet ITSM voor scale-ups en mid-market",
+    features: [
+      "1e, 2e en 3e lijns support",
+      "Volledig ITSM framework",
+      "24/7 support optioneel",
+      "Vendor management",
+      "DevOps integratie",
+      "Dedicated support specialist"
+    ],
+    populair: false
   }
 ];
 
@@ -351,22 +308,70 @@ const relatedServices = [
   {
     title: "ZZP Applicatiebeheerder",
     url: "/diensten/zzp-applicatiebeheerder",
-    description: "Technisch applicatiebeheer: monitoring, updates, releases en configuratiebeheer voor bedrijfskritische systemen."
+    description: "Technisch beheer van bedrijfskritische applicaties. Monitoring, updates en configuratiebeheer."
   },
   {
     title: "ZZP Functioneel Beheerder",
     url: "/diensten/zzp-functioneel-beheerder",
-    description: "Brug tussen business en IT: requirements, wijzigingsbeheer, UAT-coördinatie en processturing."
+    description: "Brug tussen business en IT. Requirements, wijzigingsbeheer en processturing."
   },
   {
     title: "IT Consultancy & Audits",
     url: "/diensten/it-consultancy",
-    description: "Onafhankelijke analyse van uw applicaties, architectuur en IT-processen. Inzicht vooraf investeren."
+    description: "Onafhankelijke analyse van uw IT-processen en applicaties. Inzicht vooraf investeren."
   },
   {
     title: "Fractional CTO",
     url: "/diensten/fractional-cto",
-    description: "Technische strategie, architectuur en teamrichting voor groeiende organisaties. Part-time CTO expertise."
+    description: "Technische strategie en teamrichting voor groeiende organisaties. Part-time CTO expertise."
+  }
+];
+
+// Blog suggesties voor interne links
+const blogSuggestions = [
+  {
+    title: "Technische schuld voorkomen",
+    url: "/blog/technische-schuld-voorkomen"
+  },
+  {
+    title: "Performanceproblemen herkennen",
+    url: "/blog/performanceproblemen-herkennen"
+  }
+];
+
+// Conversion Layer - FAQ (min 6, geschikt voor structured data)
+const faqs = [
+  {
+    question: "Wat kost een ITSM support specialist inhuren?",
+    answer: "De investering voor een ITSM support specialist varieert van €2.500 tot €6.000+ per maand, afhankelijk van supportniveaus (1e/2e/3e lijn), dekkingsuren en complexiteit. Voor een complete servicedesk starten MKB-organisaties gemiddeld vanaf €2.500-€4.000 per maand inclusief incident management, SLA-rapportages en continue verbetering. Scale-ups met 24/7 support behoeften investeren doorgaans €5.000-€6.000+ per maand. Vraag een vrijblijvende scan aan voor een specifiek advies op maat."
+  },
+  {
+    question: "Wat doet een ITSM support specialist precies?",
+    answer: "Een ITSM support specialist organiseert en professionaliseert uw IT support volgens het ITIL 4 framework. Dit omvat: Incident Management (verstoringen snel oplossen), Problem Management (onderliggende oorzaken wegnemen), Change Management (veilige wijzigingen), SLA-management (afspraken over responstijden en kwaliteit) en Kennisborging (documentatie in Knowledge Base). In tegenstelling tot ad-hoc helpdesk support, bouwt een ITSM specialist structurele processen die voorspelbare resultaten leveren."
+  },
+  {
+    question: "Waarom een ITIL support specialist inhuren als ZZP'er?",
+    answer: "Een ITIL support specialist als ZZP'er (service management ZZP) inhuren biedt flexibiliteit zonder vaste FTE-kosten. U krijgt: 1) Expertise op afroep - betaal alleen wat u nodig heeft, 2) Snelle inzet - geen wervings- en onboardingstrajecten, 3) ervaringskennis uit meerdere organisaties, 4) Schaalbaarheid bij pieken en dalen. Voor MKB-organisaties die geen fulltime supportafdeling willen bouwen, is een externe ITSM specialist de kosteneffectieve oplossing."
+  },
+  {
+    question: "Hoe snel kan een ITSM support specialist starten?",
+    answer: "Als ITSM support specialist ben ik normaliter binnen 1-2 weken inzetbaar. Na een intakegesprek volgt een maturity scan in week 1, procesinrichting in week 2-4, en volledige operationele support vanaf week 4-6. Voor urgente supportbehoeften kan ik binnen enkele dagen incident management op meenemen terwijl we de structurele processen opzetten. De exacte doorlooptijd hangt af van uw huidige volwassenheidsniveau en tooling."
+  },
+  {
+    question: "Wat is het verschil tussen incident en problem management?",
+    answer: "Incident Management richt zich op het snel herstellen van de service bij een verstoring - de brand blussen. Problem Management gaat dieper: het identificeren van de onderliggende oorzaak en het permanent oplossen om herhaling te voorkomen - voorkomen dat de brand weer ontstaat. Een goede ITSM specialist combineert beide: snelle incident afhandeling én structurele probleemoplossing via Root Cause Analysis."
+  },
+  {
+    question: "Welke ITSM tools gebruikt u?",
+    answer: "Ik werk met alle gangbare ITSM tools en adviseer objectief op basis van uw situatie: Jira Service Management (ideaal voor development teams), ServiceNow (enterprise 100+ FTE), TOPdesk (Nederlands MKB, gebruiksvriendelijk), Freshservice (schaalbaar met self-service), en Zendesk (customer support focus). Ik configureer en optimaliseer uw bestaande tooling of adviseer over migratie indien nodig - zonder vendor lock-in."
+  },
+  {
+    question: "Biedt u ook 24/7 IT support aan?",
+    answer: "Ja, 24/7 support is mogelijk als onderdeel van de ITSM dienstverlening. Dit is relevant voor organisaties met internationale operaties, kritische systemen zonder downtime-tolerantie, of industrien als finance, healthcare en e-commerce. Voor de meeste MKB-organisaties is business hours support (08:00-18:00) met een noodlijn buiten kantooruren een kosteneffectieve oplossing. Samen bepalen we de juiste dekkingsgraad."
+  },
+  {
+    question: "Hoe garandeert u kennisborging?",
+    answer: "Kennisborging is essentieel voor duurzame supportkwaliteit. Ik werk met: 1) Knowledge Base met oplossingsartikelen voor veelvoorkomende issues, 2) Runbooks met stapsgewijze procedures, 3) Known Error Database (KEDB) voor bekende problemen en workarounds, 4) Training van uw teamleden. Wanneer ik vertrek, blijft alle kennis gedocumenteerd in uw organisatie. Geen knowhow-verlies door personeelswisseling."
   }
 ];
 
@@ -374,8 +379,7 @@ export default function SupportITSMPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Structured Data */}
-      <ServiceSchema />
-      <BreadcrumbSchema />
+      <StructuredDataSchema />
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 lg:pt-48 lg:pb-40 overflow-hidden hero-gradient">
@@ -388,20 +392,38 @@ export default function SupportITSMPage() {
         <Navigation />
         <div className="container mx-auto px-6 text-center relative z-10">
           <span className="text-accent font-black uppercase tracking-[0.3em] text-[10px] mb-6 block opacity-0 animate-fade-in">
-            Diensten
+            IT Service Management Specialist
           </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] font-extrabold text-white tracking-tighter mb-6 leading-[1.05] text-balance opacity-0 animate-fade-in-up animation-delay-100">
-            IT Support & ITSM uitbesteden
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-white tracking-tighter mb-6 leading-[1.1] text-balance opacity-0 animate-fade-in-up animation-delay-100">
+            ITSM Support Specialist Inhuren – ITIL-Georganiseerde Service
           </h1>
-          <p className="max-w-3xl mx-auto text-lg lg:text-xl text-blue-50/90 font-medium mb-12 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
-            Van reactieve helpdesk naar professionele supportorganisatie. ITIL 4-gemiddelde support die uw MTTR verlaagt en uw development team ontlast.
+          <p className="max-w-3xl mx-auto text-lg lg:text-xl text-blue-50/90 font-medium mb-8 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
+            Support & ITSM uitbesteden aan een ITIL 4 gecertificeerde specialist.
+            Van reactieve helpdesk naar professionele supportorganisatie met <strong>92% snellere incidentafhandeling</strong>.
           </p>
+
+          {/* Key USPs */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10 opacity-0 animate-fade-in-up animation-delay-250">
+            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+              <span className="material-icons text-base">check_circle</span>
+              MTTR van 48u naar 4-8u
+            </span>
+            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+              <span className="material-icons text-base">check_circle</span>
+              95%+ SLA compliance
+            </span>
+            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+              <span className="material-icons text-base">check_circle</span>
+              30% meer dev velocity
+            </span>
+          </div>
+
           <div className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-in-up animation-delay-300">
             <Link href="/contact" className="shimmer-btn animate-shimmer text-white font-semibold px-10 py-4 rounded-full text-base shadow-lg">
-              Plan gratis intake (15 min)
+              Vraag vrijblijvende scan aan
             </Link>
-            <Link href="#diensten" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-4 rounded-full text-base transition-all">
-              Bekijk diensten
+            <Link href="#tarieven" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-4 rounded-full text-base transition-all">
+              Bekijk tarieven
             </Link>
           </div>
         </div>
@@ -416,7 +438,7 @@ export default function SupportITSMPage() {
             <li><span className="text-slate-400">/</span></li>
             <li><Link href="/diensten" className="text-slate-500 hover:text-accent transition-colors">Diensten</Link></li>
             <li><span className="text-slate-400">/</span></li>
-            <li className="text-slate-900 font-medium">IT Support & ITSM</li>
+            <li className="text-slate-900 font-medium">ITSM Support Specialist</li>
           </ol>
         </div>
       </nav>
@@ -453,44 +475,39 @@ export default function SupportITSMPage() {
         </div>
       </section>
 
-      {/* Prose Block - Why ITSM is essential */}
+      {/* Sectie 1: Wat is ITSM */}
       <section id="wat-is-itsm" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto prose prose-lg prose-slate">
+          <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Waarom ITSM essentieel is voor groeiende organisaties
+                Wat is ITSM en waarom een specialist inhuren?
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                Veel MKB-bedrijven en scale-ups starten met ad-hoc IT support: iemand belt met een probleem, er wordt een ticket aangemaakt, en hopelijk wordt het opgelost. Maar naarmate je organisatie groeit, wordt deze reactieve aanpak onhoudbaar. Incidenten duren te lang, kennis verdwijnt bij personeelsverloop, en er is geen inzicht in de kwaliteit van de support. Dit is waar <strong>ITSM (IT Service Management)</strong> verschil maakt.
+                <strong>ITSM (IT Service Management)</strong> is het professioneel organiseren van IT support volgens bewezen frameworks zoals ITIL 4. In plaats van ad-hoc reageren op incidenten, bouwt u gestructureerde processen voor incident-, problem- en changemanagement. U stelt SLA's op, meet KPI's en borgt kennis in een Knowledge Base.
               </p>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                <strong>ITSM uitbesteden</strong> betekent het professionaliseren van je supportorganisatie volgens bewezen frameworks zoals <strong>ITIL 4</strong>. In plaats van reageren op incidenten, ga je proactief werken met gestructureerde processen voor incident-, problem- en changemanagement. Je stelt SLA's op voor responstijden, meet KPI's zoals MTTR en First Contact Resolution, en bouwt een Knowledge Base op zodat oplossingen niet opnieuw hoeven worden uitgevonden. Het resultaat? Voorspelbare support, tevreden gebruikers, en een development team dat zich kan richten op productontwikkeling in plaats van brandjes blussen.
-              </p>
-              <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                Als <strong>IT support MKB</strong> specialist help ik organisaties bij de <strong>ITIL implementatie</strong> en het professionaliseren van hun helpdesk. Of je nu een complete <strong>helpdesk professionalisering</strong> nodig hebt, of specifiek ondersteuning bij <strong>SLA management</strong> en KPI-rapportages — ik schaal mee met je behoeften. Van het selecteren en configureren van ITSM tools zoals Jira Service Management of TOPdesk, tot het trainen van je team en het opzetten van processen. Als <strong>IT service management consultant</strong> breng ik ervaringskennis mee van meerdere organisaties, zodat je niet zelf het wiel hoeft uit te vinden.
-              </p>
-              <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                De investering voor professionele ITSM varieert afhankelijk van je situatie: gewenste supportniveaus, dekkingsuren en huidige volwassenheid. MKB-organisaties starten gemiddeld vanaf €2.500-€4.000 per maand voor een complete servicedesk. Vraag een vrijblijvende scan aan voor een specifiek advies op maat.
+                Een <strong>ITSM support specialist inhuren</strong> betekent dat u deze professionalisering uitbesteedt aan een expert. U krijgt voorspelbare support, tevreden gebruikers en een development team dat zich kan richten op productontwikkeling in plaats van brandjes blussen.
               </p>
             </ScrollReveal>
 
-            {/* About the specialist - E-E-A-T element */}
+            {/* Quick benefits */}
             <ScrollReveal>
-              <div className="mt-10 p-6 bg-slate-50 rounded-xl border border-slate-200">
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <span className="material-icons text-accent text-3xl">person</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-1">Over de specialist</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-3">
-                      Met meer dan 15 jaar ervaring in IT support en ITSM heb ik organisaties geholpen bij het opzetten van volwassen supportorganisaties. Ik ben ITIL 4 gecertificeerd en heb gewerkt met tools als Jira SM, ServiceNow, TOPdesk en Freshservice.
-                    </p>
-                    <Link href="/over-mij" className="text-accent hover:underline text-sm font-medium">
-                      Meer over mijn achtergrond en ervaring →
-                    </Link>
-                  </div>
+              <div className="grid md:grid-cols-3 gap-4 mt-8">
+                <div className="bg-slate-50 rounded-xl p-5">
+                  <span className="material-icons text-accent text-2xl mb-2">speed</span>
+                  <h3 className="font-bold text-slate-900 mb-1">Snellere afhandeling</h3>
+                  <p className="text-sm text-slate-600">MTTR van 48+ uur naar 4-8 uur met gestructureerde processen</p>
+                </div>
+                <div className="bg-slate-50 rounded-xl p-5">
+                  <span className="material-icons text-accent text-2xl mb-2">visibility</span>
+                  <h3 className="font-bold text-slate-900 mb-1">Volledig inzicht</h3>
+                  <p className="text-sm text-slate-600">KPI-dashboards met SLA compliance, FCR en CSAT scores</p>
+                </div>
+                <div className="bg-slate-50 rounded-xl p-5">
+                  <span className="material-icons text-accent text-2xl mb-2">school</span>
+                  <h3 className="font-bold text-slate-900 mb-1">Kennisborging</h3>
+                  <p className="text-sm text-slate-600">Documentatie in Knowledge Base, geen knowhow-verlies</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -498,28 +515,34 @@ export default function SupportITSMPage() {
         </div>
       </section>
 
-      {/* Trust Layer - Problemen die opgelost worden */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* Sectie 2: Wanneer ITSM nodig is */}
+      <section id="wanneer-nodig" className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <header className="text-center mb-16">
+            <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Herkent u deze supportproblemen?
+                Wanneer heeft u een ITSM support specialist nodig?
               </h2>
               <p className="text-slate-500 max-w-2xl mx-auto">
-                Dit zijn de signalen dat uw supportprofessionalisering een upgrade nodig heeft.
+                Herkent u deze signalen? Dan is het tijd om support & ITSM uit te besteden.
               </p>
             </header>
           </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto space-y-4">
-            {painPoints.map((item, index) => (
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
+            {itsmSignals.map((item, index) => (
               <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600}>
-                <div className="flex gap-4 items-start bg-slate-50 rounded-xl p-5">
-                  <span className="material-icons text-accent flex-shrink-0 text-2xl">error_outline</span>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h3>
-                    <p className="text-slate-600">{item.relief}</p>
+                <div className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-3">
+                    <span className="material-icons text-amber-500 flex-shrink-0">warning</span>
+                    <div>
+                      <h3 className="font-bold text-slate-900 mb-1">{item.title}</h3>
+                      <p className="text-sm text-slate-600 mb-2">{item.description}</p>
+                      <p className="text-sm text-emerald-700 flex items-start gap-1">
+                        <span className="material-icons text-xs mt-0.5">check</span>
+                        {item.solution}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -528,30 +551,37 @@ export default function SupportITSMPage() {
         </div>
       </section>
 
-      {/* Trust Layer - Voor wie is dit */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      {/* Sectie 3: Incident, Problem & Change Management */}
+      <section id="incident-management" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <header className="text-center mb-16">
+            <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Voor wie is deze dienst?
+                Incident, Problem & Change Management
               </h2>
               <p className="text-slate-500 max-w-2xl mx-auto">
-                ITSM uitbesteden is waardevol voor deze organisaties.
+                De kernprocessen van professionele ITSM die ik als ITIL support specialist implementeer.
               </p>
             </header>
           </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
-            {targetAudience.map((item, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400}>
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h3 className="font-bold text-lg text-slate-900 mb-2">{item.segment}</h3>
-                  <div className="space-y-2">
-                    <p className="text-sm"><span className="font-semibold text-slate-700">Behoefte:</span> {item.need}</p>
-                    <p className="text-sm"><span className="font-semibold text-slate-700">Pijnpunt:</span> {item.pain}</p>
-                    <p className="text-sm"><span className="font-semibold text-emerald-600">Resultaat:</span> {item.outcome}</p>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            {itsmProcesses.map((process, index) => (
+              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300}>
+                <div className="bg-slate-50 rounded-xl p-6 h-full">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-4">
+                    <span className="material-icons text-white text-2xl">{process.icon}</span>
                   </div>
+                  <h3 className="font-bold text-lg text-slate-900 mb-2">{process.title}</h3>
+                  <p className="text-slate-600 mb-4">{process.description}</p>
+                  <ul className="space-y-2">
+                    {process.deliverables.map((deliv, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+                        <span className="material-icons text-accent text-xs mt-1">check_circle</span>
+                        <span>{deliv}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </ScrollReveal>
             ))}
@@ -559,163 +589,83 @@ export default function SupportITSMPage() {
         </div>
       </section>
 
-      {/* Trust Layer - Wanneer NIET (kwalificatiefilter) */}
-      <section className="py-12 md:py-16 bg-white">
+      {/* Sectie 4: SLA & Procesoptimalisatie */}
+      <section id="sla-proces" className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-6 bg-amber-50 rounded-xl border border-amber-200">
-              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span className="material-icons text-amber-600">info</span>
-                Waar ik mij niet op richt
-              </h3>
-              <ul className="space-y-2">
-                {notFor.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-slate-700">
-                    <span className="material-icons text-amber-600 text-sm mt-0.5">{item.icon}</span>
-                    <span className="text-sm">{item.text}</span>
-                  </li>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                SLA & Procesoptimalisatie
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Meetbare afspraken en continue verbetering voor voorspelbare supportkwaliteit.
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            {slaOptimalisatie.map((section, idx) => (
+              <ScrollReveal key={idx} delay={((idx + 1) * 100) as 100 | 200 | 300}>
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="material-icons text-accent text-2xl">{section.icon}</span>
+                    <h3 className="font-bold text-slate-900">{section.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {section.items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+                        <span className="material-icons text-accent text-xs mt-1">arrow_right</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Tools integration */}
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto mt-12 p-6 bg-white rounded-xl border border-slate-200">
+              <h3 className="font-bold text-slate-900 mb-4">ITSM Tools waar ik mee werk</h3>
+              <div className="flex flex-wrap gap-3">
+                {['Jira Service Management', 'ServiceNow', 'TOPdesk', 'Freshservice', 'Zendesk'].map((tool) => (
+                  <span key={tool} className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">
+                    {tool}
+                  </span>
                 ))}
-              </ul>
+              </div>
+              <p className="text-sm text-slate-500 mt-3">
+                Ik adviseer objectief en configureer uw tooling - geen vendor lock-in.
+              </p>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Core Content - Wat we leveren */}
-      <section id="diensten" className="py-16 md:py-20 bg-slate-50">
+      {/* Sectie 5: Resultaten */}
+      <section id="resultaten" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <header className="text-center mb-16">
+            <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Wat wij leveren: concreet en meetbaar
+                Resultaten voor uw organisatie
               </h2>
               <p className="text-slate-500 max-w-2xl mx-auto">
-                Geen vage beloften, maar duidelijke diensten met tastbare resultaten.
+                Meetbare verbeteringen na het inhuren van een ITSM support specialist.
               </p>
             </header>
           </ScrollReveal>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-            {services.map((service, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600}>
-                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                      <span className="material-icons text-accent text-xl">{service.icon}</span>
-                    </div>
-                    <h3 className="font-bold text-lg text-slate-900">{service.title}</h3>
-                  </div>
-                  <p className="text-slate-600 mb-4">{service.description}</p>
-                  <div>
-                    <span className="text-xs text-slate-500 uppercase tracking-wide mb-2 block">Opleveringen:</span>
-                    <ul className="space-y-1">
-                      {service.deliverables.map((deliv, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
-                          <span className="material-icons text-accent text-xs mt-0.5">check_circle</span>
-                          <span>{deliv}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Authority Layer - Werkwijze */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Onze werkwijze: van scan naar volwassen ITSM
-              </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Een bewezen 5-stappenplan dat werkt voor MKB en scale-ups.
-              </p>
-            </header>
-          </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto space-y-4">
-            {process.map((item, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500}>
-                <div className="flex gap-6 items-start bg-slate-50 rounded-xl p-6">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0">
-                    <span className="material-icons text-white text-2xl">{item.icon}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-lg text-slate-900 mb-2">{item.fase}</h3>
-                    <p className="text-slate-600 mb-3">{item.description}</p>
-                    <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-sm rounded-full">
-                      {item.output}
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Authority Layer - Tools & Frameworks */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Tools & Frameworks waar we mee werken
-              </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Objectieve adviezen zonder vendor lock-in. Wij kiezen wat past bij uw situatie.
-              </p>
-            </header>
-          </ScrollReveal>
-
-          <div className="max-w-5xl mx-auto space-y-8">
-            {toolsFrameworks.map((section, idx) => (
-              <ScrollReveal key={idx} delay={(idx + 1) * 150}>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{section.category}</h3>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {section.items.map((item, index) => (
-                      <div key={index} className="bg-white rounded-lg p-4 shadow-sm">
-                        <h4 className="font-semibold text-slate-900 mb-1">{item.name}</h4>
-                        <p className="text-sm text-slate-600">{item.fit}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Conversion Layer - Resultaten */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Resultaten die u kunt verwachten
-              </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Meetbare verbeteringen na implementatie van professionele ITSM.
-              </p>
-            </header>
-          </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-4">
             {results.map((result, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500}>
-                <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-5 shadow-sm border border-slate-200">
+              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400}>
+                <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 border border-slate-200">
                   <h4 className="font-bold text-slate-900 mb-3">{result.metric}</h4>
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-red-600 line-through">{result.before}</span>
+                    <span className="text-red-500 line-through">{result.before}</span>
                     <span className="material-icons text-emerald-600">arrow_forward</span>
-                    <span className="text-emerald-600 font-bold">{result.after}</span>
+                    <span className="text-emerald-600 font-bold text-lg">{result.after}</span>
                   </div>
                   <span className="text-sm text-slate-600">{result.impact}</span>
                 </div>
@@ -725,7 +675,67 @@ export default function SupportITSMPage() {
         </div>
       </section>
 
-      {/* Conversion Layer - FAQ */}
+      {/* Sectie 6: Tarieven */}
+      <section id="tarieven" className="py-16 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Tarieven ITSM Support Specialist
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Transparante prijsindicatie. Uw exacte investering bepaalt u tijdens de gratis intake.
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            {tarieven.map((pakket, index) => (
+              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300}>
+                <div className={`bg-white rounded-xl p-6 ${pakket.populair ? 'ring-2 ring-accent relative' : 'border border-slate-200'}`}>
+                  {pakket.populair && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                      Meest gekozen
+                    </span>
+                  )}
+                  <h3 className="font-bold text-lg text-slate-900 mb-1">{pakket.naam}</h3>
+                  <div className="flex items-baseline gap-1 mb-2">
+                    <span className="text-3xl font-bold text-slate-900">{pakket.prijs}</span>
+                    <span className="text-slate-500">{pakket.periode}</span>
+                  </div>
+                  <p className="text-sm text-slate-600 mb-4">{pakket.beschrijving}</p>
+                  <ul className="space-y-2 mb-6">
+                    {pakket.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+                        <span className="material-icons text-accent text-xs mt-1">check</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className={`block text-center py-3 rounded-full font-semibold transition-all ${
+                      pakket.populair
+                        ? 'bg-accent text-white hover:bg-accent-hover'
+                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    }`}
+                  >
+                    Aanvragen
+                  </Link>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal>
+            <p className="text-center text-sm text-slate-500 mt-8 max-w-2xl mx-auto">
+              * Prijzen zijn indicatief en exclusief BTW. Exacte investering afhankelijk van supportniveaus, dekkingsuren en complexiteit. Vraag een vrijblijvende scan aan voor een offerte op maat.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
       <FAQSection faqs={faqs} />
       <FAQSchema faqs={faqs} />
 
@@ -738,7 +748,7 @@ export default function SupportITSMPage() {
                 Gerelateerde diensten
               </h2>
               <p className="text-slate-500 max-w-2xl mx-auto">
-                ITSM werkt nog beter in combinatie met deze expertisegebieden.
+                ITSM support werkt optimaal in combinatie met deze expertisegebieden.
               </p>
             </header>
           </ScrollReveal>
@@ -757,16 +767,37 @@ export default function SupportITSMPage() {
         </div>
       </section>
 
-      {/* Conversion Layer - CTA */}
+      {/* Blog Links */}
+      <section className="py-12 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="font-bold text-slate-900 mb-4">Gerelateerde artikelen</h3>
+            <div className="flex flex-wrap gap-3">
+              {blogSuggestions.map((blog, index) => (
+                <Link
+                  key={index}
+                  href={blog.url}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm text-slate-700 transition-colors"
+                >
+                  <span className="material-icons text-xs">article</span>
+                  {blog.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-20 md:py-24 hero-gradient">
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Klaar voor professionele support?
+              Klaar om ITSM support uit te besteden?
             </h2>
             <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              Plan een gratis intake. We bespreken uw situatie, identificeren knelpunten en adviseren over een stappenplan naar volwassen ITSM.
-              <strong className="block mt-4">Geen verplichtingen, wel inzicht.</strong>
+              Plan een gratis intake. We bespreken uw situatie, identificeren knelpunten en adviseren over een stappenplan.
+              <strong className="block mt-4">Geen verplichtingen, wel duidelijkheid.</strong>
             </p>
             <div className="flex flex-col items-center gap-4">
               <Link
