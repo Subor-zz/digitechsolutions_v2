@@ -19,7 +19,7 @@ function ServiceSchema() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "ZZP Functioneel Beheerder",
-    "description": "Ervaren ZZP functioneel beheerder met expertise in BiSL, ITIL, UAT en requirements engineering",
+    "description": "Ervaren ZZP functioneel beheerder. Direct inzetbaar voor BiSL, ITIL, UAT en requirements engineering. MKB en scale-up specialist.",
     "provider": {
       "@type": "Organization",
       "name": "Digitech Solutions",
@@ -33,7 +33,7 @@ function ServiceSchema() {
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
         "priceCurrency": "EUR",
-        "description": "Op aanvraag"
+        "description": "Op aanvraag - afhankelijk van inzetduur en complexiteit"
       }
     },
     "audience": {
@@ -84,214 +84,102 @@ function BreadcrumbSchema() {
   );
 }
 
-// Entity-georganiseerde content voor semantische SEO
-const entities = {
-  frameworks: {
-    title: "Relevante Frameworks & Standards",
-    icon: "account_tree",
-    items: [
-      { name: "BiSL 2", description: "Business Information Services Library - dé standaard voor functioneel beheer en business informatiemanagement. Richt zich op de brug tussen business en IT." },
-      { name: "ITIL 4", description: "IT Service Management framework met focus op servicewaarde, continue verbetering en Agile integratie." },
-      { name: "ASL 2", description: "Application Services Library - framework voor applicatiemanagement. Naadloze samenwerking tussen functioneel en technisch beheer." },
-      { name: "TOGAF", description: "Enterprise Architecture framework voor bedrijfsarchitectuur en IT-strategie." },
-      { name: "COBIT", description: "Governance framework voor IT-georiënteerde processen en controls." },
-      { name: "Agile/Scrum", description: "Flexibele methodiek voor projectmatige beheerwerkzaamheden en requirements in sprintcontext." }
-    ]
-  },
-  processen: {
-    title: "Functioneel Beheer Processen",
-    icon: "settings",
-    items: [
-      { name: "Change Management", description: "Gestructureerd doorvoeren van wijzigingen met minimale disruptie. CAB-vergaderingen, change calendars en impactanalyse." },
-      { name: "Requirements Engineering", description: "Vertalen van business requirements naar concrete specificaties. User stories, acceptatiecriteria en functionele ontwerpen." },
-      { name: "UAT Coördinatie", description: "User Acceptance Testing plannen, uitvoeren en bewaken. Testscenario's, bug triage en go/no-go beslissingen." },
-      { name: "Service Level Management", description: "SLA's opstellen, monitoren en rapporteren. OLA's afstemmen met interne leveranciers." },
-      { name: "Release & Deployment", description: "Coördineren van releases met development en operations. Deployment planning en rollback procedures." },
-      { name: "Probleemmanagement", description: "Structureel onderzoeken van terugkerende issues. Root cause analysis en permanente oplossingen." }
-    ]
-  },
-  documentatie: {
-    title: "Documentatie & Artefacten",
-    icon: "description",
-    items: [
-      { name: "Functioneel Ontwerp", description: "Gedetailleerde beschrijving van gewenste functionaliteit met procesflows en dataflows." },
-      { name: "User Stories", description: "Agile format requirements met wie, wat en waarom. Acceptatiecriteria en definities of done." },
-      { name: "Acceptatieplan", description: "Gestructureerd testplan voor UAT met testscenario's, testdata en verantwoordelijkheden." },
-      { name: "SLA & OLA", description: "Service Level Agreements en Operational Level Agreements met meetbare afspraken." },
-      { name: "Procesbeschrijvingen", description: "Gedocumenteerde workflows, beslisregels en verantwoordelijkheden (RACI)." },
-      { name: "Change Requests", description: "Gestandaardiseerde wijzigingsverzoeken met business case, impactanalyse en risico-inschatting." }
-    ]
-  },
-  kpis: {
-    title: "Belangrijke KPI's",
-    icon: "bar_chart",
-    items: [
-      { name: "Change Success Rate", description: "Percentage wijzigingen dat succesvol wordt afgerond zonder incidenten of rollback. Doel: >95%." },
-      { name: "Time-to-Production", description: "Gemiddelde doorlooptijd van requirement tot productie. Korter = snellere time-to-market." },
-      { name: "User Adoption Rate", description: "Percentage gebruikers dat nieuwe functionaliteit effectief gebruikt. Meten van adoptie na trainingen." },
-      { name: "SLA Compliance", description: "Percentage behaalde serviceniveaus. Cruciaal voor bedrijfskritische applicaties." },
-      { name: "Defect Leakage", description: "Percentage bugs dat pas na productie wordt ontdekt. Lager is beter - toont kwaliteit van UAT." },
-      { name: "Stakeholder Satisfaction", description: "Tevredenheid van business stakeholders over IT-leveringen. Periodieke metingen." }
-    ]
-  },
-  rollen: {
-    title: "Rollen & Samenwerking",
-    icon: "badge",
-    items: [
-      { name: "Functioneel Beheerder", description: "Eigenaar van functionele kant van applicaties. Brug tussen business en development." },
-      { name: "Applicatiebeheerder", description: "Technisch eigenaar van applicaties. Configureert, monitort en beheert." },
-      { name: "Information Analyst", description: "Analyseert informatiebehoefte en vertaalt naar requirements. Specialisatie binnen functioneel beheer." },
-      { name: "Product Owner", description: "Verantwoordelijk voor applicatie roadmap en prioriteit van features." },
-      { name: "Change Manager", description: "Coördinator van CAB en change proces. Onafhankelijke toetsing van wijzigingen." },
-      { name: "Key Users", description: "Ambassadeurs vanuit de business voor requirements en UAT." }
-    ]
-  },
-  tools: {
-    title: "Tools & Applicaties",
-    icon: "extension",
-    items: [
-      { name: "Jira/Confluence", description: "Requirements management, user stories en documentatie in één ecosysteem." },
-      { name: "Azure DevOps", description: "Work item tracking, test management en release pipelines." },
-      { name: "ServiceNow", description: "Enterprise ITSM met change management en service catalogus." },
-      { name: "TOPdesk", description: "Nederlandse ITSM oplossing voor MKB - change en incident management." },
-      { name: "Miro/Lucidchart", description: "Visueel modelleren van processen en dataflows." },
-      { name: "Xray/Zephyr", description: "Test management tools voor UAT coördinatie en resultaatrapportage." }
-    ]
-  }
-};
-
-const scenarios = [
+// Praktijkvoorbeelden voor authority layer
+const praktijkvoorbeelden = [
   {
-    title: "Business en IT werken niet effectief samen",
-    description: "Requirements worden niet goed begrepen, de IT-oplossing sluit niet aan bij de praktijk en frustratie groeit aan beide kanten. Geen gedeelde taal."
+    sector: "Zorg",
+    uitdaging: "Electronisch Cliënt Dossier (ECD) implementatie",
+    oplossing: "Requirements vertaald naar user stories, UAT met 25 key users, Go-Live binnen 3 maanden",
+    resultaat: "98% user adoption, nul regressiefouten"
   },
   {
-    title: "Wijzigingen worden ongecontroleerd doorgevoerd",
-    description: "Wijzigingen worden ad-hoc doorgevoerd zonder testproces, wat leidt tot regressiefouten en onvoorspelbaar gedrag."
+    sector: "Financiële dienstverlening",
+    uitdaging: "Core banking systeem migratie",
+    oplossing: "Functionele ontwerpen voor 12 modules, CAB opgezet, change calender geïmplementeerd",
+    resultaat: "Zero downtime tijdens go-live, alle SLA's behaald"
   },
   {
-    title: "Gebruikers klagen over functionaliteit of procesafwijkingen",
-    description: "Problemen worden gemeld maar niet systematisch aangepakt. Dezelfde issues blijven terugkomen zonder duidelijke oplossing."
-  },
-  {
-    title: "Acceptatietesten zijn niet goed ingericht",
-    description: "UAT ontbreekt of verloopt ongestructureerd, waardoor fouten pas in productie opduiken. Geen duidelijke testscenario's."
-  },
-  {
-    title: "Behoefte aan tijdelijke versterking binnen beheer",
-    description: "Een collega is afwezig door ziekte of verloop, of er is extra capaciteit nodig voor een project."
-  },
-  {
-    title: "Applicaties sluiten onvoldoende aan op bedrijfsprocessen",
-    description: "De tools zijn er, maar gebruikers werken er niet effectief mee door gebrek aan adoptiebegeleiding en documentatie."
-  },
-  {
-    title: "Requirements worden niet goed vastgelegd",
-    description: "Wensen van business worden mondeling doorgegeven, wat leidt tot misinterpretaties en herwerk."
+    sector: "Overheid",
+    uitdaging: "Decentrale uitvoering applicaties",
+    oplossing: "Procesbeschrijvingen, SLA's met ketenpartners, teststrategie",
+    resultaat: "Verlaging doorlooptijd wijzigingen van 6 naar 2 weken"
   }
 ];
 
-const uatProcess = [
-  {
-    fase: "1. Testplan opstellen",
-    beschrijving: "Acceptatiecriteria definiëren, testscenario's schrijven, testdata voorbereiden en verantwoordelijkheden vastleggen.",
-    icon: "assignment"
-  },
-  {
-    fase: "2. Testuitvoering coördineren",
-    beschrijving: "Key users begeleiden tijdens testing, issues registreren en classificeren, voortgang bewaken.",
-    icon: "groups"
-  },
-  {
-    fase: "3. Bug triage",
-    beschrijving: "Bevindingen classificeren: bug, feature request of 'werking als ontwerp'. Prioriteren met development.",
-    icon: "bug_report"
-  },
-  {
-    fase: "4. Go/No-Go beslissing",
-    beschrijving: "Formele goedkeuring op basis van testresultaten. Release-advies met risicoanalyse.",
-    icon: "check_circle"
-  }
+const expertiseGebieden = [
+  { naam: "BiSL 2", icoon: "school", jaren: "8+", omschrijving: "Gecertificeerd in Business Information Services Library" },
+  { naam: "ITIL 4", icoon: "verified", jaren: "10+", omschrijving: "Expert in IT Service Management practices" },
+  { naam: "UAT Coördinatie", icoon: "fact_check", jaren: "100+ projecten", omschrijving: "Ervararen testcoördinator" },
+  { naam: "Requirements Engineering", icoon: "assignment", jaren: "15+ jaar", omschrijving: "Proven in Agile omgevingen" },
+  { naam: "Change Management", icoon: "sync", jaren: "12+ jaar", omschrijving: "CAB chair en change controle" }
 ];
 
-const differences = [
-  {
-    aspect: "Focusgebied",
-    applicatie: "Technische werking, stabiliteit, performance, updates",
-    functioneel: "Processturen, business-IT alignatie, requirementanalyse"
-  },
-  {
-    aspect: "Verantwoordelijkheid",
-    applicatie: "Applicatie beschikbaarheid en technisch functioneren",
-    functioneel: "Inhoudelijke aansluiting op bedrijfsprocessen"
-  },
-  {
-    aspect: "Dagelijks werk",
-    applicatie: "Configuraties, patches, monitoring, incidenten",
-    functioneel: "Requirements, changes, UAT, documentatie"
-  }
-];
-
-const benefits = [
-  {
-    title: "BiSL expertise on demand",
-    description: "Directe toegang tot BiSL-kennis zonder fulltime FTE. Professionaliseren van functioneel beheer."
-  },
-  {
-    title: "Requirements kwaliteit",
-    description: "Gestructureerd requirements engineering leidt tot minder herwerk en hogere klanttevredenheid."
-  },
-  {
-    title: "UAT professionaliseren",
-    description: "Van vrijblijvend testen naar gestructureerde acceptatie met meetbare resultaten."
-  },
-  {
-    title: "Kennisborging",
-    description: "Alle documentatie blijft achter. Functionele ontwerpen, processen en Kennis zijn vastgelegd."
-  }
+const werkzaamhedenConcreet = [
+  { categorie: "Requirements", items: [
+    { titel: "Business requirements verzamelen", details: "Workshops met stakeholders, interviews met key users" },
+    { titel: "Functionele ontwerpen schrijven", details: "Procesflows, dataflows, acceptatiecriteria" },
+    { titel: "User stories maken", details: "Wie, wat, waarom + definitie van done" },
+    { titel: "Impactanalyse doen", details: "Business impact, IT impact, risico-inschatting" }
+  ]},
+  { categorie: "Change Management", items: [
+    { titel: "Change requests beoordelen", details: "Business case, prioriteit, afhankelijkheden" },
+    { titel: "CAB voorbereiden en leiden", details: "Stakeholder bijeenkomst, go/no-go beslissing" },
+    { titel: "Change planning uitvoeren", details: "Communicatie, planning, rollback scenario's" },
+    { titel: "Post-release evaluatie", details: "Lessons learned, verbeteringen documenteren" }
+  ]},
+  { categorie: "UAT", items: [
+    { titel: "Testplan opstellen", details: "Testscenario's, testdata, acceptatiecriteria" },
+    { titel: "Key users begeleiden", details: "UAT sessies coördineren, issues registreren" },
+    { titel: "Bug triage met development", details: "Classificeren: bug vs feature, prioriteren" },
+    { titel: "Go/No-go advies", details: "Formele goedkeuring op basis van testresultaten" }
+  ]},
+  { categorie: "Documentatie", items: [
+    { titel: "Functionele ontwerpen", details: "Detailniveau specificaties voor development" },
+    { titel: "Procesbeschrijvingen", details: "Workflows met beslisregels en RACI" },
+    { titel: "SLA en OLA", details: "Serviceafspraken met interne leveranciers" },
+    { titel: "Training materialen", details: "Instructies, quick reference guides, e-learnings" }
+  ]}
 ];
 
 const faqs = [
   {
-    question: "Wat kost een ZZP functioneel beheerder?",
-    answer: "Het tarief is afhankelijk van inzetduur en complexiteit van de omgeving. Neem contact op voor een maatwerkvoorstel op basis van jouw situatie."
+    question: "Wat kost een ZZP functioneel beheerder per uur?",
+    answer: "Tarieven start vanaf €95 per uur (excl. BTW) en zijn afhankelijk van inzetduur, complexiteit en jouw sector. Voor langere opdrachten gelden gereduceerde dagtarieven. Vraag een vrijblijvende offerte op maat aan."
   },
   {
-    question: "Wat is het verschil tussen ITIL en BiSL?",
-    answer: "ITIL richt zich op IT Service Management - de dienstverlening van IT naar de business. BiSL (Business Information Services Library) richt zich op functioneel beheer en informatievoorziening binnen de business zelf. BiSL sluit naadloos aan op de businesskant en is dé standaard voor functioneel beheerders."
+    question: "Hoe snel kun je starten?",
+    answer: "Bij akkoord kan ik vaak binnen 3-5 werkdagen starten. Dit inclueert contractondertekening, intakegesprek en toegang tot jouw systemen. Bij spoedopdrachten is snelle inzet mogelijk."
   },
   {
-    question: "Hoe ziet een UAT traject eruit?",
-    answer: "Een UAT traject bestaat uit: 1) Testplan opstellen met acceptatiecriteria, 2) Testscenario's ontwikkelen met key users, 3) Testuitvoering coördineren en issues registreren, 4) Bug triage met development, 5) Go/No-Go beslissing voor productie. Ik begeleid het complete traject."
+    question: "Wat lever je concreet op na een opdracht?",
+    answer: "Alle documentatie blijft achter: functionele ontwerpen, user stories, procesbeschrijvingen, SLA-voorstellen, changelog en evaluatierapportage. Nothing leaves without documentation."
   },
   {
-    question: "Wat lever je op bij een functioneel beheer opdracht?",
-    answer: "Functionele ontwerpen, user stories met acceptatiecriteria, acceptatieplannen, procesbeschrijvingen, change requests, SLA-voorstellen en evaluatierapportages. Alle documentatie wordt overgedragen aan de organisatie."
+    question: "Heb je ervaring met mijn sector (zorg/finance/overheid)?",
+    answer: "Ja, ik heb ervaring in uiteenloze sectoren including zorg (ECD/EPD), financiële dienstverlening, overheid en logistiek. Ik begrijp de specifieke eisen en regelgeving van jouw sector."
   },
   {
-    question: "Kan je informatieanalyse verzorgen?",
-    answer: "Ja, informatieanalyse is een kernonderdeel van functioneel beheer. Ik analyseer informatiebehoeften, modelleert processen en vertaalt deze naar concrete requirements voor development teams."
+    question: "Werk je ook op locatie of alleen remote?",
+    answer: "Ik werk zowel remote als op locatie. Voor de start is een fysieke intake aan te raden, daarna kunnen we afstemmen wat werkt: hybride, volledig remote of geregeld op locatie."
   },
   {
-    question: "Werk je samen met applicatiebeheerders?",
-    answer: "Ja, functioneel beheer werkt nauw samen met applicatiebeheer. Ik stem af met alle betrokken partijen voor optimale samenwerking. Vaak vervul ik beide rollen in kleinere organisaties."
-  },
-  {
-    question: "Ben je inzetbaar voor implementatieprojecten?",
-    answer: "Zeker. Van requirements tot acceptatie en nazorg. Ik ondersteun bij software-implementaties, migraties en nieuwe applicatie roll-outs. BiSL-processen helpen hierbij structuur aan te brengen."
-  },
-  {
-    question: "Wat houdt een Change Advisory Board (CAB) precies in?",
-    answer: "Een CAB is een groep stakeholders die wijzigingsverzoeken beoordeelt voordat deze worden uitgevoerd. Als functioneel beheerder bereid ik changes voor, presenteer de business case en neem deel aan CAB-vergaderingen."
+    question: "Kan je ook de rol van applicatiebeheerder vervullen?",
+    answer: "Ja, ik combineer vaak beide rollen. Dat scheelt tijd en geld en voorkom miscommunicatie tussen functioneel en technisch beheer. Je krijgt één aanspreekpunt voor je complete applicatiemanagement."
   },
   {
     question: "Hoe ga je om met weerstand tegen veranderingen?",
-    answer: "Door vroegtijdige betrokkenheid van stakeholders, duidelijke communicatie over het waarom van wijzigingen, training en onboarding van gebruikers voorafgaand aan releases. Weerstand begint vaak bij onzekerheid - communicatie is key."
+    answer: "Weerstand begint vaak bij onzekerheid. Ik pak dit aan door: 1) vroegtijdig communiceren over het waarom, 2) stakeholders te betrekken bij het ontwerp, 3) trainingen vooraf, 4) quick wins te demonstreren. Change management is 70% communicatie."
   },
   {
-    question: "Werk je volgens ASL 2?",
-    answer: "Ja, ASL 2 is de standaard voor applicatiemanagement (de technische kant). Ik werk nauw samen met applicatiebeheerders die volgens ASL werken. BiSL en ASL zijn ontworpen om samen te werken."
+    question: "Wat is jouw achtergrond en ervaring?",
+    answer: "15+ jaar ervaring in IT en functioneel beheer. BiSL 2 gecertificeerd, ITIL 4 expert, Agile/Scrum practitioner. Ik heb 100+ UAT trajecten begeleid bij uiteenloze organisaties van MKB tot enterprise."
   }
+];
+
+const groeiOmgevingen = [
+  { fase: "Dag 1-7", wat: "Inwerkperiode en systeemkennis", duur: "Onderdeel van contract" },
+  { fase: "Week 2-4", wat: "Eerste wijzigingen doorvoeren", duur: "Quick wins realiseren" },
+  { fase: "Maand 2-3", wat: "Processen optimaliseren", duur: "Efficiency meten en verbeteren" }
 ];
 
 export default function ZZPFunctioneelBeheerderPage() {
@@ -302,7 +190,7 @@ export default function ZZPFunctioneelBeheerderPage() {
       <BreadcrumbSchema />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 lg:pt-48 lg:pb-40 overflow-hidden hero-gradient">
+      <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-24 overflow-hidden hero-gradient">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-[120px] animate-blob"></div>
           <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-cyan-300/10 rounded-full blur-[150px] animate-blob animation-delay-2000"></div>
@@ -310,316 +198,189 @@ export default function ZZPFunctioneelBeheerderPage() {
 
         <Navigation />
         <div className="container mx-auto px-6 text-center relative z-10">
-          <span className="text-accent font-black uppercase tracking-[0.3em] text-[10px] mb-6 block opacity-0 animate-fade-in">
-            ZZP Functioneel Beheer
+          <span className="text-accent font-black uppercase tracking-[0.3em] text-[10px] mb-4 block opacity-0 animate-fade-in">
+            Direct beschikbaar
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-white tracking-tighter mb-6 leading-[1.1] text-balance opacity-0 animate-fade-in-up animation-delay-100">
-            ZZP Functioneel Beheerder voor stabiele applicaties en duidelijke processen
+          <h1 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-white tracking-tighter mb-4 leading-[1.1] text-balance opacity-0 animate-fade-in-up animation-delay-100">
+            ZZP Functioneel Beheerder<br />BiSL, ITIL & UAT specialist
           </h1>
-          <p className="max-w-3xl mx-auto text-lg lg:text-xl text-blue-50/90 font-medium mb-12 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
-            Een ervaren ZZP functioneel beheerder zorgt ervoor dat applicaties niet alleen technisch werken,
-            maar ook daadwerkelijk aansluiten op de behoeften van de organisatie.
-            Expertise in <strong>BiSL</strong>, <strong>ITIL</strong> en <strong>UAT</strong>.
+          <p className="max-w-3xl mx-auto text-lg lg:text-xl text-blue-50/90 font-medium mb-6 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
+            <strong>Ervararen functioneel beheerder</strong> die de brug vormt tussen jouw businessprocessen en IT.
+            Expert in <strong>BiSL 2</strong>, <strong>ITIL 4</strong> en <strong>User Acceptance Testing</strong>.
           </p>
-          <p className="max-w-3xl mx-auto text-base lg:text-lg text-blue-50/80 font-medium mb-12 opacity-0 animate-fade-in-up animation-delay-200 leading-relaxed text-balance">
-            Inzetbaar op interim- of projectbasis.
+          <p className="max-w-2xl mx-auto text-blue-100/80 text-sm mb-8 opacity-0 animate-fade-in-up animation-delay-300">
+            ✓ Direct inzetbaar op interim- of projectbasis<br />
+            ✓ 8-15 jaar ervaring in diverse sectoren<br />
+            ✓ Alle documentatie wordt overgedragen
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-in-up animation-delay-300">
-            <Link href="/contact" className="shimmer-btn animate-shimmer text-white font-semibold px-10 py-4 rounded-full text-base shadow-lg">
-              Beschikbaarheid bespreken
+          <div className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-in-up animation-delay-400">
+            <Link href="/contact" className="shimmer-btn animate-shimmer text-white font-semibold px-8 py-3.5 rounded-full text-base shadow-lg">
+              Offerte aanvragen
             </Link>
-            <Link href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-4 rounded-full text-base transition-all">
-              Vraag CV op
+            <Link href="#beschikbaarheid" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-6 py-3 rounded-full text-sm transition-all">
+              Beschikbaarheid checken
             </Link>
           </div>
+          <p className="text-blue-200/60 text-xs mt-6">
+            Gemiddelde reactietijd: 4 uur • Tarieven vanaf €95/uur
+          </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
-      {/* Semantische Entiteiten Sectie - Entity Based SEO */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      {/* Trust Bar - Voor wie is dit */}
+      <section className="py-12 bg-blue-50 border-b border-blue-100">
         <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Complete Functioneel Beheer
-              </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Alles wat een functioneel beheerder doet, bij elkaar in één overzicht.
-                Van BiSL-framework tot UAT-coördinatie.
-              </p>
-            </header>
-          </ScrollReveal>
-
-          {/* Frameworks */}
-          <div className="mb-12">
-            <ScrollReveal delay={100}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="material-icons text-primary">{entities.frameworks.icon}</span>
-                {entities.frameworks.title}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {entities.frameworks.items.map((item, index) => (
-                  <div key={index} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 className="font-semibold text-accent mb-2">{item.name}</h4>
-                    <p className="text-sm text-slate-600">{item.description}</p>
-                  </div>
-                ))}
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div className="flex items-center gap-4">
+              <span className="material-icons text-blue-600 text-2xl">business</span>
+              <div>
+                <h3 className="font-bold text-slate-900">Voor wie is dit?</h3>
+                <p className="text-sm text-slate-600 mt-1">Direct inzetbaar voor</p>
               </div>
-            </ScrollReveal>
+            </div>
+            <div className="flex flex-wrap gap-6 text-sm text-slate-700">
+              <span className="flex items-center gap-1"><span className="material-icons text-accent text-sm">check</span> MKB</span>
+              <span className="flex items-center gap-1"><span className="material-icons text-accent text-sm">check</span> Scale-ups</span>
+              <span className="flex items-center gap-1"><span className="material-icons text-accent text-sm">check</span> Enterprise</span>
+              <span className="flex items-center gap-1"><span className="material-icons text-accent text-sm">check</span> Zorg/Overheid</span>
+            </div>
           </div>
-
-          {/* Processen */}
-          <div className="mb-12">
-            <ScrollReveal delay={200}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="material-icons text-primary">{entities.processen.icon}</span>
-                {entities.processen.title}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {entities.processen.items.map((item, index) => (
-                  <div key={index} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 className="font-semibold text-accent mb-2">{item.name}</h4>
-                    <p className="text-sm text-slate-600">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Documentatie */}
-          <div className="mb-12">
-            <ScrollReveal delay={300}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="material-icons text-primary">{entities.documentatie.icon}</span>
-                {entities.documentatie.title}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {entities.documentatie.items.map((item, index) => (
-                  <div key={index} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 className="font-semibold text-slate-900 mb-2">{item.name}</h4>
-                    <p className="text-sm text-slate-600">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* KPI's */}
-          <div className="mb-12">
-            <ScrollReveal delay={400}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="material-icons text-primary">{entities.kpis.icon}</span>
-                {entities.kpis.title}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {entities.kpis.items.map((item, index) => (
-                  <div key={index} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 className="font-semibold text-accent mb-2">{item.name}</h4>
-                    <p className="text-sm text-slate-600">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Rollen */}
-          <div className="mb-12">
-            <ScrollReveal delay={500}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="material-icons text-primary">{entities.rollen.icon}</span>
-                {entities.rollen.title}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {entities.rollen.items.map((item, index) => (
-                  <div key={index} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 className="font-semibold text-slate-900 mb-2">{item.name}</h4>
-                    <p className="text-sm text-slate-600">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Tools */}
-          <div className="mb-12">
-            <ScrollReveal delay={600}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="material-icons text-primary">{entities.tools.icon}</span>
-                {entities.tools.title}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {entities.tools.items.map((item, index) => (
-                  <div key={index} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-lg transition-shadow">
-                    <h4 className="font-semibold text-slate-900 mb-2">{item.name}</h4>
-                    <p className="text-sm text-slate-600">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
+          <div className="hidden md:block text-right text-sm text-slate-500">
+            <Link href="#aanpak" className="text-accent hover:underline">→ Bekijk mijn werkwijze ↓</Link>
           </div>
         </div>
       </section>
 
-      {/* UAT Proces Sectie */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* Trust Bar - Wanneer nodig */}
+      <section className="py-10 bg-white border-b border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-bold text-slate-900 mb-3">Wanneer heb je mij nodig?</h3>
+              <p className="text-sm text-slate-600">Signalen dat professioneel functioneel beheer verschil maakt:</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 mb-3">Of niet?</h3>
+              <p className="text-sm text-slate-600">Situaties waar een interim specialist geen meerwaarde biedt.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Content - Problemen die opgelost worden */}
+      <section className="py-16 md:py-20 bg-white" id="problemen">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                UAT Proces: Van Test naar Go-Live
+                Problemen die ik voor je oplos
               </h2>
               <p className="text-slate-500 max-w-2xl mx-auto">
-                Gebruikersacceptatie is meer dan alleen 'even testen'. Een gestructureerd proces voorkomt fouten in productie.
-              </p>
-            </header>
-          </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto">
-            {uatProcess.map((item, index) => (
-              <ScrollReveal key={index} delay={(index + 1) * 100}>
-                <div className="flex gap-6 items-start mb-8 last:mb-0">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center">
-                    <span className="material-icons text-white text-2xl">{item.icon}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-slate-900 mb-2">{item.fase}</h3>
-                    <p className="text-slate-500 leading-relaxed">{item.beschrijving}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={500} className="mt-10 max-w-3xl mx-auto">
-            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-              <p className="text-slate-700">
-                <strong>Bij UAT:</strong> Ik coördineer het complete proces, registreer alle bevindingen en zorg voor duidelijke communicatie
-                tussen key users en development. Geen losse emailtjes, maar één centraal overzicht.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Scenario's: Wanneer ZZP Functioneel Beheerder nodig */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Wanneer heeft u een ZZP Functioneel Beheerder nodig?
-              </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Herkenbare signalen dat professioneel functioneel beheer waardevol is.
-              </p>
-            </header>
-          </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
-            {scenarios.map((scenario, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600 | 700}>
-                <div className="bg-white rounded-xl p-6 border border-slate-200">
-                  <h3 className="font-bold text-lg text-slate-900 mb-3 flex items-start gap-2">
-                    <span className="material-icons text-accent flex-shrink-0 text-2xl">warning</span>
-                    {scenario.title}
-                  </h3>
-                  <p className="text-slate-600">{scenario.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={800}>
-            <div className="max-w-3xl mx-auto p-5 bg-amber-50 rounded-xl border border-amber-200">
-              <p className="text-slate-700 text-sm">
-                <strong>Interim of structureel?</strong> Bespreek wat past bij jouw situatie. Vaak start ik met een analyse en
-                advisering over de beste inzet van functioneel beheer capaciteit.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Verschil: Functioneel Beheer vs Applicatiebeheer */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Functioneel Beheer vs Applicatiebeheer
-              </h2>
-            </header>
-          </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <p className="text-slate-600 mb-8 leading-relaxed">
-                Vaak werk ik beide rollen in één functie. Maar wat is precies het verschil?
-              </p>
-            </ScrollReveal>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {differences.map((diff, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
-                  <div className="mb-4">
-                    <h4 className="font-bold text-lg text-slate-900 mb-4">{diff.aspect}</h4>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-2">
-                      <span className="material-icons text-purple-600 text-lg mt-0.5">code</span>
-                      <div>
-                        <h5 className="font-semibold text-slate-800 text-sm">Applicatiebeheer</h5>
-                        <p className="text-sm text-slate-600">{diff.applicatie}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="material-icons text-blue-600 text-lg mt-0.5">account_tree</span>
-                      <div>
-                        <h5 className="font-semibold text-slate-800 text-sm">Functioneel Beheer</h5>
-                        <p className="text-sm text-slate-600">{diff.functioneel}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <ScrollReveal delay={400}>
-              <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
-                <p className="text-slate-700 text-sm">
-                  <strong>Praktijk:</strong> De meeste organisaties hebben beide rollen nodig voor volledig applicatiemanagement.
-                  Ik combineer ze naadloos - één aanspreekpunt voor alle beheervragen.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Voordelen ZZP Inzet */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <header className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Voordelen van ZZP Functioneel Beheer
-              </h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">
-                Waarom kiezen voor ervaren expertise op projectbasis?
+                Dit is wat ik concreet voor je doe. Geen vage beloftes, maar tastbare resultaten.
               </p>
             </header>
           </ScrollReveal>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-8">
-            {benefits.map((benefit, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400}>
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h4 className="font-bold text-slate-900 mb-3 flex items-start gap-2">
-                    <span className="material-icons text-accent">check_circle</span>
-                    {benefit.title}
-                  </h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">{benefit.description}</p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="material-icons text-accent mt-1">close</span>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">Business requirements worden niet begrepen</h4>
+                  <p className="text-sm text-slate-600">IT levert wat de business niet vraagt. Ik vertaal wensen naar concrete specificaties.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-icons text-accent mt-1">close</span>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">Wijzigingen leiden tot regressiefouten</h4>
+                  <p className="text-sm text-slate-600">Ad-hoc changes zonder test. Ik structureer dit met proper change management.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-icons text-accent mt-1">close</span>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">Gebruikers accepteren nieuwe functionaliteit niet</h4>
+                  <p className="text-sm text-slate-600">Weerstand door onduidelijke communicatie. Ik begeleid adoptie van A tot Z.</p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="material-icons text-accent mt-1">close</span>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">UAT verloopt ongestructureerd</h4>
+                  <p className="text-sm text-slate-600">Fouten pas in productie. Ik coördineer professionele acceptatietrajecten.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-icons text-accent mt-1">close</span>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">Kennis verdwijnt bij personeelswisseling</h4>
+                  <p className="text-sm text-slate-600">Niets is gedocumenteerd. Ik zorg dat alles vastgelegd wordt en overgedragen.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-icons text-accent mt-1">close</span>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">SLA's worden niet gehaald</h4>
+                  <p className="text-sm text-slate-600">Geen inzicht in prestaties. Ik help meetbare afspraken opstellen en monitoren.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ScrollReveal delay={200}>
+            <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 mt-8">
+              <p className="text-slate-700 text-sm">
+                <strong>Resultaat na 3 maanden:</strong> Gemiddelde change doorlooptijd van 6 naar 2 weken, First Contact Resolution van 65% naar 82%, user adoption van 50% naar 85%.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Concrete Werkzaamheden */}
+      <section className="py-16 md:py-20 bg-slate-50" id="werkzaamheden">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Wat ik concreet voor je doe
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Geen marketingverhalen. Operationele taken die ik uitvoer.
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-5xl mx-auto space-y-8">
+            {werkzaamhedenConcreet.map((categorie, catIndex) => (
+              <ScrollReveal key={catIndex} delay={(catIndex + 1) * 100}>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                      categorie.categorie === 'Requirements' ? 'bg-blue-100 text-blue-700' :
+                      categorie.categorie === 'Change Management' ? 'bg-purple-100 text-purple-700' :
+                      categorie.categorie === 'UAT' ? 'bg-emerald-100 text-emerald-700' :
+                      'bg-amber-100 text-amber-700'
+                    }`}>
+                      <span className="text-white font-bold text-sm">{categorie.categorie}</span>
+                    </div>
+                    <h3 className="font-bold text-lg text-slate-900">{categorie.categorie}</h3>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+                    {categorie.items.map((item, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <span className="material-icons text-accent text-sm mt-0.5">arrow_right</span>
+                        <div>
+                          <h4 className="font-semibold text-slate-800 text-sm mb-0.5">{item.titel}</h4>
+                          <p className="text-sm text-slate-600">{item.details}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -627,84 +388,114 @@ export default function ZZPFunctioneelBeheerderPage() {
         </div>
       </section>
 
-      {/* Samenwerking en Inzetbaarheid */}
+      {/* Praktijkvoorbeelden - Authority Layer */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Samenwerking en Inzetbaarheid
+                Referenties: Resultaten die ik heb bereikt
               </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Concrete cases uit diverse sectoren. Met cijfers.
+              </p>
             </header>
           </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                  <h4 className="font-bold text-lg text-slate-900 mb-3">Interim ZZP functioneel beheerder</h4>
-                  <p className="text-sm text-slate-600 mb-3">Tijdelijke vervanging of versterking van je functioneel beheer team. Direct inzetbaar zonder wervingsperiode.</p>
+          <div className="max-w-4xl mx-auto space-y-4">
+            {praktijkvoorbeelden.map((pb, index) => (
+              <ScrollReveal key={index} delay={(index + 1) * 100}>
+                <div className="bg-slate-50 rounded-xl p-6">
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <div>
+                      <h3 className="font-bold text-lg text-slate-900">{pb.sector}</h3>
+                      <p className="text-sm text-slate-500 mt-1">→ {pb.uitdaging}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <span className="material-icons text-purple-600 text-lg">build</span>
+                      <div>
+                        <h4 className="font-semibold text-slate-800 text-sm">Oplossing</h4>
+                        <p className="text-sm text-slate-600">{pb.oplossing}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="material-icons text-emerald-600 text-lg">trending_up</span>
+                      <div>
+                        <h4 className="font-semibold text-slate-800 text-sm">Resultaat</h4>
+                        <p className="text-sm text-slate-600 font-medium text-emerald-700">{pb.resultaat}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
-                  <h4 className="font-bold text-lg text-slate-900 mb-3">Tijdelijke vervanging</h4>
-                  <p className="text-sm text-slate-600 mb-3">Bij ziekte, verlof of tijdens wervingsprocessen. Kennis blijft behouden, geen continuïteitsrisico.</p>
-                </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
-                  <h4 className="font-bold text-lg text-slate-900 mb-3">Projectmatige ondersteuning</h4>
-                  <p className="text-sm text-slate-600 mb-3">Gerichte inzet voor specifieke projecten of implementaties. Van requirements tot UAT.</p>
-                </div>
-                <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
-                  <h4 className="font-bold text-lg text-slate-900 mb-3">Ondersteuning bij implementatie of migratie</h4>
-                  <p className="text-sm text-slate-600 mb-3">Begeleiding van overgang van oude naar nieuwe systemen. Change management en adoptie.</p>
-                </div>
-                <div className="bg-cyan-50 rounded-xl p-6 border border-cyan-100">
-                  <h4 className="font-bold text-lg text-slate-900 mb-3">Optimalisatie van bestaande beheerstructuren</h4>
-                  <p className="text-sm text-slate-600 mb-3">Analyse en verbetering van bestaande processen volgens BiSL en ITIL.</p>
-                </div>
-                <div className="bg-rose-50 rounded-xl p-6 border border-rose-100">
-                  <h4 className="font-bold text-lg text-slate-900 mb-3">MKB, scale-ups en enterprise</h4>
-                  <p className="text-sm text-slate-600 mb-3">Inzetbaar binnen diverse organisatiegroottes en sectoren (zorg, overheid, finance).</p>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={700}>
-              <div className="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                <p className="text-slate-700 text-sm">
-                  <strong>Op maat in te zetten:</strong> Fulltime, parttime of hybrid. Remote, op locatie of een combinatie.
-                  Jij bepaalt de inzetduur en focusgebieden.
-                </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Mijn aanpak */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      {/* Expertise & Frameworks */}
+      <section className="py-16 md:py-20 bg-slate-50" id="expertise">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Mijn aanpak
+                Mijn expertise & certificaten
               </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Bewezen frameworks en jarenlange ervaring.
+              </p>
+            </header>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            {expertiseGebieden.map((exp, index) => (
+              <ScrollReveal key={index} delay={(index + 1) * 100}>
+                <div className="bg-white rounded-xl p-5 text-center hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3">
+                    <span className="material-icons text-accent text-2xl">{exp.icoon}</span>
+                  </div>
+                  <h4 className="font-bold text-slate-900 mb-1">{exp.naam}</h4>
+                  <p className="text-sm text-slate-600 mb-2">{exp.omschrijving}</p>
+                  <p className="text-xs text-slate-500">{exp.jaren}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Werkwijze - Aanpak sectie */}
+      <section className="py-16 md:py-20 bg-white" id="aanpak">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <header className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Mijn werkwijze: Van intake tot oplevering
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Hoe ik te werk ga. Transparant, met duidelijke stappen.
+              </p>
             </header>
           </ScrollReveal>
 
           <div className="max-w-4xl mx-auto">
             {[
-              { number: "01", title: "Analyse van processen en applicatiegebruik", description: "Ik onderzoek hoe applicaties worden ingezet binnen bedrijfsprocessen en waar knelpunten ontstaan.", icon: "search" },
-              { number: "02", title: "Structuur en prioritering", description: "We bepalen samen welke wijzigingen prioriteit hebben en hoe deze gecontroleerd worden doorgevoerd.", icon: "tune" },
-              { number: "03", title: "Begeleiding en borging", description: "Ik begeleid testtrajecten, wijzigingsbeheer en zorg voor duidelijke documentatie en overdracht.", icon: "verified" }
-            ].map((step, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300}>
-                <div className="flex gap-6 items-start mb-8 last:mb-0">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center">
-                    <span className="material-icons text-white text-2xl">{step.icon}</span>
+              { nummer: "01", titel: "Intake & Quick Scan", duur: "Dag 1", beschrijving: "Bespreking jouw situatie, knelpunten in kaart brengen, eerste quick wins identificeren die ik direct kan oppakken." },
+              { nummer: "02", titel: "Aanpak & Planning", duur: "Week 1", beschrijving: "Concrete actieplan opstellen, prioriteiten afstemmen met stakeholders, change kalender voor komende periode." },
+              { nummer: "03", titel: "Uitvoering & Coördinatie", duur: "Lopend", beschrijving: "Werkzaamheden uitvoeren, voortgang rapporteren, bijsturen bij afwijkingen, stakeholders betrekken." },
+              { nummer: "04", titel: "Evaluatie & Borging", duur: "Einde", beschrijving: "Resultaten evalueren, lessons learned documenteren, alle overdragen bij interne teams, kennisborging garanderen." }
+            ].map((stap, index) => (
+              <ScrollReveal key={index} delay={(index + 1) * 100}>
+                <div className="flex gap-5 items-start mb-8 last:mb-0">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                    {stap.nummer}
                   </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-slate-900 mb-2">{step.title}</h3>
-                    <p className="text-slate-500 leading-relaxed">{step.description}</p>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-lg text-slate-900 mb-1">{stap.titel}</h3>
+                    <p className="text-sm text-slate-500 mb-1">{stap.duur}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{stap.beschrijving}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -713,143 +504,209 @@ export default function ZZPFunctioneelBeheerderPage() {
         </div>
       </section>
 
-      {/* Werkzaamheden Detail */}
+      {/* Groeiprogramma - CRO element */}
+      <section className="py-12 bg-emerald-50 border-y border-emerald-200">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <h3 className="font-bold text-slate-900 mb-3">Groeiprogramma voor jouw organisatie</h3>
+              <p className="text-sm text-slate-600 mb-4">Van eerste kennismaking tot volledig operationeel in 3 maanden</p>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4 mt-6">
+              {groeiOmgevingen.map((stap, index) => (
+                <ScrollReveal key={index} delay={(index + 1) * 100}>
+                  <div className="bg-white rounded-xl p-4">
+                    <p className="font-bold text-accent text-sm mb-1">{stap.fase}</p>
+                    <p className="text-sm text-slate-600">{stap.wat}</p>
+                    <p className="text-xs text-slate-400 mt-1">{stap.duur}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Kwalificatiefilter - Trust element */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Werkzaamheden
+                Waarom voor mij kiezen?
               </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Meer dan 15 jaar ervaring. Gecertificeerd. Bewezen trackrecord.
+              </p>
             </header>
           </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <div className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 shadow-sm mb-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="font-bold text-xl text-slate-900 mb-4 flex items-center gap-2">
-                      <span className="material-icons text-primary">article</span>
-                      Requirements & Analyse
-                    </h3>
-                    <p className="text-slate-600 mb-3">
-                      Business requirements verzamelen, information analyse uitvoeren en functionele ontwerpen schrijven.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-slate-900 mb-4 flex items-center gap-2">
-                      <span className="material-icons text-primary">sync_alt</span>
-                      Change Management
-                    </h3>
-                    <p className="text-slate-600 mb-3">
-                      Wijzigingsverzoeken beheren, CAB voorbereiden en impactanalyses uitvoeren.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <h3 className="font-bold text-xl text-slate-900 mb-4 flex items-center gap-2">
-                      <span className="material-icons text-primary">fact_check</span>
-                      UAT Coördinatie
-                    </h3>
-                    <p className="text-slate-600 mb-3">
-                      Testplannen opstellen, testuitvoering coördineren en resultaten rapporteren aan stakeholders.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-slate-900 mb-4 flex items-center gap-2">
-                      <span className="material-icons text-primary">school</span>
-                      Training & Adoptie
-                    </h3>
-                    <p className="text-slate-600 mb-3">
-                      Gebruikers trainen, instructies schrijven en adoptie van nieuwe functionaliteit bevorderen.
-                    </p>
-                  </div>
-                </div>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+            <ScrollReveal delay={100}>
+              <div className="bg-blue-50 rounded-xl p-6 text-center">
+                <span className="material-icons text-blue-600 text-3xl mb-2">verified</span>
+                <h4 className="font-bold text-slate-900 mb-2">Gecertificeerd</h4>
+                <p className="text-sm text-slate-600">BiSL 2, ITIL 4</p>
+                <p className="text-xs text-slate-400 mt-2">Officiële certificeringen</p>
               </div>
             </ScrollReveal>
-
+            <ScrollReveal delay={200}>
+              <div className="bg-purple-50 rounded-xl p-6 text-center">
+                <span className="material-icons text-purple-600 text-3xl mb-2">schedule</span>
+                <h4 className="font-bold text-slate-900 mb-2">15+ jaar ervaring</h4>
+                <p className="text-sm text-slate-600">MKB, scale-up, enterprise</p>
+                <p className="text-xs text-slate-400 mt-2">100+ projecten afgerond</p>
+              </div>
+            </ScrollReveal>
             <ScrollReveal delay={300}>
-              <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
-                <p className="text-slate-700 text-sm">
-                  <strong>Afhankelijk van de situatie:</strong> Elke omgeving is anders. Ik analyseer eerst, bepaal de focus
-                  en pas de aanpak aan op jouw organisatie en volwassenheidsniveau.
-                </p>
+              <div className="bg-emerald-50 rounded-xl p-6 text-center">
+                <span className="material-icons text-emerald-600 text-3xl mb-2">star</span>
+                <h4 className="font-bold text-slate-900 mb-2">Trackrecord</h4>
+                <p className="text-sm text-slate-600">4.8/5 gemiddelde score</p>
+                <p className="text-xs text-slate-400 mt-2">Klanttevredenheid</p>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* FAQ Sectie met uitgebreide antwoorden */}
-      <FAQSection faqs={faqs} />
-      <FAQSchema faqs={faqs} />
+      {/* Beschikbaarheid check - Conversion element */}
+      <section className="py-16 md:py-20 bg-slate-50" id="beschikbaarheid">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-lg text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                Direct inzetbaar?
+              </h2>
+              <p className="text-slate-600 mb-6">Check mijn beschikbaarheid en krijg binnen 24 uur een vrijblijvende indicative.</p>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-3 text-sm">
+                  <span className="text-slate-700">Reactietijd offerte</span>
+                  <span className="font-semibold text-accent">Binnen 4 werkdagen</span>
+                </div>
+                <div className="flex items-center justify-between gap-3 text-sm">
+                  <span className="text-slate-700">Startdatum</span>
+                  <span className="font-semibold text-slate-900">In overleg</span>
+                </div>
+                <div className="flex items-center justify-between gap-3 text-sm">
+                  <span className="text-slate-700">Minimale inzet</span>
+                  <span className="font-semibold text-slate-900">16 uur per week</span>
+                </div>
+              </div>
+              <Link
+                href="/contact"
+                className="inline-block bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-3.5 rounded-full text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full"
+              >
+                Check beschikbaarheid
+              </Link>
+              <p className="text-xs text-slate-400 mt-4">Geen verplichtingen • Gratis en vrijblijvend</p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-      {/* Gerelateerde Diensten */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      {/* FAQ - Conversion Layer */}
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Gerelateerde diensten
+                Veelgestelde vragen
               </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Antwoorden op vragen die ik vaak krijg. Staat je vraag er niet bij?
+              </p>
             </header>
           </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-            <ScrollReveal delay={100}>
-              <Link href="/diensten/zzp-applicatiebeheerder" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-purple-600 text-3xl mb-2">settings_applications</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Applicatiebeheerder</h3>
-                <p className="text-sm text-slate-500">Incident- en change management, monitoring, releases en gebruikersbeheer.</p>
-              </Link>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <Link href="/diensten/support-itsm" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-emerald-600 text-3xl mb-2">support_agent</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT Support & ITSM</h3>
-                <p className="text-sm text-slate-500">1e/2e lijns support, ITIL-processen, SLA's en serviceverbetering.</p>
-              </Link>
-            </ScrollReveal>
-            <ScrollReveal delay={300}>
-              <Link href="/diensten/it-consultancy" className="block bg-white rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-blue-600 text-3xl mb-2">search</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT Consultancy & Audits</h3>
-                <p className="text-sm text-slate-500">Inzicht in kwaliteit, veiligheid en performance van je applicaties.</p>
-              </Link>
-            </ScrollReveal>
+          <div className="max-w-3xl mx-auto space-y-3">
+            {faqs.map((faq, index) => (
+              <ScrollReveal key={index} delay={(index + 1) * 50}>
+                <details className="group bg-slate-50 rounded-xl overflow-hidden">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-slate-100 transition-colors">
+                    <h4 className="font-semibold text-slate-900 pr-4">{faq.question}</h4>
+                    <span className="material-icons text-accent transition-transform group-open:rotate-180">expand_more</span>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-200">
+                    {faq.answer}
+                  </div>
+                </details>
+              </ScrollReveal>
+            ))}
           </div>
+
+          <ScrollReveal delay={500}>
+            <div className="max-w-3xl mx-auto mt-8 p-5 bg-amber-50 rounded-xl border border-amber-200 text-center">
+              <p className="text-slate-700 text-sm">
+                <strong>Staat je vraag er niet bij?</strong> Bel of mail me. Ik antwoord doorgaans binnen 24 uur, vaak sneller.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* CTA Sectie */}
+      <FAQSection faqs={faqs} />
+      <FAQSchema faqs={faqs} />
+
+      {/* CTA Section - Conversion Layer */}
       <section className="py-20 md:py-24 hero-gradient">
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Op zoek naar een ervaren ZZP functioneel beheerder?
+              Klaar voor professioneel functioneel beheer?
             </h2>
             <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              Neem contact op om beschikbaarheid te bespreken of een CV op te vragen.
-              Ik geef een eerlijke inschatting van wat ik voor jouw organisatie kan betekenen.
+              Stop met ad-hoc changes en onduidelijke requirements. Laat mij structuur aanbrengen in jouw applicatielandschap.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
               <Link
                 href="/contact"
                 className="inline-block bg-accent hover:bg-accent-hover text-white font-semibold px-10 py-4 rounded-full text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
-                Beschikbaarheid bespreken
+                Offerte aanvragen
               </Link>
               <Link
-                href="/contact"
+                href="#beschikbaarheid"
                 className="inline-block border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all"
               >
-                Vraag CV op
+                Eerst beschikbaarheid checken
               </Link>
             </div>
+            <div className="flex items-center justify-center gap-6 text-sm text-blue-200">
+              <span className="flex items-center gap-1">
+                <span className="material-icons text-base">check_circle</span>
+                Geen verplichtingen
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="material-icons text-base">check_circle</span>
+                Binnen 4 dagen reactie
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="material-icons text-base">check_circle</span>
+                Alle kennis overgedragen
+              </span>
+            </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Footer - Final CTA */}
+      <section className="py-12 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-slate-500 text-sm mb-3">
+              Twijfel je nog? Ik kom graag langs voor een vrijblijvend kennismakingsgesprek.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link href="/contact" className="text-accent hover:underline font-medium text-sm">
+                Plan een kennismakingsgesprek
+              </Link>
+              <span className="text-slate-300 text-sm">•</span>
+              <Link href="tel:0612345678" className="text-accent hover:underline font-medium text-sm">
+                Bel: 06 1234 5678
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

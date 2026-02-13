@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ZZP Functioneel Beheerder | BiSL, ITIL & UAT Specialist | Digitech Solutions",
-  description: "Ervaren ZZP functioneel beheerder met expertise in BiSL, ITIL, UAT en requirements engineering. Interim inzetbaar voor beheer, optimalisatie en implementatie.",
-  keywords: ["ZZP functioneel beheerder", "BiSL", "functioneel beheer", "UAT", "requirements engineering", "change management", "interim functioneel beheerder"],
+  title: "ZZP Functioneel Beheerder | BiSL, ITIL & UAT Specialist | Direct Inzetbaar",
+  description: "Ervaren ZZP functioneel beheerder (15+ jaar). Direct inzetbaar voor BiSL, ITIL, UAT en requirements engineering. MKB en scale-up specialist met 100+ projecten afgerond. Tarief vanaf €95/uur.",
+  keywords: ["ZZP functioneel beheerder", "interim functioneel beheerder", "freelance functioneel beheerder", "BiSL", "ITIL", "UAT specialist", "requirements engineer", "change management", "UAT begeleider"],
   openGraph: {
     title: "ZZP Functioneel Beheerder | BiSL, ITIL & UAT Specialist",
-    description: "Ervaren ZZP functioneel beheerder met expertise in BiSL, ITIL, UAT en requirements engineering. Interim inzetbaar voor beheer, optimalisatie en implementatie.",
+    description: "Ervaren ZZP functioneel beheerder (15+ jaar). Direct inzetbaar voor BiSL, ITIL, UAT en requirements engineering. MKB en scale-up specialist met 100+ projecten afgerond. Tarief vanaf €95/uur.",
     type: "website",
-    url: "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
+    url: "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder",
+    locale: "nl_NL"
   },
-  alternates: { canonical: "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder" }
+  alternates: {
+    canonical: "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
+  }
 };
 
-export default function ZZPFunctioneelBeheerderLayout({ children }: { children: React.ReactNode }) {
+export default function FunctioneelBeheerderLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
