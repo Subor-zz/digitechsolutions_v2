@@ -17,27 +17,23 @@ function ScrollReveal({ children, className = '', delay = 0 }: { children: React
 const situations = [
   {
     title: "Incidenten stapelen zich op",
-    description: "Hetzelfde incident komt steeds terug omdat de oorzaak niet bij de bron wordt aangepakt. Geen structurele root cause analysis (RCA) met 5 Whys of Fishbone methodiek."
+    description: "Hetzelfde incident komt steeds terug omdat de oorzaak niet bij de bron wordt aangepakt. Geen structurele root cause analysis (RCA)."
   },
   {
     title: "Geen SLA-inzicht en -sturing",
-    description: "Supportverzoeken worden ad-hoc afgehandeld zonder meetbare responstijden of kwaliteitsmetrics. Ontbrekend inzicht in MTTR, FCR en CSAT scores."
+    description: "Supportverzoeken worden ad-hoc afgehandeld zonder meetbare responstijden of kwaliteitsmetrics. Ontbrekend inzicht in MTTR, FCR en CSAT."
   },
   {
-    title: "Verantwoordelijkheden vallen tussen wal en schip",
+    title: "Verantwoordelijkheden onduidelijk",
     description: "Issues lopen vast omdat niemand eigenaar is van het probleem. Escalatie verloopt via informele kanalen in plaats van gedefinieerde escalation matrix."
   },
   {
-    title: "Doorontwikkeling wordt verdrongen door brandjes",
-    description: "Het development team wordt overspoeld met supportvragen. Nieuwe features blijven liggen omdat alle tijd gaat naar incidenten. Geen duidelijke taakverdeling tussen support en development."
+    title: "Development overspoeld door supportvragen",
+    description: "Het development team wordt overspoeld met supportvragen. Nieuwe features blijven liggen omdat alle tijd gaat naar incidenten. Geen duidelijke taakverdeling."
   },
   {
     title: "Geen structuur in change management",
-    description: "Wijzigingen aan producties worden live gezet zonder testing, rollback of gecommuniceerde planning. Geen CAB (Change Advisory Board) voor kritieke changes."
-  },
-  {
-    title: "Tools worden niet optimaal benut",
-    description: "Jira, ServiceNow of TOPdesk draaien op halve kracht door ontbrekende procesinrichting en integraties. Geen self-service portal voor gebruikers."
+    description: "Wijzigingen aan productie worden live gezet zonder testing, rollback of gecommuniceerde planning. Geen CAB voor kritieke changes."
   },
   {
     title: "Kennis verdwijnt bij personeelswisseling",
@@ -523,7 +519,7 @@ export default function SupportITSMPage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <header className="text-center mb-16">
+            <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Wanneer heb je een ITSM partner nodig?
               </h2>
@@ -533,14 +529,14 @@ export default function SupportITSMPage() {
             </header>
           </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {situations.map((item, index) => (
-              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600 | 700}>
-                <div className="flex gap-4 items-start bg-slate-50 rounded-xl p-5">
-                  <span className="material-icons text-accent flex-shrink-0 text-2xl">warning</span>
+              <ScrollReveal key={index} delay={((index + 1) * 100) as 100 | 200 | 300 | 400 | 500 | 600}>
+                <div className="flex flex-col gap-3 bg-slate-50 rounded-xl p-5 h-full">
+                  <span className="material-icons text-accent text-2xl">warning</span>
                   <div>
-                    <h3 className="font-bold text-lg text-slate-900 mb-1">{item.title}</h3>
-                    <p className="text-slate-600">{item.description}</p>
+                    <h3 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </ScrollReveal>
