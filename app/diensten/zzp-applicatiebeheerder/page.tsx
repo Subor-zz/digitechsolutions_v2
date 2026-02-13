@@ -365,8 +365,7 @@ export default function ZZPApplicatiebeheerderPage() {
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
-            ))}
+              ))}
             </div>
 
             <ScrollReveal delay={400}>
