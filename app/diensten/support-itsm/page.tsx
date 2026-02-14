@@ -699,7 +699,7 @@ export default function SupportITSMPage() {
                 Plan gratis intake (15 minuten)
               </Link>
               <p className="text-sm text-blue-200">
-                Of bel direct: <a href="tel:+31612345678" className="underline hover:no-underline">+31 6 1234 5678</a>
+                Of bel direct: <a href="tel:+31643983420" className="underline hover:no-underline">+31 6 4398 3420</a>
               </p>
             </div>
           </ScrollReveal>
