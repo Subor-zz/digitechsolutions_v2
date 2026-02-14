@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     title: "Tarieven & samenwerkingsvormen | Digitech Solutions",
     description: "Indicatieve tarieven voor IT-consultancy, fractional CTO en development. Transparant, professioneel en afgestemd op jouw situatie.",
     type: "website",
-    url: "https://digitechsolutions.nl/tarieven"
+    url: "https://www.digitechsolutions.nl/tarieven"
   },
   alternates: {
-    canonical: "https://digitechsolutions.nl/tarieven"
+    canonical: "https://www.digitechsolutions.nl/tarieven"
   }
 };
 

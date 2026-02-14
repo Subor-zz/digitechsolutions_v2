@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     title: "Contact | Digitech Solutions IT-consultancy",
     description: "Neem contact op met Digitech Solutions voor IT-consultancy, development of fractional CTO.",
     type: "website",
-    url: "https://digitechsolutions.nl/contact"
+    url: "https://www.digitechsolutions.nl/contact"
   },
   alternates: {
-    canonical: "https://digitechsolutions.nl/contact"
+    canonical: "https://www.digitechsolutions.nl/contact"
   }
 };
 

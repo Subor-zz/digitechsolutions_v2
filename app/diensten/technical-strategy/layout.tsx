@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     title: "IT Consultancy & Technical Strategy | Digitech Solutions",
     description: "IT consultancy voor schaalbare en toekomstbestendige systemen. Architectuurreview, technische roadmap, stack evaluatie en strategisch advies.",
     type: "website",
-    url: "https://digitechsolutions.nl/diensten/technical-strategy"
+    url: "https://www.digitechsolutions.nl/diensten/technical-strategy"
   },
   alternates: {
-    canonical: "https://digitechsolutions.nl/diensten/technical-strategy"
+    canonical: "https://www.digitechsolutions.nl/diensten/technical-strategy"
   }
 };
 

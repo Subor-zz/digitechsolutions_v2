@@ -1,41 +1,19 @@
-import type { Metadata } from "next";
 import { JsonLd } from '../../components/JsonLd';
-import { createServiceBreadcrumbs } from '../../lib/schema/breadcrumbs';
+import { generateServicePageSeo } from '../../lib/seo';
 
-const siteUrl = "https://www.digitechsolutions.nl";
-
-export const metadata: Metadata = {
+const { metadata, graphSchema } = generateServicePageSeo({
   title: "Productconsultatie & Technische Validatie | Digitech Solutions",
   description: "Technische validatie van productideeën, haalbaarheidsanalyse, scope-bepaling en risico-inventarisatie.",
-  alternates: { canonical: `${siteUrl}/diensten/productconsultatie` },
-  openGraph: {
-    title: "Productconsultatie & Technische Validatie | Digitech Solutions",
-    description: "Technische validatie van productideeën, haalbaarheidsanalyse, scope-bepaling en risico-inventarisatie.",
-    type: "website",
-    url: `${siteUrl}/diensten/productconsultatie`,
-    images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Productconsultatie & Technische Validatie - Digitech Solutions"
-      }
-    ]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Productconsultatie & Technische Validatie | Digitech Solutions",
-    description: "Technische validatie van productideeën, haalbaarheidsanalyse, scope-bepaling en risico-inventarisatie.",
-    images: [`${siteUrl}/og-image.png`],
-  },
-};
+  serviceName: "Productconsultatie",
+  serviceSlug: "productconsultatie",
+});
 
-const breadcrumbSchema = createServiceBreadcrumbs("Productconsultatie & Technische Validatie", "productconsultatie");
+export { metadata };
 
 export default function ProductconsultatieLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={graphSchema} />
       {children}
     </>
   );

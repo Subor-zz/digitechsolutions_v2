@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     title: "Fractional CTO voor startups & MKB | Digitech Solutions",
     description: "Senior technische sturing zonder fulltime CTO. Architectuur, roadmap, AI-strategie en due diligence. Plan een vrijblijvende intake.",
     type: "website",
-    url: "https://digitechsolutions.nl/diensten/fractional-cto"
+    url: "https://www.digitechsolutions.nl/diensten/fractional-cto"
   },
   alternates: {
-    canonical: "https://digitechsolutions.nl/diensten/fractional-cto"
+    canonical: "https://www.digitechsolutions.nl/diensten/fractional-cto"
   }
 };
 

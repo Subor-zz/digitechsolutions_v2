@@ -93,6 +93,9 @@ export async function generateMetadata({ params }: BlogPostLayoutProps): Promise
   return {
     title: `${postMeta.title} | Digitech Solutions`,
     description: postMeta.description,
+    alternates: {
+      canonical: `https://www.digitechsolutions.nl/blog/${slug}`,
+    },
     openGraph: {
       title: `${postMeta.title} | Digitech Solutions`,
       description: postMeta.description,
