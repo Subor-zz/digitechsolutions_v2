@@ -1,15 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-background-dark text-white pt-20 pb-10">
+    <footer className="bg-background-dark text-white pt-20 pb-10 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Section */}
           <div className="col-span-1 sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
-                D
+              <div className="relative w-8 h-8 group-hover:scale-110 transition-transform">
+                <Image
+                  src="/logo-transparent.png"
+                  alt="Digitech Solutions Logo"
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
               </div>
               <span className="font-bold text-xl tracking-tight">
                 Digitech<span className="font-light text-slate-600">Solutions</span>

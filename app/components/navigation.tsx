@@ -89,20 +89,20 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'py-4' : 'py-6'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`glass-nav rounded-[2rem] px-6 lg:px-10 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] transition-all duration-500 ${isScrolled ? 'h-16' : 'h-20'}`}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className={`glass-nav rounded-[1.5rem] sm:rounded-[2rem] px-4 sm:px-6 lg:px-10 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] transition-all duration-500 ${isScrolled ? 'h-16' : 'h-20'}`}>
           <div className="flex justify-between h-full items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center gap-3 group">
-              <div className="relative w-9 h-9 group-hover:scale-110 transition-transform">
+            <Link href="/" className="flex-shrink-0 flex items-center gap-2 sm:gap-3 group">
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9 group-hover:scale-110 transition-transform">
                 <Image
                   src="/logo-transparent.png"
                   alt="Digitech Solutions Logo"
-                  width={36}
-                  height={36}
-                  className="object-contain"
+                  width={32}
+                  height={32}
+                  className="object-contain sm:w-9 sm:h-9"
                 />
               </div>
-              <span className="font-extrabold text-xl tracking-tighter text-slate-900">
+              <span className="font-extrabold text-lg sm:text-xl tracking-tighter text-slate-900">
                 Digitech<span className="text-slate-600">Solutions</span>
               </span>
             </Link>
@@ -191,25 +191,25 @@ export default function Navigation() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="absolute top-full left-4 right-4 mt-2 bg-white rounded-[2rem] border border-slate-200 shadow-2xl p-6 md:hidden max-h-[80vh] overflow-y-auto">
+            <div className="absolute top-full left-3 right-3 mt-2 bg-white rounded-[1.5rem] border border-slate-200 shadow-2xl p-4 sm:p-6 md:hidden max-h-[80vh] overflow-x-hidden overflow-y-auto">
               <div className="flex flex-col gap-2">
                 {/* Nav items with dropdowns */}
                 {navItems.map((item) => (
                   item.hasDropdown && item.items ? (
                     <div key={item.id} className="mb-2">
-                      <div className="px-6 py-3 font-bold text-slate-900 text-sm">
+                      <div className="px-3 py-2 font-bold text-slate-900 text-sm">
                         {item.label}
                       </div>
-                      <div className="flex flex-col gap-1 ml-4">
+                      <div className="flex flex-col gap-1 ml-2">
                         {item.items.map((subItem, idx) =>
                           isDivider(subItem) ? (
-                            <div key={`divider-${idx}`} className="my-2 mx-6 border-t border-slate-200" />
+                            <div key={`divider-${idx}`} className="my-2 mx-3 border-t border-slate-200" />
                           ) : (
                             <Link
                               key={subItem.id}
                               href={subItem.href}
                               onClick={() => setIsOpen(false)}
-                              className={`w-full text-left px-6 py-3 rounded-xl font-medium transition-all ${
+                              className={`w-full text-left px-3 py-2 rounded-xl font-medium text-sm break-words transition-all ${
                                 pathname === subItem.href
                                   ? 'bg-primary/10 text-primary'
                                   : 'text-slate-600 hover:bg-slate-50'
@@ -226,7 +226,7 @@ export default function Navigation() {
                       key={item.id}
                       href={'href' in item ? (item as NavItemRegular).href : ''}
                       onClick={() => setIsOpen(false)}
-                      className={`w-full text-left px-6 py-4 rounded-2xl font-bold transition-all ${
+                      className={`w-full text-left px-3 py-3 rounded-2xl font-bold text-sm transition-all ${
                         'href' in item && isActive((item as NavItemRegular).href)
                           ? 'bg-primary text-white'
                           : 'text-slate-600 hover:bg-slate-50'
@@ -241,7 +241,7 @@ export default function Navigation() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="shimmer-btn animate-shimmer w-full text-left px-6 py-4 rounded-2xl font-bold shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center gap-2"
+                  className="shimmer-btn animate-shimmer w-full text-center px-3 py-3 rounded-2xl font-bold text-sm shadow-[0_10px_40px_rgba(245,158,11,0.4)] transition-all active:scale-95 text-white hover:scale-105 flex items-center justify-center gap-2 mt-2"
                 >
                   Beschikbaarheid bespreken
                   <span className="material-icons text-sm">calendar_month</span>
