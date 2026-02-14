@@ -5,8 +5,7 @@ import FAQSection from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
-import { JsonLd } from '../../components/JsonLd';
-import { createServicePageSchema, type FAQItem } from '../../lib/schema';
+import type { FAQItem } from '../../lib/schema';
 
 function ScrollReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number; }) {
   const [ref, isIntersecting] = useScrollReveal();
@@ -272,20 +271,9 @@ const faqs: FAQItem[] = [
   }
 ];
 
-// Schema using factory
-const serviceSchema = createServicePageSchema({
-  serviceName: "ITSM Support Specialist",
-  serviceDescription: "IT support en ITSM ondersteuning met focus op incident-, problem- en change management, SLA-afspraken, procesoptimalisatie en voorspelbare service.",
-  serviceUrl: "https://www.digitechsolutions.nl/diensten/support-itsm",
-  serviceSlug: "support-itsm",
-  faqs: faqs,
-});
-
 export default function SupportITSMPage() {
   return (
     <div className="min-h-screen bg-white">
-      <JsonLd data={serviceSchema} />
-
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 lg:pt-48 lg:pb-40 overflow-hidden hero-gradient">
         {/* Animated blobs */}

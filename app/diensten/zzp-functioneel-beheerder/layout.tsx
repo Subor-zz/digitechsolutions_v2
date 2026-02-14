@@ -3,18 +3,6 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "ZZP Functioneel Beheerder Inhuren | Freelance Specialist | Digitech",
   description: "ZZP functioneel beheerder inhuren? Freelance specialist met 15+ jaar ervaring in BiSL, ITIL & UAT. Interim inzetbaar binnen 5 dagen. Tarief vanaf €95/uur.",
-  keywords: [
-    "ZZP functioneel beheerder",
-    "freelance functioneel beheerder",
-    "interim functioneel beheer specialist",
-    "functioneel beheerder inhuren",
-    "BiSL consultant",
-    "ITIL specialist",
-    "UAT coördinator",
-    "change management",
-    "requirements engineering",
-    "functioneel beheer uitbesteden"
-  ],
   robots: "index, follow",
   openGraph: {
     title: "ZZP Functioneel Beheerder Inhuren | Freelance Specialist | Digitech",
@@ -33,7 +21,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
-  }
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ZZP Functioneel Beheerder Inhuren | Freelance Specialist | Digitech",
+    description: "ZZP functioneel beheerder inhuren? Freelance specialist met 15+ jaar ervaring in BiSL, ITIL & UAT. Interim inzetbaar binnen 5 dagen. Tarief vanaf €95/uur.",
+    images: ["https://www.digitechsolutions.nl/images/og-functioneel-beheerder.jpg"],
+  },
 };
 
 export default function FunctioneelBeheerderLayout({ children }: { children: React.ReactNode }) {

@@ -12,15 +12,16 @@ export const ORGANIZATION_CONFIG = {
   foundingDate: "2020",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Bedrijfsstraat 1",
-    addressLocality: "Amsterdam",
-    postalCode: "1012 AB",
+    streetAddress: "Breda",
+    addressLocality: "Breda",
+    addressRegion: "Noord-Brabant",
+    postalCode: "4800",
     addressCountry: "NL",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "52.3676",
-    longitude: "4.9041",
+    latitude: "51.5875",
+    longitude: "4.7750",
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",

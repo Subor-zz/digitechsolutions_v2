@@ -5,8 +5,7 @@ import FAQSection from '../../components/faq-section';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
 import Link from 'next/link';
-import { JsonLd } from '../../components/JsonLd';
-import { createServicePageSchema, type FAQItem } from '../../lib/schema';
+import type { FAQItem } from '../../lib/schema';
 
 function ScrollReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number; }) {
   const [ref, isIntersecting] = useScrollReveal();
@@ -153,22 +152,9 @@ const faqs: FAQItem[] = [
   }
 ];
 
-// Schema using factory
-const serviceSchema = createServicePageSchema({
-  serviceName: "ZZP Applicatiebeheerder",
-  serviceDescription: "Inhuur van een ZZP applicatiebeheerder voor stabiele systemen, incident- en probleemoplossing, change- en release ondersteuning en procesverbetering.",
-  serviceUrl: "https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder",
-  serviceSlug: "zzp-applicatiebeheerder",
-  faqs: faqs.slice(0, 6), // Use first 6 for schema
-  hourlyRateMin: 85,
-  hourlyRateMax: 125,
-});
-
 export default function ZZPApplicatiebeheerderPage() {
   return (
     <div className="min-h-screen bg-white">
-      <JsonLd data={serviceSchema} />
-
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 lg:pt-48 lg:pb-28 overflow-hidden hero-gradient">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
