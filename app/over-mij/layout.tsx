@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: "Over Subor Cheung | ZZP Applicatiebeheerder & Functioneel Beheerder",
     description: "ZZP applicatiebeheerder en functioneel beheerder met 9+ jaar IT-ervaring en 11 jaar finance-achtergrond.",
     type: "website",
-    url: "https://digitechsolutions.nl/over-mij"
+    url: "https://www.digitechsolutions.nl/over-mij"
   },
   twitter: {
     card: "summary_large_image",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "ZZP applicatiebeheerder en functioneel beheerder met 9+ jaar IT-ervaring en 11 jaar finance-achtergrond."
   },
   alternates: {
-    canonical: "https://digitechsolutions.nl/over-mij"
+    canonical: "https://www.digitechsolutions.nl/over-mij"
   }
 };
 

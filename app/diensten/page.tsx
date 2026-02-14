@@ -30,10 +30,10 @@ function ScrollReveal({
 }
 
 // Spotlight Card Component
-function SpotlightCard({ service, onNavigate }: { service: typeof servicesData[0]; onNavigate: (slug: string) => void }) {
-  const cardRef = React.useRef<HTMLDivElement>(null);
+function SpotlightCard({ service }: { service: typeof servicesData[0] }) {
+  const cardRef = React.useRef<HTMLAnchorElement>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!cardRef.current) return;
     const { left, top } = cardRef.current.getBoundingClientRect();
     const x = e.clientX - left;
@@ -43,10 +43,10 @@ function SpotlightCard({ service, onNavigate }: { service: typeof servicesData[0
   };
 
   return (
-    <div
+    <Link
+      href={service.slug}
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      onClick={() => onNavigate(service.slug)}
       className="spotlight-card group relative bg-white p-10 rounded-[3rem] border border-slate-100 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(17,82,212,0.06)] hover:-translate-y-2 flex flex-col overflow-hidden cursor-pointer"
     >
       <div className={`w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-primary mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm relative z-10`}>
@@ -68,7 +68,7 @@ function SpotlightCard({ service, onNavigate }: { service: typeof servicesData[0
           ))}
         </ul>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -158,7 +158,7 @@ export default function DienstenPage() {
             '@type': 'CollectionPage',
             name: 'IT-diensten | Digitech Solutions',
             description: 'Overzicht van alle IT-diensten: ZZP applicatiebeheer, functioneel beheer, IT support, full-stack development, projectmanagement en meer.',
-            url: 'https://digitechsolutions.nl/diensten',
+            url: 'https://www.digitechsolutions.nl/diensten',
           }),
         }}
       />
@@ -207,7 +207,6 @@ export default function DienstenPage() {
                 <SpotlightCard
                   key={service.id}
                   service={service}
-                  onNavigate={(slug) => (window.location.href = slug)}
                 />
               ))}
             </div>

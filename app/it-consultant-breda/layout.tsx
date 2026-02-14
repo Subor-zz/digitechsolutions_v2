@@ -5,10 +5,13 @@ export const metadata: Metadata = {
   title: "IT Consultancy voor schaalbare systemen | Digitech Solutions",
   description: "IT consultancy gericht op schaalbaarheid en technische richting. Architectuurreview, roadmap en strategisch advies voor groeiende bedrijven.",
   keywords: ["IT consultancy", "technische strategie", "architectuur review", "schaalbare systemen", "IT advies", "technisch advies"],
+  alternates: {
+    canonical: "https://www.digitechsolutions.nl/it-consultant-breda",
+  },
   openGraph: {
     title: "IT Consultancy voor schaalbare systemen | Digitech Solutions",
     description: "IT consultancy gericht op schaalbaarheid en technische richting. Architectuurreview, roadmap en strategisch advies voor groeiende bedrijven.",
-    url: "https://digitechsolutions.nl/it-consultant-breda",
+    url: "https://www.digitechsolutions.nl/it-consultant-breda",
     type: "website",
   },
 };
@@ -17,11 +20,11 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://digitechsolutions.nl/#localbusiness",
+  "@id": "https://www.digitechsolutions.nl/#localbusiness",
   "name": "Digitech Solutions",
-  "url": "https://digitechsolutions.nl",
-  "logo": "https://digitechsolutions.nl/logo.png",
-  "image": "https://digitechsolutions.nl/logo.png",
+  "url": "https://www.digitechsolutions.nl",
+  "logo": "https://www.digitechsolutions.nl/logo.png",
+  "image": "https://www.digitechsolutions.nl/logo.png",
   "description": "IT consultancy gericht op schaalbaarheid en technische richting. Architectuurreview, roadmap en strategisch advies.",
   "telephone": "+31643983420",
   "priceRange": "€€",
