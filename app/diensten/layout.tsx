@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from '../components/JsonLd';
+import { buildBreadcrumbJsonLd } from '../lib/seo';
 
 const siteUrl = "https://www.digitechsolutions.nl";
 
@@ -30,10 +32,25 @@ export const metadata: Metadata = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    buildBreadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Diensten", path: "/diensten" },
+    ])
+  ]
+};
+
 export default function DienstenLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      {children}
+    </>
+  );
 }

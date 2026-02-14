@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from '../components/JsonLd';
+import { buildBreadcrumbJsonLd } from '../lib/seo';
 
 export const metadata: Metadata = {
   title: "Over Subor Cheung | ZZP Applicatiebeheerder & Functioneel Beheerder",
@@ -19,10 +21,25 @@ export const metadata: Metadata = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    buildBreadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Over", path: "/over-mij" },
+    ])
+  ]
+};
+
 export default function OverMijLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      {children}
+    </>
+  );
 }
