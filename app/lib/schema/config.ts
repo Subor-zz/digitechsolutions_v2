@@ -5,17 +5,15 @@ export const ORGANIZATION_CONFIG = {
   name: "Digitech Solutions",
   alternateName: "Digitech",
   url: "https://www.digitechsolutions.nl/",
-  logo: "https://digitechsolutions.nl/logo-transparent.png",
+  logo: "https://www.digitechsolutions.nl/logo-transparent.png",
   phone: "+31-6-43983420",
   email: "info@digitechsolutions.nl",
   description: "IT Consultancy, Applicatiebeheer & Development diensten voor startups en MKB",
   foundingDate: "2020",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Breda",
     addressLocality: "Breda",
     addressRegion: "Noord-Brabant",
-    postalCode: "4800",
     addressCountry: "NL",
   },
   geo: {

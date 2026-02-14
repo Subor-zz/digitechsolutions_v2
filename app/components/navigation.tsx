@@ -100,6 +100,8 @@ export default function Navigation() {
                   width={32}
                   height={32}
                   className="object-contain sm:w-9 sm:h-9"
+                  priority
+                  fetchPriority="high"
                 />
               </div>
               <span className="font-extrabold text-lg sm:text-xl tracking-tighter text-slate-900">
