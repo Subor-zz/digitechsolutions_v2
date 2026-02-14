@@ -202,18 +202,6 @@ export const metadata: Metadata = {
   authors: [{ name: authorName, url: authorUrl }],
   creator: authorName,
   publisher: siteName,
-  keywords: [
-    "ZZP applicatiebeheerder",
-    "ZZP functioneel beheerder",
-    "applicatiebeheer",
-    "functioneel beheer",
-    "IT support",
-    "ITSM",
-    "ITIL",
-    "incident management",
-    "change management",
-    "support & servicemanagement"
-  ],
   robots: {
     index: true,
     follow: true,
@@ -289,13 +277,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content={siteName} />
-
-        {/* DCMI Metadata */}
-        <meta name="DC.title" content={title} />
-        <meta name="DC.description" content={description} />
-        <meta name="DC.creator" content={authorName} />
-        <meta name="DC.language" content="nl" />
-        <meta name="DC.subject" content="ZZP Applicatiebeheer, Functioneel Beheer, IT Support, ITSM" />
 
         {/* Geo Meta Tags */}
         <meta name="geo.region" content="NL-NB" />
