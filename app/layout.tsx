@@ -75,10 +75,8 @@ const localBusinessSchema = {
   "priceRange": "€€",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Breda",
     "addressLocality": "Breda",
     "addressRegion": "Noord-Brabant",
-    "postalCode": "4800",
     "addressCountry": "NL"
   },
   "geo": {
@@ -129,7 +127,7 @@ const organizationBasicSchema = {
   "url": "https://www.digitechsolutions.nl/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://digitechsolutions.nl/logo-transparent.png"
+    "url": "https://www.digitechsolutions.nl/logo-transparent.png"
   },
   "contactPoint": [
     {
@@ -152,42 +150,42 @@ const servicesSchema = {
       "position": 1,
       "name": "ZZP Applicatiebeheerder",
       "description": "Incident- en change management, monitoring, releases en gebruikersbeheer voor stabiele applicaties.",
-      "url": "https://digitechsolutions.nl/diensten/zzp-applicatiebeheerder"
+      "url": "https://www.digitechsolutions.nl/diensten/zzp-applicatiebeheerder"
     },
     {
       "@type": "Service",
       "position": 2,
       "name": "ZZP Functioneel Beheerder",
       "description": "Requirements, wijzigingsbeheer, UAT, communicatie en procesoptimalisatie als brug tussen business en IT.",
-      "url": "https://digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
+      "url": "https://www.digitechsolutions.nl/diensten/zzp-functioneel-beheerder"
     },
     {
       "@type": "Service",
       "position": 3,
       "name": "IT Support & ITSM",
       "description": "1e/2e lijns support, ITIL-processen, SLA's, ticketing en serviceverbetering.",
-      "url": "https://digitechsolutions.nl/diensten/support-itsm"
+      "url": "https://www.digitechsolutions.nl/diensten/support-itsm"
     },
     {
       "@type": "Service",
       "position": 4,
       "name": "Full Stack Developer",
       "description": "Webapplicaties, API's en automatisering met moderne stack als aanvullende expertise.",
-      "url": "https://digitechsolutions.nl/diensten/full-stack-development"
+      "url": "https://www.digitechsolutions.nl/diensten/full-stack-development"
     },
     {
       "@type": "Service",
       "position": 5,
       "name": "IT Project Manager",
       "description": "Projectplanning, stakeholdermanagement, releases en delivery van IT-projecten.",
-      "url": "https://digitechsolutions.nl/diensten/it-project-manager"
+      "url": "https://www.digitechsolutions.nl/diensten/it-project-manager"
     },
     {
       "@type": "Service",
       "position": 6,
       "name": "Productconsultatie & Technische Validatie",
       "description": "Haalbaarheidsanalyse, scope-bepaling, risico-inventarisatie en technische review van productideeën.",
-      "url": "https://digitechsolutions.nl/diensten/productconsultatie"
+      "url": "https://www.digitechsolutions.nl/diensten/productconsultatie"
     }
   ]
 };
@@ -202,6 +200,9 @@ export const metadata: Metadata = {
   authors: [{ name: authorName, url: authorUrl }],
   creator: authorName,
   publisher: siteName,
+  alternates: {
+    canonical: siteUrl,
+  },
   robots: {
     index: true,
     follow: true,
@@ -222,7 +223,7 @@ export const metadata: Metadata = {
     siteName: siteName,
     images: [
       {
-        url: "/og-image.png",
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: `${siteName} - ZZP Applicatiebeheer & Functioneel Beheer`
@@ -233,7 +234,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: title,
     description: description,
-    images: ["/og-image.png"],
+    images: [`${siteUrl}/og-image.png`],
     creator: "@SuborCheung",
   },
 };
@@ -246,15 +247,18 @@ export default function RootLayout({
   return (
     <html lang="nl" className="scroll-smooth">
       <head>
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.digitechsolutions.nl/" />
+
         {/* DNS preconnect for faster LCP */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://www.digitechsolutions.nl" />
 
         {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-        <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 
         {/* PWA Manifest */}
