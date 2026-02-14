@@ -319,37 +319,57 @@ export default function FullStackPage() {
       <FAQSection faqs={faqs} />
       <FAQSchema faqs={faqs} />
 
-      {/* Related Services */}
+      {/* Related Core Services */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <header className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
-                Gerelateerde diensten
+                Gerelateerde kernservices
               </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Naast development bied ik ook applicatiebeheer en support diensten aan.
+              </p>
             </header>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Text links for SEO */}
+          <ScrollReveal delay={100}>
+            <p className="text-center text-slate-600 mb-8 max-w-3xl mx-auto">
+              Zoek je ondersteuning voor je bestaande systemen? Bekijk ook mijn&nbsp;
+              <Link href="/diensten/zzp-applicatiebeheerder" className="text-primary hover:underline font-medium">
+                ZZP applicatiebeheer
+              </Link>,&nbsp;
+              <Link href="/diensten/zzp-functioneel-beheerder" className="text-primary hover:underline font-medium">
+                functioneel beheer
+              </Link>
+              &nbsp;en&nbsp;
+              <Link href="/diensten/support-itsm" className="text-primary hover:underline font-medium">
+                support & ITSM
+              </Link>&nbsp;diensten.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <ScrollReveal delay={100}>
-              <Link href="/diensten/it-consultancy" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-emerald-600 text-3xl mb-2">terminal</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT-consultancy</h3>
-                <p className="text-sm text-slate-500">Applicatieanalyse, performance checks en integratieadvies.</p>
+              <Link href="/diensten/zzp-applicatiebeheerder" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-purple-600 text-3xl mb-2">settings_applications</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Applicatiebeheerder</h3>
+                <p className="text-sm text-slate-500">Incident- en change management voor stabiele applicaties.</p>
               </Link>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <Link href="/diensten/support-itsm" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-pink-600 text-3xl mb-2">support_agent</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">Support & IT-servicemanagement</h3>
-                <p className="text-sm text-slate-500">SLA's, supportprocessen en incident/change management.</p>
+              <Link href="/diensten/zzp-functioneel-beheerder" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-blue-600 text-3xl mb-2">sync_alt</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">ZZP Functioneel Beheerder</h3>
+                <p className="text-sm text-slate-500">De brug tussen business en IT met requirements en wijzigingsbeheer.</p>
               </Link>
             </ScrollReveal>
             <ScrollReveal delay={300}>
-              <Link href="/diensten/projectmanagement" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
-                <span className="material-icons text-orange-600 text-3xl mb-2">assignment</span>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">IT-projectmanagement</h3>
-                <p className="text-sm text-slate-500">Structuur, scope en voortgang voor softwareprojecten.</p>
+              <Link href="/diensten/support-itsm" className="block bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-all group">
+                <span className="material-icons text-pink-600 text-3xl mb-2">support_agent</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-primary transition-colors">Support & ITSM</h3>
+                <p className="text-sm text-slate-500">SLA's, supportprocessen en incident/change management.</p>
               </Link>
             </ScrollReveal>
           </div>
