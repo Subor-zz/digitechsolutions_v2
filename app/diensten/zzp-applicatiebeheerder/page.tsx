@@ -629,11 +629,11 @@ export default function ZZPApplicatiebeheerderPage() {
                 Plan intake
               </Link>
               <a
-                href="tel:06123456789"
+                href="tel:+31643983420"
                 className="border-2 border-white/80 text-white hover:bg-white hover:text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all flex items-center gap-2"
               >
                 <span className="material-icons">phone</span>
-                06-1234 56789
+                +31 6 4398 3420
               </a>
             </div>
 

@@ -979,8 +979,8 @@ export default function ZZPFunctioneelBeheerderPage() {
                 Plan een kennismakingsgesprek
               </Link>
               <span className="text-slate-300 text-sm">•</span>
-              <Link href="tel:0612345678" className="text-accent hover:underline font-medium text-sm">
-                Bel: 06 1234 5678
+              <Link href="tel:+31643983420" className="text-accent hover:underline font-medium text-sm">
+                Bel: +31 6 4398 3420
               </Link>
             </div>
           </div>
