@@ -151,7 +151,7 @@ function SpotlightCard({ service, onNavigate }: { service: typeof primaryService
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden">
         {/* Hero Section */}
         <section className="relative pt-40 pb-24 lg:pt-48 lg:pb-40 overflow-hidden hero-gradient">
           {/* Animated blobs */}
@@ -176,8 +176,8 @@ export default function Home() {
               </div>
 
               {/* Hero Title */}
-              <h1 className="text-5xl sm:text-6xl lg:text-[4rem] font-extrabold text-white tracking-tighter mb-6 leading-[1.05] text-balance opacity-0 animate-fade-in-up animation-delay-100">
-                ZZP Applicatiebeheerder &<br className="hidden lg:block" />
+              <h1 className="text-3xl sm:text-5xl sm:text-6xl lg:text-[4rem] font-extrabold text-white tracking-tighter mb-6 leading-[1.05] text-balance opacity-0 animate-fade-in-up animation-delay-100">
+                ZZP<br className="sm:hidden" /> Applicatiebeheerder &<br className="hidden lg:block" />
                 <span className="text-white/80"> Functioneel Beheerder</span>
               </h1>
 
