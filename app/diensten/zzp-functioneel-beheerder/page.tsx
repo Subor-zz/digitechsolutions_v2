@@ -844,8 +844,6 @@ export default function ZZPFunctioneelBeheerderPage() {
         </div>
       </section>
 
-      <FAQSection faqs={faqs} />
-
       {/* Interne Links - Gerelateerde diensten */}
       <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-6">
