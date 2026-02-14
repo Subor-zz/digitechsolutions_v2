@@ -3,9 +3,10 @@ import { generateServicePageSeo } from '../../lib/seo';
 
 const { metadata, graphSchema } = generateServicePageSeo({
   title: "Productconsultatie & Technische Validatie | Digitech Solutions",
-  description: "Technische validatie van productideeën, haalbaarheidsanalyse, scope-bepaling en risico-inventarisatie.",
+  description: "Productconsultatie en technische validatie voordat je bouwt. Haalbaarheidsanalyse, scope-bepaling, risico-inventarisatie en architectuur review voor startups en MKB.",
   serviceName: "Productconsultatie",
   serviceSlug: "productconsultatie",
+  ogImage: "/images/og-productconsultatie.jpg",
 });
 
 export { metadata };

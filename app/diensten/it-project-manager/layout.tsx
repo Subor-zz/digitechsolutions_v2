@@ -3,9 +3,10 @@ import { generateServicePageSeo } from '../../lib/seo';
 
 const { metadata, graphSchema } = generateServicePageSeo({
   title: "IT Project Manager (ZZP) | Digitech Solutions",
-  description: "ZZP IT Project Manager voor planning, stakeholdermanagement, releases en delivery. Senior projectmanagement voor IT-projecten.",
+  description: "ZZP IT Project Manager voor succesvolle IT-projecten. Projectplanning, stakeholdermanagement, release coördinatie en kwaliteitsbewaking voor Nederlandse organisaties.",
   serviceName: "IT Project Manager",
   serviceSlug: "it-project-manager",
+  ogImage: "/images/og-it-project-manager.jpg",
 });
 
 export { metadata };
