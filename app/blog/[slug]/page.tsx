@@ -29,7 +29,7 @@ const blogPosts: Record<
     date: "2025-02-13",
     readTime: "8 min",
     excerpt: "Stap voor stap van reactieve helpdesk naar professionele ITSM organisatie. Een praktisch stappenplan voor MKB en scale-ups.",
-    image: "/blog/itsm-support-OG.jpg",
+    image: "/blog/audit-OG.jpg",
     content: `
 Veel organisaties starten met ad-hoc IT support: iemand belt met een probleem, er wordt een ticket aangemaakt, en hopelijk wordt het opgelost. Maar naarmate je groeit, wordt deze aanpak onhoudbaar. In dit artikel deel ik een praktisch stappenplan om van reactieve helpdesk naar professionele ITIL support te groeien.
 
@@ -1618,7 +1618,7 @@ Wacht niet tot de ransomware-aanval in het nieuws staat, of tot je gebruikers kl
     date: "2025-02-14",
     readTime: "8 min",
     excerpt: "Wat is het verschil tussen functioneel beheer en applicatiebeheer? Ontdek welke rol jouw organisatie nodig heeft, de raakvlakken met BiSL en ITIL, en wanneer je kiest voor een ZZP specialist.",
-    image: "/blog/functioneel-applicatie-beheer-OG.jpg",
+    image: "/blog/comparison-OG.jpg",
     content: `
 Binnen het IT-landschap van volwassen organisaties worden vaak tientallen, zo niet honderden, bedrijfsapplicaties gebruikt. Om dit applicatielandschap stabiel te houden en mee te laten groeien met de wensen van de organisatie, zijn grofweg twee sleutelrollen cruciaal: de **functioneel beheerder** en de **applicatiebeheerder** (of technisch applicatiebeheerder). 
 
