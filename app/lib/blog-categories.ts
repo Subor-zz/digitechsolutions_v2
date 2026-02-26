@@ -27,19 +27,47 @@ export const BLOG_CATEGORIES: Record<string, BlogCategory> = {
       { href: "/diensten/zzp-functioneel-beheerder", title: "ZZP Functioneel Beheerder", icon: "sync_alt" },
     ],
   },
-  itConsultancy: {
-    id: "itConsultancy",
-    slug: "it-consultancy-audits",
-    name: "IT-Consultancy & Audits",
-    title: "IT-Consultancy & Audits",
-    description: "Advies over applicatie-audits, performance en security",
-    intro: "IT-consultancy en audits geven inzicht in de kwaliteit, veiligheid en performance van je applicaties. Identificeer risico's, verbeterpunten en optimaliseer je technische landschap.",
-    metaTitle: "IT-Consultancy & Applicatie Audits | Kwaliteit & Security",
-    metaDescription: "Inzicht in de kwaliteit, veiligheid en performance van je applicaties. Ontdek wat een audit oplevert en welke verbeteringen mogelijk zijn.",
+  zzpApplicatiebeheerder: {
+    id: "zzpApplicatiebeheerder",
+    slug: "zzp-applicatiebeheerder",
+    name: "ZZP Applicatiebeheerder",
+    title: "ZZP Applicatiebeheerder",
+    description: "Inzichten en advies over applicatiebeheer voor MKB en overheid",
+    intro: "Een ZZP applicatiebeheerder zorgt voor stabiliteit, continuïteit en structuur in je applicatielandschap. Ontdek best practices, valkuilen en wanneer je externe expertise nodig hebt.",
+    metaTitle: "ZZP Applicatiebeheerder | Tips & Inzichten voor Applicatiebeheer",
+    metaDescription: "Lees alles over applicatiebeheer, van het voorkomen van storingen tot het effectief inzetten van een ervaren ZZP applicatiebeheerder.",
     relatedServices: [
       { href: "/diensten/zzp-applicatiebeheerder", title: "ZZP Applicatiebeheerder", icon: "settings" },
       { href: "/diensten/zzp-functioneel-beheerder", title: "ZZP Functioneel Beheerder", icon: "sync_alt" },
       { href: "/diensten/support-itsm", title: "IT Support & ITSM", icon: "support_agent" },
+    ],
+  },
+  zzpFunctioneelBeheerder: {
+    id: "zzpFunctioneelBeheerder",
+    slug: "zzp-functioneel-beheerder",
+    name: "ZZP Functioneel Beheerder",
+    title: "ZZP Functioneel Beheerder",
+    description: "Kennisartikelen over functioneel beheer en de brug tussen business en IT",
+    intro: "Functioneel beheer vertaalt business wensen naar IT oplossingen. Leer over requirements, adoptie en het optimaal inrichten van functioneel beheer.",
+    metaTitle: "ZZP Functioneel Beheerder | Business & IT Vertaling",
+    metaDescription: "Ontdek hoe functioneel beheer de brug slaat tussen gebruikers en systemen. Tips over adoptie, requirements en processen.",
+    relatedServices: [
+      { href: "/diensten/zzp-functioneel-beheerder", title: "ZZP Functioneel Beheerder", icon: "sync_alt" },
+      { href: "/diensten/zzp-applicatiebeheerder", title: "ZZP Applicatiebeheerder", icon: "settings" },
+    ],
+  },
+  itsmSupport: {
+    id: "itsmSupport",
+    slug: "itsm-support",
+    name: "ITSM Support",
+    title: "ITSM Support",
+    description: "Artikelen over IT Service Management en professionalisering van support",
+    intro: "Groei van een ad-hoc helpdesk naar professionele ITSM support. Lees over ITIL-processen, toolselectie en verbetering van je supportorganisatie.",
+    metaTitle: "ITSM Support & ITIL | Professionaliseer je IT Helpdesk",
+    metaDescription: "Tips en stappenplannen voor het professionaliseren van interne IT support met ITSM en ITIL best practices.",
+    relatedServices: [
+      { href: "/diensten/support-itsm", title: "ITSM Support", icon: "support_agent" },
+      { href: "/diensten/zzp-applicatiebeheerder", title: "ZZP Applicatiebeheerder", icon: "settings" },
     ],
   },
   fullStack: {
@@ -97,19 +125,24 @@ export const BLOG_POST_CATEGORIES: Record<string, keyof typeof BLOG_CATEGORIES> 
   "technische-fouten-zonder-cto": "fractionalCto",
   "tech-roadmap-voor-startups": "fractionalCto",
 
-  // IT-Consultancy & Audits posts
-  "wat-is-een-applicatie-audit": "itConsultancy",
-  "wanneer-zzp-applicatiebeheerder-inhuren": "itConsultancy",
-  "van-ad-hoc-helpdesk-naar-itil-support": "itConsultancy",
-  "performanceproblemen-herkennen": "performanceSecurity",
-  "security-risico's-bij-webapps": "performanceSecurity",
+  // ZZP Applicatiebeheerder posts
+  "wanneer-zzp-applicatiebeheerder-inhuren": "zzpApplicatiebeheerder",
+  "applicatiebeheerder-binnen-overheidsorganisaties": "zzpApplicatiebeheerder",
+  "wat-is-een-applicatie-audit": "zzpApplicatiebeheerder",
+  "performanceproblemen-herkennen": "zzpApplicatiebeheerder",
+  "security-risico's-bij-webapps": "zzpApplicatiebeheerder",
+
+  // ZZP Functioneel Beheerder posts
+  "verschil-functioneel-applicatiebeheer": "zzpFunctioneelBeheerder",
+
+  // ITSM Support posts
+  "van-ad-hoc-helpdesk-naar-itil-support": "itsmSupport",
 
   // Full-Stack & MVP posts
   "mvp-laten-bouwen-waar-op-letten": "fullStack",
   "react-vs-nextjs-voor-startups": "fullStack",
   "technische-schuld-voorkomen": "fullStack",
   "wanneer-herschrijven-vs-doorbouwen": "fullStack",
-  "applicatiebeheerder-binnen-overheidsorganisaties": "fullStack",
 
   // Strategie & Beslissingen posts
   "build-vs-buy-beslissingen": "strategie",
