@@ -14,7 +14,7 @@ const blogPosts = [
     category: "IT-Consultancy & Audits",
     date: "2025-02-13",
     readTime: "8 min",
-    image: "/blog/itsm-support-OG.jpg",
+    image: "/blog/audit-OG.jpg",
   },
   {
     slug: "verschil-functioneel-applicatiebeheer",
@@ -23,7 +23,7 @@ const blogPosts = [
     category: "Functioneel Beheer",
     date: "2025-02-13",
     readTime: "6 min",
-    image: "/blog/functioneel-vs-applicatiebeheer-OG.jpg",
+    image: "/blog/comparison-OG.jpg",
   },
   {
     slug: "wanneer-heb-je-een-fractional-cto-nodig",
