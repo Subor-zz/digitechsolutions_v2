@@ -357,6 +357,7 @@
   max-height: 12rem;
   overflow: visible;
   color: var(--flow);
+  --flow-stroke: 4;
 }
 
 .flowSvg path {
@@ -364,7 +365,7 @@
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 4;
+  stroke-width: var(--flow-stroke, 4);
 }
 
 .flowSvg circle,
@@ -406,6 +407,58 @@
   color: inherit;
   font-size: 0.85rem;
   opacity: 0.72;
+}
+
+/* ------------------------------------------------------------------ */
+/* Flow Line motion — progressive enhancement.                         */
+/* The static graphic above is the reviewed baseline; nothing below    */
+/* runs without JS or under prefers-reduced-motion. Data attributes    */
+/* are written by flow-line.tsx (data-motion / data-revealed /         */
+/* data-active / data-flow-state). Continuity across the five figures  */
+/* comes from the shared 640x160 viewBox, the shared y=80 spine and    */
+/* these shared stroke/reveal tokens — not from one continuous SVG.    */
+/* ------------------------------------------------------------------ */
+
+/* Spine paths draw in via a normalised dash (pathLength=100 is set in JSX). */
+.flowFigure[data-motion="on"] .flowSvg > .flowSignal,
+.flowFigure[data-motion="on"] .flowSvg > .flowRisk,
+.flowFigure[data-motion="on"] .flowSvg > .flowVerified {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.flowFigure[data-motion="on"][data-revealed="false"] .flowSvg > .flowSignal,
+.flowFigure[data-motion="on"][data-revealed="false"] .flowSvg > .flowRisk,
+.flowFigure[data-motion="on"][data-revealed="false"] .flowSvg > .flowVerified {
+  stroke-dashoffset: 100;
+}
+
+/* Nodes, gates and groups fade in; stagger comes from inline           */
+/* transition-delay on each element so each state assembles differently.*/
+.flowFigure[data-motion="on"] .flowSvg > circle,
+.flowFigure[data-motion="on"] .flowSvg > rect,
+.flowFigure[data-motion="on"] .flowSvg > g,
+.flowFigure[data-motion="on"] .flowSvg > .flowMuted {
+  transition: opacity 520ms ease-out;
+}
+.flowFigure[data-motion="on"][data-revealed="false"] .flowSvg > circle,
+.flowFigure[data-motion="on"][data-revealed="false"] .flowSvg > rect,
+.flowFigure[data-motion="on"][data-revealed="false"] .flowSvg > g,
+.flowFigure[data-motion="on"][data-revealed="false"] .flowSvg > .flowMuted {
+  opacity: 0;
+}
+
+/* Ambient: only the fragmented figure, only while on-screen. A slow,   */
+/* subtle flicker on its broken segments reads as an intermittent,      */
+/* leaky connection. No other state loops, so every later act feels    */
+/* calmer than Chaos — and Resultaat ends in stillness.                 */
+@keyframes flowFlicker {
+  0%, 100% { opacity: 0.34; }
+  50% { opacity: 0.6; }
+}
+.flowFigure[data-flow-state="fragmented"][data-motion="on"][data-active="true"][data-revealed="true"]
+  .flowSvg > .flowMuted {
+  animation: flowFlicker 6s ease-in-out 520ms infinite;
 }
 
 .sceneGrid,
@@ -1092,6 +1145,24 @@
 
   .flowSvg {
     min-height: 8rem;
+    /* Thicker strokes + larger nodes so the five states stay legible and    */
+    /* distinguishable below ~600px (the static review found them nearly     */
+    /* identical at 320px). r as a CSS property is progressive enhancement;  */
+    /* the SVG r attribute is the fallback. Verified stays distinct via its  */
+    /* checkmark shape, not green alone.                                     */
+    --flow-stroke: 5.5;
+  }
+
+  .flowSvg > circle {
+    r: 11;
+  }
+
+  .flowSvg > g > circle {
+    r: 12;
+  }
+
+  .flowSvg .verifiedNode {
+    r: 16;
   }
 
   .sequence {
