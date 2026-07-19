@@ -54,10 +54,10 @@ function FlowGraphic({ state }: { state: FlowState }) {
     return (
       <>
         <path className={styles.flowSignal} d="M20 80 H620" />
-        {[110, 215, 320, 425, 530].map((x) => (
+        {[80, 176, 272, 368, 464, 560].map((x) => (
           <rect key={x} x={x - 7} y="55" width="14" height="50" rx="3" />
         ))}
-        <path className={styles.flowMuted} d="M215 80 C255 80 270 28 320 28 C370 28 385 80 425 80" />
+        <path className={styles.flowMuted} d="M176 80 C216 80 232 28 272 28 C328 28 344 80 368 80" />
       </>
     );
   }

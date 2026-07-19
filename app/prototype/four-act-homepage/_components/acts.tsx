@@ -106,6 +106,8 @@ export function ChaosAct() {
           </div>
         </div>
 
+        <a className={styles.textLink} href="#workflowmodernisering">Bekijk workflowmodernisering</a>
+
         <blockquote className={styles.actConclusion}>
           Onze organisatie draait, maar er lekt tijd, kennis en controle weg.
         </blockquote>
@@ -208,7 +210,10 @@ export function WorkAct() {
 
         <div className={styles.routeWorkGrid}>
           {modernizationRoutes.map((route) => (
-            <article key={route.label}>
+            <article
+              id={route.label === 'Workflowmodernisering' ? 'workflowmodernisering' : 'applicatiemodernisering'}
+              key={route.label}
+            >
               <p className={styles.diagramLabel}>{route.label}</p>
               <h3>{route.headline}</h3>
               <ul>{route.points.map((point) => <li key={point}>{point}</li>)}</ul>
@@ -258,12 +263,13 @@ export function WorkAct() {
             </p>
             <div className={styles.bioPlaceholder} aria-label="Founderbio nog niet bevestigd">
               <span>Founderbio</span>
-              <small>[Bio volgt na goedkeuring van founder-credentials]</small>
+              <small>[Founderbio wordt nog inhoudelijk bevestigd]</small>
             </div>
             <ul className={styles.capabilityList}>
               {founderCapabilities.map((capability) => <li key={capability}>{capability}</li>)}
             </ul>
             <p className={styles.statusNote}>[Founder credential nog te bevestigen]</p>
+            <Link className={styles.textLink} href="/over-mij">Over Subor</Link>
           </div>
         </div>
 
@@ -294,7 +300,7 @@ export function ResultAct() {
         <div className={styles.outcomeGrid}>
           <div className={styles.sceneIntro}>
             <p className={styles.sceneNumber}>04.1 — Outcome State</p>
-            <h3 id="result-title">Gewenste richtingen, geen gemeten resultaten.</h3>
+            <h3 id="result-title">Van versnippering naar een beheersbare operatie.</h3>
             <p>Deze kaarten beschrijven gewenste richtingen. Ze zijn geen gemeten klantresultaten of garanties.</p>
           </div>
           {outcomeDirections.map((outcome) => (
@@ -347,13 +353,21 @@ export function ResultAct() {
 
           <div className={styles.scanSafety}>
             <strong>Deel via een openbare intake nooit:</strong>
-            <p>Wachtwoorden, API-sleutels, broncode, exports, uploads, klantgegevens of andere vertrouwelijke informatie.</p>
+            <p>
+              Wachtwoorden, API-sleutels, broncode, exports, uploads, klantgegevens, gevoelige persoonsgegevens of
+              andere vertrouwelijke informatie.
+            </p>
           </div>
 
           <div className={styles.prototypeAction}>
             <button type="button" disabled>Intake nog niet beschikbaar in dit prototype</button>
             <p>Er wordt niets verzonden en er is bewust geen success state.</p>
-            <Link className={styles.primaryButton} href="/contact">Plan een verkennend gesprek</Link>
+            <a
+              className={styles.primaryButton}
+              href="mailto:info@digitechsolutions.nl?subject=Verkennend%20gesprek%20over%20modernisering"
+            >
+              Plan een verkennend gesprek
+            </a>
             <Link href="/privacy">Bekijk de huidige privacyinformatie</Link>
           </div>
         </div>

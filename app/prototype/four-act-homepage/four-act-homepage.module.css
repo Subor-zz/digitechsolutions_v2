@@ -619,6 +619,7 @@
   min-width: 0;
   padding: clamp(1.25rem, 3vw, 2rem);
   background: var(--ink-surface);
+  cursor: default;
 }
 
 .routeChoice > span {
@@ -666,6 +667,11 @@
   padding: clamp(1.5rem, 4vw, 3rem);
   background: var(--ink-surface);
   border: 1px solid var(--border-dark);
+  cursor: default;
+}
+
+.routeWorkGrid article {
+  scroll-margin-top: 1rem;
 }
 
 .routeWorkGrid h3 {
@@ -927,6 +933,14 @@
   align-items: center;
   color: var(--text-on-dark);
   text-underline-offset: 0.3em;
+}
+
+.prototypeAction .primaryButton {
+  color: var(--ink);
+}
+
+.prototypeAction .primaryButton:hover {
+  color: var(--text-on-dark);
 }
 
 .siteFooter {

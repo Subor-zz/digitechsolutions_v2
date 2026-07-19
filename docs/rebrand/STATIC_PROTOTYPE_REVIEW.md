@@ -260,3 +260,13 @@ The 10 required shots:
 10. `10-full-mobile-375.png` — volledige mobiele pagina
 
 Supporting captures (same folder): responsive full pages `full-1024/768/320.png`; responsive heroes `r-1024/768/320-hero.png` and scan-entries `r-*-scan-entry.png`; mobile heroes/transitions `mobile-375/320-*.png`; mid-act detail `d2-*.png`; and `measurements.json` (overflow, document height, heading inventory, tap-target and sticky audit per viewport). On request these can be moved into the repo (e.g. `docs/rebrand/screenshots/static-prototype/`) — not done unprompted to honour the "maak alleen dit bestand" constraint.
+
+## Critical Changes Resolution
+
+| Item | Status | Resolution | Bestand | Resterende beperking |
+|---|---|---|---|---|
+| Conversion dead-end | Resolved | De disabled prototype-intake blijft zichtbaar; `Plan een verkennend gesprek` opent een e-mail aan `info@digitechsolutions.nl` met een vooraf ingevuld oriëntatieonderwerp. | `acts.tsx` | De productie-intake en contactformulierbackend vallen buiten deze pass. |
+| Main-landmark en skiplink | Resolved | De vier aktes staan in `<main id="four-act-content" tabIndex={-1}>`; de bestaande skiplink verwijst naar dit focusdoel. | `page.tsx`, `story-shell.tsx` | Handmatige screenreader-smoketest blijft onderdeel van de latere production gate. |
+| Contrast op lichte evidence-surfaces | Resolved | Kleine evidence-labels gebruiken `--flow-deep` in plaats van Signal Orange; oranje blijft een accent voor borders en donkere surfaces. | `four-act-homepage.module.css` | Volledige high-fidelity palette-audit volgt na definitieve art direction. |
+| Afsluiting Resultaat | Resolved | 04.1 introduceert de beoogde beheersbare operatie; na de Scan-entry sluit een afzonderlijke `actConclusion` af met `Niet alleen gemoderniseerd, maar weer onder controle.` | `acts.tsx` | De kaarten blijven gewenste richtingen en geen gemeten resultaten. |
+| Scene-actions en statische consistentie | Resolved | Hidden Drag linkt naar het workflowpaneel in Arbeid, de Scan Bridge naar `#scan-entry`, routepanelen zonder bestemming blijven informatieve `article`-elementen, `Over Subor` gebruikt de bestaande `/over-mij`-route, de founderbio is als onbevestigde placeholder gemarkeerd, de Flow Line toont zes gates en de safety-copy noemt gevoelige persoonsgegevens. | `acts.tsx`, `flow-line.tsx`, `four-act-homepage.module.css` | Definitieve dienstenroutes, founderbio, fotografie, cases en Scan-scope blijven open. |
