@@ -749,6 +749,23 @@
   color: var(--text-muted-dark);
 }
 
+.bioPlaceholder {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px dashed var(--border-dark);
+  background: var(--ink-surface);
+  color: var(--text-muted-dark);
+}
+
+.bioPlaceholder small {
+  display: block;
+  margin-top: 0.4rem;
+}
+
+#four-act-content:focus {
+  outline: none;
+}
+
 .capabilityList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -836,7 +853,7 @@
 }
 
 .evidenceGrid strong {
-  color: var(--signal);
+  color: var(--flow-deep);
 }
 
 .evidenceGrid p {

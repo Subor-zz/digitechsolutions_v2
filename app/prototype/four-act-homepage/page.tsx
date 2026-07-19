@@ -7,12 +7,12 @@ export default function FourActHomepagePrototype() {
     <div className={styles.prototype}>
       <PrototypeHeader />
       <StoryProgress />
-      <article id="four-act-content" aria-label="Four-act homepageverhaal">
+      <main id="four-act-content" aria-label="Four-act homepageverhaal" tabIndex={-1}>
         <ChaosAct />
         <ReflectionAct />
         <WorkAct />
         <ResultAct />
-      </article>
+      </main>
       <PrototypeFooter />
     </div>
   );

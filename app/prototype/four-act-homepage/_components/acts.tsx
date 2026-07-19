@@ -185,6 +185,7 @@ export function ReflectionAct() {
           <p className={styles.routeReassurance}>
             Twijfel je? Kies ‘Ik weet het nog niet’. De passende onderzoeksroute wordt pas na de intake bevestigd.
           </p>
+          <a className={styles.textLink} href="#scan-entry">Bekijk de Modernization Scan</a>
         </div>
 
         <blockquote className={styles.actConclusion}>
@@ -255,6 +256,10 @@ export function WorkAct() {
               Je werkt in dit model rechtstreeks met Subor. Specialistische expertise wordt alleen waar nodig en
               transparant toegevoegd; de exacte partner- en capaciteitsgrenzen worden nog bevestigd.
             </p>
+            <div className={styles.bioPlaceholder} aria-label="Founderbio nog niet bevestigd">
+              <span>Founderbio</span>
+              <small>[Bio volgt na goedkeuring van founder-credentials]</small>
+            </div>
             <ul className={styles.capabilityList}>
               {founderCapabilities.map((capability) => <li key={capability}>{capability}</li>)}
             </ul>
@@ -289,7 +294,7 @@ export function ResultAct() {
         <div className={styles.outcomeGrid}>
           <div className={styles.sceneIntro}>
             <p className={styles.sceneNumber}>04.1 — Outcome State</p>
-            <h3 id="result-title">Niet alleen gemoderniseerd, maar weer onder controle.</h3>
+            <h3 id="result-title">Gewenste richtingen, geen gemeten resultaten.</h3>
             <p>Deze kaarten beschrijven gewenste richtingen. Ze zijn geen gemeten klantresultaten of garanties.</p>
           </div>
           {outcomeDirections.map((outcome) => (
@@ -348,9 +353,14 @@ export function ResultAct() {
           <div className={styles.prototypeAction}>
             <button type="button" disabled>Intake nog niet beschikbaar in dit prototype</button>
             <p>Er wordt niets verzonden en er is bewust geen success state.</p>
+            <Link className={styles.primaryButton} href="/contact">Plan een verkennend gesprek</Link>
             <Link href="/privacy">Bekijk de huidige privacyinformatie</Link>
           </div>
         </div>
+
+        <blockquote className={styles.actConclusion}>
+          Niet alleen gemoderniseerd, maar weer onder controle.
+        </blockquote>
       </div>
     </section>
   );
