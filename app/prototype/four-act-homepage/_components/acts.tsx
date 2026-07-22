@@ -1,18 +1,8 @@
 import Link from 'next/link';
+
+import { homepageCopy } from '@/lib/rebrand/homepage-copy';
+
 import styles from '../four-act-homepage.module.css';
-import {
-  controlledFlow,
-  currentFlow,
-  decisionOptions,
-  deliverySteps,
-  diagnosticLayers,
-  founderCapabilities,
-  frictionSignals,
-  modernizationRoutes,
-  outcomeDirections,
-  provisionalScanOutputs,
-  scanRoutes,
-} from './content';
 import { FlowLine } from './flow-line';
 
 function ActHeading({
@@ -33,13 +23,34 @@ function ActHeading({
   );
 }
 
+function ResponsiveParagraph({
+  desktop,
+  mobile,
+  className,
+}: {
+  desktop: string;
+  mobile: string;
+  className?: string;
+}) {
+  return (
+    <>
+      <p className={[className, styles.desktopCopy].filter(Boolean).join(' ')}>{desktop}</p>
+      <p className={[className, styles.mobileCopy].filter(Boolean).join(' ')}>{mobile}</p>
+    </>
+  );
+}
+
 function FlowSequence({ items, label }: { items: readonly string[]; label: string }) {
   return (
     <div className={styles.sequence} aria-label={label}>
       {items.map((item, index) => (
         <div className={styles.sequenceItem} key={item}>
           <span>{item}</span>
-          {index < items.length - 1 ? <span className={styles.sequenceArrow} aria-hidden="true">→</span> : null}
+          {index < items.length - 1 ? (
+            <span className={styles.sequenceArrow} aria-hidden="true">
+              →
+            </span>
+          ) : null}
         </div>
       ))}
     </div>
@@ -47,102 +58,121 @@ function FlowSequence({ items, label }: { items: readonly string[]; label: strin
 }
 
 export function ChaosAct() {
+  const { hero, hiddenDrag } = homepageCopy;
+
   return (
     <section className={`${styles.act} ${styles.chaosAct}`} id="act-chaos" aria-labelledby="chaos-title">
       <div className={styles.shell}>
         <div className={styles.heroGrid}>
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Workflow- en applicatiemodernisering</p>
-            <h1 id="chaos-title">Moderniseer wat je organisatie vertraagt.</h1>
-            <p className={styles.heroSupport}>
-              Digitech Solutions brengt vastgelopen workflows en verouderde bedrijfsapplicaties terug naar een
-              beheersbare route — eerst begrijpen, dan gericht moderniseren.
-            </p>
+            <p className={styles.eyebrow}>{hero.kicker}</p>
+            <h1 id="chaos-title">{hero.headline}</h1>
+            <ResponsiveParagraph
+              className={styles.heroSupport}
+              desktop={hero.lead}
+              mobile={hero.mobileLead}
+            />
             <div className={styles.actionRow}>
-              <a className={styles.primaryButton} href="#scan-entry">Start met een Modernization Scan</a>
-              <a className={styles.textLink} href="#delivery-flow">Bekijk de werkwijze</a>
+              <a className={styles.primaryButton} href={hero.primaryCta.href}>
+                {hero.primaryCta.label}
+              </a>
+              <a className={styles.textLink} href={hero.secondaryCta.href}>
+                {hero.secondaryCta.label}
+              </a>
             </div>
-            <p className={styles.founderLine}>Rechtstreeks met Subor Cheung.</p>
+            <p className={styles.founderLine}>{hero.founderTrustLine}</p>
           </div>
 
-          <div className={styles.systemMap} aria-label="Illustratief systeemlandschap met gefragmenteerde overdrachten">
-            <p className={styles.diagramLabel}>Illustratief systeemlandschap</p>
-            <div className={styles.systemNodes}>
-              <span>Inbox</span>
-              <span>Spreadsheet</span>
-              <span>Overdracht</span>
-              <span>Oude applicatie</span>
+          <div
+            className={styles.systemMap}
+            role="img"
+            aria-label={hero.systemVisual.accessibleText}
+          >
+            <p className={styles.diagramLabel}>{hero.systemVisual.kicker}</p>
+            <div className={styles.systemNodes} aria-hidden="true">
+              {hero.systemVisual.nodes.map((node) => (
+                <span key={node}>{node}</span>
+              ))}
             </div>
-            <p>De vertraging zit zelden op één plek.</p>
+            <p>{hero.systemVisual.description}</p>
+            <strong className={styles.systemResult}>{hero.systemVisual.resultLabel}</strong>
           </div>
         </div>
 
         <FlowLine
           state="fragmented"
-          label="Fragmented"
-          description="Een onderbroken lijn verbindt losse overdrachten, spreadsheets en een oude applicatie."
+          label={hiddenDrag.flowLine.label}
+          description={hiddenDrag.flowLine.description}
         />
 
         <div className={styles.sceneGrid}>
           <div className={styles.sceneIntro}>
-            <p className={styles.sceneNumber}>01.2 — Hidden Drag</p>
-            <h2 className={styles.sceneTitle}>De grootste vertraging zit vaak tussen je systemen.</h2>
-            <p>In overdrachten, workarounds, dubbele invoer en uitzonderingen die pas laat zichtbaar worden.</p>
+            <p className={styles.sceneNumber}>{hiddenDrag.kicker}</p>
+            <h2 className={styles.sceneTitle}>{hiddenDrag.headline}</h2>
+            <ResponsiveParagraph desktop={hiddenDrag.intro} mobile={hiddenDrag.mobileIntro} />
           </div>
           <ul className={styles.signalList} aria-label="Herkenbare frictiesignalen">
-            {frictionSignals.map((signal) => <li key={signal}>{signal}</li>)}
+            {hiddenDrag.signals.map((signal) => (
+              <li key={signal}>{signal}</li>
+            ))}
           </ul>
         </div>
 
         <div className={styles.beforeAfter}>
           <div>
-            <p className={styles.diagramLabel}>Huidige toestand — illustratief</p>
-            <FlowSequence items={currentFlow} label="Illustratief huidig proces" />
+            <p className={styles.diagramLabel}>{hiddenDrag.currentLabel}</p>
+            <FlowSequence items={hiddenDrag.currentFlow} label={hiddenDrag.currentAriaLabel} />
           </div>
           <div>
-            <p className={styles.diagramLabel}>Beheersbare richting — illustratief</p>
-            <FlowSequence items={controlledFlow} label="Illustratieve beheersbare procesrichting" />
-            <p className={styles.humanNote}>Menselijke controle blijft zichtbaar waar uitzonderingen en beslissingen dat vragen.</p>
+            <p className={styles.diagramLabel}>{hiddenDrag.targetLabel}</p>
+            <FlowSequence items={hiddenDrag.targetFlow} label={hiddenDrag.targetAriaLabel} />
+            <p className={styles.humanNote}>{hiddenDrag.humanNote}</p>
           </div>
         </div>
 
-        <a className={styles.textLink} href="#workflowmodernisering">Bekijk workflowmodernisering</a>
+        <a className={styles.textLink} href={hiddenDrag.cta.href}>
+          {hiddenDrag.cta.label}
+        </a>
 
-        <blockquote className={styles.actConclusion}>
-          Onze organisatie draait, maar er lekt tijd, kennis en controle weg.
-        </blockquote>
+        <blockquote className={styles.actConclusion}>{hiddenDrag.exitLine}</blockquote>
       </div>
     </section>
   );
 }
 
 export function ReflectionAct() {
+  const { diagnosis, routes } = homepageCopy;
+  const bridge = routes.scanBridge;
+
   return (
-    <section className={`${styles.act} ${styles.reflectionAct}`} id="act-reflection" aria-labelledby="reflection-title">
+    <section
+      className={`${styles.act} ${styles.reflectionAct}`}
+      id="act-reflection"
+      aria-labelledby="reflection-title"
+    >
       <div className={styles.shell}>
-        <ActHeading
-          number="02"
-          title="Bezinning"
-          description="Zet de flow stil. Scheid symptomen van oorzaken voordat een oplossing wordt gekozen."
-        />
+        <ActHeading {...diagnosis.act} />
 
         <FlowLine
           state="paused"
-          label="Paused"
-          description="De lijn is stilgezet zodat proces, data, systemen, risico en eigenaarschap kunnen worden onderzocht."
+          label={diagnosis.pausedFlowLine.label}
+          description={diagnosis.pausedFlowLine.description}
         />
 
         <div className={styles.diagnosisGrid}>
           <div className={styles.sceneIntro}>
-            <p className={styles.sceneNumber}>02.1 — Diagnose</p>
-            <h3 id="reflection-title">Eerst begrijpen. Dan pas automatiseren of herbouwen.</h3>
-            <p>De eerste vraag is niet welke tool wordt gebouwd, maar wat verandering werkelijk tegenhoudt.</p>
+            <p className={styles.sceneNumber}>{diagnosis.kicker}</p>
+            <h3 id="reflection-title">{diagnosis.headline}</h3>
+            <ResponsiveParagraph desktop={diagnosis.intro} mobile={diagnosis.mobileIntro} />
           </div>
           <ol className={styles.layerList}>
-            {diagnosticLayers.map((layer, index) => (
+            {diagnosis.layers.map((layer, index) => (
               <li key={layer.name}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
-                <div><strong>{layer.name}</strong><p>{layer.description}</p></div>
+                <div>
+                  <strong>{layer.name}</strong>
+                  <p>{layer.description}</p>
+                </div>
               </li>
             ))}
           </ol>
@@ -151,32 +181,33 @@ export function ReflectionAct() {
         <div className={styles.decisionPanel}>
           <div>
             <p className={styles.sceneNumber}>Decision lens</p>
-            <h3>Meerdere routes blijven open.</h3>
-            <p>Modernisering hoeft niet met automatisering of een volledige herbouw te beginnen.</p>
+            <h3>{diagnosis.asideHeading}</h3>
+            <p>{diagnosis.asideCopy}</p>
+            <a className={styles.textLink} href={diagnosis.cta.href}>
+              {diagnosis.cta.label}
+            </a>
           </div>
           <ul className={styles.tagList}>
-            {decisionOptions.map((option) => <li key={option}>{option}</li>)}
+            {diagnosis.decisionOptions.map((option) => (
+              <li key={option}>{option}</li>
+            ))}
           </ul>
         </div>
 
         <FlowLine
           state="mapped"
-          label="Mapped"
-          description="Meetpunten en labels maken de verschillende onderzoeksroutes zichtbaar."
+          label={diagnosis.mappedFlowLine.label}
+          description={diagnosis.mappedFlowLine.description}
         />
 
         <div className={styles.scanBridge}>
           <div>
-            <p className={styles.sceneNumber}>02.2 — Modernization Scan</p>
-            <h3>De route is een startpunt, geen definitieve diagnose.</h3>
-            <p>
-              De Scan is bedoeld voor operations-, IT- en productverantwoordelijken die frictie merken maar de
-              juiste ingreep nog niet vooraf willen vastleggen.
-            </p>
-            <p className={styles.statusNote}>[Definitieve scanscope volgt]</p>
+            <p className={styles.sceneNumber}>{bridge.kicker}</p>
+            <h3>{bridge.headline}</h3>
+            <p>{bridge.intro}</p>
           </div>
           <div className={styles.routeGrid} aria-label="Vier mogelijke Scan-routes">
-            {scanRoutes.map((route) => (
+            {bridge.routes.map((route) => (
               <article className={styles.routeChoice} key={route.id}>
                 <span>{route.code}</span>
                 <h4>{route.title}</h4>
@@ -184,126 +215,143 @@ export function ReflectionAct() {
               </article>
             ))}
           </div>
-          <p className={styles.routeReassurance}>
-            Twijfel je? Kies ‘Ik weet het nog niet’. De passende onderzoeksroute wordt pas na de intake bevestigd.
-          </p>
-          <a className={styles.textLink} href="#scan-entry">Bekijk de Modernization Scan</a>
+          <p className={styles.routeReassurance}>{bridge.reassurance}</p>
+          <a className={styles.textLink} href={bridge.cta.href}>
+            {bridge.cta.label}
+          </a>
         </div>
 
-        <blockquote className={styles.actConclusion}>
-          Moderniseren begint niet met bouwen, maar met begrijpen.
-        </blockquote>
+        <blockquote className={styles.actConclusion}>{diagnosis.transition}</blockquote>
       </div>
     </section>
   );
 }
 
 export function WorkAct() {
+  const { founder, method, routes } = homepageCopy;
+
   return (
     <section className={`${styles.act} ${styles.workAct}`} id="act-work" aria-labelledby="work-title">
       <div className={styles.shell}>
-        <ActHeading
-          number="03"
-          title="Arbeid"
-          description="Van een onderbouwde route naar afgebakende uitvoering met zichtbare beslismomenten."
-        />
+        <ActHeading {...routes.act} />
+
+        <div className={styles.sceneIntro}>
+          <p className={styles.sceneNumber}>{routes.kicker}</p>
+          <h3 id="work-title">{routes.headline}</h3>
+          <ResponsiveParagraph desktop={routes.intro} mobile={routes.mobileIntro} />
+        </div>
 
         <div className={styles.routeWorkGrid}>
-          {modernizationRoutes.map((route) => (
-            <article
-              id={route.label === 'Workflowmodernisering' ? 'workflowmodernisering' : 'applicatiemodernisering'}
-              key={route.label}
-            >
+          {routes.items.map((route) => (
+            <article id={route.anchor} key={route.id}>
               <p className={styles.diagramLabel}>{route.label}</p>
               <h3>{route.headline}</h3>
-              <ul>{route.points.map((point) => <li key={point}>{point}</li>)}</ul>
+              <ul>
+                {route.signals.map((signal) => (
+                  <li key={signal}>{signal}</li>
+                ))}
+              </ul>
+              <p className={styles.routeOutput}>{route.output}</p>
+              <a className={styles.textLink} href="#scan-entry">
+                {route.cta}
+              </a>
             </article>
           ))}
           <aside className={styles.combinedRoute}>
-            <strong>Gecombineerde route</strong>
-            <p>Wanneer proces en applicatie elkaar begrenzen, worden beide in samenhang onderzocht en gefaseerd.</p>
+            <strong>{routes.combined.heading}</strong>
+            <div>
+              <p>{routes.combined.copy}</p>
+              <a className={styles.textLink} href={routes.combined.cta.href}>
+                {routes.combined.cta.label}
+              </a>
+            </div>
           </aside>
         </div>
 
         <FlowLine
           state="organized"
-          label="Organized"
-          description="De lijn splitst waar nodig, passeert afgebakende stappen en komt gecontroleerd samen."
+          label={routes.organizedFlowLine.label}
+          description={routes.organizedFlowLine.description}
         />
 
         <div className={styles.deliverySection} id="delivery-flow">
           <div className={styles.sceneIntro}>
-            <p className={styles.sceneNumber}>03.2 — Delivery Flow</p>
-            <h3 id="work-title">Snel waar het kan. Gecontroleerd waar het moet.</h3>
-            <p>De stappen maken scope, besluiten en overdracht zichtbaar. Trusttermen blijven voorlopig tot echte artifacts bestaan.</p>
+            <p className={styles.sceneNumber}>{method.kicker}</p>
+            <h3>{method.headline}</h3>
+            <ResponsiveParagraph desktop={method.intro} mobile={method.mobileIntro} />
           </div>
           <ol className={styles.deliveryList}>
-            {deliverySteps.map((step) => (
-              <li key={step.name}>
+            {method.steps.map((step) => (
+              <li key={step.id}>
                 <span>{step.number}</span>
                 <h4>{step.name}</h4>
                 <p>{step.description}</p>
+                <small className={styles.methodArtifact}>{step.artifact}</small>
               </li>
             ))}
           </ol>
-          <p className={styles.statusNote}>[Claim nog niet goedgekeurd — method artifacts vereist]</p>
+          <p className={styles.methodClosing}>{method.closing}</p>
         </div>
 
-        <div className={styles.founderSection}>
-          <div className={styles.founderPlaceholder} aria-label="Founderbeeld nog niet gekozen">
-            <span>Founderbeeld</span>
-            <small>[Fotografie en rechten nog te bevestigen]</small>
+        <div className={styles.founderSection} id="founder-led">
+          <div className={styles.founderPlaceholder} aria-label={founder.portraitPlaceholder}>
+            <span>Subor Cheung</span>
+            <small>{founder.portraitPlaceholder}</small>
           </div>
           <div>
-            <p className={styles.sceneNumber}>03.3 — Founder-led verantwoordelijkheid</p>
-            <h3>Geen overdracht naar een anoniem deliveryteam.</h3>
-            <p>
-              Je werkt in dit model rechtstreeks met Subor. Specialistische expertise wordt alleen waar nodig en
-              transparant toegevoegd; de exacte partner- en capaciteitsgrenzen worden nog bevestigd.
-            </p>
-            <div className={styles.bioPlaceholder} aria-label="Founderbio nog niet bevestigd">
-              <span>Founderbio</span>
-              <small>[Founderbio wordt nog inhoudelijk bevestigd]</small>
-            </div>
+            <p className={styles.sceneNumber}>{founder.kicker}</p>
+            <h3>{founder.headline}</h3>
+            <p>{founder.lead}</p>
+            <p>{founder.supporting}</p>
+            <p className={styles.bioPlaceholder}>{founder.publicBioPlaceholder}</p>
             <ul className={styles.capabilityList}>
-              {founderCapabilities.map((capability) => <li key={capability}>{capability}</li>)}
+              {founder.capabilities.map((capability) => (
+                <li key={capability}>{capability}</li>
+              ))}
             </ul>
-            <p className={styles.statusNote}>[Founder credential nog te bevestigen]</p>
-            <Link className={styles.textLink} href="/over-mij">Over Subor</Link>
+            <p className={styles.founderTrust}>{founder.trustLine}</p>
+            <Link className={styles.textLink} href={founder.cta.href}>
+              {founder.cta.label}
+            </Link>
           </div>
         </div>
 
-        <blockquote className={styles.actConclusion}>
-          Van inzicht naar een afgebakende oplossing die wordt beoordeeld, vastgelegd en overdraagbaar gemaakt.
-        </blockquote>
+        <div className={styles.faqList} aria-label="Veelgestelde vragen over de aanpak">
+          {founder.faqs.map((faq) => (
+            <details key={faq.question}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <blockquote className={styles.actConclusion}>{founder.conclusion}</blockquote>
       </div>
     </section>
   );
 }
 
 export function ResultAct() {
+  const { result, scan } = homepageCopy;
+
   return (
     <section className={`${styles.act} ${styles.resultAct}`} id="act-result" aria-labelledby="result-title">
       <div className={styles.shell}>
-        <ActHeading
-          number="04"
-          title="Resultaat"
-          description="Geen spektakel, maar een beoogde toestand waarin flow, systemen en eigenaarschap weer beheersbaar zijn."
-        />
+        <ActHeading {...result.act} />
 
         <FlowLine
           state="verified"
-          label="Verified"
-          description="Een verbonden lijn met zichtbare verificatiepunten verbeeldt de gewenste beheersbare toestand."
+          label={result.verifiedFlowLine.label}
+          description={result.verifiedFlowLine.description}
         />
 
         <div className={styles.outcomeGrid}>
           <div className={styles.sceneIntro}>
-            <p className={styles.sceneNumber}>04.1 — Outcome State</p>
-            <h3 id="result-title">Van versnippering naar een beheersbare operatie.</h3>
-            <p>Deze kaarten beschrijven gewenste richtingen. Ze zijn geen gemeten klantresultaten of garanties.</p>
+            <p className={styles.sceneNumber}>{result.kicker}</p>
+            <h3 id="result-title">{result.headline}</h3>
+            <p>{result.intro}</p>
           </div>
-          {outcomeDirections.map((outcome) => (
+          {result.outcomes.map((outcome) => (
             <article key={outcome.title}>
               <h4>{outcome.title}</h4>
               <p>{outcome.description}</p>
@@ -313,68 +361,52 @@ export function ResultAct() {
 
         <div className={styles.evidenceSection}>
           <div>
-            <p className={styles.sceneNumber}>04.2 — Evidence Layer</p>
-            <h3>Geen toekomstverhaal zonder bewijs.</h3>
-            <p>Cases verschijnen pas met classificatie, toestemming, context, bewijsniveau en zichtbare beperkingen.</p>
+            <p className={styles.sceneNumber}>{result.proof.kicker}</p>
+            <h3>{result.proof.headline}</h3>
+            <p>{result.proof.intro}</p>
           </div>
-          <div className={styles.evidenceGrid}>
-            <article>
-              <span>Workflow evidence</span>
-              <strong>[Gevalideerde klantcase nodig]</strong>
-              <p>Geen resultaatclaim gepubliceerd.</p>
-            </article>
-            <article>
-              <span>Application evidence</span>
-              <strong>[Gevalideerde klantcase nodig]</strong>
-              <p>Geen resultaatclaim gepubliceerd.</p>
-            </article>
-          </div>
+          <ol className={styles.reportAnatomy}>
+            {result.proof.anatomy.map((item, index) => (
+              <li key={item}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                {item}
+              </li>
+            ))}
+          </ol>
         </div>
 
         <div className={styles.scanEntry} id="scan-entry">
           <div>
-            <p className={styles.sceneNumber}>04.3 — Scan Entry</p>
-            <h3>Je hoeft nog niet te weten wat er gebouwd moet worden.</h3>
-            <p>
-              De beoogde Scan brengt de situatie eerst in kaart. Definitieve scope, input, duur en commerciële
-              voorwaarden worden vóór publicatie bevestigd.
-            </p>
-            <p className={styles.statusNote}>[Definitieve scanscope volgt]</p>
+            <p className={styles.sceneNumber}>{scan.kicker}</p>
+            <h3>{scan.headline}</h3>
+            <ResponsiveParagraph desktop={scan.copy} mobile={scan.mobileCopy} />
           </div>
 
           <div>
-            <p className={styles.diagramLabel}>Beoogde output — voorlopig</p>
+            <p className={styles.diagramLabel}>{scan.outputLabel}</p>
             <ol className={styles.outputList}>
-              {provisionalScanOutputs.map((output, index) => (
-                <li key={output}><span>{String(index + 1).padStart(2, '0')}</span>{output}</li>
+              {scan.outputs.map((output, index) => (
+                <li key={output.title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <strong>{output.title}</strong>
+                    <p>{output.description}</p>
+                  </div>
+                </li>
               ))}
             </ol>
           </div>
 
-          <div className={styles.scanSafety}>
-            <strong>Deel via een openbare intake nooit:</strong>
-            <p>
-              Wachtwoorden, API-sleutels, broncode, exports, uploads, klantgegevens, gevoelige persoonsgegevens of
-              andere vertrouwelijke informatie.
-            </p>
-          </div>
-
           <div className={styles.prototypeAction}>
-            <button type="button" disabled>Intake nog niet beschikbaar in dit prototype</button>
-            <p>Er wordt niets verzonden en er is bewust geen success state.</p>
-            <a
-              className={styles.primaryButton}
-              href="mailto:info@digitechsolutions.nl?subject=Verkennend%20gesprek%20over%20modernisering"
-            >
-              Plan een verkennend gesprek
+            <button type="button" disabled>
+              {scan.disabledCtaLabel}
+            </button>
+            <p>{scan.prototypeMicrocopy}</p>
+            <a className={styles.primaryButton} href={scan.fallbackCta.href}>
+              {scan.fallbackCta.label}
             </a>
-            <Link href="/privacy">Bekijk de huidige privacyinformatie</Link>
           </div>
         </div>
-
-        <blockquote className={styles.actConclusion}>
-          Niet alleen gemoderniseerd, maar weer onder controle.
-        </blockquote>
       </div>
     </section>
   );

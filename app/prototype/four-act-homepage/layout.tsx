@@ -1,10 +1,16 @@
 import type { Metadata } from 'next';
 
+import { homepageCopy } from '@/lib/rebrand/homepage-copy';
+
 export const metadata: Metadata = {
   title: {
-    absolute: 'Four-act homepage prototype | Digitech Solutions',
+    absolute: homepageCopy.metadata.title,
   },
-  description: 'Statisch, niet-geïndexeerd prototype voor de four-act homepagearchitectuur.',
+  description: homepageCopy.metadata.description,
+  openGraph: {
+    title: homepageCopy.metadata.openGraphTitle,
+    description: homepageCopy.metadata.openGraphDescription,
+  },
   robots: {
     index: false,
     follow: false,
