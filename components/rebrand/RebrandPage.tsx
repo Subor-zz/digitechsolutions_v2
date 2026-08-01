@@ -8,8 +8,18 @@ import { NarrativeMotion } from "./NarrativeMotion";
 import { homepageCopy } from "@/lib/rebrand/homepage-copy";
 
 export function RebrandPage() {
-  const { brand, navigation, hero, hiddenDrag, diagnosis, routes, founder, scan, footer } =
-    homepageCopy;
+  const {
+    brand,
+    navigation,
+    hero,
+    hiddenDrag,
+    diagnosis,
+    routes,
+    founder,
+    result,
+    scan,
+    footer,
+  } = homepageCopy;
 
   return (
     <div className="site-shell">
@@ -50,7 +60,8 @@ export function RebrandPage() {
                 {hero.kicker}
               </p>
               <h1 id="hero-heading">{hero.headline}</h1>
-              <p className="hero__lede">{hero.lead}</p>
+              <p className="hero__lede hero__lede--desktop">{hero.lead}</p>
+              <p className="hero__lede hero__lede--mobile">{hero.mobileLead}</p>
               <div className="hero__actions">
                 <a className="button button--primary" href={hero.primaryCta.href}>
                   {hero.primaryCta.label}
@@ -77,7 +88,6 @@ export function RebrandPage() {
         >
           <div className="container problem-intro">
             <div>
-              <p className="section-kicker">{hiddenDrag.kicker}</p>
               <h2 id="probleem-heading">{hiddenDrag.headline}</h2>
             </div>
             <p className="chapter-intro">{hiddenDrag.intro}</p>
@@ -123,7 +133,6 @@ export function RebrandPage() {
 
         <section id="routes" className="chapter chapter--dark routes" aria-labelledby="routes-heading">
           <div className="container routes__heading">
-            <p className="section-kicker section-kicker--light">{routes.kicker}</p>
             <h2 id="routes-heading">{routes.headline}</h2>
             <p>{routes.intro}</p>
           </div>
@@ -162,6 +171,25 @@ export function RebrandPage() {
         <section id="werkwijze" className="chapter chapter--ink method" aria-labelledby="werkwijze-heading">
           <div className="container">
             <MethodStack />
+          </div>
+        </section>
+
+        <section id="bewijs" className="chapter chapter--paper proof" aria-labelledby="proof-heading">
+          <div className="container proof__layout">
+            <div className="proof__copy">
+              <p className="proof__label">Bewijsplaceholder</p>
+              <h2 id="proof-heading">{result.headline}</h2>
+              <p>{result.intro}</p>
+            </div>
+            <aside className="proof__placeholder" aria-label="Status en opbouw van een toekomstige case">
+              <p>{result.proof.label}</p>
+              <strong>Hier komt een geverifieerde klantcase zodra die publiceerbaar is.</strong>
+              <ul>
+                {result.proof.anatomy.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </aside>
           </div>
         </section>
 
@@ -208,11 +236,11 @@ export function RebrandPage() {
               <h2 id="scan-heading">{scan.headline}</h2>
               <p>{scan.copy}</p>
               <div className="scan__actions">
-                <a className="button button--primary" href={scan.fallbackCta.href}>
-                  {scan.fallbackCta.label}
+                <a className="button button--primary" href={scan.primaryCta.href}>
+                  {scan.primaryCta.label}
                   <span aria-hidden="true">↗</span>
                 </a>
-                <p>{scan.prototypeMicrocopy}</p>
+                <p>{scan.privacyMicrocopy}</p>
               </div>
             </div>
             <div className="scan-roadmap" aria-label={scan.outputsAriaLabel}>
@@ -244,8 +272,8 @@ export function RebrandPage() {
           </a>
         </div>
         <div className="container site-footer__bottom">
-          <span>{footer.prototypeLabel}</span>
-          <span>{footer.prototypeStatus}</span>
+          <span>© {new Date().getFullYear()} {footer.rights}</span>
+          <span>{footer.privacyStatus}</span>
         </div>
       </footer>
     </div>
