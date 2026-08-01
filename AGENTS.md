@@ -6,47 +6,25 @@ Dit bestand bepaalt hoe Codex, Antigravity en andere coding agents aan de websit
 
 ## 2. Verplichte leesvolgorde
 
-Lees vóór iedere substantiële rebrandtaak:
+Lees vóór iedere substantiële taak:
 
-1. `docs/rebrand/PROJECT_BRIEF.md`
-2. `docs/rebrand/POSITIONING.md`
-3. `docs/rebrand/REQUIREMENTS.md`
-4. `docs/rebrand/STORYLINE.md`
-5. `docs/rebrand/DESIGN_DIRECTION.md`
-6. `docs/rebrand/MODERNIZATION_SCAN.md`
-7. `docs/rebrand/DECISIONS.md`
+1. `docs/PROJECT_BRIEF.md`
+2. `docs/POSITIONING.md`
+3. `docs/REQUIREMENTS.md`
+4. `docs/STORYLINE.md`
+5. `docs/DESIGN_DIRECTION.md`
+6. `docs/MODERNIZATION_SCAN.md`
+7. `docs/DECISIONS.md`
 
 Bij conflicten:
 
-1. recente vastgelegde beslissing in `docs/rebrand/DECISIONS.md`;
+1. recente vastgelegde beslissing in `DECISIONS.md`;
 2. requirements;
 3. projectbrief;
 4. storyline/designrichting;
 5. individuele prompt.
 
 Wijzig geen strategische keuze stilzwijgend in code.
-
-## 2.1 Canonieke repository en huidige architectuur
-
-- GitHub: `https://github.com/Subor-zz/digitechsolutions_v2`
-- Production branch: `main`
-- Production domain: `https://digitechsolutions.nl`
-- Hosting: bestaand Vercel-project `digitechsolutions-v2`
-- Framework: Next.js App Router met TypeScript, React en Tailwind CSS.
-- Bestaande productiecode blijft intact totdat een afgebakende redesign-/vertical-sliceopdracht expliciet is goedgekeurd.
-- Metadata en structured data staan verspreid over `app/layout.tsx`, route-layouts en `app/lib/seo.ts`; houd die bronnen synchroon bij latere route- of positioneringswijzigingen.
-- Redirects staan in `next.config.mjs`; wijzig ze alleen vanuit een goedgekeurde SEO-migratiematrix.
-- Navigatie-items staan momenteel inline in `app/components/navigation.tsx`; contentclusters staan in `app/lib/internal-links.ts` en `app/lib/blog-categories.ts`.
-
-Huidige commands:
-
-- Install: `npm install`
-- Development: `npm run dev`
-- Build: `npm run build`
-- Start: `npm start`
-- Lint-script: `npm run lint` (eerst compatibiliteit met de actuele Next.js-versie herstellen/valideren)
-
-Er is nog geen testframework geconfigureerd. Claim niet dat tests bestaan voordat ze aantoonbaar zijn toegevoegd.
 
 ## 3. Rollen
 
@@ -250,18 +228,17 @@ Een experiment:
 - kan volledig worden verwijderd;
 - wordt na beoordeling geïntegreerd of weggegooid.
 
-## 15. Eerste redesign-engineeringopdracht
+## 15. Eerste engineeringopdracht
 
-Na goedgekeurde en geteste low-fidelity UX, visual foundation en motionprototype:
+Na fase 0 en low-fidelity UX:
 
-1. werk in deze bestaande canonieke repository; initialiseer geen nieuwe applicatie;
-2. bevestig de rebuild boundaries en bescherm bestaande SEO-URL's;
-3. herstel/configureer lint, typecheck en tests;
-4. bouw design tokens;
-5. bouw semantische statische hero;
-6. voeg Flow Line als progressive enhancement toe;
-7. bouw Hidden Drag;
-8. lever mobiel en reduced motion;
-9. meet performance;
-10. review de vertical slice;
-11. bouw pas daarna de rest van de marketinglaag.
+1. initialiseer repository;
+2. configureer lint, typecheck en tests;
+3. bouw design tokens;
+4. bouw semantische statische hero;
+5. voeg Flow Line als progressive enhancement toe;
+6. bouw Hidden Drag;
+7. lever mobiel en reduced motion;
+8. meet performance;
+9. review vertical slice;
+10. pas daarna de rest van de website bouwen.

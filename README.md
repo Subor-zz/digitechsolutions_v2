@@ -1,75 +1,46 @@
-# Digitech Solutions Website
+# Digitech Solutions — Website Redesign Foundation
 
-Official website for Digitech Solutions - IT consultancy and full-stack development services for startups and SMBs.
+## Status
 
-## 🌐 Live Site
+**Phase 0 — Foundation**  
+Werknaam van het concept: **From Friction to Flow**
 
-- **Production**: [https://digitechsolutions.nl](https://digitechsolutions.nl)
-- **Vercel**: [digitech-solutions.vercel.app](https://digitech-solutions.vercel.app)
+Dit pakket vormt de bron van waarheid voordat UX-design, motionprototypes of production development starten.
 
-## 🛠️ Tech Stack
+## Vaste uitgangspunten
 
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Deployment**: Vercel
+- Merknaam: **Digitech Solutions**
+- Positionering: **workflow- en applicatiemodernisering**
+- Websitekarakter: **founder-led modernization studio**
+- Primaire doelgroep: operations- en IT-verantwoordelijken binnen MKB en scale-ups
+- Primaire conversie: **Modernization Scan**
+- Hoofdtaal: Nederlands
+- Stijl: **editorial engineering studio**
+- Design: donker als basis met warme lichte secties
+- Merkkleuren: electric blue en signal orange
+- Motionconcept: **The Flow Line**
+- Development: Codex als primaire engineeringomgeving
+- Experimenten: Antigravity op aparte branches
+- Source of truth: GitHub
+- Eerste build: een vertical slice, niet direct de volledige website
 
-## 📁 Project Structure
+## Documenten
 
-```
-website/
-├── app/
-│   ├── components/      # Reusable components (ScrollReveal)
-│   ├── diensten/         # Service pages (fractional CTO, consulting, etc.)
-│   ├── over-mij/         # About page
-│   ├── tarieven/         # Pricing page
-│   ├── contact/          # Contact page
-│   ├── globals.css       # Global styles & animations
-│   ├── layout.tsx        # Root layout
-│   └── page.tsx          # Homepage
-├── public/               # Static assets (images, favicon)
-├── tailwind.config.ts    # Tailwind configuration
-└── next.config.mjs      # Next.js configuration
-```
+1. `PROJECT_BRIEF.md` — zakelijke en projectmatige basis
+2. `POSITIONING.md` — positionering, doelgroep en copyguardrails
+3. `REQUIREMENTS.md` — functionele en niet-functionele eisen
+4. `STORYLINE.md` — homepageverhaal en bezoekersreis
+5. `DESIGN_DIRECTION.md` — visual identity, logo, kleur, type en motion
+6. `AGENTS.md` — regels voor Codex, Antigravity en andere agents
+7. `MODERNIZATION_SCAN.md` — productdefinitie en onderzoeksroutes
+8. `DECISIONS.md` — vastgelegde en open beslissingen
+9. `CONTENT_INVENTORY.md` — benodigde teksten, cases en assets
+10. `PHASE_0_CHECKLIST.md` — gate om fase 0 af te ronden
 
-## 🚀 Getting Started
+## Werkwijze
 
-```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Run production build locally
-npm start
-```
-
-## 📄 Pages
-
-- **/**** - Homepage with services overview, expertise, pricing, and CTA
-- **/**diensten** - Services overview
-- **/**diensten/fractional-cto** - Fractional CTO services
-- **/**diensten/applicatieconsultatie** - IT consulting services
-- **/**diensten/full-stack-development** - Development services
-- **/**diensten/projectmanagement** - Project management services
-- **/**diensten/product-business-consultatie** - Product consulting services
-- **/**diensten/support-itsm** - ITSM services
-- **/**over-mij** - About page
-- **/**tarieven** - Pricing page
-- **/**contact** - Contact page
-
-## 🎨 Features
-
-- Responsive design (mobile-first)
-- Scroll reveal animations with progressive enhancement
-- SEO-optimized with proper meta tags
-- Accessible components (ARIA labels, semantic HTML)
-- Optimized performance (static generation where possible)
-
-## 📝 License
-
-© {new Date().getFullYear()} Digitech Solutions. All rights reserved.
+1. Wijzig eerst de documenten, niet de code.
+2. Leg nieuwe strategische keuzes vast in `DECISIONS.md`.
+3. Start pas met wireframes wanneer alle blokkerende fase-0-vragen zijn opgelost.
+4. Start pas met production code nadat UX, designrichting en één motionprototype zijn goedgekeurd.
+5. Iedere agent leest eerst `AGENTS.md` en de overige documenten in deze map.

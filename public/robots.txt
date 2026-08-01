@@ -1,7 +1,0 @@
-# robots.txt for www.digitechsolutions.nl
-
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://www.digitechsolutions.nl/sitemap.xml

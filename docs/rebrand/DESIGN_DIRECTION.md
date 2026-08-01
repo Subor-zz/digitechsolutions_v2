@@ -1,312 +1,122 @@
-# Design Direction
+# Rebrand Prototype Design Direction
 
-## 1. Merknaam
+## Concept
 
-De zichtbare merknaam blijft:
+**Control room editorial.** The page behaves like a calm technical field report: strong assertions, inspectable diagrams, visible decisions, and disciplined transitions from dark concentration to warm explanation. It should feel like a specialist has mapped a messy operational system and made the next decision legible.
 
-> **Digitech Solutions**
+## Brand principles
 
-Er wordt geen verkorting naar alleen DIGITECH als primaire merknaam doorgevoerd.
+1. Recognition before explanation.
+2. Diagnosis before tools.
+3. Evidence before confidence.
+4. Controlled change before transformation language.
+5. Direct founder accountability without false agency scale.
+6. Every visual device must encode a relationship, state, or decision.
 
-Een descriptor mag ondersteunend worden gebruikt:
+## Visual direction
 
-> Workflow & Application Modernization
+- Dark ink sections concentrate attention around the problem, route choice, method, and final action.
+- Warm paper sections slow the rhythm for diagnosis, evidence, and human accountability.
+- A single blue Flow Line represents controlled movement; orange marks friction or a human decision only.
+- Fine borders, clipped corners, and aligned baselines communicate engineering precision without a dashboard aesthetic.
+- Layout asymmetry comes from a wide editorial grid and deliberate offset, not random floating objects.
+- Illustrations are built from text, lines, nodes, and state changes. No stock images, fake dashboards, or generated client artifacts are required.
 
-De Nederlandse variant kan worden getest:
+## Typography
 
-> Workflow- en applicatiemodernisering
+- **Primary:** Geist Sans, loaded locally through the `geist` package.
+- **Technical labels:** Geist Mono, used sparingly for state and route vocabulary.
+- Hero uses an ultra-wide measure and a two-to-three-line maximum on desktop.
+- Body copy stays between roughly 60 and 75 characters per line.
+- Fluid type is bounded at mobile and wide desktop sizes to prevent overflow and overlong display wraps.
 
-## 2. Art direction
+The deterministic `gpt-taste` run selected Satoshi. Geist is used instead because it is the documented working direction, supports Dutch text, has a straightforward local package, and avoids adding an unrelated brand decision solely for the prototype.
 
-> **Editorial engineering studio**
+## Colour system
 
-De combinatie:
+| Role | Token | Value | Use |
+|---|---|---|---|
+| Dark canvas | `--ink-950` | `#090B0F` | Primary concentration sections |
+| Dark surface | `--ink-900` | `#10141A` | Grouped technical surfaces |
+| Raised surface | `--ink-800` | `#181E26` | Interactive or emphasized objects |
+| Warm canvas | `--paper-100` | `#F2F0E9` | Explanatory chapters |
+| Warm surface | `--paper-50` | `#FAF9F5` | Raised light objects |
+| Main light text | `--text-on-dark` | `#F7F6F1` | Readable text on dark |
+| Secondary light text | `--text-muted-dark` | `#C7CDD6` | Supporting text on dark |
+| Main dark text | `--text-on-light` | `#11151B` | Readable text on paper |
+| Flow | `--flow-blue` | `#78A0FF` | Lines, focus, and active state |
+| Friction | `--signal-orange` | `#FF7A45` | Markers and human decision points |
+| Verified | `--verified-green` | `#35C98B` | Confirmed state with text label |
 
-- redactionele typografie;
-- technische precisie;
-- systeemdiagrammen;
-- interface-elementen;
-- veel negatieve ruimte;
-- gecontroleerde motion;
-- warme menselijke details.
+Accent colours are not used as small body text where contrast is uncertain. State is always repeated in text or shape.
 
-De website moet tegelijk twee signalen afgeven:
+## Spacing and layout
 
-1. deze specialist begrijpt moderne digitale vormgeving;
-2. deze specialist beheerst risico, scope en uitvoering.
+- 12-column desktop composition, 6-column tablet adaptation, and single-flow mobile composition.
+- Maximum shell: 1440 px.
+- Content gutters: 20 px mobile, 36 px tablet, 64 px desktop.
+- Major chapter spacing is generous but not uniformly viewport-sized; rhythm follows content importance.
+- Dense technical objects use compact internal spacing while arguments receive larger surrounding whitespace.
+- Radius remains restrained: 4 px metadata, 8 px controls, 12 px grouped surfaces.
 
-## 3. Visuele principes
+## Component architecture
 
-- Eén visueel verhaal boven losse effecten.
-- Grote typografie, korte kernzinnen.
-- Technische lijnen en grids als functionele taal.
-- Donkere basis met warme lichte ademruimtes.
-- Interfaces en procesdiagrammen als bewijsobjecten.
-- Geen overmatig afgeronde SaaS-componenten.
-- Geen futuristische decoratie zonder betekenis.
-- Geen fake dashboards met onbegrijpelijke data.
-- Geen stock-AI.
+- **Asymmetric hero:** copy dominates the left and centre; a system-friction map occupies the offset right column.
+- **Workflow transformation:** one coherent before/after field rather than a card collection.
+- **Route split:** two strong routes and one combined bridge, expressed as connected editorial panels.
+- **Method stack:** chapters overlap subtly on desktop to show accumulation of control; mobile becomes a normal ordered list.
+- **Evidence ledger:** replaces a testimonial carousel because no approved testimonials or cases exist.
+- **Scan roadmap:** the Flow Line resolves into current state, decisions, and first step.
 
-## 4. Kleurenpalet v0.1
+The deterministic `gpt-taste` component selection included horizontal accordions, a testimonial carousel, and an infinite partner marquee. Horizontal disclosure behavior is adapted into the route comparison only where keyboard and touch behavior remain clear. The carousel and marquee are rejected: they would require invented proof or purposeless looping and would weaken trust.
 
-### Neutrals
+## Interaction principles
 
-| Token | Hex | Gebruik |
-|---|---|---|
-| `ink-950` | `#090B0F` | primaire donkere achtergrond |
-| `ink-900` | `#10141A` | surfaces |
-| `ink-800` | `#181E26` | verhoogde componenten |
-| `steel-500` | `#7F8998` | secundaire tekst |
-| `steel-300` | `#B7BEC8` | lichte secundaire tekst |
-| `paper-100` | `#F2F0E9` | warme lichte secties |
-| `paper-50` | `#FAF9F5` | lichte surfaces |
+- Anchor navigation uses native document flow and meaningful targets.
+- Route panels respond to hover and focus but never hide their content.
+- The mobile menu uses a native disclosure pattern and works without JavaScript.
+- Clickable surfaces do not masquerade as controls; links retain explicit labels.
+- Focus is highly visible, offset from component borders, and not colour-only.
 
-### Accenten
+## Motion rules
 
-| Token | Hex | Betekenis |
-|---|---|---|
-| `flow-blue` | `#2F6BFF` | technologie, verbinding en actieve flow |
-| `flow-blue-light` | `#78A0FF` | highlights op donker |
-| `signal-orange` | `#FF6A2B` | frictie, aandacht en menselijke beslissing |
-| `verified-green` | `#35C98B` | gevalideerd, getest en afgerond |
-| `risk-red` | `#FF4D5E` | echte fouten en risico's |
+- Motion may show fragmented handoffs resolving into a controlled route.
+- The selected scroll-pinning and card-stacking paradigms are constrained to a short desktop chapter with native scrolling.
+- No content waits for an entrance animation.
+- No autoplay loops, parallax, cursor effects, magnetic buttons, or page transitions.
+- The motion layer is progressive and can be removed without changing the story.
+- At `prefers-reduced-motion: reduce`, scrub, pin, line drawing, and large transitions are removed; both process states remain visible.
 
-### Regels
+## React Bits decision
 
-- Blauw is de primaire merk- en flowkleur.
-- Oranje is semantisch, niet overal decoratief.
-- Groen uitsluitend voor succes en verificatie.
-- Rood uitsluitend voor echte risico- of foutstatus.
-- Alle combinaties worden op contrast getest.
-- Gradients zijn ondersteunend, nooit noodzakelijk voor herkenning.
-- Geen paars-neon AI-palet.
+React Bits is intentionally not used. No proposed component improves the user journey enough to justify a second interaction dependency or recognizable demo behavior. The required diagrams and disclosure states are specific to the Digitech narrative and are simpler to implement with semantic HTML, CSS, SVG, and one bounded GSAP enhancement.
 
-## 5. Typografie v0.1
+## Smooth scrolling
 
-### Display
+Use native CSS `scroll-behavior: smooth` only when motion is allowed. Anchored headings use `scroll-margin-top` so the sticky header does not obscure them. Reduced-motion switches to `auto`. There is no scroll interception, artificial easing, or history manipulation.
 
-Test eerst:
+## Accessibility rules
 
-- Inter Tight;
-- Geist Sans;
-- Manrope.
+- One `h1`; sequential `h2` structure.
+- Skip link, semantic landmarks, keyboard-safe disclosure, and visible focus.
+- Diagrams include captions and adjacent text equivalents.
+- No information conveyed only by colour, hover, or animation.
+- Minimum comfortable touch target of 44 px where practical.
+- Mobile reading order matches DOM order.
+- Contrast is checked for all text and interface states.
+- Prototype contact does not collect or submit personal data.
+
+## Explicit anti-patterns
+
+- No generic three-card services row.
+- No purple-blue AI gradient, glassmorphism, glowing border, bento filler, or stock technology image.
+- No fake metrics, logos, testimonials, dashboards, or case outcomes.
+- No marketing superlatives or unsupported delivery claims.
+- No decorative pills, section-number labels, or trust badges without artifacts.
+- No repeated left-copy/right-card section template.
+- No animation that delays reading or changes the available information.
+
+## `gpt-taste` influence
+
+The skill materially sharpened the two-to-three-line hero constraint, forced an explicit anti-generic layout decision, increased the editorial scale and spacing contrast, required a pre-flight check before UI code, and introduced a strict review of button contrast, grid density, and motion purpose. Its randomized testimonial, marquee, and font selections were deliberately rejected where they conflicted with evidence, performance, or the authoritative project documentation.
 
-Gewenste eigenschappen:
-
-- krachtig in grote formaten;
-- modern maar niet sci-fi;
-- bruikbaar in Nederlands;
-- variabel gewicht;
-- helder bij compacte headlines.
-
-### Body
-
-Voorkeur:
-
-- Geist Sans of Inter.
-
-### Mono
-
-Test:
-
-- Geist Mono;
-- IBM Plex Mono;
-- JetBrains Mono.
-
-Gebruik mono alleen voor:
-
-- technische metadata;
-- status;
-- proceslabels;
-- sectienummers;
-- diagramannotaties.
-
-### Indicatieve schaal
-
-- Hero desktop: `clamp(4rem, 8vw, 7rem)`
-- Hero mobiel: `clamp(2.75rem, 12vw, 4rem)`
-- H2 desktop: 48–72 px
-- H3: 28–40 px
-- Body large: 20–24 px
-- Body: 16–18 px
-- Label: 12–14 px
-
-Exacte schaal volgt uit de visual spike.
-
-## 6. Grid en spacing
-
-### Grid
-
-- desktop: 12 kolommen;
-- tablet: 6 kolommen;
-- mobiel: 4 kolommen.
-
-### Content
-
-- maximale contentbreedte: ongeveer 1280–1440 px;
-- bodycopy: ongeveer 60–75 tekens per regel;
-- secties mogen viewportvullend zijn;
-- kerninformatie blijft scanbaar;
-- asymmetrie is toegestaan wanneer hiërarchie helder blijft.
-
-### Spacing
-
-Gebruik semantische tokens:
-
-- `space-1` t/m `space-10`;
-- `section-gap-sm`;
-- `section-gap-md`;
-- `section-gap-lg`;
-- `content-gutter`.
-
-Geen ongedocumenteerde willekeurige margins per sectie.
-
-## 7. Componenttaal
-
-### Radius
-
-- 4 px: labels en technische details;
-- 8 px: controls;
-- 12–16 px: kaarten;
-- grotere radius alleen voor mediaframes of uitzonderlijke hero-objecten.
-
-### Borders
-
-- dun;
-- functioneel;
-- rustig;
-- zichtbaar genoeg op dark surfaces.
-
-### Buttons
-
-Primaire CTA:
-
-- hoge visuele prioriteit;
-- duidelijke tekst;
-- geen overdreven glow;
-- zichtbare focus;
-- loading- en success-state;
-- minimale magnetic motion op desktop is optioneel.
-
-Secundaire CTA:
-
-- outline of text/link;
-- visueel onderscheid zonder onduidelijk te worden.
-
-## 8. Logo brief
-
-### Uitgangspunt
-
-De naam **Digitech Solutions** blijft volledig behouden.
-
-### Aanbevolen richting
-
-Begin met een sterk wordmark en een eenvoudig monogram. Het motionconcept is belangrijker dan een complex statisch icoon.
-
-### Richtingen voor exploratie
-
-#### A — Flow D
-
-Een `D` waarin een gefragmenteerde lijn wordt geordend tot één route.
-
-#### B — DS system mark
-
-Een minimalistisch D/S-monogram opgebouwd uit lijn, grid en onderbreking.
-
-#### C — Wordmark alignment
-
-Een custom of aangepast woordmerk waarin lettersegmenten in de motionvariant uitlijnen.
-
-### Requirements
-
-- leesbaar en herkenbaar op 16 px;
-- monochroom bruikbaar;
-- werkt op donker en licht;
-- geen gradient nodig;
-- exporteerbaar als SVG;
-- geen circuitboard-icoon;
-- geen AI-brein;
-- geen swoosh;
-- motionvariant duurt maximaal ongeveer één seconde;
-- volledige naam blijft toegankelijk zichtbaar.
-
-### Beslisproces
-
-1. drie zwart-wit richtingen;
-2. toets op favicon, header en social avatar;
-3. kies één richting;
-4. pas kleur toe;
-5. ontwerp motion lock-up;
-6. test naast hero en navigatie.
-
-## 9. Motion system
-
-### Signature elements
-
-- Flow Line;
-- nodes;
-- layers;
-- gates;
-- state transitions;
-- section progress.
-
-### Principes
-
-- motion verklaart;
-- native scroll blijft leidend;
-- geen scroll-jacking;
-- maximaal één dominante interactie per sectie;
-- mobiel krijgt eigen choreografie;
-- reduced motion is volwaardig;
-- animatie mag geen content blokkeren.
-
-### Indicatieve timings
-
-- microfeedback: 120–220 ms;
-- standaardtransitie: 250–450 ms;
-- section reveal: 500–800 ms;
-- hero orchestration: maximaal ongeveer 1,2 s.
-
-### Performance
-
-- primair transform en opacity;
-- SVG-pathanimatie selectief;
-- pauzeer animaties buiten beeld;
-- lazy-load niet-kritieke motioncode;
-- WebGL alleen na afzonderlijke goedkeuring;
-- geen permanente achtergrondanimaties die CPU verbruiken.
-
-## 10. Beeld en fotografie
-
-Benodigd:
-
-- professionele founderfoto;
-- echte werkcontext;
-- close-ups van diagrammen, schermen of schetsen;
-- casebeelden;
-- abstracte technische composities uit echte interface-elementen.
-
-Vermijden:
-
-- stockvergaderingen;
-- robots;
-- hologrammen;
-- AI-gezichten;
-- generieke serverruimtes;
-- onbegrijpelijke codewalls;
-- fictief groot team.
-
-## 11. Visual spike deliverables
-
-Voordat production design start:
-
-1. desktop hero keyframe;
-2. mobiele hero keyframe;
-3. Hidden Drag begin/midden/eind;
-4. dark en light section-combinatie;
-5. button- en navigatiestijl;
-6. case card;
-7. Flow Line-prototype;
-8. drie logo/wordmarkrichtingen;
-9. reduced-motionvoorbeeld;
-10. performance-inschatting van de motionaanpak.
