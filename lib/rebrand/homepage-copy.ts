@@ -6,7 +6,7 @@ export type ModernizationRoute = {
   visibleSignals: readonly string[];
   output: string;
   cta: string;
-  ctaHref: "#scan";
+  ctaHref: "/modernization-scan";
 };
 
 export type MethodStep = {
@@ -35,8 +35,8 @@ const modernizationRoutes = [
     ],
     output:
       "Een eenvoudiger proces met zichtbare controles, duidelijk eigenaarschap en overdraagbare werkwijzen.",
-    cta: "Verken workflowmodernisering",
-    ctaHref: "#scan",
+    cta: "Bespreek deze route",
+    ctaHref: "/modernization-scan",
   },
   {
     id: "application",
@@ -55,8 +55,8 @@ const modernizationRoutes = [
     ],
     output:
       "Een gefaseerde moderniseringsroute die behoud, aanpassing en vervanging bewust tegen elkaar afweegt.",
-    cta: "Verken applicatiemodernisering",
-    ctaHref: "#scan",
+    cta: "Bespreek deze route",
+    ctaHref: "/modernization-scan",
   },
 ] as const satisfies readonly ModernizationRoute[];
 
@@ -130,16 +130,16 @@ export const homepageCopy = {
       { href: "#routes", label: "Expertise" },
       { href: "#werkwijze", label: "Werkwijze" },
     ],
-    primaryCta: { href: "#scan", label: "Modernization Scan" },
+    primaryCta: { href: "/modernization-scan", label: "Modernization Scan" },
   },
   hero: {
     kicker: "Workflow- en applicatiemodernisering",
     headline: "Moderniseer wat je organisatie vertraagt.",
     lead:
-      "Digitech Solutions maakt zichtbaar waar processen, systemen en verantwoordelijkheden vastlopen — en brengt ze terug naar een beheersbare route. Eerst begrijpen. Dan gericht moderniseren.",
+      "Digitech Solutions maakt zichtbaar waar workflows en applicaties vastlopen. Eerst begrijpen, dan gericht en beheersbaar moderniseren.",
     mobileLead:
-      "Maak zichtbaar waar processen en systemen vastlopen. Begrijp eerst wat nodig is en moderniseer daarna gericht.",
-    primaryCta: { href: "#scan", label: "Start met de Modernization Scan" },
+      "Zie waar processen en systemen vastlopen. Begrijp eerst wat nodig is, moderniseer daarna gericht.",
+    primaryCta: { href: "/modernization-scan", label: "Start met de Modernization Scan" },
     secondaryCta: { href: "#werkwijze", label: "Bekijk de werkwijze" },
     founderTrustLine:
       "Je werkt rechtstreeks met Subor Cheung. Waar specialistische expertise nodig is, wordt die transparant toegevoegd.",
@@ -157,6 +157,11 @@ export const homepageCopy = {
         text: "Wat is de kleinste verstandige ingreep?",
       },
       outcome: { label: "Route", text: "Eén zichtbare route" },
+      mobileSteps: [
+        { label: "Frictie", text: "Workflow, data en applicatie" },
+        { label: "Diagnose", text: "De kleinste verstandige ingreep" },
+        { label: "Route", text: "Een beheersbare eerste stap" },
+      ],
     },
   },
   hiddenDrag: {
@@ -266,7 +271,7 @@ export const homepageCopy = {
       heading: "Workflow en applicatie zitten samen vast",
       copy:
         "Soms ligt de frictie niet in één proces of één systeem. Kies dan gecombineerd of onzeker. De intake vertrekt vanuit wat je dagelijks merkt, niet vanuit een technische diagnose die je vooraf zelf moet stellen.",
-      cta: { href: "#scan", label: "Ik weet nog niet welke route past" },
+      cta: { href: "/modernization-scan", label: "Ik weet nog niet welke route past" },
     },
   },
   method: {
@@ -338,7 +343,7 @@ export const homepageCopy = {
     cta: { href: "https://digitechsolutions.nl/over-mij", label: "Over Subor" },
   },
   result: {
-    rendered: false,
+    rendered: true,
     kicker: "De beoogde eindtoestand",
     headline: "Niet alleen gemoderniseerd, maar weer onder controle.",
     intro:
@@ -361,7 +366,7 @@ export const homepageCopy = {
       },
     ],
     proof: {
-      label: "Voorbeeld van de rapportstructuur — geen klantcase",
+      label: "Voorbeeld van de rapportstructuur, geen klantcase",
       anatomy: [
         "Huidige situatie",
         "Frictie en risico’s",
@@ -394,25 +399,29 @@ export const homepageCopy = {
       },
     ],
     outputsAriaLabel: "Beoogde output van de Modernization Scan",
+    primaryCta: {
+      href: "/modernization-scan",
+      label: "Bekijk de Modernization Scan",
+    },
     fallbackCta: {
       href: "mailto:info@digitechsolutions.nl?subject=Verkennend%20gesprek%20over%20modernisering",
       label: "Plan een verkennend gesprek",
     },
-    prototypeMicrocopy:
-      "Prototype: er wordt op deze pagina nog geen formulierdata verzameld of verzonden.",
+    privacyMicrocopy:
+      "De intake vraagt niet om wachtwoorden, broncode of gevoelige persoonsgegevens.",
   },
   footer: {
     descriptor:
       "Workflow- en applicatiemodernisering voor organisaties die weer grip willen op verandering.",
     backToTop: { href: "#top", label: "Terug naar boven" },
-    prototypeLabel: "Rebrandprototype, juli 2026",
-    prototypeStatus: "Niet geïndexeerd. Geen analytics. Geen formulierverwerking.",
+    legalLabel: "Digitech Solutions",
+    privacyStatus: "Geen analytics of formulierverwerking op deze website.",
     rights: "Digitech Solutions. Alle rechten voorbehouden.",
   },
   metadata: {
     title: "Workflow- en applicatiemodernisering",
     description:
-      "Digitech Solutions helpt organisaties vastgelopen workflows en verouderde applicaties onderzoeken en gericht moderniseren — met heldere scope, kwaliteitscontrole en overdracht.",
+      "Digitech Solutions helpt organisaties vastgelopen workflows en verouderde applicaties onderzoeken en gericht moderniseren, met heldere scope, kwaliteitscontrole en overdracht.",
   },
 } as const;
 

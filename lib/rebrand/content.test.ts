@@ -47,15 +47,24 @@ describe("rebrand content model", () => {
     expect(publicCopy).not.toContain('"status":"definitief"');
   });
 
-  it("keeps deferred result copy central but inactive", () => {
-    expect(homepageCopy.result.rendered).toBe(false);
+  it("keeps the honest proof placeholder active", () => {
+    expect(homepageCopy.result.rendered).toBe(true);
+    expect(homepageCopy.result.proof.label).toContain("geen klantcase");
     expect(homepageCopy.result.outcomes).toHaveLength(3);
   });
 
-  it("keeps the prototype scan honest", () => {
+  it("keeps the scan handoff honest", () => {
+    expect(homepageCopy.scan.primaryCta.href).toBe("/modernization-scan");
     expect(homepageCopy.scan.fallbackCta.href).toMatch(/^mailto:/);
-    expect(homepageCopy.scan.prototypeMicrocopy).toContain("geen formulierdata");
+    expect(homepageCopy.scan.privacyMicrocopy).toContain("wachtwoorden");
     expect(publicCopy).not.toContain("success");
+  });
+
+  it("routes every expertise CTA to the dedicated scan page", () => {
+    for (const route of modernizationRoutes) {
+      expect(route.cta).toBe("Bespreek deze route");
+      expect(route.ctaHref).toBe("/modernization-scan");
+    }
   });
 
   it("stores mobile variants without requiring extra layout slots", () => {
