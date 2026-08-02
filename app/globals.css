@@ -300,6 +300,7 @@ section[id] {
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  opacity: 0.38;
 }
 
 .journey-route__map {
@@ -318,13 +319,13 @@ section[id] {
 }
 
 .journey-route__path--base {
-  stroke: rgb(120 160 255 / 18%);
+  stroke: rgb(120 160 255 / 12%);
   stroke-width: 1;
 }
 
 .journey-route__path--draw {
-  stroke: var(--flow-blue-strong);
-  stroke-width: 1.5;
+  stroke: rgb(47 107 255 / 68%);
+  stroke-width: 1.25;
 }
 
 .journey-route__path--branch {
@@ -333,7 +334,7 @@ section[id] {
 
 .journey-route__branch--friction,
 .journey-route__branch--diagnosis {
-  stroke: var(--signal-orange);
+  stroke: rgb(255 122 69 / 58%);
 }
 
 .journey-route__gate {
@@ -347,39 +348,39 @@ section[id] {
 
 .journey-route__gate--hero {
   top: 3%;
-  left: 92%;
+  left: 97%;
 }
 
 .journey-route__gate--friction {
   top: 18%;
-  left: 86%;
+  left: 91%;
   border-color: var(--signal-orange);
 }
 
 .journey-route__gate--diagnosis {
   top: 36%;
-  left: 84%;
+  left: 90%;
   border-color: var(--signal-orange);
 }
 
 .journey-route__gate--routes {
   top: 53%;
-  left: 92%;
+  left: 97%;
 }
 
 .journey-route__gate--method {
   top: 67%;
-  left: 80%;
+  left: 95%;
 }
 
 .journey-route__gate--founder {
   top: 82%;
-  left: 89%;
+  left: 97%;
 }
 
 .journey-route__gate--scan {
   top: 96%;
-  left: 50%;
+  left: 96%;
 }
 
 .story-spike {
@@ -993,6 +994,8 @@ h3 {
 .routes__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(calc(100% - (2 * var(--content-gutter))), 76rem);
+  padding-inline: 0;
   border-top: 1px solid var(--border-dark);
   border-bottom: 1px solid var(--border-dark);
 }
@@ -1000,7 +1003,7 @@ h3 {
 .route-panel {
   min-width: 0;
   min-height: 38rem;
-  padding: clamp(3.5rem, 7vw, 7rem) var(--content-gutter);
+  padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 3vw, 3.25rem);
   background: transparent;
 }
 
@@ -1081,7 +1084,7 @@ h3 {
   grid-template-columns: 1.15fr 2fr auto;
   align-items: center;
   gap: clamp(1.5rem, 4vw, 4rem);
-  padding: 1.75rem var(--content-gutter);
+  padding: 1.75rem clamp(1.5rem, 3vw, 3.25rem);
   background: transparent;
   border-top: 1px solid var(--border-dark);
 }
@@ -1763,6 +1766,17 @@ h3 {
   }
 }
 
+@supports (content-visibility: auto) {
+  .routes,
+  .method,
+  .founder,
+  .scan,
+  .exploration {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 60rem;
+  }
+}
+
 .scan-page {
   min-height: 100svh;
   color: var(--text-on-dark);
@@ -2309,7 +2323,7 @@ h3 {
   }
 
   .journey-route {
-    opacity: 0.58;
+    display: none;
   }
 
   h2 {
@@ -2393,6 +2407,7 @@ h3 {
 
   .routes__grid {
     grid-template-columns: 1fr;
+    width: min(calc(100% - (2 * var(--content-gutter))), 76rem);
   }
 
   .route-panel {

@@ -7,6 +7,43 @@ export const metadata: Metadata = {
   title: "Modernization Scan",
   description:
     "Breng workflows, applicaties, risico's en de verstandigste eerste moderniseringsstap in kaart.",
+  alternates: { canonical: "/modernization-scan" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    url: "/modernization-scan",
+    siteName: "Digitech Solutions",
+    title: "Modernization Scan | Digitech Solutions",
+    description:
+      "Breng workflows, applicaties, risico's en de verstandigste eerste moderniseringsstap in kaart.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Modernization Scan | Digitech Solutions",
+    description:
+      "Breng workflows, applicaties, risico's en de verstandigste eerste moderniseringsstap in kaart.",
+  },
+};
+
+const scanSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://digitechsolutions.nl/modernization-scan#service",
+  name: "Modernization Scan",
+  url: "https://digitechsolutions.nl/modernization-scan",
+  description:
+    "Een afgebakende analyse van workflows, applicaties of de samenhang daartussen, met risico's, afhankelijkheden en een concrete moderniseringsroute.",
+  provider: { "@id": "https://digitechsolutions.nl/#organization" },
+  serviceType: "Moderniseringsanalyse",
+  areaServed: ["Nederland", "België"],
+  offers: {
+    "@type": "Offer",
+    price: "1499",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url: "https://digitechsolutions.nl/modernization-scan",
+  },
 };
 
 const routes = [
@@ -34,6 +71,10 @@ const emailHref =
 export default function ModernizationScanPage() {
   return (
     <div className="scan-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(scanSchema).replace(/</g, "\\u003c") }}
+      />
       <a className="skip-link" href="#scan-inhoud">
         Ga naar de hoofdinhoud
       </a>

@@ -4,7 +4,6 @@ import { HeroSystemMap } from "./HeroSystemMap";
 import { JourneyRoute } from "./JourneyRoute";
 import { MethodStack } from "./MethodStack";
 import { MobileNav } from "./MobileNav";
-import { NarrativeMotion } from "./NarrativeMotion";
 import { ProblemExplorationForm } from "./ProblemExplorationForm";
 import { homepageCopy } from "@/lib/rebrand/homepage-copy";
 
@@ -14,7 +13,6 @@ export function RebrandPage() {
 
   return (
     <div className="site-shell">
-      <NarrativeMotion />
       <a className="skip-link" href="#hoofdinhoud">
         {navigation.skipLink}
       </a>
@@ -130,7 +128,7 @@ export function RebrandPage() {
             <h2 id="routes-heading">{routes.headline}</h2>
             <p>{routes.intro}</p>
           </div>
-          <div className="routes__grid">
+          <div className="container routes__grid">
             {routes.items.map((route) => (
               <article className="route-panel" key={route.id}>
                 <div className="route-panel__topline">
