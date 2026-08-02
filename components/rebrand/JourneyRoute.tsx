@@ -11,6 +11,7 @@ export function JourneyRoute() {
           d="M97 0V92H95V205H97V326H94V454H97V576H95V704H97V820H94V910H96V1000"
         />
         <path
+          pathLength="1"
           className="journey-route__path journey-route__path--draw journey-route__path--main"
           d="M97 0V92H95V205H97V326H94V454H97V576H95V704H97V820H94V910H96V1000"
         />
@@ -19,6 +20,7 @@ export function JourneyRoute() {
           d="M95 148H91V224H88"
         />
         <path
+          pathLength="1"
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--friction"
           d="M95 148H91V224H88"
         />
@@ -27,6 +29,7 @@ export function JourneyRoute() {
           d="M94 390H90V476H87"
         />
         <path
+          pathLength="1"
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--diagnosis"
           d="M94 390H90V476H87"
         />
@@ -35,6 +38,7 @@ export function JourneyRoute() {
           d="M95 638H91V690H87M91 638V746H87"
         />
         <path
+          pathLength="1"
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--routes"
           d="M95 638H91V690H87M91 638V746H87"
         />
@@ -43,6 +47,7 @@ export function JourneyRoute() {
           d="M94 858H90V910H96"
         />
         <path
+          pathLength="1"
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--transfer"
           d="M94 858H90V910H96"
         />
