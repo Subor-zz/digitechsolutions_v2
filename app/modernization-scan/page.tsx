@@ -29,7 +29,7 @@ const routes = [
 ] as const;
 
 const emailHref =
-  "mailto:info@digitechsolutions.nl?subject=Modernization%20Scan&body=Organisatie%3A%0A%0ARoute%20(workflow%2C%20applicatie%2C%20gecombineerd%20of%20onzeker)%3A%0A%0AWaar%20merken%20jullie%20de%20meeste%20frictie%3F%0A%0AWat%20zou%20er%20moeten%20verbeteren%3F%0A%0AWie%20is%20betrokken%20bij%20een%20vervolggesprek%3F%0A";
+  "mailto:subor@digitechsolutions.nl?subject=Modernization%20Scan&body=Organisatie%3A%0A%0ARoute%20(workflow%2C%20applicatie%2C%20gecombineerd%20of%20onzeker)%3A%0A%0AWaar%20merken%20jullie%20de%20meeste%20frictie%3F%0A%0AWat%20zou%20er%20moeten%20verbeteren%3F%0A%0AWie%20is%20betrokken%20bij%20een%20vervolggesprek%3F%0A";
 
 export default function ModernizationScanPage() {
   return (

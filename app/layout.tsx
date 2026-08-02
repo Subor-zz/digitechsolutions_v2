@@ -5,13 +5,12 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://digitechsolutions.nl"),
   title: {
     default: "Workflow- en applicatiemodernisering | Digitech Solutions",
     template: "%s | Digitech Solutions",
   },
   description:
-    "Digitech Solutions maakt zichtbaar waar workflows en applicaties vastlopen en helpt organisaties gericht moderniseren.",
+    "Digitech Solutions helpt mkb-bedrijven en scale-ups verouderde processen en applicaties gericht te moderniseren.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
