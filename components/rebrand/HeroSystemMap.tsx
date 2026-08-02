@@ -12,10 +12,10 @@ export function HeroSystemMap() {
         role="img"
         aria-label={systemVisual.ariaLabel}
       >
-        <path className="hero-map__line hero-map__line--muted" d="M190 132H270V285H370" />
-        <path className="hero-map__line hero-map__line--friction" d="M210 308H302V285H370" />
-        <path className="hero-map__line hero-map__line--muted" d="M205 487H270V285H370" />
-        <path className="hero-map__line hero-map__line--flow" d="M370 285H458V476H492" />
+        <path pathLength="1" className="hero-map__line hero-map__line--muted" d="M190 132H270V285H370" />
+        <path pathLength="1" className="hero-map__line hero-map__line--friction" d="M210 308H302V285H370" />
+        <path pathLength="1" className="hero-map__line hero-map__line--muted" d="M205 487H270V285H370" />
+        <path pathLength="1" className="hero-map__line hero-map__line--flow" d="M370 285H458V476H492" />
         <circle className="hero-map__junction" cx="370" cy="285" r="7" />
 
         <foreignObject x="26" y="88" width="164" height="88">
