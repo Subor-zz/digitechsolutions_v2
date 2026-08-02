@@ -1,85 +1,10 @@
-"use client";
-
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { homepageCopy } from "@/lib/rebrand/homepage-copy";
 
-gsap.registerPlugin(useGSAP);
-
-const MOTION_TIME_SCALE = 2 / 3;
 const { systemVisual } = homepageCopy.hero;
 
 export function HeroSystemMap() {
-  const scope = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const media = gsap.matchMedia();
-
-      media.add(
-        {
-          motionAllowed: "(prefers-reduced-motion: no-preference)",
-          desktop: "(min-width: 768px)",
-        },
-        (context) => {
-          if (!context.conditions?.motionAllowed) return;
-
-          const fragments = gsap.utils.toArray<HTMLElement>(
-            ".hero-map__canvas .hero-map__fragment",
-          );
-          const decision = scope.current?.querySelector<HTMLElement>(
-            ".hero-map__canvas .hero-map__decision",
-          );
-          const outcome = scope.current?.querySelector<HTMLElement>(
-            ".hero-map__canvas .hero-map__outcome",
-          );
-          const paths = gsap.utils.toArray<SVGPathElement>(
-            ".hero-map__canvas .hero-map__line",
-          );
-          const junction = scope.current?.querySelector<SVGCircleElement>(
-            ".hero-map__canvas .hero-map__junction",
-          );
-          const desktop = Boolean(context.conditions?.desktop);
-
-          if (!decision || !outcome || !junction || paths.length < 4) return;
-
-          paths.forEach((path) => {
-            const length = path.getTotalLength();
-            gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
-          });
-
-          gsap.set(fragments, {
-            autoAlpha: 0,
-            x: desktop ? (index: number) => [-24, -36, -18][index] : 0,
-            y: desktop ? 0 : 14,
-          });
-          gsap.set([decision, outcome], { autoAlpha: 0, y: 14 });
-          gsap.set(junction, { autoAlpha: 0, scale: 0, transformOrigin: "center" });
-
-          const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-          timeline
-            .to(fragments, { autoAlpha: 1, x: 0, y: 0, duration: 0.42, stagger: 0.07 })
-            .to(paths.slice(0, 3), { strokeDashoffset: 0, duration: 0.38, stagger: 0.04 }, 0.18)
-            .to(junction, { autoAlpha: 1, scale: 1, duration: 0.2 }, 0.46)
-            .to(decision, { autoAlpha: 1, y: 0, duration: 0.32 }, 0.48)
-            .to(paths[3], { strokeDashoffset: 0, duration: 0.38, ease: "power2.out" }, 0.66)
-            .to(outcome, { autoAlpha: 1, y: 0, duration: 0.32 }, 0.82);
-
-          timeline.timeScale(MOTION_TIME_SCALE);
-
-          return () => timeline.kill();
-        },
-      );
-
-      return () => media.revert();
-    },
-    { scope },
-  );
-
   return (
-    <figure ref={scope} className="hero-map" aria-labelledby="hero-map-caption">
+    <figure className="hero-map" aria-labelledby="hero-map-caption">
       <figcaption id="hero-map-caption">{systemVisual.caption}</figcaption>
       <svg
         className="hero-map__canvas"

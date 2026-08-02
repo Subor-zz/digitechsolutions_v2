@@ -8,43 +8,43 @@ export function JourneyRoute() {
       >
         <path
           className="journey-route__path journey-route__path--base"
-          d="M92 0V92H86V205H92V326H84V454H92V576H80V704H89V820H72V910H50V1000"
+          d="M97 0V92H95V205H97V326H94V454H97V576H95V704H97V820H94V910H96V1000"
         />
         <path
           className="journey-route__path journey-route__path--draw journey-route__path--main"
-          d="M92 0V92H86V205H92V326H84V454H92V576H80V704H89V820H72V910H50V1000"
+          d="M97 0V92H95V205H97V326H94V454H97V576H95V704H97V820H94V910H96V1000"
         />
         <path
           className="journey-route__path journey-route__path--base journey-route__path--branch"
-          d="M86 148H70V224H57"
+          d="M95 148H91V224H88"
         />
         <path
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--friction"
-          d="M86 148H70V224H57"
+          d="M95 148H91V224H88"
         />
         <path
           className="journey-route__path journey-route__path--base journey-route__path--branch"
-          d="M84 390H68V476H54"
+          d="M94 390H90V476H87"
         />
         <path
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--diagnosis"
-          d="M84 390H68V476H54"
+          d="M94 390H90V476H87"
         />
         <path
           className="journey-route__path journey-route__path--base journey-route__path--branch"
-          d="M80 638H62V690H45M62 638V746H45"
+          d="M95 638H91V690H87M91 638V746H87"
         />
         <path
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--routes"
-          d="M80 638H62V690H45M62 638V746H45"
+          d="M95 638H91V690H87M91 638V746H87"
         />
         <path
           className="journey-route__path journey-route__path--base journey-route__path--branch"
-          d="M72 858H58V910H50"
+          d="M94 858H90V910H96"
         />
         <path
           className="journey-route__path journey-route__path--draw journey-route__path--branch journey-route__branch--transfer"
-          d="M72 858H58V910H50"
+          d="M94 858H90V910H96"
         />
       </svg>
 
