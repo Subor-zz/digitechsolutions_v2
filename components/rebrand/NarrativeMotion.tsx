@@ -420,12 +420,13 @@ export function NarrativeMotion() {
           timelines.push(founderTimeline.timeScale(MOTION_TIME_SCALE));
         }
 
-        const roadmap = document.querySelector<HTMLElement>(".scan-roadmap");
+        const roadmap = document.querySelector<HTMLElement>(".scan__details");
         if (roadmap) {
           const scanSection = document.querySelector<HTMLElement>(".scan");
           const scanCopy = gsap.utils.toArray<HTMLElement>(".scan__copy > *");
-          const roadmapCards = Array.from(roadmap.querySelectorAll<HTMLElement>(":scope > div"));
-          const roadmapLinks = Array.from(roadmap.querySelectorAll<HTMLElement>(":scope > i"));
+          const roadmapCards = Array.from(
+            roadmap.querySelectorAll<HTMLElement>("article, .scan-deliverables"),
+          );
           const roadmapTimeline = gsap.timeline({
             scrollTrigger: { trigger: scanSection ?? roadmap, start: "top 72%", once: true },
           });
@@ -462,18 +463,6 @@ export function NarrativeMotion() {
                 clearProps: "transform,opacity,visibility",
               },
               "-=0.3",
-            )
-            .from(
-              roadmapLinks,
-              {
-                scaleY: 0,
-                transformOrigin: "top",
-                duration: 0.34,
-                stagger: 0.16,
-                ease: "power2.inOut",
-                clearProps: "transform",
-              },
-              "-=0.48",
             );
           timelines.push(roadmapTimeline.timeScale(MOTION_TIME_SCALE));
         }

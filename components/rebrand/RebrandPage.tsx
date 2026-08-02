@@ -5,6 +5,7 @@ import { JourneyRoute } from "./JourneyRoute";
 import { MethodStack } from "./MethodStack";
 import { MobileNav } from "./MobileNav";
 import { NarrativeMotion } from "./NarrativeMotion";
+import { ProblemExplorationForm } from "./ProblemExplorationForm";
 import { homepageCopy } from "@/lib/rebrand/homepage-copy";
 
 export function RebrandPage() {
@@ -50,7 +51,9 @@ export function RebrandPage() {
                 {hero.kicker}
               </p>
               <h1 id="hero-heading">{hero.headline}</h1>
-              <p className="hero__lede">{hero.lead}</p>
+              <p className="hero__lede hero__lede--full">{hero.lead}</p>
+              <p className="hero__lede hero__lede--mobile">{hero.mobileLead}</p>
+              <p className="hero__supporting">{hero.supporting}</p>
               <div className="hero__actions">
                 <a className="button button--primary" href={hero.primaryCta.href}>
                   {hero.primaryCta.label}
@@ -165,7 +168,7 @@ export function RebrandPage() {
           </div>
         </section>
 
-        <section className="chapter chapter--paper founder" aria-labelledby="founder-heading">
+        <section id="over-digitech" className="chapter chapter--paper founder" aria-labelledby="founder-heading">
           <div className="container founder__layout">
             <div className="founder__identity" aria-hidden="true">
               <svg className="founder__route" viewBox="0 0 600 520">
@@ -174,11 +177,12 @@ export function RebrandPage() {
                 <circle cx="304" cy="260" r="7" />
                 <circle cx="566" cy="416" r="7" />
               </svg>
+              <span>D</span>
               <span>S</span>
-              <span>C</span>
               <i />
             </div>
             <div className="founder__copy">
+              <p className="section-kicker">{founder.kicker}</p>
               <h2 id="founder-heading">{founder.headline}</h2>
               <p className="founder__lead">{founder.lead}</p>
               <p>{founder.supporting}</p>
@@ -205,34 +209,43 @@ export function RebrandPage() {
         <section id="scan" className="chapter chapter--dark scan" aria-labelledby="scan-heading">
           <div className="container scan__layout">
             <div className="scan__copy">
+              <p className="section-kicker section-kicker--light">{scan.kicker}</p>
               <h2 id="scan-heading">{scan.headline}</h2>
               <p>{scan.copy}</p>
+              <p>{scan.decisionCopy}</p>
+              <p className="scan__investment">{scan.investment}</p>
               <div className="scan__actions">
-                <a className="button button--primary" href={scan.fallbackCta.href}>
-                  {scan.fallbackCta.label}
+                <a className="button button--primary" href={scan.primaryCta.href}>
+                  {scan.primaryCta.label}
                   <span aria-hidden="true">↗</span>
                 </a>
-                <p>{scan.prototypeMicrocopy}</p>
+                <a className="text-link text-link--light" href={scan.fallbackCta.href}>
+                  {scan.fallbackCta.label}
+                </a>
               </div>
             </div>
-            <div className="scan-roadmap" aria-label={scan.outputsAriaLabel}>
-              <div>
-                <span>{scan.outputs[0].title}</span>
-                <strong>{scan.outputs[0].description}</strong>
+            <div className="scan__details" aria-label={scan.outputsAriaLabel}>
+              <div className="scan-days">
+                {scan.days.map((day) => (
+                  <article key={day.title}>
+                    <h3>{day.title}</h3>
+                    <ul>
+                      {day.items.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </article>
+                ))}
               </div>
-              <i aria-hidden="true" />
-              <div>
-                <span>{scan.outputs[1].title}</span>
-                <strong>{scan.outputs[1].description}</strong>
-              </div>
-              <i aria-hidden="true" />
-              <div>
-                <span>{scan.outputs[2].title}</span>
-                <strong>{scan.outputs[2].description}</strong>
+              <div className="scan-deliverables">
+                <h3>Dit ontvang je</h3>
+                <ul>
+                  {scan.deliverables.map((item) => <li key={item}>{item}</li>)}
+                </ul>
               </div>
             </div>
           </div>
         </section>
+
+        <ProblemExplorationForm />
       </main>
 
       <footer className="site-footer">
@@ -244,8 +257,13 @@ export function RebrandPage() {
           </a>
         </div>
         <div className="container site-footer__bottom">
-          <span>{footer.prototypeLabel}</span>
-          <span>{footer.prototypeStatus}</span>
+          <nav aria-label="Voettekstnavigatie">
+            {footer.links.map((link) => (
+              <a key={link.href} href={link.href}>{link.label}</a>
+            ))}
+          </nav>
+          <span>{footer.location}</span>
+          <span>{footer.rights}</span>
         </div>
       </footer>
     </div>

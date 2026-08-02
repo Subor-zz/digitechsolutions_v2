@@ -6,11 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Digitech Solutions | Rebrand prototype",
+    default: "Workflow- en applicatiemodernisering | Digitech Solutions",
     template: "%s | Digitech Solutions",
   },
   description:
-    "Een geïsoleerd rebrandprototype voor workflow- en applicatiemodernisering.",
+    "Digitech Solutions helpt mkb-bedrijven en scale-ups verouderde processen en applicaties gericht te moderniseren.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

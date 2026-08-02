@@ -18,7 +18,7 @@ describe("MobileNav", () => {
     expect(toggle.getAttribute("aria-expanded")).toBe("true");
     expect(screen.getByRole("navigation", { name: "Mobiele navigatie" })).toBeTruthy();
 
-    fireEvent.click(screen.getByRole("link", { name: "Diagnose" }));
+    fireEvent.click(screen.getByRole("link", { name: "De scan" }));
     expect(toggle.getAttribute("aria-expanded")).toBe("false");
   });
 
