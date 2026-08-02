@@ -126,26 +126,15 @@ export function HeroSystemMap() {
       </svg>
 
       <div className="hero-map__mobile-list" aria-hidden="true">
-        <div className="hero-map__fragment">
-          <span>{systemVisual.fragments[0].label}</span>
-          {systemVisual.fragments[0].text}
-        </div>
-        <div className="hero-map__fragment">
-          <span>{systemVisual.fragments[1].label}</span>
-          {systemVisual.fragments[1].text}
-        </div>
-        <div className="hero-map__fragment">
-          <span>{systemVisual.fragments[2].label}</span>
-          {systemVisual.fragments[2].text}
-        </div>
-        <div className="hero-map__decision">
-          <span>{systemVisual.decision.label}</span>
-          {systemVisual.decision.text}
-        </div>
-        <div className="hero-map__outcome">
-          <span>{systemVisual.outcome.label}</span>
-          {systemVisual.outcome.text}
-        </div>
+        {systemVisual.mobileSteps.map((step, index) => (
+          <div
+            className={index === 1 ? "hero-map__decision" : index === 2 ? "hero-map__outcome" : "hero-map__fragment"}
+            key={step.label}
+          >
+            <span>{step.label}</span>
+            {step.text}
+          </div>
+        ))}
       </div>
     </figure>
   );

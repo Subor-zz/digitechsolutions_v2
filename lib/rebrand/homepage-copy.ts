@@ -113,6 +113,11 @@ export const homepageCopy = {
       ],
       decision: { label: "Gevolg", text: "Een groeiende backlog" },
       outcome: { label: "Richting", text: "Eén beheersbare route" },
+      mobileSteps: [
+        { label: "Frictie", text: "Workflow, data en applicatie" },
+        { label: "Gevolg", text: "Een groeiende backlog" },
+        { label: "Richting", text: "Eén beheersbare route" },
+      ],
     },
   },
   hiddenDrag: {
