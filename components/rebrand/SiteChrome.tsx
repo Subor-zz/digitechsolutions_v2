@@ -3,8 +3,13 @@ import { homepageCopy } from "@/lib/rebrand/homepage-copy";
 import { BrandLockup } from "./BrandLockup";
 import { MobileNav } from "./MobileNav";
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  primaryCtaHref?: string;
+};
+
+export function SiteHeader({ primaryCtaHref }: SiteHeaderProps) {
   const { brand, navigation } = homepageCopy;
+  const resolvedPrimaryCtaHref = primaryCtaHref ?? navigation.primaryCta.href;
 
   return (
     <>
@@ -16,10 +21,10 @@ export function SiteHeader() {
         <nav className="desktop-nav" aria-label={navigation.ariaLabel}>
           {navigation.links.map((item) => <a href={item.href} key={item.href}>{item.label}</a>)}
         </nav>
-        <a className="button button--header" href={navigation.primaryCta.href}>
+        <a className="button button--header" href={resolvedPrimaryCtaHref}>
           {navigation.primaryCta.label}
         </a>
-        <MobileNav />
+        <MobileNav primaryCtaHref={resolvedPrimaryCtaHref} />
       </header>
     </>
   );

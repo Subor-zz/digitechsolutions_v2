@@ -58,6 +58,7 @@ describe("homepage copy contract", () => {
     expect(home.match(/<h1/g)).toHaveLength(1);
     expect(exploration.match(/<h1/g)).toHaveLength(1);
     expect(exploration).toContain("ProblemExplorationForm");
+    expect(exploration).toContain('primaryCtaHref="#probleemverkenning"');
     expect(exploration).toContain("problemExploration.metadata.canonical");
   });
 
@@ -84,5 +85,15 @@ describe("homepage copy contract", () => {
     const css = readFileSync(join(process.cwd(), "app/globals.css"), "utf8");
     expect(css).toContain("@media (prefers-reduced-motion: reduce)");
     expect(css).toContain("scroll-behavior: auto");
+  });
+
+  it("keeps the solution progression visible in the mobile hero", () => {
+    const css = readFileSync(join(process.cwd(), "app/globals.css"), "utf8");
+    const mobileCss = css.slice(css.indexOf("@media (max-width: 767px)"));
+    const visual = readFileSync(join(process.cwd(), "components/rebrand/HeroSystemMap.tsx"), "utf8");
+
+    expect(mobileCss).not.toMatch(/\.hero-map\s*{\s*display:\s*none/);
+    expect(mobileCss).toContain(".hero-map__mobile-list");
+    expect(visual).toContain("systemVisual.mobileSteps");
   });
 });

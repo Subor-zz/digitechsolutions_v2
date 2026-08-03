@@ -4,6 +4,7 @@ import { FlowDiagram } from "./FlowDiagram";
 import { HeroSystemMap } from "./HeroSystemMap";
 import { JourneyRoute } from "./JourneyRoute";
 import { MethodStack } from "./MethodStack";
+import { MotionOrchestrator } from "./MotionOrchestrator";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 
 export function RebrandPage() {
@@ -13,6 +14,7 @@ export function RebrandPage() {
     <div className="site-shell">
       <SiteHeader />
       <main id="hoofdinhoud" className="site-journey">
+        <MotionOrchestrator />
         <JourneyRoute />
 
         <section id="top" className="hero chapter chapter--dark" aria-labelledby="hero-heading">
@@ -35,19 +37,19 @@ export function RebrandPage() {
         </section>
 
         <section id="probleem" className="chapter chapter--paper" aria-labelledby="probleem-heading">
-          <div className="container problem-intro">
+          <div className="container problem-intro" data-reveal="rise">
             <div>
               <p className="section-kicker">{hiddenDrag.kicker}</p>
               <h2 id="probleem-heading">{hiddenDrag.headline}</h2>
             </div>
             <p className="chapter-intro">{hiddenDrag.intro}</p>
           </div>
-          <div className="container"><div className="flow-diagram-stage"><FlowDiagram /></div></div>
+          <div className="container"><div className="flow-diagram-stage" data-reveal="flow"><FlowDiagram /></div></div>
         </section>
 
         <section id="scan" className="chapter chapter--dark scan" aria-labelledby="scan-heading">
           <div className="container scan__layout">
-            <div className="scan__copy">
+            <div className="scan__copy" data-reveal="left">
               <p className="section-kicker section-kicker--light">{scan.kicker}</p>
               <h2 id="scan-heading">{scan.headline}</h2>
               <p className="scan__full-copy">{scan.copy}</p>
@@ -60,23 +62,23 @@ export function RebrandPage() {
             </div>
             <div className="scan__details" aria-label={scan.outputsAriaLabel}>
               <div className="scan-days">
-                {scan.days.map((day) => <article key={day.title}><h3>{day.title}</h3><ul>{day.items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}
+                {scan.days.map((day, index) => <article data-reveal="rise" data-reveal-delay={index + 1} key={day.title}><h3>{day.title}</h3><ul>{day.items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}
               </div>
-              <div className="scan-deliverables"><h3>Dit ontvang je</h3><ul>{scan.deliverables.map((item) => <li key={item}>{item}</li>)}</ul></div>
+              <div className="scan-deliverables" data-reveal="rise" data-reveal-delay="3"><h3>Dit ontvang je</h3><ul>{scan.deliverables.map((item) => <li key={item}>{item}</li>)}</ul></div>
             </div>
           </div>
         </section>
 
         <section id="routes" className="chapter chapter--dark routes" aria-labelledby="routes-heading">
-          <div className="container routes__heading">
+          <div className="container routes__heading" data-reveal="rise">
             <p className="section-kicker section-kicker--light">{routes.kicker}</p>
             <h2 id="routes-heading">{routes.headline}</h2>
             <p className="routes__full-intro">{routes.intro}</p>
             <p className="routes__mobile-intro">{routes.mobileIntro}</p>
           </div>
           <div className="container routes__grid">
-            {routes.items.map((route) => (
-              <article className="route-panel" key={route.id}>
+            {routes.items.map((route, index) => (
+              <article className="route-panel" data-reveal={index === 0 ? "left" : "right"} key={route.id}>
                 <div className="route-panel__topline"><span>{route.title}</span><i aria-hidden="true" /></div>
                 <h3>{route.statement}</h3>
                 <p className="route-panel__context">{route.context}</p>
@@ -90,7 +92,7 @@ export function RebrandPage() {
                 </details>
               </article>
             ))}
-            <aside className="combined-route">
+            <aside className="combined-route" data-reveal="rise" data-reveal-delay="2">
               <div><span className="combined-route__mark" aria-hidden="true" /><p>{routes.combined.heading}</p></div>
               <p>{routes.combined.copy}</p>
               <a className="text-link text-link--light" href={routes.combined.cta.href}>{routes.combined.cta.label}</a>
@@ -104,8 +106,8 @@ export function RebrandPage() {
 
         <section id="over-digitech" className="chapter chapter--paper founder" aria-labelledby="founder-heading">
           <div className="container founder__layout">
-            <div className="founder__identity" aria-hidden="true"><span>D</span><span>S</span><i /></div>
-            <div className="founder__copy">
+            <div className="founder__identity" data-reveal="scale" aria-hidden="true"><span>D</span><span>S</span><i /></div>
+            <div className="founder__copy" data-reveal="right">
               <p className="section-kicker">{founder.kicker}</p>
               <h2 id="founder-heading">{founder.headline}</h2>
               <p className="founder__lead">{founder.lead}</p>
@@ -119,8 +121,8 @@ export function RebrandPage() {
 
         <section id="contact" className="chapter chapter--dark contact-cta" aria-labelledby="contact-heading">
           <div className="container contact-cta__layout">
-            <div><h2 id="contact-heading">{contact.headline}</h2><p>{contact.intro}</p></div>
-            <div className="contact-cta__actions">
+            <div data-reveal="left"><h2 id="contact-heading">{contact.headline}</h2><p>{contact.intro}</p></div>
+            <div className="contact-cta__actions" data-reveal="right" data-reveal-delay="1">
               <a className="button button--primary" href={contact.primaryCta.href}>{contact.primaryCta.label}<span aria-hidden="true">↗</span></a>
               <p>{contact.directLabel}</p>
               <a href={`mailto:${form.email}`}>{form.email}</a>
