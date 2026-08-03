@@ -31,7 +31,7 @@ describe("homepage copy contract", () => {
 
   it("states the scan scope and price exactly once", () => {
     expect(publicCopy.match(/€1\.499 exclusief btw/g)).toHaveLength(1);
-    expect(homepageCopy.scan.investment).toContain("maximaal drie interviews");
+    expect(homepageCopy.scan.days.flatMap((day) => day.items).join(" ")).toContain("maximaal drie interviews");
     expect(homepageCopy.scan.copy).toContain("twee werkdagen");
   });
 
@@ -40,11 +40,25 @@ describe("homepage copy contract", () => {
       homepageCopy.navigation.primaryCta.href,
       homepageCopy.hero.primaryCta.href,
       homepageCopy.scan.primaryCta.href,
-      homepageCopy.founder.cta.href,
-      homepageCopy.routes.combined.cta.href,
-      ...homepageCopy.routes.items.map((route) => route.ctaHref),
+      homepageCopy.contact.primaryCta.href,
     ];
-    expect(new Set(primaryTargets)).toEqual(new Set(["#probleemverkenning"]));
+    expect(new Set(primaryTargets)).toEqual(new Set(["/probleemverkenning"]));
+  });
+
+  it("renders the requested seven-section homepage order with the scan before routes", () => {
+    const route = readFileSync(join(process.cwd(), "components/rebrand/RebrandPage.tsx"), "utf8");
+    const sectionIds = [...route.matchAll(/<section id="([^"]+)"/g)].map((match) => match[1]);
+    expect(sectionIds).toEqual(["top", "probleem", "scan", "routes", "werkwijze", "over-digitech", "contact"]);
+    expect(route).not.toContain("ProblemExplorationForm");
+  });
+
+  it("keeps the full form on its dedicated route with one h1 per page", () => {
+    const home = readFileSync(join(process.cwd(), "components/rebrand/RebrandPage.tsx"), "utf8");
+    const exploration = readFileSync(join(process.cwd(), "app/probleemverkenning/page.tsx"), "utf8");
+    expect(home.match(/<h1/g)).toHaveLength(1);
+    expect(exploration.match(/<h1/g)).toHaveLength(1);
+    expect(exploration).toContain("ProblemExplorationForm");
+    expect(exploration).toContain("problemExploration.metadata.canonical");
   });
 
   it("has production metadata without route-level noindex", () => {
@@ -57,6 +71,7 @@ describe("homepage copy contract", () => {
     expect(nextConfig).not.toContain("noindex");
     expect(nextConfig).not.toContain("/prototype");
     expect(existsSync(join(process.cwd(), "app/prototype/rebrand/page.tsx"))).toBe(false);
+    expect(existsSync(join(process.cwd(), "app/probleemverkenning/page.tsx"))).toBe(true);
   });
 
   it("uses the approved Google Workspace contact address", () => {

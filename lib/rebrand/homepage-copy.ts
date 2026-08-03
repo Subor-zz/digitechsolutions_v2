@@ -2,11 +2,12 @@ export type ModernizationRoute = {
   id: "workflow" | "application";
   title: string;
   statement: string;
+  context: string;
   signals: readonly string[];
   visibleSignals: readonly string[];
   output: string;
   cta: string;
-  ctaHref: "#probleemverkenning";
+  ctaHref: "/probleemverkenning";
 };
 
 export type MethodStep = {
@@ -21,7 +22,8 @@ const modernizationRoutes = [
   {
     id: "workflow",
     title: "Workflowmodernisering",
-    statement: "Van handwerk naar een beheersbaar proces.",
+    statement: "Van handwerk en losse overdrachten naar een beheersbaar proces.",
+    context: "We maken de echte procesroute zichtbaar en bepalen welke stappen eenvoudiger, beter verbonden of gecontroleerd geautomatiseerd kunnen worden.",
     signals: [
       "Informatie beweegt via inboxen, spreadsheets en losse overdrachten.",
       "Uitzonderingen worden te laat zichtbaar.",
@@ -32,18 +34,17 @@ const modernizationRoutes = [
       "Processtappen vereenvoudigen",
       "Overdrachten en controles automatiseren",
       "Systemen en databronnen koppelen",
-      "Interne tools of dashboards ontwikkelen",
-      "AI inzetten waar dat aantoonbaar helpt",
+      "Interne tools gericht ontwikkelen",
     ],
-    output:
-      "Een duidelijke route met zichtbare controles, helder eigenaarschap en overdraagbare werkwijzen.",
+    output: "Een duidelijke route met zichtbare controles, helder eigenaarschap en een overdraagbare werkwijze.",
     cta: "Start de probleemverkenning",
-    ctaHref: "#probleemverkenning",
+    ctaHref: "/probleemverkenning",
   },
   {
     id: "application",
     title: "Applicatiemodernisering",
-    statement: "Van kwetsbare software naar een applicatie die weer kan veranderen.",
+    statement: "Van kwetsbare of moeilijk aanpasbare software naar een applicatie die weer kan veranderen.",
+    context: "We onderzoeken architectuur, data, integraties en beheer om gericht te bepalen wat kan blijven en wat gefaseerd moet worden vernieuwd.",
     signals: [
       "Kleine wijzigingen zijn risicovol of disproportioneel duur.",
       "Integraties en afhankelijkheden zijn onvoldoende zichtbaar.",
@@ -54,13 +55,11 @@ const modernizationRoutes = [
       "Architectuur en afhankelijkheden inzichtelijk maken",
       "Technische schuld gericht terugbrengen",
       "Integraties en datastromen verbeteren",
-      "Functionaliteit modulair vernieuwen",
-      "Een applicatie gefaseerd vervangen",
+      "Functionaliteit modulair vernieuwen of vervangen",
     ],
-    output:
-      "Een gefaseerde route die behoud, verbetering en vervanging bewust tegen elkaar afweegt.",
+    output: "Een gefaseerde route die behoud, verbetering en vervanging bewust tegen elkaar afweegt.",
     cta: "Start de probleemverkenning",
-    ctaHref: "#probleemverkenning",
+    ctaHref: "/probleemverkenning",
   },
 ] as const satisfies readonly ModernizationRoute[];
 
@@ -74,7 +73,7 @@ const methodSteps = [
 ] as const satisfies readonly MethodStep[];
 
 export const homepageCopy = {
-  brand: { ariaLabel: "Digitech Solutions", firstLine: "Digitech", secondLine: "Solutions", homeHref: "#top" },
+  brand: { ariaLabel: "Digitech Solutions", firstLine: "Digitech", secondLine: "Solutions", homeHref: "/#top" },
   navigation: {
     skipLink: "Ga naar de hoofdinhoud",
     ariaLabel: "Hoofdnavigatie",
@@ -82,27 +81,23 @@ export const homepageCopy = {
     mobileOpen: "Navigatie",
     mobileClose: "Sluiten",
     links: [
-      { href: "#probleem", label: "Waar het vastloopt" },
-      { href: "#scan", label: "De scan" },
-      { href: "#routes", label: "Expertise" },
-      { href: "#werkwijze", label: "Werkwijze" },
-      { href: "#over-digitech", label: "Over Digitech" },
+      { href: "/#probleem", label: "Waar het vastloopt" },
+      { href: "/#scan", label: "De scan" },
+      { href: "/#routes", label: "Expertise" },
+      { href: "/#werkwijze", label: "Werkwijze" },
+      { href: "/#over-digitech", label: "Over Digitech" },
     ],
-    primaryCta: { href: "#probleemverkenning", label: "Start de probleemverkenning" },
+    primaryCta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
   },
   hero: {
     kicker: "Workflow- en applicatiemodernisering",
     headline: "Moderniseer wat verandering tegenhoudt.",
-    lead:
-      "Verouderde processen, versnipperde systemen en moeilijk aanpasbare software maken iedere volgende verbetering ingewikkelder.",
-    mobileLead:
-      "Verouderde processen en moeilijk aanpasbare software maken iedere verbetering ingewikkelder.",
-    supporting:
-      "Digitech Solutions brengt de oorzaken in kaart en vertaalt ze naar een beheersbare moderniseringsroute. Daarna vereenvoudigen, automatiseren of vernieuwen we precies wat nodig is, met AI waar het aantoonbaar waarde toevoegt.",
-    primaryCta: { href: "#probleemverkenning", label: "Start de probleemverkenning" },
+    lead: "Verouderde processen, versnipperde systemen en moeilijk aanpasbare software maken iedere volgende verbetering ingewikkelder. Teams verliezen tijd aan overdrachten en herstelwerk.",
+    mobileLead: "Verouderde processen en moeilijk aanpasbare software maken iedere verbetering ingewikkelder.",
+    supporting: "Digitech Solutions brengt proces, data, systemen, risico en eigenaarschap samen. Zo wordt duidelijk waar de echte beperking zit. Daarna moderniseren we gericht wat nodig is, zonder automatisch voor een volledige herbouw te kiezen.",
+    primaryCta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
     secondaryCta: { href: "#scan", label: "Bekijk de Modernization Scan" },
-    founderTrustLine:
-      "Van analyse en architectuur tot uitvoering en overdracht. Eén aanpak, met een vaste kern en specialistische versterking wanneer de opdracht daarom vraagt.",
+    founderTrustLine: "Procesanalyse, productdenken en technische uitvoering in één samenwerking.",
     systemVisual: {
       caption: "Waar proces en techniek elkaar vertragen.",
       ariaLabel: "Workflow, data en applicatie komen samen in één beheersbare route.",
@@ -123,12 +118,11 @@ export const homepageCopy = {
   hiddenDrag: {
     kicker: "Waar het vastloopt",
     headline: "De grootste vertraging zit vaak tussen mensen, processen en systemen.",
-    intro:
-      "Niet ieder knelpunt vraagt om nieuwe software. Vaak ontstaat vertraging in de verbindingen: informatie wordt handmatig overgenomen, uitzonderingen blijven liggen en tijdelijke oplossingen worden vaste werkwijzen.",
+    intro: "Frictie ontstaat in handmatige overdrachten, dubbele invoer, uitzonderingen zonder eigenaar en software die niet meer met de organisatie meebeweegt. Samen maken deze knelpunten verandering traag, foutgevoelig en afhankelijk van individuele kennis.",
     mobileIntro: "Frictie ontstaat in overdrachten, dubbel werk en uitzonderingen zonder duidelijke eigenaar.",
     currentFlow: ["Aanvraag", "Inbox", "Spreadsheet", "Controle", "Oude applicatie", "Rapportage"],
-    visibleCurrentFlow: ["Aanvraag", "Inbox", "Spreadsheet", "Controle", "Oude applicatie", "Rapportage"],
-    targetFlow: ["Aanvraag", "Validatie", "Verwerking", "Menselijke controle", "Resultaat"],
+    visibleCurrentFlow: ["Aanvraag", "Inbox en spreadsheet", "Oude applicatie", "Rapportage"],
+    targetFlow: ["Aanvraag", "Validatie", "Menselijke controle", "Resultaat"],
     signals: ["Dubbele invoer", "Lange wachttijden", "Foutgevoelige overdrachten", "Onduidelijk eigenaarschap", "Beperkte ruimte om te veranderen"],
     visibleSignals: ["Dubbele invoer", "Lange wachttijden", "Foutgevoelige overdrachten", "Onduidelijk eigenaarschap"],
     signalsAriaLabel: "Veelvoorkomende gevolgen",
@@ -143,89 +137,91 @@ export const homepageCopy = {
   },
   diagnosis: {
     headline: "Bouw niet sneller voordat duidelijk is wat je moet oplossen.",
-    intro:
-      "Een nieuw systeem kan een slecht proces versnellen zonder het te verbeteren. Daarom onderzoeken we waar vertraging ontstaat, welke afhankelijkheden worden geraakt en wat behouden moet blijven.",
-    mobileIntro: "Onderzoek eerst proces, data, systemen, risico en eigenaarschap. Kies daarna pas een route.",
+    intro: "We onderzoeken waar vertraging ontstaat, welke afhankelijkheden worden geraakt en wat behouden moet blijven.",
+    mobileIntro: "Onderzoek eerst proces, data, systemen, risico en eigenaarschap.",
     layers: [
-      { title: "Proces", description: "Waar ontstaan wachttijd, herstelwerk en uitzonderingen? Welke stappen leveren werkelijk waarde op?" },
-      { title: "Data", description: "Welke gegevens zijn leidend, waar ontstaan dubbele versies en hoe betrouwbaar is de informatie?" },
-      { title: "Systemen", description: "Welke applicaties, koppelingen en technische afhankelijkheden ondersteunen of beperken het proces?" },
-      { title: "Risico", description: "Wat zijn de gevolgen voor continuïteit, beveiliging, privacy, kwaliteit en beheer?" },
-      { title: "Eigenaarschap", description: "Wie neemt besluiten, wie beheert de oplossing en waar is kennis onvoldoende overdraagbaar?" },
+      { title: "Proces", description: "Waar ontstaan wachttijd, herstelwerk en uitzonderingen?" },
+      { title: "Data", description: "Welke gegevens zijn leidend en waar ontstaan dubbele versies?" },
+      { title: "Systemen", description: "Welke applicaties en koppelingen ondersteunen of beperken het proces?" },
+      { title: "Risico", description: "Wat zijn de gevolgen voor continuïteit, beveiliging en beheer?" },
+      { title: "Eigenaarschap", description: "Wie neemt besluiten en beheert de oplossing?" },
     ],
     asideHeading: "De oplossing volgt uit de analyse.",
-    asideCopy: "Vereenvoudigen, integreren, automatiseren, beveiligen en gericht vernieuwen zijn mogelijke routes. Een volledige herbouw is nooit automatisch het vertrekpunt.",
+    asideCopy: "Een volledige herbouw is nooit automatisch het vertrekpunt.",
     cta: { href: "#routes", label: "Bekijk de mogelijke routes" },
     transition: "Eerst begrijpen. Daarna gericht afbakenen.",
   },
-  routes: {
-    kicker: "Eén vraagstuk, twee expertisegebieden",
-    headline: "Proces en applicatie zijn zelden los van elkaar te moderniseren.",
-    intro: "Je hoeft vooraf niet te bepalen welke expertise nodig is. We starten bij wat je organisatie dagelijks merkt.",
-    mobileIntro: "We starten bij het zichtbare knelpunt en bepalen waar de kern ligt.",
-    items: modernizationRoutes,
-    combined: {
-      heading: "Nog niet duidelijk waar het probleem zit?",
-      copy: "Dat hoeft ook niet. De probleemverkenning begint bij het zichtbare knelpunt. We bepalen of de kern in het proces, de applicatie of de samenhang ligt.",
-      cta: { href: "#probleemverkenning", label: "Start de probleemverkenning" },
-    },
-  },
-  method: {
-    headline: "Een moderniseringsroute met duidelijke beslismomenten.",
-    intro: "Iedere opdracht vraagt een andere technische ingreep, maar dezelfde discipline: heldere grenzen, zichtbare besluiten, toetsbare kwaliteit en professionele overdracht.",
-    mobileIntro: "Heldere grenzen, zichtbare besluiten, toetsbare kwaliteit en overdracht.",
-    steps: methodSteps,
-    phases: [
-      { title: "Begrijpen", stepIds: ["scope", "map"], description: "Doel, proces, data, systemen en risico komen samen in één gedeeld beeld.", artifact: "Scopekader en kaart van de huidige situatie" },
-      { title: "Gericht moderniseren", stepIds: ["simplify", "build"], description: "Onnodige complexiteit verdwijnt eerst. Daarna bouwen we alleen de afgebakende verbetering.", artifact: "Beslislog en werkende moderniseringsstap" },
-      { title: "Borgen", stepIds: ["verify", "transfer"], description: "Acceptatie, risico, documentatie en overdracht maken de verandering controleerbaar.", artifact: "Controlebewijs en overdrachtsset" },
-    ],
-    closing: "Het doel is een werkende verandering die de organisatie begrijpt en zelfstandig kan beheren.",
-  },
-  founder: {
-    kicker: "Compacte kern, directe samenwerking",
-    headline: "De mensen die meedenken, blijven betrokken bij de uitvoering.",
-    lead: "Digitech Solutions combineert procesanalyse, productdenken en technische uitvoering. Zo verdwijnt de oorspronkelijke vraag niet tussen advies, ontwerp en development.",
-    supporting: "We werken met een vaste kern. Wanneer extra capaciteit of specialistische expertise nodig is, breiden we gericht uit met vaste samenwerkingspartners. Scope, verantwoordelijkheid en communicatie blijven centraal georganiseerd.",
-    capabilities: ["Procesanalyse", "Functionele vertaling", "Product- en architectuurkeuzes", "Workflowautomatisering", "Applicatiemodernisering", "Kwaliteit en overdracht"],
-    publicBioPlaceholder: "",
-    faqAriaLabel: "Veelgestelde vragen",
-    faqs: [
-      { question: "Is de Modernization Scan een verkoopgesprek?", answer: "Nee. De scan is een betaalde, afgebakende analyse met een zelfstandig bruikbaar rapport. Een vervolgopdracht is niet verplicht." },
-      { question: "Moet een oude applicatie volledig opnieuw worden gebouwd?", answer: "Meestal niet. We beoordelen eerst of vereenvoudiging, betere integraties of modulaire vernieuwing voldoende zijn." },
-      { question: "Welke rol speelt AI?", answer: "AI is één van de beschikbare middelen. We zetten het alleen in bij voldoende waarde, betrouwbare input en beheersbare risico's." },
-      { question: "Kunnen jullie de verbetering na de scan uitvoeren?", answer: "Ja. Digitech Solutions kan de aanbevolen modernisering ontwerpen, bouwen en begeleiden. Voor specialistische trajecten schalen we gericht op." },
-      { question: "Voor welke organisaties is de scan bedoeld?", answer: "Voor mkb-bedrijven en scale-ups met een concreet proces- of applicatieprobleem en een betrokken eigenaar binnen de organisatie." },
-      { question: "Wat moet vooraf beschikbaar zijn?", answer: "Een contactpersoon, maximaal drie relevante stakeholders en beschikbare informatie over het gekozen probleemgebied." },
-    ],
-    cta: { href: "#probleemverkenning", label: "Start de probleemverkenning" },
-  },
-  result: { rendered: false, kicker: "", headline: "", intro: "", outcomes: [], proof: { label: "", anatomy: [] } },
   scan: {
     kicker: "Modernization Scan",
     headline: "Van een terugkerend probleem naar een onderbouwde eerste stap.",
-    copy: "De Modernization Scan onderzoekt één afgebakend proces, applicatie of probleemgebied. In twee werkdagen brengen we de huidige situatie, belangrijkste beperkingen en realistische oplossingsrichtingen in kaart.",
-    decisionCopy: "Je krijgt geen vooraf gekozen technologie of generiek AI-advies, maar een concreet besliskader dat ook zonder vervolgopdracht bruikbaar blijft.",
+    copy: "De Modernization Scan onderzoekt één afgebakend proces, applicatie of probleemgebied. In twee werkdagen brengen we de huidige situatie, belangrijkste beperkingen en realistische oplossingsrichtingen in kaart. Maximaal drie interviews brengen de relevante perspectieven samen.",
+    decisionCopy: "Bedoeld voor mkb-bedrijven en scale-ups die eerst scope, risico en een verstandige route willen begrijpen. Je ontvangt een zelfstandig bruikbaar rapport met observaties, aannames en bewuste uitsluitingen.",
     mobileCopy: "In twee werkdagen van een afgebakend probleem naar een bruikbaar besliskader.",
     days: [
-      { title: "Dag 1: begrijpen en afbakenen", items: ["Intake en beschikbare informatie", "Maximaal drie interviews", "Proces, systemen, data en afhankelijkheden", "Knelpunten, risico's en aannames", "Tussentijdse terugkoppeling"] },
-      { title: "Dag 2: beoordelen en adviseren", items: ["Vergelijking van moderniseringsroutes", "Beoordeling van automatisering en AI", "Prioritering op impact, risico en uitvoerbaarheid", "Aanbevolen eerste stap", "Rapportage, eindbespreking en overdracht"] },
+      { title: "Dag 1: begrijpen", items: ["Intake en maximaal drie interviews", "Proces, systemen en afhankelijkheden", "Tussentijdse terugkoppeling"] },
+      { title: "Dag 2: adviseren", items: ["Routes beoordelen en prioriteren", "Aanbevolen eerste stap", "Rapportage en eindbespreking"] },
     ],
-    deliverables: ["Overzicht van de huidige situatie", "Visuele proces- of applicatiekaart", "Knelpunten en afhankelijkheden", "Risico- en impactanalyse", "Oplossingsrichtingen en uitsluitingen", "Automatiserings- en AI-kansen", "Prioriteitenmatrix", "Gefaseerd advies"],
-    investment: "De scan behandelt één duidelijk afgebakend probleemgebied en omvat maximaal drie interviews. De vaste investering bedraagt €1.499 exclusief btw. Voor een bredere scope bespreken we vooraf een passende uitbreiding.",
+    deliverables: ["Visuele kaart van de huidige situatie", "Knelpunten, risico's en afhankelijkheden", "Onderbouwde oplossingsrichtingen", "Gefaseerd advies voor de eerste stap"],
+    investment: "Vaste investering: €1.499 exclusief btw.",
     outputs: [
       { title: "Huidige staat", description: "Proces, systemen, afhankelijkheden en eigenaarschap in één overzicht." },
       { title: "Beslissingen", description: "Frictie, risico, opties, aannames en bewuste uitsluitingen." },
       { title: "Eerste stap", description: "Een gefaseerde route met duidelijke grenzen en beslismomenten." },
     ],
     outputsAriaLabel: "Output van de Modernization Scan",
-    primaryCta: { href: "#probleemverkenning", label: "Start de probleemverkenning" },
+    primaryCta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
     fallbackCta: { href: "mailto:subor@digitechsolutions.nl?subject=Probleemverkenning%20modernisering", label: "Neem direct contact op" },
   },
-  form: {
-    kicker: "Volgende stap",
+  routes: {
+    kicker: "Twee moderniseringsroutes",
+    headline: "Moderniseer het proces, de applicatie of de samenhang.",
+    intro: "We onderzoeken proces, data, systemen, risico en eigenaarschap in samenhang. Zo voorkomen we dat de oplossing vooraf wordt gekozen en bepalen we de kleinste route die het probleem structureel oplost.",
+    mobileIntro: "We starten bij het zichtbare knelpunt en bepalen waar de kern ligt.",
+    items: modernizationRoutes,
+    combined: {
+      heading: "Nog niet duidelijk waar het probleem zit?",
+      copy: "Dat hoeft ook niet. We beginnen bij het zichtbare knelpunt en bepalen of de kern in het proces, de applicatie of de samenhang ligt.",
+      cta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
+    },
+  },
+  method: {
+    headline: "Eerst begrijpen. Dan gericht moderniseren.",
+    intro: "Drie heldere fasen houden probleem, uitvoering en overdracht met elkaar verbonden. Iedere fase heeft een concrete uitkomst.",
+    mobileIntro: "Begrijpen, gericht moderniseren en zorgvuldig overdragen.",
+    steps: methodSteps,
+    phases: [
+      { title: "Begrijpen", stepIds: ["scope", "map"], description: "We brengen proces, data, systemen, risico en doel samen tot een gedeeld beeld en duidelijke grenzen.", artifact: "Scopekader en kaart van de huidige situatie" },
+      { title: "Gericht moderniseren", stepIds: ["simplify", "build"], description: "We vereenvoudigen eerst en bouwen daarna alleen de afgebakende verbetering in controleerbare iteraties.", artifact: "Beslislog en werkende moderniseringsstap" },
+      { title: "Borgen en overdragen", stepIds: ["verify", "transfer"], description: "We testen, leggen belangrijke besluiten vast en dragen kennis zorgvuldig over voor blijvende beheerbaarheid.", artifact: "Controlebewijs en overdrachtsset" },
+    ],
+    closing: "Het doel is een werkende verandering die de organisatie begrijpt en zelfstandig kan beheren.",
+  },
+  founder: {
+    kicker: "Over Digitech Solutions",
+    headline: "Analyse en uitvoering blijven verbonden.",
+    lead: "Digitech Solutions combineert procesanalyse, productdenken en technische uitvoering. Zo blijft de zakelijke vraag verbonden met keuzes in ontwerp en techniek.",
+    supporting: "We werken met een vaste kern en breiden gericht uit met vaste samenwerkingspartners. Scope, verantwoordelijkheid en communicatie blijven centraal georganiseerd. Na de scan kunnen we ontwerpen, bouwen en begeleiden, of het rapport overdragen aan een ander uitvoeringsteam.",
+    capabilities: [],
+    publicBioPlaceholder: "",
+    faqAriaLabel: "Veelgestelde vragen",
+    faqs: [
+      { question: "Is de Modernization Scan een verkoopgesprek?", answer: "Nee. De scan is een betaalde, afgebakende analyse met een zelfstandig bruikbaar rapport. Een vervolgopdracht is niet verplicht en stuurt het advies niet." },
+      { question: "Kunnen jullie de modernisering na de scan ook uitvoeren?", answer: "Ja. Digitech Solutions kan de aanbevolen modernisering ontwerpen, bouwen en begeleiden. De eerste uitvoeringsstap krijgt een eigen scope en acceptatiecriteria." },
+      { question: "Welke rol speelt AI?", answer: "AI is één van de beschikbare middelen, geen product op zichzelf. We zetten het alleen in bij voldoende waarde en beheersbare risico's. Review, testing en documentatie blijven onderdeel van de uitvoering." },
+    ],
+    cta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
+  },
+  result: { rendered: false, kicker: "", headline: "", intro: "", outcomes: [], proof: { label: "", anatomy: [] } },
+  contact: {
     headline: "Je hoeft nog niet te weten wat er gebouwd moet worden.",
-    intro: "Deel waar het werk vertraagt, welke systemen betrokken zijn en wat je al hebt geprobeerd. We gebruiken de kennismaking om de situatie gericht te verkennen.",
+    intro: "Beschrijf het terugkerende probleem, de mensen die er hinder van ondervinden, de betrokken systemen en de gewenste uitkomst. We gebruiken die context om ons vooraf in de organisatie te verdiepen en de eerste kennismaking gericht voor te bereiden.",
+    primaryCta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
+    directLabel: "Of neem direct contact op",
+  },
+  form: {
+    kicker: "Probleemverkenning",
+    headline: "Beschrijf het probleem in context.",
+    intro: "Na verzending verdiepen we ons vooraf in je organisatie. De eerste kennismaking is bedoeld om de situatie te verkennen, niet om direct een oplossing te verkopen. Deel geen wachtwoorden, broncode of andere gevoelige informatie.",
     submitLabel: "Verstuur de probleemverkenning",
     privacyCopy: "We gebruiken je gegevens uitsluitend om je aanvraag te beoordelen en contact met je op te nemen.",
     unavailable: "Online verzending is nog niet geconfigureerd. Je invoer is niet verzonden. Neem voor nu rechtstreeks contact op via e-mail of telefoon.",
@@ -235,23 +231,32 @@ export const homepageCopy = {
     phoneHref: "tel:+31643983420",
     privacyHref: "https://digitechsolutions.nl/privacy",
   },
+  problemExploration: {
+    title: "Start de probleemverkenning",
+    lead: "Geef ons voldoende context om het eerste gesprek inhoudelijk voor te bereiden.",
+    metadata: {
+      title: "Probleemverkenning | Digitech Solutions",
+      description: "Beschrijf het proces- of applicatieprobleem dat verandering vertraagt. Digitech Solutions bereidt een gerichte eerste kennismaking voor.",
+      canonical: "https://digitechsolutions.nl/probleemverkenning",
+    },
+  },
   footer: {
     descriptor: "Workflow- en applicatiemodernisering voor mkb-bedrijven en scale-ups die weer grip willen op verandering.",
     links: [
-      { href: "#routes", label: "Expertise" },
-      { href: "#scan", label: "Modernization Scan" },
-      { href: "#over-digitech", label: "Over Digitech Solutions" },
-      { href: "#probleemverkenning", label: "Contact" },
+      { href: "/#routes", label: "Expertise" },
+      { href: "/#scan", label: "Modernization Scan" },
+      { href: "/#over-digitech", label: "Over Digitech Solutions" },
+      { href: "/#contact", label: "Contact" },
       { href: "https://digitechsolutions.nl/privacy", label: "Privacyverklaring" },
       { href: "https://digitechsolutions.nl/algemene-voorwaarden", label: "Algemene voorwaarden" },
     ],
-    backToTop: { href: "#top", label: "Terug naar boven" },
+    backToTop: { href: "/#top", label: "Terug naar boven" },
     location: "Nederland en België. Op locatie en op afstand.",
     rights: "Digitech Solutions. Alle rechten voorbehouden.",
   },
   metadata: {
     title: "Workflow- en applicatiemodernisering | Digitech Solutions",
-    description: "Digitech Solutions helpt mkb-bedrijven en scale-ups verouderde processen en applicaties gericht te moderniseren. Start met een concrete probleemverkenning of Modernization Scan.",
+    description: "Digitech Solutions helpt mkb-bedrijven en scale-ups in Nederland en België workflows en applicaties gericht te moderniseren. Start met de Modernization Scan.",
     canonical: "https://digitechsolutions.nl/",
   },
 } as const;
