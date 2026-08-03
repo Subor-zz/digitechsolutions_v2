@@ -22,8 +22,8 @@ const modernizationRoutes = [
   {
     id: "workflow",
     title: "Workflowmodernisering",
-    statement: "Van handwerk en losse overdrachten naar een beheersbaar proces.",
-    context: "We maken de echte procesroute zichtbaar en bepalen welke stappen eenvoudiger, beter verbonden of gecontroleerd geautomatiseerd kunnen worden.",
+    statement: "Van handwerk naar een beheersbaar proces.",
+    context: "We maken de procesroute zichtbaar en bepalen welke stappen eenvoudiger, beter verbonden of gecontroleerd geautomatiseerd kunnen worden. Daarbij leggen we uitzonderingen, overdrachten en eigenaarschap vast, zodat verbetering niet afhankelijk blijft van impliciete kennis.",
     signals: [
       "Informatie beweegt via inboxen, spreadsheets en losse overdrachten.",
       "Uitzonderingen worden te laat zichtbaar.",
@@ -34,7 +34,6 @@ const modernizationRoutes = [
       "Processtappen vereenvoudigen",
       "Overdrachten en controles automatiseren",
       "Systemen en databronnen koppelen",
-      "Interne tools gericht ontwikkelen",
     ],
     output: "Een duidelijke route met zichtbare controles, helder eigenaarschap en een overdraagbare werkwijze.",
     cta: "Start de probleemverkenning",
@@ -43,8 +42,8 @@ const modernizationRoutes = [
   {
     id: "application",
     title: "Applicatiemodernisering",
-    statement: "Van kwetsbare of moeilijk aanpasbare software naar een applicatie die weer kan veranderen.",
-    context: "We onderzoeken architectuur, data, integraties en beheer om gericht te bepalen wat kan blijven en wat gefaseerd moet worden vernieuwd.",
+    statement: "Van kwetsbare software naar een veranderbare applicatie.",
+    context: "We onderzoeken architectuur, data, integraties en beheer om te bepalen wat kan blijven en wat gefaseerd moet worden vernieuwd. Zo ontstaat een realistische route die continuïteit beschermt en toekomstige wijzigingen beter voorspelbaar en beheersbaar maakt.",
     signals: [
       "Kleine wijzigingen zijn risicovol of disproportioneel duur.",
       "Integraties en afhankelijkheden zijn onvoldoende zichtbaar.",
@@ -55,7 +54,6 @@ const modernizationRoutes = [
       "Architectuur en afhankelijkheden inzichtelijk maken",
       "Technische schuld gericht terugbrengen",
       "Integraties en datastromen verbeteren",
-      "Functionaliteit modulair vernieuwen of vervangen",
     ],
     output: "Een gefaseerde route die behoud, verbetering en vervanging bewust tegen elkaar afweegt.",
     cta: "Start de probleemverkenning",
@@ -175,14 +173,9 @@ export const homepageCopy = {
   routes: {
     kicker: "Twee moderniseringsroutes",
     headline: "Moderniseer het proces, de applicatie of de samenhang.",
-    intro: "We onderzoeken proces, data, systemen, risico en eigenaarschap in samenhang. Zo voorkomen we dat de oplossing vooraf wordt gekozen en bepalen we de kleinste route die het probleem structureel oplost.",
+    intro: "We onderzoeken proces, data, systemen, risico en eigenaarschap in samenhang. Zo bepalen we waar de kern ligt en welke kleinste ingreep het probleem structureel oplost.",
     mobileIntro: "We starten bij het zichtbare knelpunt en bepalen waar de kern ligt.",
     items: modernizationRoutes,
-    combined: {
-      heading: "Nog niet duidelijk waar het probleem zit?",
-      copy: "Dat hoeft ook niet. We beginnen bij het zichtbare knelpunt en bepalen of de kern in het proces, de applicatie of de samenhang ligt.",
-      cta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
-    },
   },
   method: {
     headline: "Eerst begrijpen. Dan gericht moderniseren.",
@@ -199,8 +192,8 @@ export const homepageCopy = {
   founder: {
     kicker: "Over Digitech Solutions",
     headline: "Analyse en uitvoering blijven verbonden.",
-    lead: "Digitech Solutions combineert procesanalyse, productdenken en technische uitvoering. Zo blijft de zakelijke vraag verbonden met keuzes in ontwerp en techniek.",
-    supporting: "We werken met een vaste kern en breiden gericht uit met vaste samenwerkingspartners. Scope, verantwoordelijkheid en communicatie blijven centraal georganiseerd. Na de scan kunnen we ontwerpen, bouwen en begeleiden, of het rapport overdragen aan een ander uitvoeringsteam.",
+    lead: "Procesanalyse, productdenken en technische uitvoering blijven verbonden, van zakelijke vraag tot ontwerp en techniek.",
+    supporting: "Digitech werkt met een vaste kern en vaste samenwerkingspartners. Ook na de scan kunnen we ontwerpen, bouwen en begeleiden. Verantwoordelijkheid en communicatie blijven centraal georganiseerd.",
     capabilities: [],
     publicBioPlaceholder: "",
     faqAriaLabel: "Veelgestelde vragen",
@@ -213,8 +206,8 @@ export const homepageCopy = {
   },
   result: { rendered: false, kicker: "", headline: "", intro: "", outcomes: [], proof: { label: "", anatomy: [] } },
   contact: {
-    headline: "Je hoeft nog niet te weten wat er gebouwd moet worden.",
-    intro: "Beschrijf het terugkerende probleem, de mensen die er hinder van ondervinden, de betrokken systemen en de gewenste uitkomst. We gebruiken die context om ons vooraf in de organisatie te verdiepen en de eerste kennismaking gericht voor te bereiden.",
+    headline: "Begin bij wat er vastloopt.",
+    intro: "Je hoeft nog niet te weten wat er gebouwd moet worden. Beschrijf het terugkerende probleem, de betrokken mensen en systemen en de gewenste uitkomst. Daarmee bereiden we de eerste kennismaking gericht voor.",
     primaryCta: { href: "/probleemverkenning", label: "Start de probleemverkenning" },
     directLabel: "Of neem direct contact op",
   },
@@ -229,7 +222,7 @@ export const homepageCopy = {
     email: "subor@digitechsolutions.nl",
     phoneDisplay: "+31 6 43983420",
     phoneHref: "tel:+31643983420",
-    privacyHref: "https://digitechsolutions.nl/privacy",
+    privacyHref: "/privacy",
   },
   problemExploration: {
     title: "Start de probleemverkenning",
@@ -247,8 +240,8 @@ export const homepageCopy = {
       { href: "/#scan", label: "Modernization Scan" },
       { href: "/#over-digitech", label: "Over Digitech Solutions" },
       { href: "/#contact", label: "Contact" },
-      { href: "https://digitechsolutions.nl/privacy", label: "Privacyverklaring" },
-      { href: "https://digitechsolutions.nl/algemene-voorwaarden", label: "Algemene voorwaarden" },
+      { href: "/privacy", label: "Privacyverklaring" },
+      { href: "/algemene-voorwaarden", label: "Algemene voorwaarden" },
     ],
     backToTop: { href: "/#top", label: "Terug naar boven" },
     location: "Nederland en België. Op locatie en op afstand.",

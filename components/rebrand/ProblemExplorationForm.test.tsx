@@ -26,7 +26,7 @@ describe("ProblemExplorationForm", () => {
       expect(screen.getByLabelText(label)).toBeTruthy();
     }
     expect(screen.getByRole("group", { name: /Voorkeursroute/ })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "privacyverklaring" }).getAttribute("href")).toBe("https://digitechsolutions.nl/privacy");
+    expect(screen.getByRole("link", { name: "privacyverklaring" }).getAttribute("href")).toBe("/privacy");
     expect(screen.getByRole("link", { name: "subor@digitechsolutions.nl" }).getAttribute("href")).toBe("mailto:subor@digitechsolutions.nl");
   });
 

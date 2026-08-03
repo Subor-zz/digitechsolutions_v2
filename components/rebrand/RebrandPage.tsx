@@ -92,11 +92,6 @@ export function RebrandPage() {
                 </details>
               </article>
             ))}
-            <aside className="combined-route" data-reveal="rise" data-reveal-delay="2">
-              <div><span className="combined-route__mark" aria-hidden="true" /><p>{routes.combined.heading}</p></div>
-              <p>{routes.combined.copy}</p>
-              <a className="text-link text-link--light" href={routes.combined.cta.href}>{routes.combined.cta.label}</a>
-            </aside>
           </div>
         </section>
 
