@@ -5,7 +5,11 @@ import { homepageCopy } from "../../lib/rebrand/homepage-copy";
 
 const { navigation } = homepageCopy;
 
-export function MobileNav() {
+type MobileNavProps = {
+  primaryCtaHref?: string;
+};
+
+export function MobileNav({ primaryCtaHref = navigation.primaryCta.href }: MobileNavProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -47,7 +51,7 @@ export function MobileNav() {
           ))}
           <a
             className="button button--primary"
-            href={navigation.primaryCta.href}
+            href={primaryCtaHref}
             onClick={() => setOpen(false)}
           >
             {navigation.primaryCta.label}

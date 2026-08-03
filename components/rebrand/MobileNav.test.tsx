@@ -31,4 +31,14 @@ describe("MobileNav", () => {
 
     expect(toggle.getAttribute("aria-expanded")).toBe("false");
   });
+
+  it("uses a local form target when the dedicated route supplies one", () => {
+    render(<MobileNav primaryCtaHref="#probleemverkenning" />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Navigatie" }));
+
+    expect(
+      screen.getByRole("link", { name: "Start de probleemverkenning" }).getAttribute("href"),
+    ).toBe("#probleemverkenning");
+  });
 });

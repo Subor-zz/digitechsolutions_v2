@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function ProblemExplorationPage() {
   return (
     <div className="site-shell">
-      <SiteHeader />
+      <SiteHeader primaryCtaHref="#probleemverkenning" />
       <main id="hoofdinhoud" className="problem-exploration-page">
         <header className="problem-exploration-hero">
           <div className="container">
