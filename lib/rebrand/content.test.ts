@@ -45,6 +45,21 @@ describe("homepage copy contract", () => {
     expect(new Set(primaryTargets)).toEqual(new Set(["/probleemverkenning"]));
   });
 
+  it("uses the shortened routes and removes the redundant expertise row", () => {
+    expect(homepageCopy.routes.items.map((route) => route.statement)).toEqual([
+      "Van handwerk naar een beheersbaar proces.",
+      "Van kwetsbare software naar een veranderbare applicatie.",
+    ]);
+    expect(homepageCopy.routes.items.every((route) => route.visibleSignals.length <= 3)).toBe(true);
+    expect("combined" in homepageCopy.routes).toBe(false);
+    const route = readFileSync(join(process.cwd(), "components/rebrand/RebrandPage.tsx"), "utf8");
+    expect(route).not.toContain("combined-route");
+  });
+
+  it("uses the compact final contact heading", () => {
+    expect(homepageCopy.contact.headline).toBe("Begin bij wat er vastloopt.");
+  });
+
   it("renders the requested seven-section homepage order with the scan before routes", () => {
     const route = readFileSync(join(process.cwd(), "components/rebrand/RebrandPage.tsx"), "utf8");
     const sectionIds = [...route.matchAll(/<section id="([^"]+)"/g)].map((match) => match[1]);
@@ -79,6 +94,18 @@ describe("homepage copy contract", () => {
     expect(homepageCopy.form.email).toBe("subor@digitechsolutions.nl");
     expect(homepageCopy.scan.fallbackCta.href).toContain("mailto:subor@digitechsolutions.nl");
     expect(publicCopyLower).not.toContain("info@digitechsolutions.nl");
+  });
+
+  it("links the legal documents to local routes", () => {
+    expect(homepageCopy.form.privacyHref).toBe("/privacy");
+    expect(homepageCopy.footer.links).toEqual(expect.arrayContaining([
+      { href: "/privacy", label: "Privacyverklaring" },
+      { href: "/algemene-voorwaarden", label: "Algemene voorwaarden" },
+    ]));
+    expect(existsSync(join(process.cwd(), "app/privacy/page.tsx"))).toBe(true);
+    expect(existsSync(join(process.cwd(), "app/algemene-voorwaarden/page.tsx"))).toBe(true);
+    expect(readFileSync(join(process.cwd(), "privacyverklaring-digitech-solutions.md"), "utf8")).toContain("# Privacyverklaring Digitech Solutions");
+    expect(readFileSync(join(process.cwd(), "algemene-voorwaarden-digitech-solutions.md"), "utf8")).toContain("# Algemene voorwaarden Digitech Solutions");
   });
 
   it("retains a reduced-motion baseline", () => {
