@@ -86,9 +86,9 @@ export function RebrandPage() {
           </div>
         </section>
 
-        <section id="routes" className="chapter chapter--dark routes" aria-labelledby="routes-heading">
+        <section id="routes" className="chapter chapter--paper routes" aria-labelledby="routes-heading">
           <div className="container routes__heading" data-reveal="rise">
-            <p className="section-kicker section-kicker--light">{routes.kicker}</p>
+            <p className="section-kicker">{routes.kicker}</p>
             <h2 id="routes-heading">{routes.headline}</h2>
             <p className="routes__full-intro">{routes.intro}</p>
             <p className="routes__mobile-intro">{routes.mobileIntro}</p>

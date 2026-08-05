@@ -1367,6 +1367,42 @@ h3 {
   font-size: 1.08rem;
 }
 
+/* ── Routes section: inverted to the light/paper theme ──
+   The section moved from chapter--dark to chapter--paper. Its rules above were
+   written for a dark background (they reference the *-dark tokens), so the
+   light counterparts are applied here, scoped to .routes so only this section
+   flips. Higher specificity than the base rules, so order-independent. */
+.routes {
+  background: var(--paper-100);
+  border-top-color: var(--border-light);
+}
+
+.routes .routes__heading > p:not(.section-kicker),
+.routes .route-panel__topline,
+.routes .route-panel__context,
+.routes .route-panel li {
+  color: var(--text-muted-light);
+}
+
+.routes .route-panel__output {
+  color: var(--text-on-light);
+}
+
+.routes .routes__grid,
+.routes .route-panel:first-child,
+.routes .route-panel ul,
+.routes .route-panel li,
+.routes .route-panel__mobile-details,
+.routes .route-panel__mobile-details[open] summary {
+  border-color: var(--border-light);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .routes .route-panel:hover {
+    background: rgb(17 21 27 / 3%);
+  }
+}
+
 .method {
   border-top: 1px solid var(--border-dark);
 }
@@ -2753,6 +2789,9 @@ h3 {
   .hero-map__mobile-list .hero-map__fragment,
   .hero-map__mobile-list .hero-map__decision,
   .hero-map__mobile-list .hero-map__outcome {
+    /* Base card style uses height:100% to fill the desktop SVG foreignObject;
+       neutralise it on mobile so cards size to their own content. */
+    height: auto;
     min-height: 4.5rem;
   }
 
@@ -2761,7 +2800,7 @@ h3 {
   }
 
   .hero-map__mobile-list .hero-map__decision {
-    margin-top: 1rem;
+    border-left: 2px solid var(--signal-orange);
   }
 
   .hero-map__mobile-list .hero-map__outcome {
