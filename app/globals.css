@@ -120,9 +120,10 @@ section[id] {
   position: sticky;
   z-index: 100;
   top: 0;
-  display: grid;
-  grid-template-columns: minmax(14rem, 1fr) auto auto;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
   min-height: var(--header-height);
   padding-inline: var(--content-gutter);
   color: var(--text-on-dark);
@@ -181,7 +182,6 @@ section[id] {
   display: flex;
   align-items: center;
   gap: clamp(1.25rem, 2.4vw, 2.5rem);
-  margin-right: clamp(1.25rem, 2.5vw, 2.5rem);
 }
 
 .desktop-nav a,
@@ -2456,7 +2456,7 @@ h3 {
   }
 
   .site-header {
-    grid-template-columns: 1fr auto;
+    justify-content: space-between;
   }
 
   .desktop-nav,
