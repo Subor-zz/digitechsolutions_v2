@@ -1,5 +1,6 @@
 import { homepageCopy } from "@/lib/rebrand/homepage-copy";
 
+import CursorGrid from "./CursorGrid";
 import { FlowDiagram } from "./FlowDiagram";
 import { HeroSystemMap } from "./HeroSystemMap";
 import { JourneyRoute } from "./JourneyRoute";
@@ -19,6 +20,22 @@ export function RebrandPage() {
 
         <section id="top" className="hero chapter chapter--dark" aria-labelledby="hero-heading">
           <div className="hero__grid" aria-hidden="true" />
+          <CursorGrid
+            className="hero__cursor-grid"
+            cellSize={80}
+            color="#78a0ff"
+            radius={170}
+            falloff="smooth"
+            holdTime={420}
+            fadeDuration={900}
+            lineWidth={1.2}
+            maxOpacity={0.5}
+            fillOpacity={0.05}
+            gridOpacity={0}
+            cellRadius={0}
+            clickPulse
+            pulseSpeed={620}
+          />
           <div className="container hero__layout">
             <div className="hero__copy">
               <p className="section-kicker section-kicker--light">{hero.kicker}</p>
