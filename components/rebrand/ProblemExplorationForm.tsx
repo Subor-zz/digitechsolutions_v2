@@ -2,51 +2,14 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 
+import {
+  emptyProblemExplorationValues,
+  problemExplorationRoutes,
+  type ProblemExplorationErrors,
+  type ProblemExplorationValues,
+  validateProblemExploration,
+} from "../../lib/forms/problem-exploration";
 import { homepageCopy } from "../../lib/rebrand/homepage-copy";
-
-export type ProblemExplorationValues = {
-  name: string;
-  organization: string;
-  role: string;
-  email: string;
-  phone: string;
-  problem: string;
-  affected: string;
-  systems: string;
-  attempted: string;
-  outcome: string;
-  preferredRoute: string;
-  website: string;
-};
-
-export type ProblemExplorationErrors = Partial<Record<keyof ProblemExplorationValues, string>>;
-
-const requiredMessages: Partial<Record<keyof ProblemExplorationValues, string>> = {
-  name: "Vul je naam in.",
-  organization: "Vul de naam van je organisatie in.",
-  role: "Vul je functie in.",
-  email: "Vul je zakelijke e-mailadres in.",
-  problem: "Beschrijf waar je organisatie op vastloopt.",
-  affected: "Beschrijf wie hiervan hinder ondervindt.",
-  systems: "Beschrijf welke systemen of hulpmiddelen betrokken zijn.",
-  outcome: "Beschrijf wat een goede uitkomst zou zijn.",
-  preferredRoute: "Kies een voorkeursroute.",
-};
-
-export function validateProblemExploration(values: ProblemExplorationValues) {
-  const errors: ProblemExplorationErrors = {};
-
-  for (const [field, message] of Object.entries(requiredMessages)) {
-    const key = field as keyof ProblemExplorationValues;
-    if (!values[key].trim()) errors[key] = message;
-  }
-
-  if (values.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = "Vul een geldig zakelijk e-mailadres in.";
-  }
-
-  return errors;
-}
 
 const fieldIds: Record<keyof ProblemExplorationValues, string> = {
   name: "exploration-name",
@@ -60,29 +23,16 @@ const fieldIds: Record<keyof ProblemExplorationValues, string> = {
   attempted: "exploration-attempted",
   outcome: "exploration-outcome",
   preferredRoute: "exploration-route",
+  privacyAccepted: "exploration-privacy",
   website: "exploration-website",
-};
-
-const emptyValues: ProblemExplorationValues = {
-  name: "",
-  organization: "",
-  role: "",
-  email: "",
-  phone: "",
-  problem: "",
-  affected: "",
-  systems: "",
-  attempted: "",
-  outcome: "",
-  preferredRoute: "",
-  website: "",
 };
 
 export function ProblemExplorationForm() {
   const { form } = homepageCopy;
-  const [values, setValues] = useState(emptyValues);
+  const [values, setValues] = useState(emptyProblemExplorationValues);
   const [errors, setErrors] = useState<ProblemExplorationErrors>({});
-  const [status, setStatus] = useState<"idle" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [submitError, setSubmitError] = useState("");
   const startedAt = useRef(0);
   const errorSummary = useRef<HTMLDivElement>(null);
 
@@ -90,7 +40,7 @@ export function ProblemExplorationForm() {
     startedAt.current = Date.now();
   }, []);
 
-  function update(field: keyof ProblemExplorationValues, value: string) {
+  function update(field: keyof ProblemExplorationValues, value: string | boolean) {
     setValues((current) => ({ ...current, [field]: value }));
     if (errors[field]) {
       setErrors((current) => {
@@ -101,7 +51,7 @@ export function ProblemExplorationForm() {
     }
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const nextErrors = validateProblemExploration(values);
@@ -112,14 +62,29 @@ export function ProblemExplorationForm() {
       return;
     }
 
-    if (values.website || Date.now() - startedAt.current < 2500) {
+    setStatus("submitting");
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/problem-exploration", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ values, elapsedMs: Date.now() - startedAt.current }),
+      });
+      const result = (await response.json()) as { ok?: boolean; message?: string };
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || "De aanvraag kon niet worden verzonden.");
+      }
+
+      setValues(emptyProblemExplorationValues);
+      setStatus("success");
+      startedAt.current = Date.now();
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "De aanvraag kon niet worden verzonden.");
       setStatus("error");
-      requestAnimationFrame(() => errorSummary.current?.focus());
-      return;
     }
 
-    // No approved transport exists yet. Never imply that data was sent.
-    setStatus("error");
     requestAnimationFrame(() => errorSummary.current?.focus());
   }
 
@@ -142,9 +107,9 @@ export function ProblemExplorationForm() {
 
       <div className="container exploration__layout">
         <form className="exploration-form" noValidate onSubmit={handleSubmit}>
-          {(errorCount > 0 || status === "error") && (
-            <div className="form-status form-status--error" role="alert" tabIndex={-1} ref={errorSummary}>
-              <h3>{errorCount > 0 ? "Controleer de gemarkeerde velden." : "Verzending niet beschikbaar"}</h3>
+          {(errorCount > 0 || status === "error" || status === "success") && (
+            <div className={`form-status form-status--${status === "success" ? "success" : "error"}`} role={status === "success" ? "status" : "alert"} tabIndex={-1} ref={errorSummary}>
+              <h3>{errorCount > 0 ? "Controleer de gemarkeerde velden." : status === "success" ? "Je aanvraag is verzonden" : "Verzenden is niet gelukt"}</h3>
               {errorCount > 0 ? (
                 <ul>
                   {Object.entries(errors).map(([field, message]) => (
@@ -154,7 +119,7 @@ export function ProblemExplorationForm() {
                   ))}
                 </ul>
               ) : (
-                <p>{form.unavailable}</p>
+                <p>{status === "success" ? form.success : submitError || form.unavailable}</p>
               )}
             </div>
           )}
@@ -195,12 +160,7 @@ export function ProblemExplorationForm() {
 
           <fieldset className="form-field form-routes" aria-describedby={errors.preferredRoute ? `${fieldIds.preferredRoute}-error` : undefined}>
             <legend>Voorkeursroute <span aria-hidden="true">*</span></legend>
-            {[
-              "Ik wil eerst kennismaken",
-              "Ik wil de Modernization Scan bespreken",
-              "Ik zoek ondersteuning bij uitvoering of modernisering",
-              "Ik weet nog niet welke route past",
-            ].map((route) => (
+            {problemExplorationRoutes.map((route) => (
               <label key={route}>
                 <input type="radio" name="preferredRoute" value={route} checked={values.preferredRoute === route} onChange={(e) => update("preferredRoute", e.target.value)} />
                 <span>{route}</span>
@@ -214,7 +174,26 @@ export function ProblemExplorationForm() {
             <input id={fieldIds.website} name="website" tabIndex={-1} autoComplete="off" value={values.website} onChange={(e) => update("website", e.target.value)} />
           </div>
 
-          <button className="button button--primary" type="submit">{form.submitLabel}</button>
+          <div className="form-field form-consent">
+            <label htmlFor={fieldIds.privacyAccepted}>
+              <input
+                id={fieldIds.privacyAccepted}
+                name="privacyAccepted"
+                type="checkbox"
+                required
+                checked={values.privacyAccepted}
+                onChange={(event) => update("privacyAccepted", event.target.checked)}
+                aria-invalid={Boolean(errors.privacyAccepted)}
+                aria-describedby={errors.privacyAccepted ? `${fieldIds.privacyAccepted}-error` : undefined}
+              />
+              <span>Ik heb gelezen hoe Digitech Solutions mijn gegevens gebruikt om deze aanvraag te beoordelen en contact met mij op te nemen.</span>
+            </label>
+            {errors.privacyAccepted && <span className="field-error" id={`${fieldIds.privacyAccepted}-error`}>{errors.privacyAccepted}</span>}
+          </div>
+
+          <button className="button button--primary" type="submit" disabled={status === "submitting"}>
+            {status === "submitting" ? "Bezig met verzenden..." : form.submitLabel}
+          </button>
           <p className="form-privacy">
             {form.privacyCopy} Lees de <a href={form.privacyHref}>privacyverklaring</a>.
           </p>

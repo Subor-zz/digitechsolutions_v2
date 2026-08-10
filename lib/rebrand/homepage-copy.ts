@@ -216,6 +216,7 @@ export const homepageCopy = {
     headline: "Beschrijf het probleem in context.",
     intro: "Na verzending verdiepen we ons vooraf in je organisatie. De eerste kennismaking is bedoeld om de situatie te verkennen, niet om direct een oplossing te verkopen. Deel geen wachtwoorden, broncode of andere gevoelige informatie.",
     submitLabel: "Verstuur de probleemverkenning",
+    success: "Bedankt. Je probleemverkenning is ontvangen. Subor neemt contact met je op om de passende vervolgstap te bespreken.",
     privacyCopy: "We gebruiken je gegevens uitsluitend om je aanvraag te beoordelen en contact met je op te nemen.",
     unavailable: "Online verzending is nog niet geconfigureerd. Je invoer is niet verzonden. Neem voor nu rechtstreeks contact op via e-mail of telefoon.",
     directHeading: "Liever direct overleggen?",
