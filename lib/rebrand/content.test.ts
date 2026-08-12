@@ -85,7 +85,10 @@ describe("homepage copy contract", () => {
     const css = readFileSync(join(process.cwd(), "app/globals.css"), "utf8");
     expect(homepageCopy.evidence.items).toHaveLength(3);
     expect(route).toContain('className="container routes__grid evidence-grid"');
+    expect(css).toContain(".routes__grid.evidence-grid");
     expect(css).toContain("grid-template-columns: repeat(3, minmax(0, 1fr))");
+    expect(css).toContain("border-right: 1px solid var(--border-light)");
+    expect(css).toContain("border-bottom: 1px solid var(--border-light)");
   });
 
   it("keeps consent checkboxes compact and their privacy copy readable", () => {
