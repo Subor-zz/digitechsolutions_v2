@@ -2950,11 +2950,11 @@ h3 {
   }
 
   .route-panel__desktop-details {
-    display: none;
+    display: block;
   }
 
   .route-panel__mobile-details {
-    display: block;
+    display: none;
     border-top: 1px solid var(--border-dark);
     border-bottom: 1px solid var(--border-dark);
   }
@@ -2974,6 +2974,10 @@ h3 {
   .route-panel__mobile-details .route-panel__output {
     min-height: 0;
     margin: 1rem 0;
+  }
+
+  #werkproduct .route-panel__context {
+    display: block;
   }
 
   .method-phase h3 {

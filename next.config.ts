@@ -13,6 +13,23 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      { source: "/diensten", destination: "/#routes", permanent: true },
+      { source: "/diensten/zzp-applicatiebeheerder", destination: "/applicatiemodernisering", permanent: true },
+      { source: "/diensten/zzp-functioneel-beheerder", destination: "/workflowmodernisering", permanent: true },
+      { source: "/diensten/support-itsm", destination: "/workflowmodernisering", permanent: true },
+      { source: "/diensten/it-consultancy", destination: "/modernization-scan", permanent: true },
+      { source: "/diensten/full-stack-development", destination: "/applicatiemodernisering", permanent: true },
+      { source: "/diensten/productconsultatie", destination: "/modernization-scan", permanent: true },
+      { source: "/diensten/product-business-consultatie", destination: "/modernization-scan", permanent: true },
+      { source: "/diensten/applicatieconsultatie", destination: "/applicatiemodernisering", permanent: true },
+      { source: "/over-mij", destination: "/#over-digitech", permanent: true },
+      { source: "/contact", destination: "/kennismaking", permanent: true },
+      { source: "/voorwaarden", destination: "/algemene-voorwaarden", permanent: true },
+      { source: "/cookiebeleid", destination: "/privacy", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

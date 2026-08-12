@@ -14,8 +14,8 @@ describe("homepage copy contract", () => {
     expect(methodSteps.map((step) => step.id)).toEqual(["scope", "map", "simplify", "build", "verify", "transfer"]);
   });
 
-  it("uses the approved positioning and removes old prototype positioning", () => {
-    expect(homepageCopy.hero.headline).toBe("Moderniseer wat verandering tegenhoudt.");
+  it("uses decision-maker language and removes old prototype positioning", () => {
+    expect(homepageCopy.hero.headline).toBe("Laat verouderde processen en software je groei niet afremmen.");
     expect(publicCopyLower).not.toContain("moderniseer wat je organisatie vertraagt");
     expect(publicCopyLower).not.toContain("je werkt rechtstreeks met subor");
     expect(publicCopyLower).not.toContain("rebrandprototype");
@@ -35,14 +35,19 @@ describe("homepage copy contract", () => {
     expect(homepageCopy.scan.copy).toContain("twee werkdagen");
   });
 
-  it("routes every primary CTA to the problem exploration", () => {
+  it("offers a short introduction route and a detailed scan route", () => {
     const primaryTargets = [
       homepageCopy.navigation.primaryCta.href,
       homepageCopy.hero.primaryCta.href,
       homepageCopy.scan.primaryCta.href,
       homepageCopy.contact.primaryCta.href,
     ];
-    expect(new Set(primaryTargets)).toEqual(new Set(["/probleemverkenning"]));
+    expect(primaryTargets).toEqual([
+      "/kennismaking",
+      "/kennismaking",
+      "/probleemverkenning",
+      "/kennismaking",
+    ]);
   });
 
   it("uses the shortened routes and removes the redundant expertise row", () => {
@@ -56,15 +61,23 @@ describe("homepage copy contract", () => {
     expect(route).not.toContain("combined-route");
   });
 
-  it("uses the compact final contact heading", () => {
-    expect(homepageCopy.contact.headline).toBe("Begin bij wat er vastloopt.");
+  it("uses a decision-oriented final contact heading", () => {
+    expect(homepageCopy.contact.headline).toBe("Begin bij het probleem, niet bij de oplossing.");
   });
 
-  it("renders the requested seven-section homepage order with the scan before routes", () => {
+  it("renders the approved homepage order with tangible proof before the founder", () => {
     const route = readFileSync(join(process.cwd(), "components/rebrand/RebrandPage.tsx"), "utf8");
     const sectionIds = [...route.matchAll(/<section id="([^"]+)"/g)].map((match) => match[1]);
-    expect(sectionIds).toEqual(["top", "probleem", "scan", "routes", "werkwijze", "over-digitech", "contact"]);
+    expect(sectionIds).toEqual(["top", "probleem", "scan", "routes", "werkwijze", "werkproduct", "over-digitech", "contact"]);
     expect(route).not.toContain("ProblemExplorationForm");
+  });
+
+  it("does not render duplicate desktop and mobile copy variants", () => {
+    const route = readFileSync(join(process.cwd(), "components/rebrand/RebrandPage.tsx"), "utf8");
+    expect(route).not.toContain("hero__lede--mobile");
+    expect(route).not.toContain("scan__mobile-copy");
+    expect(route).not.toContain("routes__mobile-intro");
+    expect(route).not.toContain("route-panel__mobile-details");
   });
 
   it("keeps the full form on its dedicated route with one h1 per page", () => {
@@ -88,6 +101,7 @@ describe("homepage copy contract", () => {
     expect(nextConfig).not.toContain("/prototype");
     expect(existsSync(join(process.cwd(), "app/prototype/rebrand/page.tsx"))).toBe(false);
     expect(existsSync(join(process.cwd(), "app/probleemverkenning/page.tsx"))).toBe(true);
+    expect(existsSync(join(process.cwd(), "app/kennismaking/page.tsx"))).toBe(true);
   });
 
   it("uses the approved Google Workspace contact address", () => {
