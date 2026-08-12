@@ -88,6 +88,12 @@ describe("homepage copy contract", () => {
     expect(css).toContain("grid-template-columns: repeat(3, minmax(0, 1fr))");
   });
 
+  it("keeps consent checkboxes compact and their privacy copy readable", () => {
+    const css = readFileSync(join(process.cwd(), "app/globals.css"), "utf8");
+    expect(css).toContain('input:not([type="radio"]):not([type="checkbox"])');
+    expect(css).toContain("grid-template-columns: 1.25rem minmax(0, 1fr)");
+  });
+
   it("keeps the full form on its dedicated route with one h1 per page", () => {
     const home = readFileSync(join(process.cwd(), "components/rebrand/RebrandPage.tsx"), "utf8");
     const exploration = readFileSync(join(process.cwd(), "app/probleemverkenning/page.tsx"), "utf8");
