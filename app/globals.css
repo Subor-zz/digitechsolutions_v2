@@ -1367,7 +1367,7 @@ h3 {
   font-size: 1.08rem;
 }
 
-.evidence-grid {
+.routes__grid.evidence-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1377,7 +1377,7 @@ h3 {
 }
 
 .evidence-grid .route-panel:not(:last-child) {
-  border-right: 1px solid var(--border-dark);
+  border-right: 1px solid var(--border-light);
 }
 
 .evidence-grid .route-panel h3 {
@@ -2945,6 +2945,10 @@ h3 {
     width: min(calc(100% - (2 * var(--content-gutter))), 76rem);
   }
 
+  .routes__grid.evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
   .route-panel {
     min-height: auto;
     padding: 2.1rem var(--content-gutter);
@@ -2957,7 +2961,7 @@ h3 {
 
   .evidence-grid .route-panel:not(:last-child) {
     border-right: 0;
-    border-bottom: 1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
   }
 
   .route-panel__topline {
