@@ -9,7 +9,7 @@ import { MotionOrchestrator } from "./MotionOrchestrator";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 
 export function RebrandPage() {
-  const { hero, hiddenDrag, routes, founder, scan, contact, form } = homepageCopy;
+  const { hero, hiddenDrag, routes, founder, scan, contact, form, evidence } = homepageCopy;
 
   return (
     <div className="site-shell">
@@ -40,8 +40,7 @@ export function RebrandPage() {
             <div className="hero__copy">
               <p className="section-kicker section-kicker--light">{hero.kicker}</p>
               <h1 id="hero-heading">{hero.headline}</h1>
-              <p className="hero__lede hero__lede--full">{hero.lead}</p>
-              <p className="hero__lede hero__lede--mobile">{hero.mobileLead}</p>
+              <p className="hero__lede">{hero.lead}</p>
               <p className="hero__supporting">{hero.supporting}</p>
               <div className="hero__actions">
                 <a className="button button--primary" href={hero.primaryCta.href}>{hero.primaryCta.label}<span aria-hidden="true">↗</span></a>
@@ -69,8 +68,7 @@ export function RebrandPage() {
             <div className="scan__copy" data-reveal="left">
               <p className="section-kicker section-kicker--light">{scan.kicker}</p>
               <h2 id="scan-heading">{scan.headline}</h2>
-              <p className="scan__full-copy">{scan.copy}</p>
-              <p className="scan__mobile-copy">{scan.mobileCopy}</p>
+              <p>{scan.copy}</p>
               <p className="scan__decision-copy">{scan.decisionCopy}</p>
               <p className="scan__investment">{scan.investment}</p>
               <div className="scan__actions">
@@ -90,8 +88,7 @@ export function RebrandPage() {
           <div className="container routes__heading" data-reveal="rise">
             <p className="section-kicker">{routes.kicker}</p>
             <h2 id="routes-heading">{routes.headline}</h2>
-            <p className="routes__full-intro">{routes.intro}</p>
-            <p className="routes__mobile-intro">{routes.mobileIntro}</p>
+            <p>{routes.intro}</p>
           </div>
           <div className="container routes__grid">
             {routes.items.map((route, index) => (
@@ -101,12 +98,8 @@ export function RebrandPage() {
                 <p className="route-panel__context">{route.context}</p>
                 <div className="route-panel__desktop-details">
                   <ul>{route.visibleSignals.map((signal) => <li key={signal}>{signal}</li>)}</ul>
-                </div>
-                <details className="route-panel__mobile-details">
-                  <summary>Bekijk voorbeelden en resultaat</summary>
-                  <ul>{route.visibleSignals.map((signal) => <li key={signal}>{signal}</li>)}</ul>
                   <p className="route-panel__output">{route.output}</p>
-                </details>
+                </div>
               </article>
             ))}
           </div>
@@ -114,6 +107,18 @@ export function RebrandPage() {
 
         <section id="werkwijze" className="chapter chapter--ink method" aria-labelledby="werkwijze-heading">
           <div className="container"><MethodStack /></div>
+        </section>
+
+        <section id="werkproduct" className="chapter chapter--paper routes" aria-labelledby="evidence-heading">
+          <div className="container routes__heading" data-reveal="rise">
+            <p className="section-kicker">{evidence.kicker}</p>
+            <h2 id="evidence-heading">{evidence.headline}</h2>
+            <p>{evidence.intro}</p>
+          </div>
+          <div className="container routes__grid" aria-label={evidence.disclaimer}>
+            {evidence.items.map((item, index) => <article className="route-panel" data-reveal="rise" data-reveal-delay={index + 1} key={item.title}><div className="route-panel__topline"><span>0{index + 1}</span><i aria-hidden="true" /></div><h3>{item.title}</h3><p className="route-panel__context">{item.description}</p></article>)}
+          </div>
+          <p className="container flow-diagram__caption">{evidence.disclaimer}</p>
         </section>
 
         <section id="over-digitech" className="chapter chapter--paper founder" aria-labelledby="founder-heading">

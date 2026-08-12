@@ -38,7 +38,7 @@ describe("MobileNav", () => {
     fireEvent.click(screen.getByRole("button", { name: "Navigatie" }));
 
     expect(
-      screen.getByRole("link", { name: "Start de probleemverkenning" }).getAttribute("href"),
+      screen.getByRole("link", { name: "Plan een kennismaking" }).getAttribute("href"),
     ).toBe("#probleemverkenning");
   });
 });
