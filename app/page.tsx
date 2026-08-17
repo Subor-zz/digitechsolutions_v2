@@ -31,15 +31,25 @@ const organizationSchema = {
   "@type": "Organization",
   "@id": "https://digitechsolutions.nl/#organization",
   name: "Digitech Solutions",
+  legalName: "Digitech Solutions",
   url: "https://digitechsolutions.nl/",
+  logo: "https://digitechsolutions.nl/icon.png",
   email: "subor@digitechsolutions.nl",
   telephone: "+31643983420",
   founder: {
     "@type": "Person",
     "@id": "https://digitechsolutions.nl/#subor-cheung",
     name: "Subor Cheung",
-    jobTitle: "Founder en modernization specialist",
+    jobTitle: "CEO",
+    url: "https://digitechsolutions.nl/over",
+    sameAs: ["https://www.linkedin.com/in/subor-cheung-3baab21a/"],
   },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Breda",
+    addressCountry: "NL",
+  },
+  sameAs: ["https://www.linkedin.com/company/111914901"],
   areaServed: [
     { "@type": "Country", name: "Nederland" },
     { "@type": "Country", name: "België" },
@@ -87,17 +97,7 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: homepageCopy.founder.faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
-  })),
-};
-
-const structuredData = [organizationSchema, websiteSchema, serviceSchema, faqSchema];
+const structuredData = [organizationSchema, websiteSchema, serviceSchema];
 
 export default function HomePage() {
   return (

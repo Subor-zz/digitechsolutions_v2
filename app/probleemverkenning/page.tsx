@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: problemExploration.metadata.title },
   description: problemExploration.metadata.description,
   alternates: { canonical: problemExploration.metadata.canonical },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
   openGraph: {
     type: "website",
     locale: "nl_NL",

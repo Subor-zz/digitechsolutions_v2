@@ -250,7 +250,7 @@ export const homepageCopy = {
     links: [
       { href: "/#routes", label: "Expertise" },
       { href: "/#scan", label: "Modernization Scan" },
-      { href: "/#over-digitech", label: "Over Digitech Solutions" },
+      { href: "/over", label: "Over Digitech Solutions" },
       { href: "/#contact", label: "Contact" },
       { href: "/privacy", label: "Privacyverklaring" },
       { href: "/algemene-voorwaarden", label: "Algemene voorwaarden" },

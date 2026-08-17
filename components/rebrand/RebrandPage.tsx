@@ -129,6 +129,7 @@ export function RebrandPage() {
               <h2 id="founder-heading">{founder.headline}</h2>
               <p className="founder__lead">{founder.lead}</p>
               <p className="founder__supporting">{founder.supporting}</p>
+              <a className="text-link" href="/over">Meer over Subor en Digitech Solutions</a>
               <div className="founder__questions" aria-label={founder.faqAriaLabel}>
                 {founder.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
               </div>
