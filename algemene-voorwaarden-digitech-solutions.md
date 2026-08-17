@@ -6,7 +6,7 @@
 
 ## Artikel 1 – Identiteit en definities
 
-1. Digitech Solutions is een eenmanszaak van Subor Cheung, gevestigd in Breda, Nederland, ingeschreven bij de Kamer van Koophandel onder nummer 94338698, met btw-identificatienummer NL003396049B41.
+1. Digitech Solutions is een eenmanszaak van Subor Cheung, gevestigd aan Boomweide 10, 4847 GJ Teteringen, Nederland, ingeschreven bij de Kamer van Koophandel onder nummer 94338698, met btw-identificatienummer NL003396049B41.
 2. Digitech Solutions is bereikbaar via subor@digitechsolutions.nl en +31 6 43983420.
 3. In deze algemene voorwaarden wordt verstaan onder:
    - **Digitech Solutions:** de opdrachtnemer;
