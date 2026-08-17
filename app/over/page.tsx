@@ -58,7 +58,7 @@ export default function AboutPage() {
           <div className="container">
             <p className="section-kicker section-kicker--light">Over Digitech Solutions</p>
             <h1>Eén aanspreekpunt. Duidelijke eindverantwoordelijkheid.</h1>
-            <p>Digitech Solutions is opgericht door Subor Cheung en werkt founder-led vanuit Breda voor organisaties in Nederland en België.</p>
+            <p>Digitech Solutions is opgericht door Subor Cheung en werkt founder-led voor organisaties in Nederland en België.</p>
           </div>
         </header>
 

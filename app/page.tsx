@@ -31,7 +31,6 @@ const organizationSchema = {
   "@type": "Organization",
   "@id": "https://digitechsolutions.nl/#organization",
   name: "Digitech Solutions",
-  legalName: "Digitech Solutions",
   url: "https://digitechsolutions.nl/",
   logo: "https://digitechsolutions.nl/icon.png",
   email: "subor@digitechsolutions.nl",
