@@ -1,9 +1,8 @@
 # Privacyverklaring Digitech Solutions
 
-**Versie:** 1.0
-**Datum:** 3 augustus 2026
+**Versie:** 1.1
+**Datum:** 17 augustus 2026
 
-> **Voor publicatie invullen:** vestigingsadres, KvK-nummer en btw-identificatienummer. Controleer ook of de genoemde categorieën dienstverleners en bewaartermijnen overeenkomen met de werkelijk gebruikte systemen.
 
 ## 1. Wie is verantwoordelijk voor je persoonsgegevens?
 
@@ -13,9 +12,9 @@ Digitech Solutions is een eenmanszaak van Subor Cheung en is verantwoordelijk vo
 
 - Handelsnaam: Digitech Solutions
 - Eigenaar: Subor Cheung
-- Vestigingsadres: **[INVULLEN: volledig vestigingsadres]**
-- KvK-nummer: **[INVULLEN: KvK-nummer]**
-- Btw-identificatienummer: **[INVULLEN: btw-identificatienummer]**
+- Vestigingsplaats: Breda, Nederland
+- KvK-nummer: 94338698
+- Btw-identificatienummer: NL003396049B41
 - E-mail: subor@digitechsolutions.nl
 - Telefoon: +31 6 43983420
 - Website: https://digitechsolutions.nl
@@ -64,7 +63,7 @@ We verkopen geen persoonsgegevens.
 
 ## 5. Het contact- en probleemverkenningsformulier
 
-Via het formulier op de website vragen we om de gegevens die nodig zijn om het zakelijke vraagstuk te beoordelen en gericht contact op te nemen. Verplichte velden zijn als zodanig gemarkeerd. Een telefoonnummer is optioneel.
+Via het formulier op de website vragen we om de gegevens die nodig zijn om het zakelijke vraagstuk te beoordelen en gericht contact op te nemen. Verplichte velden zijn als zodanig gemarkeerd. Een telefoonnummer is optioneel. De aanvraag wordt per e-mail afgeleverd en in Google Workspace verwerkt.
 
 We gebruiken de formuliergegevens niet automatisch voor een nieuwsbrief of algemene marketingcampagne. We vragen in het formulier ook niet om toestemming voor de privacyverklaring: de privacyverklaring informeert je over de verwerking, maar is geen overeenkomst waarvoor toestemming nodig is.
 
@@ -80,7 +79,9 @@ We nemen geen uitsluitend geautomatiseerde besluiten die voor personen rechtsgev
 
 We delen persoonsgegevens alleen wanneer dit nodig is voor onze dienstverlening, bedrijfsvoering of een wettelijke verplichting. Daarbij kunnen de volgende categorieën ontvangers betrokken zijn:
 
-- leveranciers van hosting, e-mail, formulieren, cloudopslag, projectbeheer en beveiliging;
+- Vercel voor hosting en tijdelijke technische runtime- en beveiligingslogs;
+- Google Workspace voor zakelijke e-mail en de opslag van formulieraanvragen;
+- leveranciers van cloudopslag, projectbeheer en beveiliging voor zover die voor de dienstverlening worden gebruikt;
 - boekhouders, betaal- en administratiedienstverleners;
 - vaste samenwerkingspartners of gespecialiseerde opdrachtnemers die bij een opdracht worden ingezet;
 - professionele adviseurs, zoals juristen of verzekeraars;
@@ -152,6 +153,6 @@ Voor vragen, verzoeken of klachten over privacy kun je contact opnemen via:
 
 **Digitech Solutions**
 T.a.v. Subor Cheung
-**[INVULLEN: volledig vestigingsadres]**
+**Breda, Nederland**
 subor@digitechsolutions.nl
 +31 6 43983420
