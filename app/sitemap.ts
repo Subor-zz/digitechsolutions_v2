@@ -8,5 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "https://digitechsolutions.nl/modernization-scan",
     "https://digitechsolutions.nl/tarieven",
     "https://digitechsolutions.nl/over",
+    "https://digitechsolutions.nl/cases/ai-documentvertaling",
   ].map((url) => ({ url }));
 }
