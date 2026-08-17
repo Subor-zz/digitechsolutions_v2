@@ -251,6 +251,7 @@ export const homepageCopy = {
       { href: "/#routes", label: "Expertise" },
       { href: "/#scan", label: "Modernization Scan" },
       { href: "/over", label: "Over Digitech Solutions" },
+      { href: "/cases/ai-documentvertaling", label: "Praktijkcase" },
       { href: "/#contact", label: "Contact" },
       { href: "/privacy", label: "Privacyverklaring" },
       { href: "/algemene-voorwaarden", label: "Algemene voorwaarden" },
