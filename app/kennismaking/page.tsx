@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: { absolute: "Kennismaken | Digitech Solutions" },
   description: "Plan een korte kennismaking over een vastgelopen workflow of moeilijk aanpasbare applicatie.",
   alternates: { canonical: "https://digitechsolutions.nl/kennismaking" },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function IntroductionPage() {
