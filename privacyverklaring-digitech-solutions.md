@@ -12,7 +12,7 @@ Digitech Solutions is een eenmanszaak van Subor Cheung en is verantwoordelijk vo
 
 - Handelsnaam: Digitech Solutions
 - Eigenaar: Subor Cheung
-- Vestigingsplaats: Breda, Nederland
+- Vestigingsadres: Boomweide 10, 4847 GJ Teteringen, Nederland
 - KvK-nummer: 94338698
 - Btw-identificatienummer: NL003396049B41
 - E-mail: subor@digitechsolutions.nl
@@ -153,6 +153,6 @@ Voor vragen, verzoeken of klachten over privacy kun je contact opnemen via:
 
 **Digitech Solutions**
 T.a.v. Subor Cheung
-**Breda, Nederland**
+**Boomweide 10, 4847 GJ Teteringen, Nederland**
 subor@digitechsolutions.nl
 +31 6 43983420
