@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://digitechsolutions.nl/over" },
   robots: { index: true, follow: true },
   openGraph: {
-    type: "profile",
+    type: "website",
     locale: "nl_NL",
     url: "https://digitechsolutions.nl/over",
     siteName: "Digitech Solutions",
