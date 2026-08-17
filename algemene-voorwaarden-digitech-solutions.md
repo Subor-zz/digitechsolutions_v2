@@ -1,13 +1,12 @@
 # Algemene voorwaarden Digitech Solutions
 
-**Versie:** 1.0
-**Datum:** 3 augustus 2026
+**Versie:** 1.1
+**Datum:** 17 augustus 2026
 
-> **Voor publicatie invullen:** vestigingsadres, KvK-nummer en btw-identificatienummer. Laat deze voorwaarden vóór ingebruikname beoordelen op aansluiting bij de verzekeringspolis, facturatiepraktijk en technische werkwijze.
 
 ## Artikel 1 – Identiteit en definities
 
-1. Digitech Solutions is een eenmanszaak van Subor Cheung, gevestigd aan **[INVULLEN: volledig vestigingsadres]**, ingeschreven bij de Kamer van Koophandel onder nummer **[INVULLEN: KvK-nummer]**, met btw-identificatienummer **[INVULLEN: btw-identificatienummer]**.
+1. Digitech Solutions is een eenmanszaak van Subor Cheung, gevestigd in Breda, Nederland, ingeschreven bij de Kamer van Koophandel onder nummer 94338698, met btw-identificatienummer NL003396049B41.
 2. Digitech Solutions is bereikbaar via subor@digitechsolutions.nl en +31 6 43983420.
 3. In deze algemene voorwaarden wordt verstaan onder:
    - **Digitech Solutions:** de opdrachtnemer;
