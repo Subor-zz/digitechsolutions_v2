@@ -104,7 +104,7 @@ Als uitgangspunt hanteren we:
 - probleemverkenningen, contactaanvragen en afgewezen offertes: maximaal 24 maanden na het laatste inhoudelijke contact;
 - klant-, overeenkomst- en projectgegevens: gedurende de opdracht en daarna maximaal 7 jaar voor administratie, verantwoording en eventuele rechtsvorderingen;
 - facturen, betaalgegevens en overige fiscaal relevante administratie: 7 jaar, of langer wanneer de wet dit voor specifieke gegevens verplicht;
-- technische beveiligings- en serverlogs: **[INVULLEN: werkelijke bewaartermijn, bijvoorbeeld 30 of 90 dagen]**, tenzij een incident of onderzoek langere bewaring noodzakelijk maakt;
+- technische runtime- en beveiligingslogs bij Vercel: maximaal 1 uur binnen het Hobby-abonnement. Digitech Solutions gebruikt geen Observability Plus en heeft geen externe Log Drain ingesteld. Bij een beveiligingsincident kunnen relevante gegevens alleen langer beschikbaar blijven als deze binnen die termijn afzonderlijk en rechtmatig zijn veiliggesteld;
 - gegevens in back-ups: totdat de betreffende back-up volgens de reguliere beveiligde cyclus is overschreven of verwijderd.
 
 Wanneer gegevens voor meerdere doelen worden gebruikt, geldt de langste noodzakelijke bewaartermijn. Daarna verwijderen of anonimiseren we de gegevens.
