@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
       { source: "/diensten/productconsultatie", destination: "/modernization-scan", permanent: true },
       { source: "/diensten/product-business-consultatie", destination: "/modernization-scan", permanent: true },
       { source: "/diensten/applicatieconsultatie", destination: "/applicatiemodernisering", permanent: true },
-      { source: "/over-mij", destination: "/#over-digitech", permanent: true },
+      { source: "/over-mij", destination: "/over", permanent: true },
       { source: "/contact", destination: "/kennismaking", permanent: true },
       { source: "/voorwaarden", destination: "/algemene-voorwaarden", permanent: true },
       { source: "/cookiebeleid", destination: "/privacy", permanent: true },
